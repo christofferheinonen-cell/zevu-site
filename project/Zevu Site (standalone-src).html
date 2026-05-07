@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zevu — Meta-mainonta, joka toimii</title>
+<template id="__bundler_thumbnail" data-bg-color="#F3F4F6">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F3F4F6"/>
+    <text x="600" y="430" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="220" letter-spacing="-10" fill="#09090F">Zevu</text>
+    <circle cx="780" cy="345" r="18" fill="#2563EB"/>
+  </svg>
+</template>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #F3F4F6;
+  --white:    #FFFFFF;
+  --text:     #09090F;
+  --sub:      #5C6578;
+  --border:   #DDE1E9;
+  --blue:     #2563EB;
+  --blue-dim: #EEF3FD;
+  --dark:     #0C1121;
+  --dark2:    #111827;
+  --sh:       0 1px 3px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.06);
+  --sh2:      0 2px 8px rgba(0,0,0,.05), 0 16px 48px rgba(0,0,0,.10);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* NAV */
+.nav-wrap{
+  position:fixed;top:16px;left:50%;transform:translateX(-50%);
+  z-index:200;
+  display:flex;align-items:center;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--border);
+  border-radius:100px;
+  padding:6px 6px 6px 20px;
+  gap:4px;
+  box-shadow:0 2px 12px rgba(0,0,0,.07);
+  white-space:nowrap;
+}
+.nav-logo{font-size:15px;font-weight:800;letter-spacing:-.4px;color:var(--text);text-decoration:none;margin-right:24px;cursor:pointer;}
+.nav-link{font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:6px 14px;border-radius:100px;transition:background .15s,color .15s;cursor:pointer;background:none;border:none;font-family:inherit;}
+.nav-link:hover,.nav-link.active{background:var(--bg);color:var(--text);}
+.nav-btn{
+  font-family:inherit;font-size:13px;font-weight:600;
+  background:var(--text);color:var(--white);
+  border:none;cursor:pointer;
+  padding:9px 18px;border-radius:100px;margin-left:8px;
+  transition:background .15s;text-decoration:none;display:inline-block;
+}
+.nav-btn:hover{background:var(--blue);}
+
+/* SHARED UTILS */
+.wrap{max-width:1160px;margin:0 auto;padding:0 48px;}
+.btn-dark{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:inherit;font-size:13px;font-weight:600;
+  background:var(--text);color:var(--white);
+  padding:11px 22px;border-radius:100px;border:none;
+  cursor:pointer;text-decoration:none;
+  transition:background .15s,transform .15s;
+}
+.btn-dark:hover{background:var(--blue);transform:translateY(-1px);}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:inherit;font-size:13px;font-weight:600;
+  background:transparent;color:var(--text);
+  padding:11px 20px;border-radius:100px;
+  border:1.5px solid var(--border);cursor:pointer;
+  text-decoration:none;transition:border-color .15s,background .15s;
+}
+.btn-outline:hover{border-color:var(--text);background:var(--white);}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub);margin-bottom:20px;}
+.section-h{font-size:clamp(28px,3.6vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.section-sub{font-size:15px;color:var(--sub);line-height:1.75;max-width:480px;}
+.divider{border:none;border-top:1px solid var(--border);}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);}
+.reveal.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}
+
+/* PAGE VIEWS */
+.view{display:none;}
+.view.active{display:block;}
+
+/* HERO */
+.hero{max-width:1160px;margin:0 auto;padding:156px 48px 100px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.hero-kicker{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--sub);background:var(--white);border:1px solid var(--border);border-radius:100px;padding:5px 12px;margin-bottom:28px;animation:up .5s ease both .05s;}
+.kicker-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.hero h1{font-size:clamp(40px,5.2vw,70px);font-weight:800;line-height:1.06;letter-spacing:-2.5px;margin-bottom:20px;animation:up .6s ease both .1s;}
+.hero h1 .muted{color:var(--sub);font-weight:300;}
+.hero-sub{font-size:15px;font-weight:400;line-height:1.75;color:var(--sub);max-width:360px;margin-bottom:36px;animation:up .6s ease both .15s;}
+.hero-btns{display:flex;align-items:center;gap:10px;animation:up .6s ease both .2s;}
+
+/* HERO VISUAL */
+.hero-visual{position:relative;animation:up .7s ease both .15s;}
+.float-pill{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:9px 16px;box-shadow:var(--sh2);display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;white-space:nowrap;z-index:10;}
+.fp-1{top:-12px;right:0;animation:float 5s ease-in-out infinite .5s;}
+.fp-2{bottom:10px;left:-10px;animation:float 6s ease-in-out infinite 1.8s;}
+.pill-icon{width:22px;height:22px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+.pill-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;animation:pulse 2s ease infinite;flex-shrink:0;}
+.ad-stack{position:relative;width:100%;height:420px;}
+.ad-card{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--sh2);}
+.ac-main{width:260px;top:30px;right:0;animation:float 6s ease-in-out infinite 1s;}
+.ac-secondary{width:240px;bottom:0;left:0;animation:float 7s ease-in-out infinite 2.5s;}
+.ad-topbar{padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);}
+.ad-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;}
+.av-blue{background:linear-gradient(135deg,#3B82F6,#1D4ED8);}
+.av-slate{background:linear-gradient(135deg,#475569,#1E293B);}
+.ad-page-name{font-size:12px;font-weight:700;}
+.ad-page-meta{font-size:10px;color:var(--sub);}
+.ad-sponsored{margin-left:auto;font-size:9px;font-weight:600;color:var(--sub);background:var(--bg);padding:3px 8px;border-radius:4px;}
+.ad-image{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;}
+.ai-wellness{background:linear-gradient(145deg,#DBEAFE 0%,#BFDBFE 60%,#93C5FD 100%);}
+.ai-resto{background:linear-gradient(145deg,#D1FAE5 0%,#A7F3D0 60%,#6EE7B7 100%);}
+.ad-image-label{font-size:13px;font-weight:700;color:#fff;background:rgba(0,0,0,.35);padding:6px 14px;border-radius:8px;}
+.ad-body{padding:12px 14px;}
+.ad-body-head{font-size:13px;font-weight:700;margin-bottom:3px;letter-spacing:-.1px;}
+.ad-body-sub{font-size:11px;color:var(--sub);margin-bottom:10px;line-height:1.5;}
+.ad-cta-btn{display:block;text-align:center;font-size:12px;font-weight:700;padding:8px;border-radius:8px;text-decoration:none;}
+.cta-blue{background:var(--blue-dim);color:var(--blue);}
+.cta-dark{background:var(--text);color:#fff;}
+
+/* LOGOS */
+.logos{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;overflow:hidden;display:flex;align-items:center;}
+.logos-tag{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub);padding:0 36px;white-space:nowrap;flex-shrink:0;}
+.logos-run{display:flex;align-items:center;gap:48px;animation:run 22s linear infinite;white-space:nowrap;padding-right:48px;}
+.logos-run span{font-size:13px;font-weight:700;color:#C2C8D4;letter-spacing:-.2px;}
+.logos-sep{width:3px;height:3px;border-radius:50%;background:var(--border);}
+@keyframes run{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* SECTIONS */
+.section{padding:120px 0;}
+.feat-intro{text-align:center;margin-bottom:56px;}
+.feat-intro .section-h{max-width:520px;margin:0 auto 14px;}
+.feat-intro .section-sub{margin:0 auto;}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.feat-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s,transform .2s;}
+.feat-card:hover{box-shadow:var(--sh2);transform:translateY(-3px);}
+.feat-visual{height:160px;padding:20px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+.fv-1{background:linear-gradient(160deg,#EEF3FD 0%,#DBEAFE 100%);}
+.fv-2{background:linear-gradient(160deg,#EFF6FF 0%,#DBEAFE 80%);}
+.fv-3{background:linear-gradient(160deg,#F0FDF4 0%,#DCFCE7 100%);}
+.mini-ui{background:var(--white);border:1px solid var(--border);border-radius:10px;width:100%;box-shadow:0 4px 16px rgba(0,0,0,.08);overflow:hidden;}
+.mini-header{padding:8px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.mini-title{font-size:10px;font-weight:700;}
+.mini-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;}
+.mini-body{padding:10px 12px;}
+.mini-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #F0F2F5;}
+.mini-row:last-child{border-bottom:none;}
+.mini-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.mini-line{flex:1;height:7px;background:var(--bg);border-radius:3px;}
+.mini-val{font-size:10px;font-weight:700;}
+.mini-bars{display:flex;align-items:flex-end;gap:3px;height:36px;padding:8px 12px 0;}
+.mini-bar{flex:1;border-radius:3px 3px 0 0;}
+.feat-text{padding:20px 24px 24px;}
+.feat-text h3{font-size:17px;font-weight:700;letter-spacing:-.3px;margin-bottom:8px;}
+.feat-text p{font-size:13px;color:var(--sub);line-height:1.75;}
+
+/* PERF */
+.perf-section{padding:120px 0;}
+.perf-intro{text-align:center;margin-bottom:48px;}
+.perf-intro .section-h{max-width:560px;margin:0 auto 14px;}
+.perf-intro .section-sub{margin:0 auto;}
+.perf-tabs{display:flex;align-items:center;gap:4px;justify-content:center;margin-bottom:32px;flex-wrap:wrap;}
+.ptab{font-family:inherit;font-size:13px;font-weight:600;color:var(--sub);background:transparent;border:1.5px solid var(--border);border-radius:100px;padding:8px 18px;cursor:pointer;transition:all .2s;}
+.ptab.active,.ptab:hover{background:var(--text);color:var(--white);border-color:var(--text);}
+.perf-visual{background:var(--white);border:1px solid var(--border);border-radius:20px;box-shadow:var(--sh2);overflow:hidden;}
+.perf-topbar{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+.perf-dots{display:flex;gap:6px;}
+.pd{width:10px;height:10px;border-radius:50%;}
+.pd-r{background:#FF5F57;}.pd-y{background:#FFBC2E;}.pd-g{background:#27C93F;}
+.perf-body{padding:28px;display:grid;grid-template-columns:240px 1fr;gap:24px;min-height:300px;}
+.perf-card-sm{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px;}
+.perf-card-sm h4{font-size:12px;font-weight:700;margin-bottom:4px;}
+.perf-card-sm p{font-size:11px;color:var(--sub);line-height:1.6;}
+.perf-metric{margin-top:10px;}
+.perf-metric-val{font-size:22px;font-weight:800;letter-spacing:-1px;}
+.perf-metric-label{font-size:10px;color:var(--sub);font-weight:500;}
+.perf-main-title{font-size:20px;font-weight:800;letter-spacing:-.5px;margin-bottom:6px;}
+.perf-main-sub{font-size:13px;color:var(--sub);margin-bottom:20px;}
+.big-chart{background:var(--bg);border-radius:10px;padding:16px;height:160px;display:flex;align-items:flex-end;gap:6px;margin-bottom:16px;}
+.big-bar{flex:1;border-radius:5px 5px 0 0;transition:height .5s cubic-bezier(.16,1,.3,1);}
+.bb-hi{background:#2563EB;}.bb-mid{background:#93C5FD;}.bb-lo{background:#DBEAFE;}
+.stat-row{display:flex;gap:12px;}
+.stat-item{flex:1;background:var(--bg);border-radius:8px;padding:12px 14px;}
+.stat-item-val{font-size:18px;font-weight:800;letter-spacing:-.5px;}
+.stat-item-label{font-size:11px;color:var(--sub);margin-top:2px;}
+
+/* DARK CTA */
+.dark-section{background:var(--dark);position:relative;overflow:hidden;}
+.dark-section::before{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.18) 0%,transparent 65%);pointer-events:none;}
+.dark-section::after{content:'';position:absolute;bottom:-150px;left:-50px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 65%);pointer-events:none;}
+.dark-inner{position:relative;z-index:1;}
+.dark-section .eyebrow{color:rgba(243,244,246,.3);}
+.dark-section .section-h{color:var(--bg);}
+.dark-section .section-sub{color:rgba(243,244,246,.4);}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.cta-form .field{margin-bottom:12px;}
+.cta-form .field label{display:block;font-size:11px;font-weight:600;color:rgba(243,244,246,.35);margin-bottom:8px;letter-spacing:.3px;}
+.cta-form .field input,.cta-form .field textarea{width:100%;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:var(--bg);padding:12px 16px;outline:none;transition:border-color .2s;resize:vertical;}
+.cta-form .field input::placeholder,.cta-form .field textarea::placeholder{color:rgba(243,244,246,.22);}
+.cta-form .field input:focus,.cta-form .field textarea:focus{border-color:rgba(255,255,255,.28);}
+.cta-form .field input.invalid{border-color:#EF4444;}
+.cta-form .field-err{font-size:11px;color:#FCA5A5;margin-top:6px;display:none;}
+.cta-form .field.has-err .field-err{display:block;}
+.cta-form .submit-btn{width:100%;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;background:var(--white);color:var(--text);border:none;border-radius:10px;padding:14px;cursor:pointer;transition:background .15s,color .15s,transform .15s;margin-top:4px;}
+.cta-form .submit-btn:hover{background:var(--blue);color:#fff;transform:translateY(-1px);}
+.cta-form .submit-btn:disabled{opacity:.6;cursor:not-allowed;}
+.form-note{font-size:12px;color:rgba(243,244,246,.2);margin-top:10px;text-align:center;}
+.form-success{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);color:#86EFAC;border-radius:10px;padding:18px;font-size:13px;line-height:1.6;text-align:center;display:none;}
+.form-success.show{display:block;}
+.form-success.show + form{display:none;}
+
+/* PROOF */
+.proof-placeholder{border:1.5px dashed var(--border);border-radius:16px;padding:80px;text-align:center;}
+.proof-placeholder strong{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--border);margin-bottom:8px;}
+.proof-placeholder p{font-size:13px;color:var(--border);}
+
+/* CREATIVES SHOWCASE */
+.creatives-intro{text-align:center;margin-bottom:56px;}
+.creatives-intro .section-h{max-width:620px;margin:0 auto 14px;}
+.creatives-intro .section-sub{margin:0 auto;}
+
+/* card style — same vocabulary as hero ad-cards */
+.cr-stage{position:relative;max-width:1100px;margin:0 auto;padding:40px 0 60px;}
+.cr-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:16px;gap:0;align-items:start;}
+.cr-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--sh2);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s;}
+.cr-card:hover{transform:translateY(-6px) rotate(0deg) !important;box-shadow:0 4px 14px rgba(0,0,0,.06),0 30px 60px -10px rgba(0,0,0,.18);z-index:50 !important;}
+.cr-top{padding:9px 10px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--border);}
+.cr-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0;}
+.cr-av-orange{background:linear-gradient(135deg,#FB923C,#F97316);}
+.cr-av-blue{background:linear-gradient(135deg,#3B82F6,#1D4ED8);}
+.cr-av-slate{background:linear-gradient(135deg,#475569,#1E293B);}
+.cr-av-rose{background:linear-gradient(135deg,#F43F5E,#BE123C);}
+.cr-name{font-size:9px;font-weight:700;color:#050505;line-height:1.2;}
+.cr-meta-row{font-size:8px;color:var(--sub);display:flex;align-items:center;gap:3px;margin-top:1px;}
+.cr-tag{margin-left:auto;font-size:7px;font-weight:600;color:var(--sub);background:var(--bg);border:1px solid var(--border);padding:3px 7px;border-radius:4px;flex-shrink:0;}
+.cr-img{width:100%;aspect-ratio:9/16;background:#000;overflow:hidden;}
+.cr-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.cr-body{padding:10px 12px 12px;}
+.cr-body-h{font-size:10px;font-weight:700;letter-spacing:-.1px;margin-bottom:3px;color:#050505;line-height:1.3;}
+.cr-body-p{font-size:8.5px;color:var(--sub);line-height:1.5;margin-bottom:9px;}
+.cr-cta{display:block;text-align:center;font-size:9px;font-weight:700;padding:7px;border-radius:6px;text-decoration:none;}
+.cr-cta.cta-blue{background:var(--blue-dim);color:var(--blue);}
+.cr-cta.cta-dark{background:var(--text);color:#fff;}
+.cr-cta.cta-light{background:var(--bg);color:var(--text);}
+
+/* floating note */
+.cr-note{position:absolute;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:9px 16px;box-shadow:var(--sh2);display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;white-space:nowrap;z-index:30;}
+.cr-note-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;animation:pulse 2s ease infinite;flex-shrink:0;}
+.cr-note-icon{width:22px;height:22px;border-radius:7px;background:#EEF3FD;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+
+/* Per-card placement: 4 cards spread wide, ~60% vertical alignment */
+.cr-c1{grid-column:1 / span 3;grid-row:1 / span 28;transform:rotate(-2deg);z-index:3;}
+.cr-c2{grid-column:4 / span 3;grid-row:5 / span 28;transform:rotate(1.5deg);z-index:4;}
+.cr-c3{grid-column:7 / span 3;grid-row:3 / span 28;transform:rotate(-1.5deg);z-index:2;}
+.cr-c4{grid-column:10 / span 3;grid-row:7 / span 28;transform:rotate(2deg);z-index:5;}
+
+.cr-note-1{top:7%;right:4%;}
+.cr-note-2{top:48%;left:2%;}
+.cr-note-3{bottom:6%;right:6%;}
+
+/* legend strip */
+.cr-legend{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:64px;padding-top:32px;border-top:1px solid var(--border);}
+.cr-legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sub);font-weight:500;}
+.cr-legend-dot{width:8px;height:8px;border-radius:2px;}
+
+@media(max-width:860px){
+  .cr-grid{grid-template-columns:1fr;grid-auto-rows:auto;gap:20px;}
+  .cr-c1,.cr-c2,.cr-c3,.cr-c4{grid-column:1;grid-row:auto;transform:none !important;max-width:280px;margin:0 auto;}
+  .cr-c2,.cr-c4{margin-left:auto;margin-right:0;}
+  .cr-note{display:none;}
+}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;}
+.faq-item{border-top:1px solid var(--border);padding:20px 0;cursor:pointer;}
+.faq-item:last-child{border-bottom:1px solid var(--border);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:600;letter-spacing:-.2px;user-select:none;gap:24px;}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;transition:transform .2s,background .2s,color .2s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--text);color:#fff;border-color:var(--text);}
+.faq-a{font-size:14px;color:var(--sub);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;}
+.faq-item.open .faq-a{max-height:240px;padding-top:12px;}
+
+/* BLOG */
+.blog-hero{padding:140px 0 80px;border-bottom:1px solid var(--border);}
+.blog-hero h1{font-size:clamp(36px,5vw,72px);font-weight:800;letter-spacing:-2.5px;line-height:1.06;margin-bottom:16px;animation:up .6s ease both .1s;}
+.blog-hero p{font-size:16px;color:var(--sub);max-width:400px;line-height:1.75;animation:up .6s ease both .2s;}
+
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:80px 0 80px;}
+.post-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s,transform .2s;text-decoration:none;color:inherit;display:block;cursor:pointer;text-align:left;border:1px solid var(--border);width:100%;font-family:inherit;}
+.post-card:hover{box-shadow:var(--sh2);transform:translateY(-3px);}
+.post-thumb{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;}
+.post-thumb-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:rgba(0,0,0,.25);letter-spacing:.5px;text-transform:uppercase;font-family:'JetBrains Mono',ui-monospace,monospace;}
+.thumb-cat{position:absolute;top:12px;left:12px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:var(--white);color:var(--text);padding:4px 10px;border-radius:100px;}
+.post-body{padding:20px 24px 24px;}
+.post-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--sub);margin-bottom:10px;}
+.post-meta span{display:flex;align-items:center;gap:4px;}
+.post-title{font-size:17px;font-weight:700;letter-spacing:-.3px;line-height:1.35;margin-bottom:10px;color:var(--text);transition:color .15s;}
+.post-excerpt{font-size:13px;color:var(--sub);line-height:1.7;}
+.post-card:hover .post-title{color:var(--blue);}
+
+.blog-pagination{display:flex;justify-content:center;gap:8px;padding-bottom:80px;}
+.page-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;color:var(--sub);border:1.5px solid var(--border);transition:all .15s;background:none;cursor:pointer;font-family:inherit;}
+.page-btn:hover,.page-btn.current{background:var(--text);color:var(--white);border-color:var(--text);}
+.page-btn[disabled]{opacity:.4;pointer-events:none;}
+.page-btn-prev,.page-btn-next{width:auto;padding:0 16px;gap:6px;}
+
+/* SINGLE */
+.single-hero{padding:140px 0 60px;border-bottom:1px solid var(--border);max-width:760px;}
+.single-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--sub);text-decoration:none;margin-bottom:32px;transition:color .15s;background:none;border:none;cursor:pointer;font-family:inherit;padding:0;}
+.single-back:hover{color:var(--text);}
+.single-cats{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.single-cat{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:var(--blue-dim);color:var(--blue);padding:4px 12px;border-radius:100px;}
+.single-hero h1{font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px;animation:up .6s ease both .1s;}
+.single-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--sub);animation:up .6s ease both .2s;flex-wrap:wrap;}
+.single-meta span{display:flex;align-items:center;gap:6px;}
+.single-author-dot{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#3B82F6,#1D4ED8);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;}
+
+.single-thumb{width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin:48px 0;box-shadow:var(--sh2);}
+.single-thumb-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:rgba(0,0,0,.3);letter-spacing:1px;text-transform:uppercase;}
+
+.single-content{max-width:680px;padding:0 0 60px;}
+.single-content p{font-size:17px;line-height:1.85;color:var(--text);margin-bottom:24px;font-weight:400;}
+.single-content h2{font-size:26px;font-weight:800;letter-spacing:-.8px;line-height:1.2;margin:48px 0 16px;color:var(--text);}
+.single-content h3{font-size:20px;font-weight:700;letter-spacing:-.4px;line-height:1.3;margin:36px 0 12px;color:var(--text);}
+.single-content ul,.single-content ol{margin:0 0 24px 24px;}
+.single-content li{font-size:17px;line-height:1.85;color:var(--text);margin-bottom:8px;}
+.single-content a{color:var(--blue);text-decoration:none;font-weight:500;border-bottom:1px solid var(--blue-dim);transition:border-color .15s;}
+.single-content a:hover{border-color:var(--blue);}
+.single-content blockquote{border-left:3px solid var(--blue);padding:16px 24px;margin:32px 0;background:var(--blue-dim);border-radius:0 12px 12px 0;}
+.single-content blockquote p{color:var(--text);font-weight:500;margin-bottom:0;}
+
+.single-cta{background:var(--dark);border-radius:20px;padding:56px;margin:0 0 80px;position:relative;overflow:hidden;}
+.single-cta::before{content:'';position:absolute;top:-100px;right:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.18) 0%,transparent 65%);pointer-events:none;}
+.single-cta-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+.single-cta h3{font-size:clamp(20px,2.5vw,30px);font-weight:800;letter-spacing:-1px;line-height:1.2;color:var(--bg);margin-bottom:8px;}
+.single-cta p{font-size:14px;color:rgba(243,244,246,.4);line-height:1.7;}
+
+.post-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 0 80px;}
+.post-nav-item{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s;cursor:pointer;text-align:left;font-family:inherit;}
+.post-nav-item:hover{box-shadow:var(--sh2);transform:translateY(-2px);}
+.post-nav-item.next{text-align:right;}
+.post-nav-dir{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--sub);margin-bottom:8px;}
+.post-nav-title{font-size:15px;font-weight:700;letter-spacing:-.2px;line-height:1.35;color:var(--text);}
+
+/* FOOTER */
+.footer-dark{background:var(--dark2);}
+.footer-inner{padding-top:80px;padding-bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.footer-logo{font-size:18px;font-weight:800;letter-spacing:-.4px;color:var(--bg);margin-bottom:14px;}
+.footer-tagline{font-size:14px;color:rgba(243,244,246,.3);line-height:1.7;max-width:260px;margin-bottom:28px;}
+.footer-contact{font-size:14px;color:rgba(243,244,246,.35);}
+.footer-contact a{color:var(--bg);text-decoration:none;font-weight:600;}
+.footer-contact a:hover{color:var(--blue);}
+.footer-form-title{font-size:17px;font-weight:700;color:var(--bg);letter-spacing:-.3px;margin-bottom:20px;}
+.footer-bar{padding:28px 0;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(243,244,246,.06);margin-top:60px;}
+.footer-bar p{font-size:12px;color:rgba(243,244,246,.18);}
+.footer-big{background:var(--dark);padding:56px 48px;text-align:center;border-top:1px solid rgba(243,244,246,.05);}
+.footer-big-email{font-size:clamp(24px,4vw,52px);font-weight:800;letter-spacing:-2px;color:rgba(243,244,246,.12);text-decoration:none;transition:color .2s;}
+.footer-big-email:hover{color:var(--blue);}
+
+/* gradient placeholders for thumbs */
+.grad-1{background:linear-gradient(135deg,#EEF3FD,#DBEAFE);}
+.grad-2{background:linear-gradient(135deg,#F0FDF4,#DCFCE7);}
+.grad-3{background:linear-gradient(135deg,#FEF3C7,#FDE68A);}
+.grad-4{background:linear-gradient(135deg,#FCE7F3,#FBCFE8);}
+.grad-5{background:linear-gradient(135deg,#E0E7FF,#C7D2FE);}
+.grad-6{background:linear-gradient(135deg,#CFFAFE,#A5F3FC);}
+
+@keyframes up{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.85);}}
+
+@media(max-width:860px){
+  .nav-link{display:none;}
+  .wrap{padding-left:24px;padding-right:24px;}
+  .hero{grid-template-columns:1fr;padding:110px 24px 60px;gap:40px;}
+  .feat-grid,.perf-body,.cta-grid,.faq-grid{grid-template-columns:1fr;}
+  .section,.perf-section{padding:80px 0;}
+  .fp-1,.fp-2{display:none;}
+  .blog-hero{padding:110px 0 60px;}
+  .blog-grid{grid-template-columns:1fr;padding:48px 0 60px;}
+  .post-nav{grid-template-columns:1fr;}
+  .single-cta-inner{grid-template-columns:1fr;}
+  .single-cta{padding:36px 28px;}
+  .footer-inner{grid-template-columns:1fr;gap:48px;padding-bottom:0;}
+  .footer-bar{flex-direction:column;gap:8px;text-align:center;}
+  .footer-big{padding:40px 24px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav-wrap">
+  <button class="nav-logo" data-nav="home">Zevu</button>
+  <button class="nav-link" data-nav="home" data-anchor="prosessi">Prosessi</button>
+  <button class="nav-link" data-nav="blog">Blogi</button>
+  <button class="nav-link" data-nav="home" data-anchor="faq">FAQ</button>
+  <button class="nav-btn" data-nav="home" data-anchor="cta">Pyydä analyysi →</button>
+</nav>
+
+<!-- =================== HOME VIEW =================== -->
+<main id="view-home" class="view active" data-screen-label="Home">
+
+<!-- HERO -->
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-kicker"><span class="kicker-dot"></span>Meta-mainonta</div>
+      <h1>Mainoksesi<br>pyörivät.<br><span class="muted">Asiakkaat<br>eivät tule.</span></h1>
+      <p class="hero-sub">Meta mainonta, joka toimii. Ilman arvailua, geneerisiä kuvia tai tuhlattua budjettia.</p>
+      <div class="hero-btns">
+        <button class="btn-dark" data-nav="home" data-anchor="cta">Pyydä ilmainen analyysi →</button>
+        <button class="btn-outline" data-nav="home" data-anchor="prosessi">Miten toimii</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="float-pill fp-1"><div class="pill-icon" style="background:#EEF3FD;">📈</div>ROAS 4.8× tällä viikolla</div>
+      <div class="ad-stack">
+        <div class="ad-card ac-main">
+          <div class="ad-topbar">
+            <div class="ad-avatar av-blue">TT</div>
+            <div>
+              <div class="ad-page-name">Terveystekniikka</div>
+              <div class="ad-page-meta">Sponsoroitu · 🌐</div>
+            </div>
+            <div class="ad-sponsored">Mainos</div>
+          </div>
+          <div class="ad-image ai-wellness"><span class="ad-image-label">Kivunlievitys kotona</span></div>
+          <div class="ad-body">
+            <div class="ad-body-head">Tunnetko kipua joka päivä?</div>
+            <div class="ad-body-sub">Lääkkeetön hoito kotona — turvallinen ja testattu.</div>
+            <a class="ad-cta-btn cta-blue" href="#">Lue lisää →</a>
+          </div>
+        </div>
+        <div class="ad-card ac-secondary">
+          <div class="ad-topbar">
+            <div class="ad-avatar av-slate">RK</div>
+            <div>
+              <div class="ad-page-name">Ravintola Kulta</div>
+              <div class="ad-page-meta">Sponsoroitu · 🌐</div>
+            </div>
+            <div class="ad-sponsored">Mainos</div>
+          </div>
+          <div class="ad-image ai-resto"><span class="ad-image-label">Illallinen kahdelle</span></div>
+          <div class="ad-body">
+            <div class="ad-body-head">Pöytä varattu. Kokemus odottaa.</div>
+            <div class="ad-body-sub">Varaa pöytäsi tänään — erikoistarjous viikonlopulle.</div>
+            <a class="ad-cta-btn cta-dark" href="#">Varaa pöytä →</a>
+          </div>
+        </div>
+      </div>
+      <div class="float-pill fp-2"><span class="pill-dot"></span>Mainos julkaistu juuri nyt</div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOS -->
+<div class="logos">
+  <div class="logos-tag">Toimii toimialoilla</div>
+  <div style="overflow:hidden;flex:1;">
+    <div class="logos-run">
+      <span>Ravintolat</span><span class="logos-sep"></span>
+      <span>Hyvinvointi</span><span class="logos-sep"></span>
+      <span>Kiinteistöt</span><span class="logos-sep"></span>
+      <span>Remontit</span><span class="logos-sep"></span>
+      <span>Kauneus</span><span class="logos-sep"></span>
+      <span>Vähittäiskauppa</span><span class="logos-sep"></span>
+      <span>Ravintolat</span><span class="logos-sep"></span>
+      <span>Hyvinvointi</span><span class="logos-sep"></span>
+      <span>Kiinteistöt</span><span class="logos-sep"></span>
+      <span>Remontit</span><span class="logos-sep"></span>
+      <span>Kauneus</span><span class="logos-sep"></span>
+      <span>Vähittäiskauppa</span><span class="logos-sep"></span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PROCESS / FEATURES -->
+<div class="wrap">
+  <div class="section" id="prosessi">
+    <div class="feat-intro reveal">
+      <div class="eyebrow">Miten Zevu toimii</div>
+      <div class="section-h">Kolme vaihetta. Yksi tavoite.</div>
+      <p class="section-sub">Yksinkertainen prosessi ilman turhaa monimutkaisuutta. Sinä kerrot bisneksestäsi — me teemme loput.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card reveal d1">
+        <div class="feat-visual fv-1">
+          <div class="mini-ui">
+            <div class="mini-header">
+              <span class="mini-title">Mainosanalyysi</span>
+              <span class="mini-badge" style="background:#FEE2E2;color:#B91C1C;">3 ongelmaa</span>
+            </div>
+            <div class="mini-body">
+              <div class="mini-row"><div class="mini-dot" style="background:#EF4444;"></div><div class="mini-line"></div><span class="mini-val" style="color:#B91C1C;">Heikko kuva</span></div>
+              <div class="mini-row"><div class="mini-dot" style="background:#EF4444;"></div><div class="mini-line"></div><span class="mini-val" style="color:#B91C1C;">Väärä yleisö</span></div>
+              <div class="mini-row"><div class="mini-dot" style="background:#F59E0B;"></div><div class="mini-line"></div><span class="mini-val" style="color:#92400E;">Teksti liian pitkä</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="feat-text"><h3>Analyysi</h3><p>Katsomme nykyiset mainoksesi ja löydämme tarkalleen miksi ne eivät toimi.</p></div>
+      </div>
+      <div class="feat-card reveal d2">
+        <div class="feat-visual fv-2">
+          <div class="mini-ui">
+            <div class="mini-header">
+              <span class="mini-title">Uusi luova</span>
+              <span class="mini-badge" style="background:#DBEAFE;color:#1D4ED8;">Suunnitteilla</span>
+            </div>
+            <div class="mini-body">
+              <div style="height:36px;background:linear-gradient(135deg,#BFDBFE,#93C5FD);border-radius:6px;margin-bottom:8px;"></div>
+              <div class="mini-row"><div class="mini-line" style="background:#DBEAFE;"></div><div class="mini-line" style="background:#DBEAFE;width:40%;flex:none;"></div></div>
+              <div class="mini-row"><div class="mini-line" style="background:#DBEAFE;width:60%;flex:none;"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="feat-text"><h3>Toteutus</h3><p>Suunnittelemme mainokset, jotka pysäyttävät oikean ihmisen oikealla hetkellä.</p></div>
+      </div>
+      <div class="feat-card reveal d3">
+        <div class="feat-visual fv-3">
+          <div class="mini-ui">
+            <div class="mini-header">
+              <span class="mini-title">Tulokset</span>
+              <span class="mini-badge" style="background:#DCFCE7;color:#15803D;">↑ +142%</span>
+            </div>
+            <div class="mini-bars">
+              <div class="mini-bar" style="height:40%;background:#DBEAFE;"></div>
+              <div class="mini-bar" style="height:55%;background:#DBEAFE;"></div>
+              <div class="mini-bar" style="height:48%;background:#DBEAFE;"></div>
+              <div class="mini-bar" style="height:70%;background:#93C5FD;"></div>
+              <div class="mini-bar" style="height:85%;background:#60A5FA;"></div>
+              <div class="mini-bar" style="height:100%;background:#2563EB;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="feat-text"><h3>Tulokset</h3><p>Mainokset julkaistaan, dataa seurataan ja optimoidaan jatkuvasti.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PERFORMANCE -->
+<div class="wrap">
+  <div class="perf-section reveal">
+    <div class="perf-intro">
+      <div class="eyebrow">Rakennettu tuloksille</div>
+      <div class="section-h">Oikea viesti. Oikea ihminen. Oikeaan aikaan.</div>
+      <p class="section-sub">Ei geneerisiä mainoksia. Jokaiselle asiakkaalle räätälöity lähestymistapa.</p>
+    </div>
+    <div class="perf-tabs">
+      <button class="ptab active" data-tab="kohdentaminen">Kohdentaminen</button>
+      <button class="ptab" data-tab="luova">Luova suunnittelu</button>
+      <button class="ptab" data-tab="budjetti">Budjetointi</button>
+      <button class="ptab" data-tab="raportointi">Raportointi</button>
+    </div>
+    <div class="perf-visual">
+      <div class="perf-topbar">
+        <div class="perf-dots"><div class="pd pd-r"></div><div class="pd pd-y"></div><div class="pd pd-g"></div></div>
+        <span style="font-size:12px;color:var(--sub);font-weight:500;margin-left:12px;" id="perf-bar-title">Meta Business Suite — Kampanjanäkymä</span>
+      </div>
+      <div class="perf-body">
+        <div>
+          <div class="perf-card-sm">
+            <h4 id="perf-c1-h">Hyvinvointi-kampanja</h4>
+            <p id="perf-c1-p">Naiset 35–64 · Helsinki, Espoo, Vantaa</p>
+            <div class="perf-metric">
+              <div class="perf-metric-val" id="perf-c1-v">12 400</div>
+              <div class="perf-metric-label" id="perf-c1-l">tavoitettu tällä viikolla</div>
+            </div>
+          </div>
+          <div class="perf-card-sm">
+            <h4 id="perf-c2-h">Ravintola-kampanja</h4>
+            <p id="perf-c2-p">25–55 v. · 5 km säde ravintolasta</p>
+            <div class="perf-metric">
+              <div class="perf-metric-val" id="perf-c2-v">8 100</div>
+              <div class="perf-metric-label" id="perf-c2-l">tavoitettu tällä viikolla</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="perf-main-title" id="perf-main-h">Tavoittavuus kasvaa joka viikko.</div>
+          <div class="perf-main-sub" id="perf-main-p">Optimoitu kohdentaminen tuo oikeat asiakkaat — ei pelkkiä klikkejä.</div>
+          <div class="big-chart" id="perf-chart">
+            <div class="big-bar bb-lo" style="height:30%"></div>
+            <div class="big-bar bb-lo" style="height:40%"></div>
+            <div class="big-bar bb-lo" style="height:35%"></div>
+            <div class="big-bar bb-mid" style="height:52%"></div>
+            <div class="big-bar bb-mid" style="height:60%"></div>
+            <div class="big-bar bb-hi" style="height:75%"></div>
+            <div class="big-bar bb-hi" style="height:82%"></div>
+            <div class="big-bar bb-hi" style="height:90%"></div>
+            <div class="big-bar bb-hi" style="height:100%"></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-item"><div class="stat-item-val" id="perf-s1-v">26.2k</div><div class="stat-item-label" id="perf-s1-l">Tavoitettu / viikko</div></div>
+            <div class="stat-item"><div class="stat-item-val" id="perf-s2-v">€0.18</div><div class="stat-item-label" id="perf-s2-l">Hinta per klikkaus</div></div>
+            <div class="stat-item"><div class="stat-item-val" id="perf-s3-v">+142%</div><div class="stat-item-label" id="perf-s3-l">Kasvu / kk</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CREATIVES SHOWCASE -->
+<div class="wrap" id="creatives">
+  <div class="section reveal">
+    <div class="creatives-intro">
+      <div class="eyebrow">Esimerkkejä työstämme</div>
+      <div class="section-h">Mainoksia, jotka pysäyttävät selauksen.</div>
+      <p class="section-sub">Asiakkaillemme suunniteltuja luovia. Sama tuote, eri kulma — sama tavoite: pysäyttää oikea ihminen oikealla hetkellä.</p>
+    </div>
+
+    <div class="cr-stage">
+      <div class="cr-grid">
+        <!-- Card 1 -->
+        <div class="cr-card cr-c1">
+          <div class="cr-top">
+            <div class="cr-av cr-av-orange">BC</div>
+            <div>
+              <div class="cr-name">B-Cure Laser</div>
+              <div class="cr-meta-row">Sponsoroitu · 🌐</div>
+            </div>
+            <div class="cr-tag">Mainos</div>
+          </div>
+          <div class="cr-img"><img src="creatives/creative-1.jpg" alt="Hyödyt"></div>
+          <div class="cr-body">
+            <div class="cr-body-h">Tuhannet suomalaiset ilman kipua taas.</div>
+            <div class="cr-body-p">Lääkkeetön hoito kotona — kokeile ensin, vuokraus mahdollinen.</div>
+            <a class="cr-cta cta-blue" href="#">Lue lisää →</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="cr-card cr-c2">
+          <div class="cr-top">
+            <div class="cr-av cr-av-orange">BC</div>
+            <div>
+              <div class="cr-name">B-Cure Laser</div>
+              <div class="cr-meta-row">Sponsoroitu · 🌐</div>
+            </div>
+            <div class="cr-tag">Mainos</div>
+          </div>
+          <div class="cr-img"><img src="creatives/creative-2.jpg" alt="Käyttötilanne"></div>
+          <div class="cr-body">
+            <div class="cr-body-h">Kivunlievitys olohuoneen sohvalta.</div>
+            <div class="cr-body-p">Niveliin, selkään, lihaksiin. Kliinisesti testattu — ei sivuvaikutuksia.</div>
+            <a class="cr-cta cta-dark" href="#">Tilaa kotiin →</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="cr-card cr-c3">
+          <div class="cr-top">
+            <div class="cr-av cr-av-orange">BC</div>
+            <div>
+              <div class="cr-name">B-Cure Laser</div>
+              <div class="cr-meta-row">Sponsoroitu · 🌐</div>
+            </div>
+            <div class="cr-tag">Mainos</div>
+          </div>
+          <div class="cr-img"><img src="creatives/creative-3.jpg" alt="Diagnoosikohdistus"></div>
+          <div class="cr-body">
+            <div class="cr-body-h">Tehokas kivunlievitys ilman lääkkeitä.</div>
+            <div class="cr-body-p">Nivelrikko, hermosärky, fibromyalgia. Tuhansien suomalaisten valinta.</div>
+            <a class="cr-cta cta-blue" href="#">Katso lisää →</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="cr-card cr-c4">
+          <div class="cr-top">
+            <div class="cr-av cr-av-rose">JP</div>
+            <div>
+              <div class="cr-name">B-Cure Laser</div>
+              <div class="cr-meta-row">Sponsoroitu · 🌐</div>
+            </div>
+            <div class="cr-tag">Mainos</div>
+          </div>
+          <div class="cr-img"><img src="creatives/creative-4.jpg" alt="Asiakastarina"></div>
+          <div class="cr-body">
+            <div class="cr-body-h">"Polvi oli kipeä 7 kuukautta…"</div>
+            <div class="cr-body-p">Lue Johannan tarina — ja miksi B-Cure on Suomen suosituin kotilaserlaite.</div>
+            <a class="cr-cta cta-light" href="#">Lue tarina →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Floating notes (echo hero language) -->
+      <div class="cr-note cr-note-1"><div class="cr-note-icon">📈</div>ROAS 4.8× tällä viikolla</div>
+      <div class="cr-note cr-note-2"><span class="cr-note-dot"></span>Mainos julkaistu juuri nyt</div>
+      <div class="cr-note cr-note-3"><div class="cr-note-icon" style="background:#DCFCE7;">↑</div>CTR 3.2 % · CPC 0,18 €</div>
+    </div>
+
+    <div class="cr-legend">
+      <div class="cr-legend-item"><div class="cr-legend-dot" style="background:#FB923C;"></div>Hyvinvointi · B-Cure Laser</div>
+      <div class="cr-legend-item"><div class="cr-legend-dot" style="background:var(--blue);"></div>4 luovaa · 1 kampanja</div>
+      <div class="cr-legend-item"><div class="cr-legend-dot" style="background:#22C55E;"></div>+142 % kasvu / kk</div>
+    </div>
+  </div>
+</div>
+
+<!-- DARK CTA -->
+<div class="dark-section" id="cta">
+  <div class="wrap">
+    <div class="section dark-inner reveal">
+      <div class="cta-grid">
+        <div>
+          <div class="eyebrow">Aloitetaan</div>
+          <div class="section-h">Selvitetään miksi mainoksesi eivät toimi.</div>
+          <p class="section-sub">Ilmainen analyysi. Ei sitoumuksia. Vain rehellinen arvio siitä, mitä kannattaa tehdä toisin.</p>
+        </div>
+        <div class="cta-form">
+          <div class="form-success" id="cta-success">✓ Kiitos! Vastaamme 24 tunnin sisällä.</div>
+          <form id="cta-form" novalidate>
+            <div class="field">
+              <label>Nimi</label>
+              <input type="text" name="name" placeholder="Etu- ja sukunimi" required>
+              <div class="field-err">Anna nimesi.</div>
+            </div>
+            <div class="field">
+              <label>Sähköposti</label>
+              <input type="email" name="email" placeholder="sinä@yritys.fi" required>
+              <div class="field-err">Anna kelvollinen sähköpostiosoite.</div>
+            </div>
+            <div class="field">
+              <label>Yritys</label>
+              <input type="text" name="company" placeholder="Yrityksesi nimi">
+              <div class="field-err"></div>
+            </div>
+            <button type="submit" class="submit-btn">Pyydä ilmainen analyysi →</button>
+            <p class="form-note">Vastaamme 24 tunnin sisällä.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<div class="wrap" id="faq">
+  <div class="section reveal">
+    <div class="faq-grid">
+      <div>
+        <div class="eyebrow">FAQ</div>
+        <div class="section-h">Kysymyksiä?<br>Meillä on vastaukset.</div>
+        <p class="section-sub" style="margin-top:16px;">Etkö löydä vastausta? Ota yhteyttä suoraan.</p>
+        <button class="btn-dark" data-nav="home" data-anchor="cta" style="margin-top:28px;">Ota yhteyttä →</button>
+      </div>
+      <div>
+        <div class="faq-item open">
+          <div class="faq-q">Minkälaisille yrityksille Zevu sopii?<div class="faq-icon">+</div></div>
+          <div class="faq-a">Zevu sopii suomalaisille pk-yrityksille, jotka haluavat saada enemmän irti Meta-mainonnasta. Toimimme erityisesti ravintola-, hyvinvointi-, kiinteistö- ja remonttialoilla.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Kuinka nopeasti näen tuloksia?<div class="faq-icon">+</div></div>
+          <div class="faq-a">Ensimmäiset mainokset julkaistaan yleensä 1–2 viikon sisällä aloituksesta. Merkittäviä tuloksia nähdään tyypillisesti 4–6 viikon optimoinnin jälkeen.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Mitä ilmainen mainosanalyysi sisältää?<div class="faq-icon">+</div></div>
+          <div class="faq-a">Käymme läpi nykyiset mainoksesi ja kerromme konkreettisesti, miksi ne eivät tuota toivottuja tuloksia. Saat selkeän arvion siitä, mitä kannattaa tehdä toisin — ilman sitoumuksia.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Tarvitsenko itse tehdä jotain?<div class="faq-icon">+</div></div>
+          <div class="faq-a">Minimaalisen panoksen tarvitset: kerrot bisneksestäsi ja toimitat tarvittavat materiaalit. Me hoidamme kaiken suunnittelusta julkaisuun ja optimointiin.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- =================== BLOG VIEW =================== -->
+<main id="view-blog" class="view" data-screen-label="Blog index">
+  <div class="wrap">
+    <div class="blog-hero reveal">
+      <div class="eyebrow">Blogi</div>
+      <h1>Meta-mainonnan<br>parhaat käytännöt.</h1>
+      <p>Vinkkejä, strategioita ja tapaustutkimuksia suomalaisille yrittäjille.</p>
+    </div>
+
+    <div class="blog-grid" id="blog-grid"></div>
+
+    <div class="blog-pagination" id="blog-pagination"></div>
+  </div>
+</main>
+
+<!-- =================== SINGLE POST VIEW =================== -->
+<main id="view-single" class="view" data-screen-label="Blog post">
+  <div class="wrap">
+    <div class="single-hero reveal">
+      <button class="single-back" data-nav="blog">← Takaisin blogiin</button>
+      <div class="single-cats" id="single-cats"></div>
+      <h1 id="single-title"></h1>
+      <div class="single-meta">
+        <span><div class="single-author-dot">C</div><span id="single-author">Christoffer</span></span>
+        <span>·</span>
+        <span id="single-date"></span>
+        <span>·</span>
+        <span id="single-read"></span>
+      </div>
+    </div>
+
+    <div class="single-thumb" id="single-thumb">
+      <div class="single-thumb-placeholder">[ Pääkuva — artikkeli ]</div>
+    </div>
+
+    <div class="single-content reveal" id="single-content"></div>
+
+    <div class="single-cta reveal">
+      <div class="single-cta-inner">
+        <div>
+          <h3>Haluatko parempia tuloksia Meta-mainonnalla?</h3>
+          <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
+        </div>
+        <button class="btn-dark" data-nav="home" data-anchor="cta" style="flex-shrink:0;">Pyydä analyysi →</button>
+      </div>
+    </div>
+
+    <div class="post-nav reveal" id="post-nav"></div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<div class="footer-dark">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Zevu</div>
+        <p class="footer-tagline">Meta mainonta, joka toimii. Suomalaisille yrityksille, jotka haluavat kasvaa.</p>
+        <div class="footer-contact">Sähköposti: <a href="mailto:hei@zevu.fi">hei@zevu.fi</a></div>
+      </div>
+      <div>
+        <div class="footer-form-title">Aloita tänään.</div>
+        <form id="footer-form" class="cta-form" novalidate>
+          <div class="form-success" id="footer-success">✓ Kiitos! Olemme yhteydessä pian.</div>
+          <div class="field">
+            <label>Sähköposti</label>
+            <input type="email" name="email" placeholder="sinä@yritys.fi" required>
+            <div class="field-err">Anna kelvollinen sähköpostiosoite.</div>
+          </div>
+          <button type="submit" class="submit-btn">Lähetä →</button>
+        </form>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="footer-bar">
+        <p>© 2026 Zevu</p>
+        <p>Helsinki, Suomi</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-big">
+  <a href="mailto:hei@zevu.fi" class="footer-big-email">hei@zevu.fi</a>
+</div>
+
+<script>
+/* ============== POSTS DATA ============== */
+const POSTS = [
+  {
+    slug: 'miksi-meta-mainos-ei-toimi',
+    title: 'Miksi Meta-mainoksesi ei tuo asiakkaita — 5 yleisintä virhettä',
+    cats: ['Strategia'],
+    date: '28.4.2026',
+    read: 6,
+    grad: 'grad-1',
+    excerpt: 'Suurin osa epäonnistuneista Meta-kampanjoista kaatuu samoihin viiteen virheeseen. Käymme ne läpi ja kerromme miten korjaat ne.',
+    content: `
+      <p>Suomalaiset yrittäjät polttavat Meta-mainontaan vuosittain miljoonia ilman, että saavat siitä tuloksia. Syy ei yleensä ole alustassa, eikä budjetissa — vaan siinä, miten kampanja on rakennettu.</p>
+      <p>Kävimme läpi yli sata pk-yrityksen tiliä viime vuonna. Samat viisi virhettä toistuivat lähes joka kerta.</p>
+      <h2>1. Kohdentaminen on liian laajaa</h2>
+      <p>Yleisin virhe: yritetään tavoittaa "kaikki suomalaiset 25–55 v.". Meta ei voi optimoida, jos et anna sille suuntaa. Aloita kapeasta yleisöstä — laajenna vasta kun data sanoo niin.</p>
+      <h2>2. Mainoskuva on geneerinen</h2>
+      <p>Stock-kuva, jossa kaksi ihmistä hymyilee tietokoneelle, ei pysäytä ketään. Mainoksen pitää näyttää siltä, että se on tehty <em>juuri</em> oikealle ihmiselle juuri oikealla hetkellä.</p>
+      <blockquote><p>Hyvä mainos ei näytä mainokselta. Se näyttää siltä, että tuttu lähetti sen sinulle.</p></blockquote>
+      <h2>3. Tekstiä on liian paljon</h2>
+      <p>Feedissä mainos näkyy 1,7 sekuntia. Jos otsikko on yli 8 sanaa, se ei ehdi mennä perille. Lyhennä, kunnes sattuu.</p>
+      <h2>4. Yksi kreatiivi yhteen kampanjaan</h2>
+      <p>Algoritmi tarvitsee variaatioita oppiakseen. Suosittelemme aina vähintään 3–5 erilaista kreatiivia per ad set.</p>
+      <h2>5. Mittaaminen puuttuu kokonaan</h2>
+      <p>Ilman pikseliä ja konversioseurantaa lennät sokkona. Tämä on usein helpoin korjata — ja vaikuttavin.</p>
+      <h3>Mitä seuraavaksi?</h3>
+      <p>Jos tunnistit useita näistä virheistä, et ole yksin. Pyydä ilmainen mainosanalyysi — kerromme tarkalleen, mitä sinun kannattaa korjata ensimmäisenä.</p>
+    `
+  },
+  {
+    slug: 'budjetti-ei-ratkaise',
+    title: 'Pieni budjetti ei ole ongelma — väärä strategia on',
+    cats: ['Budjetointi'],
+    date: '15.4.2026',
+    read: 4,
+    grad: 'grad-2',
+    excerpt: 'Yrittäjät kysyvät usein "kuinka paljon pitäisi laittaa rahaa". Vastaus on harvoin se mitä odotat.',
+    content: `
+      <p>Saamme tämän kysymyksen viikoittain: "Kuinka paljon Meta-mainontaan pitäisi laittaa rahaa?" Lyhyt vastaus: vähemmän kuin luulet. Pitkä vastaus seuraa.</p>
+      <h2>Budjetti ei ole strategia</h2>
+      <p>50 € päivässä huonoon kampanjaan tuottaa huonompia tuloksia kuin 10 € hyvin rakennettuun. Algoritmi palkitsee laatua, ei volyymia.</p>
+      <h2>Mistä aloittaa</h2>
+      <ul>
+        <li>Aloita 10–20 €/päivä per ad set</li>
+        <li>Anna sen pyöriä vähintään 7 päivää ennen kuin teet muutoksia</li>
+        <li>Skaalaa vain kampanjoita, joiden CPA on tavoitteen alla</li>
+      </ul>
+      <p>Tämä lähestymistapa säästää keskimäärin 40 % budjettia ensimmäisten kahden kuukauden aikana.</p>
+    `
+  },
+  {
+    slug: 'ravintolan-meta-opas',
+    title: 'Ravintolan Meta-opas: kuinka täytät pöytäsi maanantaisin',
+    cats: ['Tapaustutkimus','Ravintolat'],
+    date: '2.4.2026',
+    read: 7,
+    grad: 'grad-3',
+    excerpt: 'Hiljaisten alkuviikkojen täyttäminen on Meta-mainonnan helpoin voitto — jos teet sen oikein.',
+    content: `
+      <p>Ravintola-ala elää viikonlopuilla. Mutta maanantai-keskiviikko ovat juuri se aika, jolloin Meta-mainonta tuottaa parhaan tuoton. Kilpailu on pienempää, klikkihinnat alhaisempia ja asiakkailla on aikaa.</p>
+      <h2>Geocircle 5 km</h2>
+      <p>Älä kohdenna kaupungin sisällä — kohdenna ravintolasi ympärille 5 km säteellä. Tämä on yleensä se etäisyys, jonka asiakas ajaa illalliselle.</p>
+      <h2>Aikaikkuna ratkaisee</h2>
+      <p>Aja mainoksia ma–ke klo 11–17. Iltapäivällä ihmiset päättävät, mihin syövät illalla. Sitä ennen tai jälkeen mainos menee hukkaan.</p>
+      <blockquote><p>Eräällä asiakkaallamme maanantai-illan kate kasvoi 3,2-kertaiseksi neljässä viikossa.</p></blockquote>
+      <h3>Mitä mainostaa</h3>
+      <p>Älä mainosta "ravintolaa". Mainosta yhtä konkreettista lautasta. Yhtä elämystä. Yhtä illan tarjousta.</p>
+    `
+  },
+  {
+    slug: 'pikseli-puuttuu',
+    title: 'Meta-pikseli puuttuu? Menetät rahaa joka päivä',
+    cats: ['Tekniikka'],
+    date: '20.3.2026',
+    read: 3,
+    grad: 'grad-4',
+    excerpt: 'Ilman pikseliä Meta ei opi mitään. 15 minuutin asennus, joka muuttaa kaiken.',
+    content: `
+      <p>Jos verkkosivuillasi ei ole Meta-pikseliä, Meta ei voi optimoida mainoksiasi. Se on yksinkertainen totuus, jota suurin osa pk-yrityksistä ei tiedä.</p>
+      <h2>Mikä Meta-pikseli on</h2>
+      <p>Pikseli on pieni JavaScript-pätkä, joka kertoo Metalle mitä sivuillasi tapahtuu. Kuka osti, kuka katsoi, kuka jätti ostoskorin.</p>
+      <h2>Asentaminen vie 15 minuuttia</h2>
+      <p>WordPressissä riittää yksi plugin. Shopifyssä yksi koodi. Wixissä yksi kenttä. Lisää myös Conversions API rinnalle, jos haluat tarkkaa dataa selainestoja vastaan.</p>
+    `
+  },
+  {
+    slug: 'video-vs-kuva',
+    title: 'Video vai still-kuva? Kumpi voittaa vuonna 2026',
+    cats: ['Luova suunnittelu'],
+    date: '8.3.2026',
+    read: 5,
+    grad: 'grad-5',
+    excerpt: 'Algoritmi suosii videota, mutta vain tiettyä videota. Tässä mitä testit kertovat.',
+    content: `
+      <p>Yleinen myytti: video voittaa aina kuvan. Todellisuus: lyhyt 6–9 sekunnin video voittaa, pitkä 30 sekunnin video häviää useimmiten still-kuvalle.</p>
+      <h2>Mitä data sanoo</h2>
+      <p>Kävimme läpi 240 kampanjaa Q1/2026 aikana. Lyhyet pystyvideot tuottivat keskimäärin 31 % alemman CPA:n kuin staattiset mainokset. Pitkät videot tuottivat 18 % korkeamman.</p>
+      <h2>Reseptin perusasiat</h2>
+      <ul>
+        <li>Hook 1,5 sekunnissa</li>
+        <li>Tekstitykset aina päällä</li>
+        <li>Pystysuunta 9:16</li>
+        <li>Selkeä CTA viimeisessä sekunnissa</li>
+      </ul>
+    `
+  },
+  {
+    slug: 'remonttialan-liidit',
+    title: 'Remonttialan liidit: kuinka saat vain laadukkaita yhteydenottoja',
+    cats: ['Tapaustutkimus','Remontit'],
+    date: '22.2.2026',
+    read: 6,
+    grad: 'grad-6',
+    excerpt: 'Remontoijat saavat usein paljon liidejä — ja paljon roskaa. Kuinka erottelet jyvät akanoista.',
+    content: `
+      <p>Remonttialalla 100 liidiä kuukaudessa ei tarkoita mitään, jos 90 niistä on hintatiedustelijoita ilman aikomusta tilata. Tärkeämpää on saada 20 liidiä, joista 8 muuttuu sopimukseksi.</p>
+      <h2>Lomake on suodatin</h2>
+      <p>Lyhyt lomake = paljon liidejä, huono laatu. Pitkä lomake = vähän liidejä, korkea laatu. Lisää 3–5 kvalifioivaa kysymystä: budjetti, aikataulu, omistaako asunnon.</p>
+      <h2>Hinnan mainitseminen</h2>
+      <p>Mainita lähtöhinta mainostekstissä ("Keittiöremontti alkaen 12 000 €") karsii valtaosan väärin kohdistuneista liideistä jo ennen lomaketta.</p>
+    `
+  },
+  {
+    slug: 'kohderyhma-ei-ole-demografia',
+    title: 'Kohderyhmäsi ei ole demografia — se on hetki',
+    cats: ['Strategia'],
+    date: '10.2.2026',
+    read: 5,
+    grad: 'grad-1',
+    excerpt: '"Naiset 35–54" ei ole kohderyhmä. "Naiset, jotka heräsivät juuri kipuun" on.',
+    content: `
+      <p>Demografinen kohdentaminen on ajattelutapa vuodelta 2015. Vuonna 2026 tärkeämpää on kohdentaa <em>hetkiin</em> — siihen vaiheeseen, jossa ihminen on juuri nyt.</p>
+      <h2>Mitä hetkikohdentaminen tarkoittaa</h2>
+      <p>Et mainosta hyvinvointituotetta "naisille 35–54", vaan ihmisille jotka ovat juuri tehneet hakuja kivunhallinnasta, niskakivusta tai unihäiriöistä. Konteksti voittaa demografian.</p>
+      <blockquote><p>Oikea viesti väärällä hetkellä on melu. Sama viesti oikealla hetkellä on vastaus.</p></blockquote>
+    `
+  },
+  {
+    slug: 'mainosbudjetin-jakaminen',
+    title: 'Kuinka jakaa 1 000 €/kk mainosbudjetti — käytännön malli',
+    cats: ['Budjetointi'],
+    date: '1.2.2026',
+    read: 4,
+    grad: 'grad-2',
+    excerpt: 'Yksi budjetti, kolme vaihetta, neljä kampanjaa. Tässä yksinkertainen malli pieneen budjettiin.',
+    content: `
+      <p>Pieni budjetti ei tarkoita huonoja tuloksia. Se tarkoittaa vain, että sinulla ei ole varaa kokeilla 12 asiaa kerralla.</p>
+      <h2>70/20/10-sääntö</h2>
+      <ul>
+        <li><strong>70 % (700 €):</strong> Konversiokampanja parhaaseen tarjoukseen</li>
+        <li><strong>20 % (200 €):</strong> Uudelleenkohdentaminen sivustovierailijoille</li>
+        <li><strong>10 % (100 €):</strong> Testikampanja uusille kreatiiveille</li>
+      </ul>
+      <p>Tällä jaolla saat sekä tuloksia heti että dataa pitkän aikavälin kasvua varten.</p>
+    `
+  },
+  {
+    slug: 'kiinteistovalittajan-meta',
+    title: 'Kiinteistövälittäjän Meta-mainonta: kohti listausta, ei kohti klikkiä',
+    cats: ['Tapaustutkimus','Kiinteistöt'],
+    date: '18.1.2026',
+    read: 6,
+    grad: 'grad-3',
+    excerpt: 'Klikit eivät myy taloja. Listauspyynnöt myyvät.',
+    content: `
+      <p>Kiinteistövälitys on alueellinen bisnes, jossa yksi listaus on arvokkaampi kuin tuhat klikkiä. Silti suurin osa välittäjistä mittaa Meta-mainontaa klikkihinnan mukaan.</p>
+      <h2>Mittari pitää vaihtaa</h2>
+      <p>Listauspyyntö on oikea konversio. Sen optimointi vaatii lomakkeen + Conversions API:n + 30 päivän attribuutio-ikkunan.</p>
+      <h2>Tarjouksena arvio, ei vinkki</h2>
+      <p>"Lataa myyntivinkit" tuottaa heikkoja liidejä. "Pyydä ilmainen myyntiarvio asunnostasi" tuottaa myyntivalmiita liidejä — vähemmän, mutta arvokkaampia.</p>
+    `
+  }
+];
+
+const PER_PAGE = 6;
+let currentPage = 1;
+
+/* ============== ROUTING ============== */
+const views = { home: 'view-home', blog: 'view-blog', single: 'view-single' };
+
+function showView(name, opts = {}){
+  Object.values(views).forEach(id => document.getElementById(id).classList.remove('active'));
+  document.getElementById(views[name]).classList.add('active');
+  // Restart reveal animation for this view
+  document.querySelectorAll('#'+views[name]+' .reveal').forEach(el => el.classList.remove('on'));
+  setTimeout(() => {
+    document.querySelectorAll('#'+views[name]+' .reveal').forEach(el => observer.observe(el));
+  }, 30);
+
+  if (opts.anchor){
+    setTimeout(() => {
+      const target = document.getElementById(opts.anchor);
+      if (target) target.scrollIntoView({behavior:'smooth',block:'start'});
+    }, 80);
+  } else if (!opts.preserveScroll) {
+    window.scrollTo({top:0,behavior:'instant'});
+  }
+
+  // active nav state
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  if (name === 'blog' || name === 'single'){
+    const blogLink = document.querySelector('.nav-link[data-nav="blog"]');
+    if (blogLink) blogLink.classList.add('active');
+  }
+}
+
+document.addEventListener('click', (e) => {
+  const navEl = e.target.closest('[data-nav]');
+  if (!navEl) return;
+  e.preventDefault();
+  const target = navEl.getAttribute('data-nav');
+  const anchor = navEl.getAttribute('data-anchor');
+  if (target === 'home') showView('home', { anchor: anchor || null });
+  else if (target === 'blog') { currentPage = 1; renderBlog(); showView('blog'); }
+  else if (target === 'single') {
+    const slug = navEl.getAttribute('data-slug');
+    renderSingle(slug); showView('single');
+  }
+});
+
+/* ============== BLOG RENDER ============== */
+function renderBlog(){
+  const grid = document.getElementById('blog-grid');
+  const totalPages = Math.ceil(POSTS.length / PER_PAGE);
+  const start = (currentPage - 1) * PER_PAGE;
+  const slice = POSTS.slice(start, start + PER_PAGE);
+
+  grid.innerHTML = slice.map(p => `
+    <button class="post-card reveal" data-nav="single" data-slug="${p.slug}">
+      <div class="post-thumb ${p.grad}">
+        <div class="post-thumb-placeholder">[ kuva — ${p.cats[0].toLowerCase()} ]</div>
+        <span class="thumb-cat">${p.cats[0]}</span>
+      </div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span>${p.date}</span><span>·</span><span>${p.read} min lukuaika</span>
+        </div>
+        <div class="post-title">${p.title}</div>
+        <div class="post-excerpt">${p.excerpt}</div>
+      </div>
+    </button>
+  `).join('');
+
+  // pagination
+  const pag = document.getElementById('blog-pagination');
+  let html = '';
+  html += `<button class="page-btn page-btn-prev" ${currentPage===1?'disabled':''} data-pg="${currentPage-1}">← Edellinen</button>`;
+  for (let i=1; i<=totalPages; i++){
+    html += `<button class="page-btn ${i===currentPage?'current':''}" data-pg="${i}">${i}</button>`;
+  }
+  html += `<button class="page-btn page-btn-next" ${currentPage===totalPages?'disabled':''} data-pg="${currentPage+1}">Seuraava →</button>`;
+  pag.innerHTML = html;
+
+  pag.querySelectorAll('[data-pg]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const n = parseInt(btn.getAttribute('data-pg'),10);
+      if (n >= 1 && n <= totalPages){
+        currentPage = n;
+        renderBlog();
+        document.querySelector('.blog-hero').scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+  });
+
+  // re-observe new reveal elements
+  document.querySelectorAll('#view-blog .reveal').forEach(el => { el.classList.remove('on'); observer.observe(el); });
+}
+
+/* ============== SINGLE RENDER ============== */
+function renderSingle(slug){
+  const post = POSTS.find(p => p.slug === slug);
+  if (!post) { showView('blog'); return; }
+  document.getElementById('single-title').textContent = post.title;
+  document.getElementById('single-cats').innerHTML = post.cats.map(c => `<span class="single-cat">${c}</span>`).join('');
+  document.getElementById('single-date').textContent = post.date;
+  document.getElementById('single-read').textContent = post.read + ' min lukuaika';
+  document.getElementById('single-content').innerHTML = post.content;
+
+  const thumb = document.getElementById('single-thumb');
+  thumb.className = 'single-thumb ' + post.grad;
+  thumb.innerHTML = `<div class="single-thumb-placeholder">[ pääkuva — ${post.cats[0].toLowerCase()} ]</div>`;
+
+  // post nav
+  const idx = POSTS.findIndex(p => p.slug === slug);
+  const prev = POSTS[idx - 1];
+  const next = POSTS[idx + 1];
+  let navHtml = '';
+  if (prev) navHtml += `<button class="post-nav-item" data-nav="single" data-slug="${prev.slug}"><div class="post-nav-dir">← Edellinen</div><div class="post-nav-title">${prev.title}</div></button>`;
+  else navHtml += '<div></div>';
+  if (next) navHtml += `<button class="post-nav-item next" data-nav="single" data-slug="${next.slug}"><div class="post-nav-dir">Seuraava →</div><div class="post-nav-title">${next.title}</div></button>`;
+  document.getElementById('post-nav').innerHTML = navHtml;
+}
+
+/* ============== FAQ ============== */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* ============== PERF TABS ============== */
+const PERF_DATA = {
+  kohdentaminen: {
+    bar: 'Meta Business Suite — Kampanjanäkymä',
+    c1h: 'Hyvinvointi-kampanja', c1p: 'Naiset 35–64 · Helsinki, Espoo, Vantaa', c1v: '12 400', c1l: 'tavoitettu tällä viikolla',
+    c2h: 'Ravintola-kampanja', c2p: '25–55 v. · 5 km säde ravintolasta', c2v: '8 100', c2l: 'tavoitettu tällä viikolla',
+    mh: 'Tavoittavuus kasvaa joka viikko.', mp: 'Optimoitu kohdentaminen tuo oikeat asiakkaat — ei pelkkiä klikkejä.',
+    chart: [30,40,35,52,60,75,82,90,100],
+    s1v:'26.2k', s1l:'Tavoitettu / viikko', s2v:'€0.18', s2l:'Hinta per klikkaus', s3v:'+142%', s3l:'Kasvu / kk'
+  },
+  luova: {
+    bar: 'Meta Business Suite — Luovat',
+    c1h: 'Video — pystysuunta', c1p: '6 sek hook · tekstitykset', c1v: '4.8×', c1l: 'ROAS testijaksolla',
+    c2h: 'Still-kuva — A/B', c2p: '3 variaatiota · 1 voittaja', c2v: '0.07€', c2l: 'CPC parhaalla',
+    mh: 'Oikea kreatiivi tekee 80 % tuloksesta.', mp: 'Testaamme 3–5 variaatiota per ad set ja skaalaamme vain voittajia.',
+    chart: [22,38,50,45,68,72,80,95,100],
+    s1v:'5', s1l:'Variaatiota / kampanja', s2v:'31%', s2l:'Alempi CPA videolla', s3v:'1.7s', s3l:'Hookin pituus'
+  },
+  budjetti: {
+    bar: 'Meta Business Suite — Budjetti',
+    c1h: 'Konversiokampanja', c1p: '70 % budjetista · paras tarjous', c1v: '700€', c1l: 'kuukausibudjetti',
+    c2h: 'Uudelleenkohdentaminen', c2p: '20 % budjetista · 30 pv ikkuna', c2v: '200€', c2l: 'kuukausibudjetti',
+    mh: 'Vähemmän on usein enemmän.', mp: '70/20/10-jako tuottaa keskimäärin 40 % parempaa tehoa pienellä budjetilla.',
+    chart: [60,55,58,62,70,68,75,72,82],
+    s1v:'10€', s1l:'Min. päiväbudjetti / ad set', s2v:'7 pv', s2l:'Oppimisjakso', s3v:'40%', s3l:'Säästö ka.'
+  },
+  raportointi: {
+    bar: 'Meta Business Suite — Raportit',
+    c1h: 'Viikkoraportti', c1p: 'Toimitetaan joka maanantai', c1v: '52', c1l: 'raporttia / vuosi',
+    c2h: 'Kuukausikatsaus', c2p: 'Strategiapuhelu mukana', c2v: '12', c2l: 'katsausta / vuosi',
+    mh: 'Selkeät raportit. Ei numeroviidakkoa.', mp: 'Saat tietää mikä toimi, mikä ei, ja mitä teemme seuraavaksi — selvällä suomella.',
+    chart: [40,45,48,55,60,68,76,84,92],
+    s1v:'7 pv', s1l:'Raportointiväli', s2v:'24h', s2l:'Vastausaika', s3v:'100%', s3l:'Läpinäkyvyys'
+  }
+};
+function applyPerfData(key){
+  const d = PERF_DATA[key]; if (!d) return;
+  document.getElementById('perf-bar-title').textContent = d.bar;
+  document.getElementById('perf-c1-h').textContent = d.c1h;
+  document.getElementById('perf-c1-p').textContent = d.c1p;
+  document.getElementById('perf-c1-v').textContent = d.c1v;
+  document.getElementById('perf-c1-l').textContent = d.c1l;
+  document.getElementById('perf-c2-h').textContent = d.c2h;
+  document.getElementById('perf-c2-p').textContent = d.c2p;
+  document.getElementById('perf-c2-v').textContent = d.c2v;
+  document.getElementById('perf-c2-l').textContent = d.c2l;
+  document.getElementById('perf-main-h').textContent = d.mh;
+  document.getElementById('perf-main-p').textContent = d.mp;
+  document.getElementById('perf-s1-v').textContent = d.s1v;
+  document.getElementById('perf-s1-l').textContent = d.s1l;
+  document.getElementById('perf-s2-v').textContent = d.s2v;
+  document.getElementById('perf-s2-l').textContent = d.s2l;
+  document.getElementById('perf-s3-v').textContent = d.s3v;
+  document.getElementById('perf-s3-l').textContent = d.s3l;
+  const bars = document.querySelectorAll('#perf-chart .big-bar');
+  bars.forEach((b,i) => {
+    b.style.height = d.chart[i] + '%';
+    b.classList.remove('bb-lo','bb-mid','bb-hi');
+    if (d.chart[i] < 50) b.classList.add('bb-lo');
+    else if (d.chart[i] < 75) b.classList.add('bb-mid');
+    else b.classList.add('bb-hi');
+  });
+}
+document.querySelectorAll('.ptab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    applyPerfData(tab.getAttribute('data-tab'));
+  });
+});
+
+
+
+/* ============== FORM VALIDATION ============== */
+function wireForm(formId, successId){
+  const form = document.getElementById(formId);
+  const success = document.getElementById(successId);
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('.field').forEach(f => f.classList.remove('has-err'));
+    form.querySelectorAll('input[required]').forEach(input => {
+      const field = input.closest('.field');
+      const val = input.value.trim();
+      if (!val) { field.classList.add('has-err'); valid = false; }
+      else if (input.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val)) {
+        field.classList.add('has-err'); valid = false;
+      }
+    });
+    if (!valid) return;
+    const btn = form.querySelector('.submit-btn');
+    btn.disabled = true; btn.textContent = 'Lähetetään…';
+    setTimeout(() => {
+      success.classList.add('show');
+    }, 600);
+  });
+}
+wireForm('cta-form','cta-success');
+wireForm('footer-form','footer-success');
+
+/* ============== REVEAL OBSERVER ============== */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('on'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* initial render */
+renderBlog();
+</script>
+
+</body>
+</html>
