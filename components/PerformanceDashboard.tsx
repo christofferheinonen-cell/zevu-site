@@ -69,16 +69,18 @@ export default function PerformanceDashboard() {
           <div className="section-h">Oikea viesti. Oikea ihminen. Oikeaan aikaan.</div>
           <p className="section-sub">Ei geneerisiä mainoksia. Jokaiselle asiakkaalle räätälöity lähestymistapa.</p>
         </div>
-        <div className="perf-tabs">
-          {TABS.map(t => (
-            <button
-              key={t.key}
-              className={`ptab${active === t.key ? ' active' : ''}`}
-              onClick={() => setActive(t.key)}
-            >
-              {t.label}
-            </button>
-          ))}
+        <div className="perf-tabs-wrap">
+          <div className="perf-tabs">
+            {TABS.map(t => (
+              <button
+                key={t.key}
+                className={`ptab${active === t.key ? ' active' : ''}`}
+                onClick={() => setActive(t.key)}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="perf-visual">
           <div className="perf-topbar">
