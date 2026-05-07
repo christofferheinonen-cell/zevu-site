@@ -16,7 +16,10 @@ export default function BlogList({ posts }: { posts: Post[] }) {
         {slice.map(p => (
           <Link key={p.slug} href={`/blog/${p.slug}`} className="post-card reveal on">
             <div className={`post-thumb ${p.grad}`}>
-              <div className="post-thumb-placeholder">[ kuva — {p.cats[0].toLowerCase()} ]</div>
+              {p.image
+                ? <img src={p.image} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                : <div className="post-thumb-placeholder">[ kuva — {p.cats[0].toLowerCase()} ]</div>
+              }
               <span className="thumb-cat">{p.cats[0]}</span>
             </div>
             <div className="post-body">
