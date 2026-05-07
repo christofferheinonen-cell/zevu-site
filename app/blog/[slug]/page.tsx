@@ -50,34 +50,44 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           )}
         </div>
 
-        <RevealWrapper className="single-content">
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
-        </RevealWrapper>
+        <div className="single-layout">
+          <div className="single-main">
+            <RevealWrapper className="single-content">
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            </RevealWrapper>
 
-        <RevealWrapper className="single-cta">
-          <div className="single-cta-inner">
-            <div>
-              <h3>Haluatko parempia tuloksia Meta-mainonnalla?</h3>
-              <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
-            </div>
-            <Link href="/#cta" className="btn-dark" style={{ flexShrink: 0 }}>Pyydä analyysi →</Link>
+            <RevealWrapper className="post-nav">
+              {prev ? (
+                <Link href={`/blog/${prev.slug}`} className="post-nav-item">
+                  <div className="post-nav-dir">← Edellinen</div>
+                  <div className="post-nav-title">{prev.title}</div>
+                </Link>
+              ) : <div />}
+              {next ? (
+                <Link href={`/blog/${next.slug}`} className="post-nav-item next">
+                  <div className="post-nav-dir">Seuraava →</div>
+                  <div className="post-nav-title">{next.title}</div>
+                </Link>
+              ) : <div />}
+            </RevealWrapper>
           </div>
-        </RevealWrapper>
 
-        <RevealWrapper className="post-nav">
-          {prev ? (
-            <Link href={`/blog/${prev.slug}`} className="post-nav-item">
-              <div className="post-nav-dir">← Edellinen</div>
-              <div className="post-nav-title">{prev.title}</div>
-            </Link>
-          ) : <div />}
-          {next ? (
-            <Link href={`/blog/${next.slug}`} className="post-nav-item next">
-              <div className="post-nav-dir">Seuraava →</div>
-              <div className="post-nav-title">{next.title}</div>
-            </Link>
-          ) : <div />}
-        </RevealWrapper>
+          <aside className="single-sidebar">
+            <div className="single-cta-card">
+              <div className="single-cta-card-inner">
+                <h3>Haluatko parempia tuloksia Meta-mainonnalla?</h3>
+                <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
+                <Link href="/#cta" className="btn-dark single-cta-card-btn">Pyydä analyysi →</Link>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      {/* Mobile floating pill */}
+      <div className="single-cta-pill">
+        <span>Haluatko parempia tuloksia?</span>
+        <Link href="/#cta" className="single-cta-pill-btn">Pyydä analyysi →</Link>
       </div>
     </main>
   )
