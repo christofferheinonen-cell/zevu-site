@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fi">
       <body className={plusJakarta.className}>
         <Nav />
-        {children}
+        <main style={{ position: 'relative', zIndex: 1 }}>{children}</main>
         <Footer />
       </body>
     </html>
