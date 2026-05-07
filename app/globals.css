@@ -35,7 +35,8 @@ body::before{
 
 /* NAV */
 .nav-wrap{
-  position:fixed;top:16px;left:50%;transform:translateX(-50%);
+  position:fixed;top:16px;left:50%;
+  transform:translateX(-50%);
   z-index:200;
   display:flex;align-items:center;
   background:rgba(255,255,255,0.92);
@@ -46,6 +47,12 @@ body::before{
   gap:4px;
   box-shadow:0 2px 12px rgba(0,0,0,.07);
   white-space:nowrap;
+  transition:transform .35s cubic-bezier(.4,0,.2,1), opacity .35s ease;
+}
+.nav-wrap.nav-hidden{
+  transform:translateX(-50%) translateY(calc(-100% - 24px));
+  opacity:0;
+  pointer-events:none;
 }
 .nav-logo{font-size:15px;font-weight:800;letter-spacing:-.4px;color:var(--text);text-decoration:none;margin-right:24px;cursor:pointer;}
 .nav-link{font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:6px 14px;border-radius:100px;transition:background .15s,color .15s;cursor:pointer;background:none;border:none;font-family:inherit;}
