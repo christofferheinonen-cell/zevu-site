@@ -43,7 +43,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </RevealWrapper>
 
         <div className={`single-thumb ${post.grad}`}>
-          <div className="single-thumb-placeholder">[ pääkuva — {post.cats[0].toLowerCase()} ]</div>
+          {post.image ? (
+            <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          ) : (
+            <div className="single-thumb-placeholder">[ pääkuva — {post.cats[0].toLowerCase()} ]</div>
+          )}
         </div>
 
         <RevealWrapper className="single-content">

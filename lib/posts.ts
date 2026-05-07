@@ -7,6 +7,7 @@ export interface Post {
   grad: string
   excerpt: string
   content: string
+  image?: string
 }
 
 export const POSTS: Post[] = [
@@ -17,6 +18,7 @@ export const POSTS: Post[] = [
     date: '7.5.2026',
     read: 8,
     grad: 'grad-5',
+    image: '/blog/miksi-meta-facebook-mainokset-eivat-tuota.png',
     excerpt: 'Meta-mainokset kuluttavat budjetin mutta eivät tuo asiakkaita? Tässä 8 yleisintä syytä — ja miten korjaat ne nopeasti.',
     content: `
       <p>Meta-mainonta — eli mainonta Facebookissa ja Instagramissa — on yksi tehokkaimmista tavoista tavoittaa asiakkaita. Teoriassa. Käytännössä tuhannet suomalaiset yrittäjät käyttävät satoja tai tuhansia euroja Meta-mainontaan joka kuukausi ilman merkittäviä tuloksia. Rahat katoavat, klikkauksia tulee vähän, ja asiakkaita ei näy.</p>
