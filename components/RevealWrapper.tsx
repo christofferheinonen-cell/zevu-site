@@ -15,7 +15,7 @@ export default function RevealWrapper({ children, className = '', id }: Props) {
     if (!el) return
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) el.classList.add('on') },
-      { threshold: 0.07 }
+      { threshold: 0, rootMargin: '0px 0px -60px 0px' }
     )
     observer.observe(el)
     return () => observer.disconnect()
