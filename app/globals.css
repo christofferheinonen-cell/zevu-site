@@ -38,13 +38,13 @@ body::before{
   position:fixed;top:16px;left:50%;
   transform:translateX(-50%);
   z-index:200;
-  display:grid;grid-template-columns:auto 1fr auto;align-items:center;
-  width:min(780px,calc(100vw - 48px));
+  display:flex;align-items:center;
   background:rgba(255,255,255,0.92);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border:1px solid var(--border);
   border-radius:100px;
-  padding:6px 6px 6px 22px;
+  padding:7px 7px 7px 22px;
+  gap:4px;
   box-shadow:0 2px 12px rgba(0,0,0,.07);
   white-space:nowrap;
   transition:transform .35s cubic-bezier(.4,0,.2,1), opacity .35s ease;
@@ -54,15 +54,15 @@ body::before{
   opacity:0;
   pointer-events:none;
 }
-.nav-logo{font-size:15px;font-weight:800;letter-spacing:-.4px;color:var(--text);text-decoration:none;cursor:pointer;}
+.nav-logo{font-size:16px;font-weight:800;letter-spacing:-.4px;color:var(--text);text-decoration:none;margin-right:26px;cursor:pointer;}
 .nav-links{display:flex;align-items:center;justify-content:center;gap:2px;}
-.nav-link{font-size:13px;font-weight:500;color:var(--sub);text-decoration:none;padding:6px 14px;border-radius:100px;transition:background .15s,color .15s;cursor:pointer;background:none;border:none;font-family:inherit;}
+.nav-link{font-size:14px;font-weight:500;color:var(--sub);text-decoration:none;padding:7px 15px;border-radius:100px;transition:background .15s,color .15s;cursor:pointer;background:none;border:none;font-family:inherit;}
 .nav-link:hover,.nav-link.active{background:var(--bg);color:var(--text);}
 .nav-btn{
-  font-family:inherit;font-size:13px;font-weight:600;
+  font-family:inherit;font-size:14px;font-weight:600;
   background:var(--text);color:var(--white);
   border:none;cursor:pointer;
-  padding:9px 18px;border-radius:100px;
+  padding:10px 20px;border-radius:100px;margin-left:8px;
   transition:background .15s;text-decoration:none;display:inline-block;
 }
 .nav-btn:hover{background:var(--blue);}
@@ -372,8 +372,7 @@ body::before{
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.85);}}
 
 @media(max-width:860px){
-  .nav-links{display:none;}
-  .nav-wrap{grid-template-columns:auto auto;justify-content:space-between;}
+  .nav-link{display:none;}
   .wrap{padding-left:24px;padding-right:24px;}
   .hero{grid-template-columns:1fr;padding:110px 24px 60px;gap:40px;}
   .feat-grid,.perf-body,.cta-grid,.faq-grid{grid-template-columns:1fr;}

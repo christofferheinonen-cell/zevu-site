@@ -24,11 +24,9 @@ export default function Nav() {
   return (
     <nav className={`nav-wrap${hidden ? ' nav-hidden' : ''}`}>
       <Link href="/" className="nav-logo">Zevu</Link>
-      <div className="nav-links">
-        <Link href="/#prosessi" className="nav-link">Prosessi</Link>
-        <Link href="/blog" className={`nav-link${isBlog ? ' active' : ''}`}>Blogi</Link>
-        <Link href="/#faq" className="nav-link">FAQ</Link>
-      </div>
+      <Link href="/#prosessi" className="nav-link">Prosessi</Link>
+      <Link href="/blog" className={`nav-link${isBlog ? ' active' : ''}`}>Blogi</Link>
+      <Link href="/#faq" className="nav-link">FAQ</Link>
       <Link href="/#cta" className="nav-btn">Pyydä analyysi →</Link>
     </nav>
   )
