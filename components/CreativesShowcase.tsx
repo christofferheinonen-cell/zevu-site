@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import RevealWrapper from './RevealWrapper'
 
 export default function CreativesShowcase() {
@@ -34,7 +33,7 @@ export default function CreativesShowcase() {
                 <div className="cr-tag">Mainos</div>
               </div>
               <div className="cr-img">
-                <Image src="/creatives/creative-1.jpg" alt="Hyödyt" width={300} height={533} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                <img src="/creatives/creative-1.jpg" alt="Hyödyt" />
               </div>
               <div className="cr-body">
                 <div className="cr-body-h">Tuhannet suomalaiset ilman kipua taas.</div>
@@ -53,7 +52,7 @@ export default function CreativesShowcase() {
                 <div className="cr-tag">Mainos</div>
               </div>
               <div className="cr-img">
-                <Image src="/creatives/creative-2.jpg" alt="Käyttötilanne" width={300} height={533} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                <img src="/creatives/creative-2.jpg" alt="Käyttötilanne" />
               </div>
               <div className="cr-body">
                 <div className="cr-body-h">Kivunlievitys olohuoneen sohvalta.</div>
@@ -72,7 +71,7 @@ export default function CreativesShowcase() {
                 <div className="cr-tag">Mainos</div>
               </div>
               <div className="cr-img">
-                <Image src="/creatives/creative-3.jpg" alt="Diagnoosikohdistus" width={300} height={533} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                <img src="/creatives/creative-3.jpg" alt="Diagnoosikohdistus" />
               </div>
               <div className="cr-body">
                 <div className="cr-body-h">Tehokas kivunlievitys ilman lääkkeitä.</div>
@@ -91,7 +90,7 @@ export default function CreativesShowcase() {
                 <div className="cr-tag">Mainos</div>
               </div>
               <div className="cr-img">
-                <Image src="/creatives/creative-4.jpg" alt="Asiakastarina" width={300} height={533} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                <img src="/creatives/creative-4.jpg" alt="Asiakastarina" />
               </div>
               <div className="cr-body">
                 <div className="cr-body-h">&ldquo;Polvi oli kipeä 7 kuukautta…&rdquo;</div>
