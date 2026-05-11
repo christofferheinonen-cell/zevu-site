@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main style={{ position: 'relative', zIndex: 1 }}>{children}</main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   )
