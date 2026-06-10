@@ -2,6 +2,7 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import RevealWrapper from '@/components/RevealWrapper'
+import ArticleCta from '@/components/ArticleCta'
 
 export async function generateStaticParams() {
   return getAllPosts().map(p => ({ slug: p.slug }))
@@ -72,22 +73,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             </RevealWrapper>
           </div>
 
-          <aside className="single-sidebar">
-            <div className="single-cta-card">
-              <div className="single-cta-card-inner">
-                <h3>Haluatko parempia tuloksia Meta-mainonnalla?</h3>
-                <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
-                <Link href="/#cta" className="btn-dark single-cta-card-btn">Pyydä analyysi →</Link>
-              </div>
-            </div>
-          </aside>
+          <ArticleCta />
         </div>
-      </div>
-
-      {/* Mobile floating pill */}
-      <div className="single-cta-pill">
-        <span>Haluatko parempia tuloksia?</span>
-        <Link href="/#cta" className="single-cta-pill-btn">Pyydä analyysi →</Link>
       </div>
     </main>
   )
