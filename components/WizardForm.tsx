@@ -94,7 +94,7 @@ export default function WizardForm({ compact = false }: { compact?: boolean }) {
               <div className="wizard-fields">
                 <div className={`wfield${errors.company ? ' err' : ''}`}>
                   <label>Yrityksen nimi <span className="req">*</span></label>
-                  <input autoFocus type="text" placeholder="Esim. Acme Oy"
+                  <input autoFocus={compact} type="text" placeholder="Esim. Acme Oy"
                     value={data.company} onChange={e => set('company', e.target.value)} />
                   <div className="wfield-err">Anna yrityksen nimi.</div>
                 </div>
