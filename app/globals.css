@@ -335,7 +335,10 @@ body::before{
 .faq-item{border-top:1px solid var(--border);padding:20px 0;cursor:pointer;}
 .faq-item:last-child{border-bottom:1px solid var(--border);}
 .faq-q{display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:600;letter-spacing:-.2px;user-select:none;gap:24px;}
-.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;transition:transform .2s,background .2s,color .2s;}
+.faq-icon{position:relative;width:22px;height:22px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);flex-shrink:0;color:var(--text);transition:transform .2s,background .2s,color .2s,border-color .2s;}
+.faq-icon::before,.faq-icon::after{content:'';position:absolute;top:50%;left:50%;background:currentColor;border-radius:1px;transform:translate(-50%,-50%);}
+.faq-icon::before{width:9px;height:1.6px;}
+.faq-icon::after{width:1.6px;height:9px;}
 .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--text);color:#fff;border-color:var(--text);}
 .faq-a{font-size:14px;color:var(--sub);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;}
 .faq-item.open .faq-a{max-height:240px;padding-top:12px;}

@@ -40,7 +40,7 @@ export default function FaqAccordion() {
               <div key={i} className={`faq-item${open === i ? ' open' : ''}`} onClick={() => setOpen(open === i ? -1 : i)}>
                 <div className="faq-q">
                   {faq.q}
-                  <div className="faq-icon">+</div>
+                  <div className="faq-icon" />
                 </div>
                 <div className="faq-a">{faq.a}</div>
               </div>
