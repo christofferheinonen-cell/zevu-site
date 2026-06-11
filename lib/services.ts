@@ -1,6 +1,7 @@
 export interface Service {
   slug: string
   navLabel: string
+  navDesc: string
   metaTitle: string
   metaDescription: string
   eyebrow: string
@@ -21,6 +22,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'meta-ads-manager',
     navLabel: 'Meta Ads Manager',
+    navDesc: 'Kampanjarakenne ja jatkuva optimointi',
     metaTitle: 'Meta Ads Manager — mitä teemme mainostililläsi | Zevu',
     metaDescription: 'Näin rakennamme ja optimoimme Meta Ads Manager -tilin, joka tuottaa. Kampanjarakenne, tavoitteet, budjetti ja jatkuva optimointi.',
     eyebrow: 'Meta Ads Manager',
@@ -62,6 +64,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'mainokset',
     navLabel: 'Mainokset',
+    navDesc: 'Kuva- ja videomainokset, jotka pysäyttävät',
     metaTitle: 'Mainokset, jotka pysäyttävät selauksen — kuva- ja videomainokset | Zevu',
     metaDescription: 'Kuvamainokset ja videomainokset, jotka pysäyttävät oikean ihmisen oikealla hetkellä. Näin suunnittelemme ja testaamme mainoksia, jotka tuottavat.',
     eyebrow: 'Mainokset',
@@ -102,6 +105,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'raportointi',
     navLabel: 'Raportointi',
+    navDesc: 'Oikeat mittarit ja selkeät päätökset',
     metaTitle: 'Meta-mainonnan raportointi ja analyysi | Zevu',
     metaDescription: 'Raportointi, joka vastaa yhteen kysymykseen: mitä tehdään seuraavaksi. Oikeat mittarit, attribuutio ja selkeät päätökset.',
     eyebrow: 'Raportointi & analyysi',
@@ -142,6 +146,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'pikseli',
     navLabel: 'Meta-pikseli',
+    navDesc: 'Mittaus kuntoon — pikseli ja Conversions API',
     metaTitle: 'Meta-pikseli & Conversions API — oikea mittaus | Zevu',
     metaDescription: 'Ilman kunnollista mittausta optimoit sokkona. Näin asennamme ja varmistamme Meta-pikselin ja Conversions API:n.',
     eyebrow: 'Meta-pikseli',
