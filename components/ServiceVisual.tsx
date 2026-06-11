@@ -168,18 +168,23 @@ function AbTestVisual() {
 
 function VariationGridVisual() {
   const items = [
-    { win: true, m: '3.2 %', g: 'sv-th-1' },
-    { win: false, m: '1.4 %', g: 'sv-th-2' },
-    { win: false, m: '0.9 %', g: 'sv-th-3' },
-    { win: false, m: '1.1 %', g: 'sv-th-4' },
+    { win: true, m: '3.2 %' },
+    { win: false, m: '1.4 %' },
+    { win: false, m: '0.9 %' },
+    { win: false, m: '1.1 %' },
   ]
   return (
     <div className="sv">
       <div className="sv-vargrid">
         {items.map((it, i) => (
-          <div className={`sv-th ${it.g}${it.win ? ' sv-th-win' : ' sv-th-dim'}`} key={i}>
-            {it.win && <span className="sv-th-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="m20 6-11 11-5-5" /></svg>Voittaja</span>}
-            <span className="sv-th-metric">CTR {it.m}</span>
+          <div className={`sv-ad${it.win ? ' sv-ad-win' : ' sv-ad-dim'}`} key={i}>
+            {it.win && <span className="sv-ad-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="m20 6-11 11-5-5" /></svg>Voittaja</span>}
+            <div className="sv-ad-img"><span className="sv-ad-metric">CTR {it.m}</span></div>
+            <div className="sv-ad-cap">
+              <span className="sv-ad-line" style={{ width: '82%' }} />
+              <span className="sv-ad-line" style={{ width: '54%' }} />
+              <span className="sv-ad-cta" />
+            </div>
           </div>
         ))}
       </div>
