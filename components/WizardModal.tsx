@@ -23,7 +23,9 @@ export default function WizardModal({ open, onClose }: { open: boolean; onClose:
   return createPortal(
     <div className="cta-modal-overlay" onClick={onClose}>
       <div className="cta-modal" onClick={e => e.stopPropagation()}>
-        <button type="button" className="cta-modal-close" onClick={onClose} aria-label="Sulje">×</button>
+        <button type="button" className="cta-modal-close" onClick={onClose} aria-label="Sulje">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        </button>
         <WizardForm compact />
       </div>
     </div>,

@@ -56,25 +56,40 @@ export default function ServiceLanding({ data }: { data: Service }) {
           </div>
         </RevealWrapper>
 
-        <RevealWrapper className="service-mistakes">
-          <h2>Yleisimmät virheet</h2>
-          <ul className="mistake-list">
-            {data.mistakes.map((m, i) => (
-              <li key={i}><span className="mistake-x">×</span><span>{m}</span></li>
-            ))}
-          </ul>
-        </RevealWrapper>
+        <RevealWrapper className="ps">
+          <div className="ps-card ps-problems">
+            <div className="ps-head">
+              <span className="ps-tag ps-tag-red">Ongelma</span>
+              <span className="ps-h">Yleisimmät virheet</span>
+            </div>
+            <ul className="ps-list">
+              {data.mistakes.map((m, i) => (
+                <li key={i}>
+                  <span className="ps-x">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  </span>
+                  <span>{m}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <RevealWrapper className="service-steps">
-          <div className="eyebrow">Näin Zevu hoitaa tämän</div>
-          <div className="service-steps-grid">
-            {data.doItems.map((d, i) => (
-              <div key={i} className="service-step">
-                <div className="service-step-num">{i + 1}</div>
-                <h3>{d.h}</h3>
-                <p>{d.p}</p>
-              </div>
-            ))}
+          <div className="ps-card ps-solutions">
+            <div className="ps-head">
+              <span className="ps-tag ps-tag-blue">Ratkaisu</span>
+              <span className="ps-h">Näin Zevu hoitaa tämän</span>
+            </div>
+            <div className="ps-steps">
+              {data.doItems.map((d, i) => (
+                <div key={i} className="ps-step">
+                  <div className="ps-step-num">{i + 1}</div>
+                  <div>
+                    <div className="ps-step-h">{d.h}</div>
+                    <div className="ps-step-p">{d.p}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </RevealWrapper>
 
