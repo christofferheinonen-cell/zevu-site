@@ -1,0 +1,149 @@
+const WindowTop = ({ title }: { title: string }) => (
+  <div className="sv-top">
+    <div className="sv-dots"><i /><i /><i /></div>
+    <span className="sv-top-title">{title}</span>
+  </div>
+)
+
+function AdsManagerVisual() {
+  return (
+    <div className="sv">
+      <div className="sv-pill sv-pill-tr"><span className="pill-icon" style={{ background: '#EEF3FD' }}>📈</span>ROAS 4.8×</div>
+      <div className="sv-panel">
+        <WindowTop title="Ads Manager" />
+        <div className="sv-am">
+          <div className="sv-am-camp">
+            <span className="sv-am-folder">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>
+            </span>
+            <span className="sv-am-name">Kesäkampanja · Myynti</span>
+            <span className="sv-badge sv-badge-green"><span className="pill-dot" />Aktiivinen</span>
+          </div>
+          {[
+            { name: 'Laaja yleisö', roas: '4.2×', w: '78%', d: '.35s' },
+            { name: 'Uudelleenkohdennus', roas: '5.6×', w: '92%', d: '.5s' },
+            { name: 'Samankaltaiset', roas: '3.4×', w: '60%', d: '.65s' },
+          ].map(s => (
+            <div className="sv-am-set" key={s.name}>
+              <div className="sv-am-set-head">
+                <span className="sv-mini-dot" />
+                <span className="sv-am-set-name">Mainosjoukko · {s.name}</span>
+                <span className="sv-am-roas">{s.roas}</span>
+              </div>
+              <div className="sv-bar"><div className="sv-bar-fill" style={{ ['--w' as string]: s.w, animationDelay: s.d }} /></div>
+            </div>
+          ))}
+          <div className="sv-am-foot">
+            <span>Budjetti 40 €/pv</span>
+            <span className="sv-am-foot-strong">+142 % / kk</span>
+          </div>
+        </div>
+      </div>
+      <div className="sv-pill sv-pill-bl"><span className="pill-dot" />Optimointi käynnissä</div>
+    </div>
+  )
+}
+
+function CreativesVisual() {
+  return (
+    <div className="sv">
+      <div className="sv-pill sv-pill-tr"><span className="pill-icon" style={{ background: '#DCFCE7' }}>↑</span>CTR 3.2 %</div>
+      <div className="sv-creatives">
+        <div className="sv-cr sv-cr-1">
+          <div className="sv-cr-tag">Kuvamainos</div>
+          <div className="sv-cr-img sv-cr-img-1"><span className="sv-cr-imglabel">Kivunlievitys kotona</span></div>
+          <div className="sv-cr-cap"><div className="sv-cr-line" style={{ width: '72%' }} /><div className="sv-cr-line" style={{ width: '44%' }} /></div>
+        </div>
+        <div className="sv-cr sv-cr-2">
+          <div className="sv-cr-tag">Videomainos</div>
+          <div className="sv-cr-img sv-cr-img-2">
+            <span className="sv-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
+            <span className="sv-cr-time">0:08</span>
+          </div>
+          <div className="sv-cr-cap"><div className="sv-cr-line" style={{ width: '60%' }} /><div className="sv-cr-line" style={{ width: '50%' }} /></div>
+        </div>
+      </div>
+      <div className="sv-pill sv-pill-bl"><span className="pill-dot" />Uusi mainos testissä</div>
+    </div>
+  )
+}
+
+function ReportingVisual() {
+  return (
+    <div className="sv">
+      <div className="sv-pill sv-pill-tr"><span className="pill-icon" style={{ background: '#EEF3FD' }}>📊</span>+142 % / kk</div>
+      <div className="sv-panel">
+        <WindowTop title="Raportti" />
+        <div className="sv-rep">
+          <div className="sv-rep-tiles">
+            {[['ROAS', '4.8×'], ['CTR', '3.2 %'], ['CPA', '8,40 €']].map(([l, v]) => (
+              <div className="sv-tile" key={l}><div className="sv-tile-label">{l}</div><div className="sv-tile-val">{v}</div></div>
+            ))}
+          </div>
+          <div className="sv-chart">
+            <svg viewBox="0 0 280 110" preserveAspectRatio="none" className="sv-chart-svg">
+              <defs>
+                <linearGradient id="svArea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#2563EB" stopOpacity="0.22" />
+                  <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="28" x2="280" y2="28" className="sv-grid" />
+              <line x1="0" y1="58" x2="280" y2="58" className="sv-grid" />
+              <line x1="0" y1="88" x2="280" y2="88" className="sv-grid" />
+              <path d="M0,88 L40,80 L80,84 L120,60 L160,66 L200,40 L240,30 L280,14 L280,110 L0,110 Z" fill="url(#svArea)" className="sv-area" />
+              <path d="M0,88 L40,80 L80,84 L120,60 L160,66 L200,40 L240,30 L280,14" pathLength={1} fill="none" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="sv-line" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div className="sv-pill sv-pill-bl"><span className="pill-dot" />Päivittyy reaaliajassa</div>
+    </div>
+  )
+}
+
+function PixelVisual() {
+  const events = [
+    { name: 'PageView', meta: 'nyt' },
+    { name: 'ViewContent', meta: '2 s' },
+    { name: 'AddToCart', meta: '14 s' },
+    { name: 'Purchase', badge: '+89 €' },
+  ]
+  return (
+    <div className="sv">
+      <div className="sv-pill sv-pill-tr"><span className="pill-dot" />CAPI yhdistetty</div>
+      <div className="sv-panel">
+        <WindowTop title="Tapahtumat" />
+        <div className="sv-px">
+          {events.map((e, i) => (
+            <div className="sv-px-row" key={e.name} style={{ animationDelay: `${0.3 + i * 0.22}s` }}>
+              <span className="sv-px-check">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="m20 6-11 11-5-5" /></svg>
+              </span>
+              <span className="sv-px-name">{e.name}</span>
+              {e.badge ? <span className="sv-badge sv-badge-green">{e.badge}</span> : <span className="sv-px-meta">{e.meta}</span>}
+            </div>
+          ))}
+          <div className="sv-px-flow">
+            <span className="sv-px-node">Selain</span>
+            <span className="sv-px-wire"><span className="sv-px-spark" /></span>
+            <span className="sv-px-node">Pikseli</span>
+            <span className="sv-px-wire"><span className="sv-px-spark" style={{ animationDelay: '.6s' }} /></span>
+            <span className="sv-px-node sv-px-node-blue">Meta</span>
+          </div>
+        </div>
+      </div>
+      <div className="sv-pill sv-pill-bl"><span className="pill-icon" style={{ background: '#EEF3FD' }}>🎯</span>Mittaus 100 %</div>
+    </div>
+  )
+}
+
+export default function ServiceVisual({ slug }: { slug: string }) {
+  switch (slug) {
+    case 'meta-ads-manager': return <AdsManagerVisual />
+    case 'mainokset': return <CreativesVisual />
+    case 'raportointi': return <ReportingVisual />
+    case 'pikseli': return <PixelVisual />
+    default: return null
+  }
+}

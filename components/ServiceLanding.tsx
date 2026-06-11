@@ -2,6 +2,7 @@ import Link from 'next/link'
 import RevealWrapper from './RevealWrapper'
 import CtaButton from './CtaButton'
 import ServiceFaq from './ServiceFaq'
+import ServiceVisual from './ServiceVisual'
 import type { Service } from '@/lib/services'
 
 export default function ServiceLanding({ data }: { data: Service }) {
@@ -9,11 +10,18 @@ export default function ServiceLanding({ data }: { data: Service }) {
     <main>
       <div className="wrap">
         <RevealWrapper className="service-hero">
-          <Link href="/" className="single-back">← Etusivulle</Link>
-          <div className="eyebrow">{data.eyebrow}</div>
-          <h1 className="service-h1">{data.h1}</h1>
-          <p className="service-intro">{data.intro}</p>
-          <CtaButton label={data.ctaLabel} />
+          <div className="service-hero-inner">
+            <div className="service-hero-copy">
+              <Link href="/" className="single-back">← Etusivulle</Link>
+              <div className="eyebrow">{data.eyebrow}</div>
+              <h1 className="service-h1">{data.h1}</h1>
+              <p className="service-intro">{data.intro}</p>
+              <CtaButton label={data.ctaLabel} />
+            </div>
+            <div className="service-hero-art">
+              <ServiceVisual slug={data.slug} />
+            </div>
+          </div>
         </RevealWrapper>
 
         <RevealWrapper className="service-prose">
