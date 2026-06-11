@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import MetaMenu from './MetaMenu'
+import MobileMenu from './MobileMenu'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -29,6 +30,7 @@ export default function Nav() {
       <Link href="/blog" className={`nav-link${isBlog ? ' active' : ''}`}>Blogi</Link>
       <Link href="/#faq" className="nav-link">FAQ</Link>
       <Link href="/#cta" className="nav-btn">Pyydä analyysi →</Link>
+      <MobileMenu />
     </nav>
   )
 }
