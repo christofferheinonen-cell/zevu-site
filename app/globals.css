@@ -625,7 +625,7 @@ body::before{
 .service-stats{padding:0 0 64px;}
 .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;background:var(--dark);border-radius:20px;padding:44px 32px;position:relative;overflow:hidden;}
 .stat-strip::before{content:'';position:absolute;top:-140px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.2) 0%,transparent 65%);pointer-events:none;}
-.stat-item{position:relative;z-index:1;text-align:center;}
+.stat-cell{position:relative;z-index:1;text-align:center;}
 .stat-num{font-size:clamp(32px,4.5vw,46px);font-weight:800;letter-spacing:-2px;line-height:1;color:var(--bg);font-variant-numeric:tabular-nums;}
 .stat-label{font-size:13px;font-weight:500;color:rgba(243,244,246,.45);line-height:1.5;margin-top:10px;max-width:220px;margin-left:auto;margin-right:auto;}
 

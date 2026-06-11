@@ -22,7 +22,7 @@ function StatItem({ s, run }: { s: Stat; run: boolean }) {
 
   const num = s.decimals ? v.toFixed(s.decimals) : Math.round(v).toString()
   return (
-    <div className="stat-item">
+    <div className="stat-cell">
       <div className="stat-num">{s.prefix ?? ''}{num}{s.suffix ?? ''}</div>
       <div className="stat-label">{s.label}</div>
     </div>
