@@ -74,7 +74,7 @@ body::before{
 .nav-dd-trigger.open .nav-dd-caret{transform:rotate(180deg);}
 .nav-dd-wrap{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:13px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease;z-index:210;}
 .nav-dd-wrap.open{opacity:1;visibility:visible;pointer-events:auto;}
-.nav-dd-panel{width:min(620px,calc(100vw - 32px));background:var(--white);border:1px solid var(--border);border-radius:20px;box-shadow:var(--sh2);padding:14px;transform:translateY(-6px);transition:transform .18s ease;}
+.nav-dd-panel{width:min(620px,calc(100vw - 32px));background:var(--white);border:1px solid var(--border);border-radius:20px;box-shadow:var(--sh2);padding:14px;white-space:normal;transform:translateY(-6px);transition:transform .18s ease;}
 .nav-dd-wrap.open .nav-dd-panel{transform:translateY(0);}
 .nav-dd-head{display:flex;gap:14px;align-items:flex-start;padding:10px 12px 16px;}
 .nav-dd-head>div{min-width:0;}
