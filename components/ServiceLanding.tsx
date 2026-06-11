@@ -3,6 +3,7 @@ import RevealWrapper from './RevealWrapper'
 import CtaButton from './CtaButton'
 import ServiceFaq from './ServiceFaq'
 import ServiceVisual from './ServiceVisual'
+import StatStrip from './StatStrip'
 import type { Service } from '@/lib/services'
 
 export default function ServiceLanding({ data }: { data: Service }) {
@@ -35,6 +36,26 @@ export default function ServiceLanding({ data }: { data: Service }) {
           </div>
         </RevealWrapper>
 
+        <RevealWrapper className="service-showcase">
+          <div className="service-showcase-art">
+            <ServiceVisual slug={data.slug} variant="b" />
+          </div>
+          <div className="service-showcase-copy">
+            <h2>{data.showcase.h}</h2>
+            <p>{data.showcase.p}</p>
+            <ul className="service-points">
+              {data.showcase.points.map((pt, i) => (
+                <li key={i}>
+                  <span className="service-point-check">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m20 6-11 11-5-5" /></svg>
+                  </span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </RevealWrapper>
+
         <RevealWrapper className="service-mistakes">
           <h2>Yleisimmät virheet</h2>
           <ul className="mistake-list">
@@ -55,6 +76,10 @@ export default function ServiceLanding({ data }: { data: Service }) {
               </div>
             ))}
           </div>
+        </RevealWrapper>
+
+        <RevealWrapper className="service-stats">
+          <StatStrip stats={data.stats} />
         </RevealWrapper>
 
         <RevealWrapper className="service-related">

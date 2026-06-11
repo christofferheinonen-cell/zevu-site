@@ -12,6 +12,8 @@ export interface Service {
   whyMatters: { h: string; p: string }
   doItems: { h: string; p: string }[]
   mistakes: string[]
+  showcase: { h: string; p: string; points: string[] }
+  stats: { prefix?: string; value: number; decimals?: number; suffix?: string; label: string }[]
   related: { label: string; href: string }[]
   faq: { q: string; a: string }[]
   ctaHeading: string
@@ -48,6 +50,16 @@ export const SERVICES: Service[] = [
       'Väärä kampanjatavoite — optimoidaan klikkejä myynnin sijaan',
       'Jatkuva uudelleenkäynnistys — jokainen muutos nollaa oppimisvaiheen',
       'Liian kapea yleisö — algoritmilta viedään tila löytää ostajat',
+    ],
+    showcase: {
+      h: 'Jatkuvaa optimointia, ei kertasäätöä',
+      p: 'Emme rakenna kampanjaa kerran ja unohda sitä. Testaamme mainosjoukkoja jatkuvasti, siirrämme budjettia voittajille ja sammutamme heikot ennen kuin ne syövät tuloksen.',
+      points: ['Viikoittainen optimointirytmi', 'Budjetti seuraa parhaita tuloksia', 'Selkeä raportti joka viikko'],
+    },
+    stats: [
+      { value: 3, suffix: '', label: 'tasoinen kampanjarakenne' },
+      { prefix: '+', value: 142, suffix: ' %', label: 'keskimääräinen kasvu / kk' },
+      { value: 4.8, decimals: 1, suffix: '×', label: 'ROAS-tavoite' },
     ],
     related: [
       { label: 'Pieni budjetti ei ole ongelma — väärä strategia on', href: '/blog/budjetti-ei-ratkaise' },
@@ -90,6 +102,16 @@ export const SERVICES: Service[] = [
       'Ei koukkua — kolme ensimmäistä sekuntia ratkaisevat, ja ne menevät hukkaan',
       'Vain yksi mainos — ilman variaatioita ei tiedä mikä toimisi paremmin',
     ],
+    showcase: {
+      h: 'Emme arvaa — me testaamme',
+      p: 'Jokaiseen kampanjaan tuotetaan useita versioita: eri koukut, formaatit ja kulmat. Data kertoo voittajan, ja siihen panostetaan.',
+      points: ['Kuva- ja videomainokset rinnakkain', 'Useita versioita samaan aikaan testissä', 'Voittaja skaalataan, muut karsitaan'],
+    },
+    stats: [
+      { value: 3, suffix: ' s', label: 'ratkaisee huomion' },
+      { value: 5, suffix: '+', label: 'variaatiota / kampanja' },
+      { value: 3.2, decimals: 1, suffix: ' %', label: 'keskimääräinen CTR' },
+    ],
     related: [
       { label: 'Video vai still-kuva? Kumpi voittaa vuonna 2026', href: '/blog/video-vs-kuva' },
       { label: 'Miksi Meta-mainoksesi ei tuo asiakkaita — 5 yleisintä virhettä', href: '/blog/miksi-meta-mainos-ei-toimi' },
@@ -131,6 +153,16 @@ export const SERVICES: Service[] = [
       'Dataa ei yhdistetä myyntiin — raportti näyttää hyvältä, tili tyhjenee',
       'Liian lyhyt tarkasteluväli — päätökset tehdään satunnaisesta kohinasta',
     ],
+    showcase: {
+      h: 'Jokainen luku johtaa päätökseen',
+      p: 'Raportti ei ole koriste. Jokainen mittari kertoo mitä tehdä: skaalataanko, säädetäänkö vai sammutetaanko. Yhdistämme datan myyntiin, emme pelkkiin klikkeihin.',
+      points: ['Mittarit yhdistetty todelliseen myyntiin', 'Selkeä suositus joka raportissa', 'Ei turhamaisuuslukuja'],
+    },
+    stats: [
+      { value: 5, suffix: '', label: 'mittaria joilla on väliä' },
+      { prefix: '+', value: 142, suffix: ' %', label: 'kasvu / kk' },
+      { value: 24, suffix: '/7', label: 'reaaliaikainen seuranta' },
+    ],
     related: [
       { label: 'Meta-pikseli & Conversions API', href: '/pikseli' },
       { label: 'Kuinka jakaa 1 000 €/kk mainosbudjetti', href: '/blog/mainosbudjetin-jakaminen' },
@@ -171,6 +203,16 @@ export const SERVICES: Service[] = [
       'Ei Conversions API:a — osa konversioista jää näkymättä iOS:n takia',
       'Väärät tapahtumat — algoritmi optimoi väärää toimintoa',
       'Tuplaseuranta — sama tapahtuma kirjautuu kahdesti ja vääristää datan',
+    ],
+    showcase: {
+      h: 'Mittaus, johon voi luottaa',
+      p: 'Pikseli ja Conversions API yhdessä varmistavat, että jokainen tapahtuma tallentuu — myös silloin kun selainseuranta estyy. Optimointi perustuu oikeaan dataan, ei arvaukseen.',
+      points: ['Pikseli + Conversions API rinnakkain', 'Tapahtumat kartoitettu myyntipolkuun', 'Varmennettu ja seurattu jatkuvasti'],
+    },
+    stats: [
+      { value: 100, suffix: ' %', label: 'tapahtumakattavuus' },
+      { value: 2, suffix: '', label: 'mittaustapaa: pikseli + CAPI' },
+      { value: 0, suffix: '', label: 'menetettyä konversiota' },
     ],
     related: [
       { label: 'Meta-pikseli puuttuu? Menetät rahaa joka päivä', href: '/blog/pikseli-puuttuu' },
