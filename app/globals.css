@@ -545,7 +545,8 @@ body::before{
 
 @media(max-width:860px){
   .nav-link,.nav-dd,.nav-btn{display:none;}
-  .nav-burger{display:inline-flex;}
+  .nav-burger{display:inline-flex;margin-left:0;}
+  .nav-wrap{width:calc(100vw - 20px);justify-content:space-between;gap:0;padding:8px 12px 8px 22px;border-radius:18px;}
   .wrap{padding-left:24px;padding-right:24px;}
   .hero{grid-template-columns:1fr;padding:110px 24px 60px;gap:40px;}
   .feat-grid,.perf-body,.cta-grid,.faq-grid{grid-template-columns:1fr;}
