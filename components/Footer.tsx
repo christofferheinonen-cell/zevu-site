@@ -1,4 +1,6 @@
 import FooterForm from './FooterForm'
+import Link from 'next/link'
+import { SERVICES } from '@/lib/services'
 
 export default function Footer() {
   return (
@@ -10,6 +12,12 @@ export default function Footer() {
               <div className="footer-logo">Zevu</div>
               <p className="footer-tagline">Meta mainonta, joka toimii. Suomalaisille yrityksille, jotka haluavat kasvaa.</p>
               <div className="footer-contact">Sähköposti: <a href="mailto:hei@zevu.fi">hei@zevu.fi</a></div>
+              <nav className="footer-links">
+                <div className="footer-links-title">Palvelut</div>
+                {SERVICES.map(s => (
+                  <Link key={s.slug} href={`/${s.slug}`} className="footer-link">{s.navLabel}</Link>
+                ))}
+              </nav>
             </div>
             <div>
               <div className="footer-form-title">Aloita tänään.</div>
