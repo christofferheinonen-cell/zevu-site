@@ -11,7 +11,7 @@ export default function Footer() {
             <div>
               <div className="footer-logo">Zevu</div>
               <p className="footer-tagline">Meta mainonta, joka toimii. Suomalaisille yrityksille, jotka haluavat kasvaa.</p>
-              <div className="footer-contact">Sähköposti: <a href="mailto:hei@zevu.fi">hei@zevu.fi</a></div>
+              <div className="footer-contact">Sähköposti: <a href="mailto:hey@zevu.cc">hey@zevu.cc</a></div>
               <nav className="footer-links">
                 <div className="footer-links-title">Palvelut</div>
                 {SERVICES.map(s => (
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-big">
-        <a href="mailto:hei@zevu.fi" className="footer-big-email">hei@zevu.fi</a>
+        <a href="mailto:hey@zevu.cc" className="footer-big-email">hey@zevu.cc</a>
       </div>
     </>
   )

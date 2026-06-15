@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -11,6 +12,7 @@ import {
   DEFAULT_DESCRIPTION,
   LOCALE,
   CONTACT_EMAIL,
+  GA_MEASUREMENT_ID,
   absoluteUrl,
 } from '@/lib/seo'
 
@@ -91,6 +93,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main style={{ position: 'relative', zIndex: 1 }}>{children}</main>
         <Footer />
+        {GA_MEASUREMENT_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+            </Script>
+          </>
+        ) : null}
       </body>
     </html>
   )

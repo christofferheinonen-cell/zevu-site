@@ -13,7 +13,11 @@ export const DEFAULT_TITLE = 'Zevu — Meta-mainonta, joka toimii'
 export const DEFAULT_DESCRIPTION =
   'Meta mainonta, joka toimii. Ilman arvailua, geneerisiä kuvia tai tuhlattua budjettia.'
 export const LOCALE = 'fi_FI'
-export const CONTACT_EMAIL = 'hei@zevu.fi'
+export const CONTACT_EMAIL = 'hey@zevu.cc'
+
+/** Google Analytics 4 measurement ID (overridable via NEXT_PUBLIC_GA_ID). */
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_ID ?? 'G-38XEQS2TW3'
 
 /** Build an absolute URL from a site-relative path. */
 export function absoluteUrl(path = '/'): string {
