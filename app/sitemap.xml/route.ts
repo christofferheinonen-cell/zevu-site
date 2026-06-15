@@ -34,7 +34,7 @@ export function GET() {
     })),
     ...getAllPosts().map(post => ({
       loc: absoluteUrl(`/blog/${post.slug}`),
-      lastmod: parseFiDate(post.date),
+      lastmod: post.publishedTime ? new Date(post.publishedTime) : parseFiDate(post.date),
       changefreq: 'monthly',
       priority: 0.6,
     })),

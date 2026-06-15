@@ -9,6 +9,12 @@ export interface Post {
   content: string
   image?: string
   /**
+   * ISO 8601 publish timestamp (e.g. "2026-06-15T08:37:00+03:00"). When set it
+   * drives the article's publishedTime / datePublished in metadata, JSON-LD and
+   * the sitemap. When omitted it falls back to midnight UTC of `date`.
+   */
+  publishedTime?: string
+  /**
    * Whether the post is listed on the /blog index page. Defaults to false
    * (hidden) so newly added articles stay off the Blogi page until explicitly
    * set to true. Hidden posts are still live by direct URL and in the sitemap.

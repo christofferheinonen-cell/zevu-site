@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     path: `/blog/${post.slug}`,
     type: 'article',
     images: post.image ? [post.image] : undefined,
-    publishedTime: parseFiDate(post.date).toISOString(),
+    publishedTime: post.publishedTime ?? parseFiDate(post.date).toISOString(),
   })
 }
 
@@ -41,7 +41,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const prev = idx > 0 ? listed[idx - 1] : undefined
   const next = idx >= 0 && idx < listed.length - 1 ? listed[idx + 1] : undefined
 
-  const published = parseFiDate(post.date).toISOString()
+  const published = post.publishedTime ?? parseFiDate(post.date).toISOString()
   const articleLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
