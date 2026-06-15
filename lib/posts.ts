@@ -1,3 +1,10 @@
+import { batch1 } from './blog/batch-1'
+import { batch2 } from './blog/batch-2'
+import { batch3 } from './blog/batch-3'
+import { batch4 } from './blog/batch-4'
+import { batch5 } from './blog/batch-5'
+import { batch6 } from './blog/batch-6'
+
 export interface Post {
   slug: string
   title: string
@@ -112,6 +119,12 @@ export const POSTS: Post[] = [
       <p>Meta-mainonta toimii B2B-yrityksille, mutta tehokkuus vaihtelee toimialan mukaan. Parhaiten se soveltuu paikallisille B2B-palveluille kuten rakennusala, siivous ja tilitoimistot. Korkeakatteisissa tai monimutkaisten päätösprosessien B2B-myynneissä LinkedIn-mainonta on usein tehokkaampi vaihtoehto.</p>
     `
   },
+  ...batch1,
+  ...batch2,
+  ...batch3,
+  ...batch4,
+  ...batch5,
+  ...batch6,
 ]
 
 export function getAllPosts(): Post[] {
