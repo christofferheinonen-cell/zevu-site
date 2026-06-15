@@ -62,8 +62,8 @@ export const SERVICES: Service[] = [
       { value: 4.8, decimals: 1, suffix: '×', label: 'ROAS-tavoite' },
     ],
     related: [
-      { label: 'Pieni budjetti ei ole ongelma — väärä strategia on', href: '/blog/budjetti-ei-ratkaise' },
-      { label: 'Kuinka jakaa 1 000 €/kk mainosbudjetti', href: '/blog/mainosbudjetin-jakaminen' },
+      { label: 'Luovat mainokset jotka tuottavat tulosta', href: '/mainokset' },
+      { label: 'Miksi Meta (Facebook) mainokset eivät tuota mitään?', href: '/blog/miksi-meta-facebook-mainokset-eivat-tuota' },
     ],
     faq: [
       { q: 'Tarvitsenko oman Meta-mainostilin?', a: 'Kyllä. Mainostili pysyy aina sinun omistuksessasi — me toimimme sen kautta, mutta data ja pääsy ovat sinun.' },
@@ -113,8 +113,8 @@ export const SERVICES: Service[] = [
       { value: 3.2, decimals: 1, suffix: ' %', label: 'keskimääräinen CTR' },
     ],
     related: [
-      { label: 'Video vai still-kuva? Kumpi voittaa vuonna 2026', href: '/blog/video-vs-kuva' },
-      { label: 'Miksi Meta-mainoksesi ei tuo asiakkaita — 5 yleisintä virhettä', href: '/blog/miksi-meta-mainos-ei-toimi' },
+      { label: 'Meta Ads Manager — kampanjarakenne ja optimointi', href: '/meta-ads-manager' },
+      { label: 'Miksi Meta (Facebook) mainokset eivät tuota mitään?', href: '/blog/miksi-meta-facebook-mainokset-eivat-tuota' },
     ],
     faq: [
       { q: 'Kumpi on parempi, kuvamainos vai videomainos?', a: 'Riippuu tavoitteesta. Videomainos rakentaa luottamusta ja toimii uusasiakashankinnassa, kuvamainos taas on nopea ja tehokas tarjouksissa. Yleensä testaamme molempia.' },
@@ -165,7 +165,7 @@ export const SERVICES: Service[] = [
     ],
     related: [
       { label: 'Meta-pikseli & Conversions API', href: '/pikseli' },
-      { label: 'Kuinka jakaa 1 000 €/kk mainosbudjetti', href: '/blog/mainosbudjetin-jakaminen' },
+      { label: 'Meta Ads Manager — kampanjarakenne ja optimointi', href: '/meta-ads-manager' },
     ],
     faq: [
       { q: 'Mikä on hyvä ROAS?', a: 'Se riippuu katteestasi. Verkkokaupalle 3–4× voi olla erinomainen, toiselle 2× riittää voitolliseen. Tärkeintä on tietää oma kannattavuusrajasi.' },
@@ -215,7 +215,7 @@ export const SERVICES: Service[] = [
       { value: 0, suffix: '', label: 'menetettyä konversiota' },
     ],
     related: [
-      { label: 'Meta-pikseli puuttuu? Menetät rahaa joka päivä', href: '/blog/pikseli-puuttuu' },
+      { label: 'Miksi Meta (Facebook) mainokset eivät tuota mitään?', href: '/blog/miksi-meta-facebook-mainokset-eivat-tuota' },
       { label: 'Raportointi, joka kertoo mitä tehdä seuraavaksi', href: '/raportointi' },
     ],
     faq: [

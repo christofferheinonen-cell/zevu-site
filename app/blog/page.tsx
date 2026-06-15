@@ -1,4 +1,4 @@
-import { getAllPosts } from '@/lib/posts'
+import { getListedPosts } from '@/lib/posts'
 import BlogList from '@/components/BlogList'
 import RevealWrapper from '@/components/RevealWrapper'
 import { buildMetadata } from '@/lib/seo'
@@ -11,7 +11,7 @@ export const metadata = buildMetadata({
 })
 
 export default function BlogPage() {
-  const posts = getAllPosts()
+  const posts = getListedPosts()
   return (
     <main>
       <div className="wrap">

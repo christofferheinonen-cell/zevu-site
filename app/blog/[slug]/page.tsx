@@ -1,4 +1,4 @@
-import { getAllPosts, getPostBySlug } from '@/lib/posts'
+import { getAllPosts, getListedPosts, getPostBySlug } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import RevealWrapper from '@/components/RevealWrapper'
@@ -35,10 +35,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
-  const posts = getAllPosts()
-  const idx = posts.findIndex(p => p.slug === slug)
-  const prev = posts[idx - 1]
-  const next = posts[idx + 1]
+  // Navigation only traverses listed posts; hidden posts get no prev/next.
+  const listed = getListedPosts()
+  const idx = listed.findIndex(p => p.slug === slug)
+  const prev = idx > 0 ? listed[idx - 1] : undefined
+  const next = idx >= 0 && idx < listed.length - 1 ? listed[idx + 1] : undefined
 
   const published = parseFiDate(post.date).toISOString()
   const articleLd = {
