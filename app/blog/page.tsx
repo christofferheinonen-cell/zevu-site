@@ -1,6 +1,14 @@
 import { getAllPosts } from '@/lib/posts'
 import BlogList from '@/components/BlogList'
 import RevealWrapper from '@/components/RevealWrapper'
+import { buildMetadata } from '@/lib/seo'
+
+export const metadata = buildMetadata({
+  path: '/blog',
+  title: 'Blogi — Meta-mainonnan parhaat käytännöt | Zevu',
+  description:
+    'Vinkkejä, strategioita ja tapaustutkimuksia Meta-mainonnasta suomalaisille yrittäjille.',
+})
 
 export default function BlogPage() {
   const posts = getAllPosts()

@@ -1,13 +1,14 @@
-import type { Metadata } from 'next'
 import ServiceLanding from '@/components/ServiceLanding'
 import { getService } from '@/lib/services'
+import { buildMetadata } from '@/lib/seo'
 
 const service = getService('pikseli')!
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: service.metaTitle,
   description: service.metaDescription,
-}
+  path: `/${service.slug}`,
+})
 
 export default function Page() {
   return <ServiceLanding data={service} />

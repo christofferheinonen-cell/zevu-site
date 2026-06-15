@@ -3,6 +3,14 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import RevealWrapper from '@/components/RevealWrapper'
 import ArticleCta from '@/components/ArticleCta'
+import JsonLd from '@/components/JsonLd'
+import {
+  buildMetadata,
+  absoluteUrl,
+  parseFiDate,
+  SITE_NAME,
+  CONTACT_EMAIL,
+} from '@/lib/seo'
 
 export async function generateStaticParams() {
   return getAllPosts().map(p => ({ slug: p.slug }))
@@ -12,7 +20,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) return {}
-  return { title: `${post.title} — Zevu`, description: post.excerpt }
+  return buildMetadata({
+    title: `${post.title} — Zevu`,
+    description: post.excerpt,
+    path: `/blog/${post.slug}`,
+    type: 'article',
+    images: post.image ? [post.image] : undefined,
+    publishedTime: parseFiDate(post.date).toISOString(),
+  })
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,8 +40,39 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const prev = posts[idx - 1]
   const next = posts[idx + 1]
 
+  const published = parseFiDate(post.date).toISOString()
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: published,
+    dateModified: published,
+    inLanguage: 'fi-FI',
+    mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
+    ...(post.image ? { image: absoluteUrl(post.image) } : {}),
+    author: { '@type': 'Organization', name: SITE_NAME, email: CONTACT_EMAIL },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      logo: { '@type': 'ImageObject', url: absoluteUrl('/icon') },
+    },
+    articleSection: post.cats,
+  }
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Etusivu', item: absoluteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Blogi', item: absoluteUrl('/blog') },
+      { '@type': 'ListItem', position: 3, name: post.title, item: absoluteUrl(`/blog/${post.slug}`) },
+    ],
+  }
+
   return (
     <main>
+      <JsonLd data={articleLd} />
+      <JsonLd data={breadcrumbLd} />
       <div className="wrap">
         <RevealWrapper className="single-hero">
           <Link href="/blog" className="single-back">← Takaisin blogiin</Link>
