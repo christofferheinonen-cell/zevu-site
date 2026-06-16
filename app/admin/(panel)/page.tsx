@@ -5,13 +5,13 @@ import { articleStatus, fiDateTime } from '@/lib/admin-format'
 
 export const dynamic = 'force-dynamic'
 
-export default function AdminHome() {
+export default async function AdminHome() {
   const now = new Date()
-  const posts = getAllPosts()
+  const posts = await getAllPosts()
   const counts = { published: 0, scheduled: 0, hidden: 0 }
   for (const p of posts) counts[articleStatus(p, now)]++
 
-  const leads = getLeads().sort(
+  const leads = (await getLeads()).sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   )
 

@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
       ? body.satisfaction
       : null
 
-  const lead = appendLead({
+  const lead = await appendLead({
     source: String(body.source ?? '').trim().slice(0, 300),
     company: String(body.company ?? '').trim().slice(0, 200),
     industry: String(body.industry ?? '').trim().slice(0, 200),

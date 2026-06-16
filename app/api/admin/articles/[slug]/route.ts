@@ -15,7 +15,7 @@ function str(v: unknown, max: number): string {
 
 export async function PUT(req: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  if (!getPostBySlug(slug)) {
+  if (!(await getPostBySlug(slug))) {
     return NextResponse.json({ error: 'not_found' }, { status: 404 })
   }
 
@@ -50,14 +50,14 @@ export async function PUT(req: Request, { params }: { params: Promise<{ slug: st
     showOnBlog,
   }
 
-  const saved = saveOverride(slug, patch)
+  const saved = await saveOverride(slug, patch)
   revalidateArticle(slug)
   return NextResponse.json({ ok: true, updatedAt: saved.updatedAt })
 }
 
 export async function DELETE(_req: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  clearOverride(slug)
+  await clearOverride(slug)
   revalidateArticle(slug)
   return NextResponse.json({ ok: true })
 }

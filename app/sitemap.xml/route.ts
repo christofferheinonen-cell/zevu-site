@@ -20,8 +20,9 @@ function escapeXml(value: string): string {
     .replace(/'/g, '&apos;')
 }
 
-export function GET() {
+export async function GET() {
   const now = new Date()
+  const posts = await getAllPosts()
 
   const entries: Entry[] = [
     { loc: absoluteUrl('/'), lastmod: now, changefreq: 'weekly', priority: 1 },
@@ -32,7 +33,7 @@ export function GET() {
       changefreq: 'monthly',
       priority: 0.8,
     })),
-    ...getAllPosts().map(post => ({
+    ...posts.map(post => ({
       loc: absoluteUrl(`/blog/${post.slug}`),
       lastmod: post.publishedTime ? new Date(post.publishedTime) : parseFiDate(post.date),
       changefreq: 'monthly',

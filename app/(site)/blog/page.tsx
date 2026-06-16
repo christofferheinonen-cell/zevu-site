@@ -14,8 +14,8 @@ export const metadata = buildMetadata({
     'Vinkkejä, strategioita ja tapaustutkimuksia Meta-mainonnasta suomalaisille yrittäjille.',
 })
 
-export default function BlogPage() {
-  const posts = getListedPosts()
+export default async function BlogPage() {
+  const posts = await getListedPosts()
   return (
     <main>
       <div className="wrap">

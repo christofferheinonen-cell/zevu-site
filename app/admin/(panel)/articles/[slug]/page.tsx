@@ -7,10 +7,10 @@ export const dynamic = 'force-dynamic'
 
 export default async function EditArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
   if (!post) notFound()
 
-  const override = getOverride(slug)
+  const override = await getOverride(slug)
 
   return (
     <ArticleEditor

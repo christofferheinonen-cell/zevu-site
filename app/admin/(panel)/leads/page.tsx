@@ -3,8 +3,8 @@ import { fiDateTime } from '@/lib/admin-format'
 
 export const dynamic = 'force-dynamic'
 
-export default function LeadsPage() {
-  const leads = getLeads().sort(
+export default async function LeadsPage() {
+  const leads = (await getLeads()).sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   )
 

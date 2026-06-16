@@ -1,5 +1,5 @@
 import { parseFiDate } from './seo'
-import { getOverrides } from './articles'
+import { getOverrides, type ArticleOverride } from './articles'
 import { batch1 } from './blog/batch-1'
 import { batch2 } from './blog/batch-2'
 import { batch3 } from './blog/batch-3'
@@ -133,7 +133,7 @@ export const POSTS: Post[] = [
 ]
 
 /** Apply any saved editor overrides on top of a base post. */
-function withOverrides(post: Post, overrides = getOverrides()): Post {
+function withOverrides(post: Post, overrides: Record<string, ArticleOverride>): Post {
   const o = overrides[post.slug]
   if (!o) return post
   // Drop bookkeeping fields and undefined values so they never clobber the base.
@@ -142,8 +142,8 @@ function withOverrides(post: Post, overrides = getOverrides()): Post {
   return { ...post, ...clean }
 }
 
-export function getAllPosts(): Post[] {
-  const overrides = getOverrides()
+export async function getAllPosts(): Promise<Post[]> {
+  const overrides = await getOverrides()
   return POSTS.map(p => withOverrides(p, overrides))
 }
 
@@ -162,15 +162,17 @@ export function isPublished(post: Post, now: Date = new Date()): boolean {
  * publish date arrives, unless `showOnBlog` forces it true (always) or
  * false (never). Sorted newest-first.
  */
-export function getListedPosts(now: Date = new Date()): Post[] {
-  const overrides = getOverrides()
+export async function getListedPosts(now: Date = new Date()): Promise<Post[]> {
+  const overrides = await getOverrides()
   return POSTS
     .map(p => withOverrides(p, overrides))
     .filter(p => p.showOnBlog ?? isPublished(p, now))
     .sort((a, b) => getPublishDate(b).getTime() - getPublishDate(a).getTime())
 }
 
-export function getPostBySlug(slug: string): Post | undefined {
+export async function getPostBySlug(slug: string): Promise<Post | undefined> {
   const post = POSTS.find(p => p.slug === slug)
-  return post ? withOverrides(post) : undefined
+  if (!post) return undefined
+  const overrides = await getOverrides()
+  return withOverrides(post, overrides)
 }

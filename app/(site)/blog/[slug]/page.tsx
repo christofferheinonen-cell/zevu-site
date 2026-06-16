@@ -17,12 +17,13 @@ import {
 export const revalidate = 3600
 
 export async function generateStaticParams() {
-  return getAllPosts().map(p => ({ slug: p.slug }))
+  const posts = await getAllPosts()
+  return posts.map(p => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
   if (!post) return {}
   return buildMetadata({
     title: `${post.title} — Zevu`,
@@ -36,11 +37,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
   if (!post) notFound()
 
   // Navigation only traverses listed posts; hidden posts get no prev/next.
-  const listed = getListedPosts()
+  const listed = await getListedPosts()
   const idx = listed.findIndex(p => p.slug === slug)
   const prev = idx > 0 ? listed[idx - 1] : undefined
   const next = idx >= 0 && idx < listed.length - 1 ? listed[idx + 1] : undefined

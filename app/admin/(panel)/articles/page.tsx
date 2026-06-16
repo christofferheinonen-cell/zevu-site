@@ -5,10 +5,10 @@ import { getOverrides } from '@/lib/articles'
 
 export const dynamic = 'force-dynamic'
 
-export default function ArticlesPage() {
+export default async function ArticlesPage() {
   const now = new Date()
-  const overrides = getOverrides()
-  const rows = getAllPosts()
+  const [overrides, posts] = await Promise.all([getOverrides(), getAllPosts()])
+  const rows = posts
     .map(p => ({
       slug: p.slug,
       title: p.title,

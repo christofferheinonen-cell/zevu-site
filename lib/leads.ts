@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
+import { getRedis } from './redis'
 
 export interface Lead {
   id: string
@@ -16,9 +17,13 @@ export interface Lead {
   phone: string
 }
 
+// Production (Vercel) runs on a read-only filesystem, so leads are stored in
+// Redis (Vercel KV / Upstash) there. Local dev falls back to a JSON file so
+// it keeps working without that integration configured.
+const REDIS_KEY = 'zevu:leads'
 const FILE = path.join(process.cwd(), 'data', 'leads.json')
 
-function readAll(): Lead[] {
+function readFileLeads(): Lead[] {
   try {
     return JSON.parse(fs.readFileSync(FILE, 'utf-8'))
   } catch {
@@ -26,19 +31,31 @@ function readAll(): Lead[] {
   }
 }
 
-export function getLeads(): Lead[] {
-  return readAll()
+function writeFileLeads(leads: Lead[]): void {
+  fs.mkdirSync(path.dirname(FILE), { recursive: true })
+  fs.writeFileSync(FILE, JSON.stringify(leads, null, 2))
 }
 
-export function appendLead(input: Omit<Lead, 'id' | 'createdAt'>): Lead {
+export async function getLeads(): Promise<Lead[]> {
+  const redis = getRedis()
+  if (!redis) return readFileLeads()
+  const raw = await redis.lrange<string>(REDIS_KEY, 0, -1)
+  return raw.map(r => JSON.parse(r) as Lead)
+}
+
+export async function appendLead(input: Omit<Lead, 'id' | 'createdAt'>): Promise<Lead> {
   const lead: Lead = {
     id: crypto.randomUUID(),
     createdAt: new Date().toISOString(),
     ...input,
   }
-  const leads = readAll()
-  leads.push(lead)
-  fs.mkdirSync(path.dirname(FILE), { recursive: true })
-  fs.writeFileSync(FILE, JSON.stringify(leads, null, 2))
+  const redis = getRedis()
+  if (redis) {
+    await redis.rpush(REDIS_KEY, JSON.stringify(lead))
+  } else {
+    const leads = readFileLeads()
+    leads.push(lead)
+    writeFileLeads(leads)
+  }
   return lead
 }
