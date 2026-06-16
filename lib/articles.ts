@@ -37,24 +37,16 @@ function writeFileOverrides(all: Record<string, ArticleOverride>): void {
 export async function getOverrides(): Promise<Record<string, ArticleOverride>> {
   const redis = getRedis()
   if (!redis) return readFileOverrides()
-  const raw = await redis.hgetall<Record<string, string>>(REDIS_KEY)
-  if (!raw) return {}
-  const result: Record<string, ArticleOverride> = {}
-  for (const [slug, value] of Object.entries(raw)) {
-    try {
-      result[slug] = JSON.parse(value)
-    } catch {
-      // skip a malformed entry rather than failing the whole read
-    }
-  }
-  return result
+  // The Upstash client deserializes hash values automatically.
+  const raw = await redis.hgetall<Record<string, ArticleOverride>>(REDIS_KEY)
+  return raw ?? {}
 }
 
 export async function getOverride(slug: string): Promise<ArticleOverride | undefined> {
   const redis = getRedis()
   if (!redis) return readFileOverrides()[slug]
-  const raw = await redis.hget<string>(REDIS_KEY, slug)
-  return raw ? JSON.parse(raw) : undefined
+  const value = await redis.hget<ArticleOverride>(REDIS_KEY, slug)
+  return value ?? undefined
 }
 
 export async function saveOverride(slug: string, patch: ArticleOverride): Promise<ArticleOverride> {
@@ -62,7 +54,8 @@ export async function saveOverride(slug: string, patch: ArticleOverride): Promis
   const next: ArticleOverride = { ...existing, ...patch, updatedAt: new Date().toISOString() }
   const redis = getRedis()
   if (redis) {
-    await redis.hset(REDIS_KEY, { [slug]: JSON.stringify(next) })
+    // Pass the object directly; the Upstash client serializes it.
+    await redis.hset(REDIS_KEY, { [slug]: next })
   } else {
     const all = readFileOverrides()
     all[slug] = next

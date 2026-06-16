@@ -39,8 +39,9 @@ function writeFileLeads(leads: Lead[]): void {
 export async function getLeads(): Promise<Lead[]> {
   const redis = getRedis()
   if (!redis) return readFileLeads()
-  const raw = await redis.lrange<string>(REDIS_KEY, 0, -1)
-  return raw.map(r => JSON.parse(r) as Lead)
+  // The Upstash client deserializes JSON automatically, so we get Lead objects
+  // back directly — no manual JSON.parse (which would double-decode and throw).
+  return await redis.lrange<Lead>(REDIS_KEY, 0, -1)
 }
 
 export async function appendLead(input: Omit<Lead, 'id' | 'createdAt'>): Promise<Lead> {
@@ -51,7 +52,8 @@ export async function appendLead(input: Omit<Lead, 'id' | 'createdAt'>): Promise
   }
   const redis = getRedis()
   if (redis) {
-    await redis.rpush(REDIS_KEY, JSON.stringify(lead))
+    // Pass the object directly; the Upstash client serializes it.
+    await redis.rpush(REDIS_KEY, lead)
   } else {
     const leads = readFileLeads()
     leads.push(lead)

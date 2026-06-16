@@ -23,17 +23,23 @@ export async function POST(req: NextRequest) {
       ? body.satisfaction
       : null
 
-  const lead = await appendLead({
-    source: String(body.source ?? '').trim().slice(0, 300),
-    company: String(body.company ?? '').trim().slice(0, 200),
-    industry: String(body.industry ?? '').trim().slice(0, 200),
-    runsAds,
-    budget: String(body.budget ?? '').trim().slice(0, 100),
-    satisfaction,
-    name,
-    email,
-    phone: String(body.phone ?? '').trim().slice(0, 50),
-  })
-
-  return NextResponse.json({ ok: true, id: lead.id })
+  try {
+    const lead = await appendLead({
+      source: String(body.source ?? '').trim().slice(0, 300),
+      company: String(body.company ?? '').trim().slice(0, 200),
+      industry: String(body.industry ?? '').trim().slice(0, 200),
+      runsAds,
+      budget: String(body.budget ?? '').trim().slice(0, 100),
+      satisfaction,
+      name,
+      email,
+      phone: String(body.phone ?? '').trim().slice(0, 50),
+    })
+    return NextResponse.json({ ok: true, id: lead.id })
+  } catch (err) {
+    // Surface the real cause in the Vercel function logs (e.g. a read-only
+    // filesystem write when no Redis/KV store is configured).
+    console.error('[leads] failed to store lead:', err)
+    return NextResponse.json({ error: 'storage_failed' }, { status: 500 })
+  }
 }
