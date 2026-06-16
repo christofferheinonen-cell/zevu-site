@@ -10,6 +10,9 @@ out/
 .env.local
 .env.*.local
 
+# local data (contains real customer PII, never commit)
+/data/
+
 # misc
 .DS_Store
 *.pem
