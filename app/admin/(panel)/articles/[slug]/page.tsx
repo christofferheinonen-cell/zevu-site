@@ -26,6 +26,8 @@ export default async function EditArticlePage({ params }: { params: Promise<{ sl
         date: post.date,
         publishedTime: post.publishedTime ?? '',
         showOnBlog: post.showOnBlog === true ? 'show' : post.showOnBlog === false ? 'hide' : 'auto',
+        image: post.image ?? '',
+        grad: post.grad,
       }}
     />
   )

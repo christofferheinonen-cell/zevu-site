@@ -48,6 +48,8 @@ export async function PUT(req: Request, { params }: { params: Promise<{ slug: st
     date: str(body.date, 20).trim(),
     publishedTime: str(body.publishedTime, 40).trim() || undefined,
     showOnBlog,
+    image: body.image ? str(body.image, 500).trim() : undefined,
+    grad: body.grad ? str(body.grad, 30).trim() : undefined,
   }
 
   const saved = await saveOverride(slug, patch)
