@@ -17,14 +17,18 @@ export const batch6: Post[] = [
       <h2>Mistä lookalike syntyy: lähdeyleisö</h2>
       <p>Lookalike rakennetaan aina jonkin lähteen pohjalta. Lähde voi olla asiakaslista jonka lataat Metaan, sivustosi kävijät jotka pikseli on kerännyt, ihmiset jotka ovat täyttäneet lomakkeen, tai vaikka videosi katsojat. Meta tutkii mitä yhteistä näillä ihmisillä on ja etsii samankaltaisia muiden suomalaisten joukosta.</p>
       <p>Lähteen laatu ratkaisee kaiken. Jos annat Metalle listan parhaista maksavista asiakkaistasi, saat parempaa jälkeä kuin jos annat listan kaikista jotka ovat joskus tykänneet julkaisustasi. Verkkokaupalle paras lähde on usein ostaneiden asiakkaiden lista. Palveluyritykselle se voi olla lista ihmisistä jotka ovat oikeasti varanneet ajan, eivät pelkkiä lomakkeen täyttäjiä.</p>
+      <p>Pieni mutta laadukas lähde voittaa ison ja sekalaisen. Sata oikeaa maksanutta asiakasta antaa Metalle selkeämmän kuvan kuin tuhat satunnaista sivustokävijää, joista suuri osa poistui sekunnissa. Mieti siis ennen kaikkea kenestä haluat lisää, ja rakenna lähde juuri heistä.</p>
 
       <h2>Miten rakennat sellaisen</h2>
       <p>Lookalike luodaan Meta Ads Managerin yleisöt-osiossa. Valitset lähteen, valitset maan eli Suomen, ja Meta rakentaa yleisön. Tämän jälkeen käytät sitä mainosjoukon kohdentamisessa samalla tavalla kuin mitä tahansa muuta yleisöä.</p>
+      <p>Voit säätää kuinka tiukasti samankaltaisia ihmisiä Meta etsii. Tiukempi yleisö muistuttaa lähdettä enemmän mutta on pienempi, väljempi yleisö on suurempi mutta hajanaisempi. Aloita tiukasta päästä, koska se osuu lähimmäs nykyisiä parhaita asiakkaitasi. Jos yleisö osoittautuu liian pieneksi budjettiisi nähden, väljennä asteittain ja seuraa muuttuvatko tulokset.</p>
       <p>Käytännön esimerkki: kauneushoitola lataa listan asiakkaista jotka ovat varanneet ajan viimeisen vuoden aikana. Meta etsii Suomesta ihmisiä jotka muistuttavat heitä iältään, kiinnostuksiltaan ja käyttäytymiseltään. Hoitola mainostaa tälle yleisölle samaa tarjousta jolla se on jo saanut varauksia. Tulokset ovat tyypillisesti parempia kuin laajalla arvaukseen perustuvalla kohdentamisella.</p>
+      <p>Toinen esimerkki: verkkokauppa rakentaa lookaliken viimeisen puolen vuoden ostajista ja jättää tarkoituksella pois ihmiset jotka palauttivat tilauksensa. Näin Meta oppii etsimään juuri tyytyväisiä ostajia, ei kaikkia jotka joskus tilasivat.</p>
 
       <h2>Milloin lookalike kannattaa, milloin ei</h2>
       <p>Lookalike toimii parhaiten kun sinulla on riittävästi laadukasta dataa lähteeksi. Aivan uudella yrityksellä jolla on kourallinen asiakkaita ei vielä ole tarpeeksi pohjaa, jolloin tavallinen kiinnostuksiin perustuva kohdentaminen on parempi alku. Kun asiakaskunta kasvaa, lookalike alkaa toimia.</p>
-      <p>Paikalliselle yritykselle on yksi sudenkuoppa: lookalike etsii samankaltaisia koko Suomesta. Jos olet ravintola Tampereella, sinun pitää rajata yleisö maantieteellisesti, muuten mainostat samankaltaisille ihmisille Helsingissä eikä se hyödytä sinua.</p>
+      <p>Paikalliselle yritykselle on yksi sudenkuoppa: lookalike etsii samankaltaisia koko Suomesta. Jos olet ravintola Tampereella, sinun pitää rajata yleisö maantieteellisesti, muuten mainostat samankaltaisille ihmisille Helsingissä eikä se hyödytä sinua. Aseta siis aina sekä lookalike-yleisö että maantieteellinen rajaus, niin tavoitat samankaltaisia ihmisiä omalta alueeltasi.</p>
+      <p>Yleisin virhe on rakentaa lookalike heikosta lähteestä ja ihmetellä miksi tulokset ovat laihat. Jos lähteenä on lista kaikista sivuston kävijöistä, Meta etsii samankaltaisia satunnaisille selaajille, ei ostajille. Vaihda lähde laadukkaampaan ja yleisön taso muuttuu. Toinen virhe on jättää lookalike paikalleen vuodeksi: asiakaslistaan perustuva lähde vanhenee, ja päivittämätön lähde ohjaa Metaa vanhentuneella tiedolla.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Tarvitsenko paljon asiakkaita ennen kuin lookalike toimii?</h3>
@@ -32,9 +36,11 @@ export const batch6: Post[] = [
       <h3>Voinko käyttää sähköpostilistaa lähteenä?</h3>
       <p>Kyllä. Lataat asiakaslistasi Metaan, ja se yhdistää osoitteet käyttäjiin. Mitä laadukkaampi lista, sitä parempi tulos. Käytä mieluummin maksaneiden asiakkaiden listaa kuin uutiskirjeen tilaajia, jos haluat löytää ostajia.</p>
       <h3>Pitääkö lookalike-yleisöä päivittää?</h3>
-      <p>Sivustoon ja pikseliin perustuvat lähteet päivittyvät automaattisesti. Asiakaslistaan perustuvan lähteen kannattaa päivittää ajoittain, jotta uusimmat asiakkaat ovat mukana.</p>
+      <p>Sivustoon ja pikseliin perustuvat lähteet päivittyvät automaattisesti. Asiakaslistaan perustuvan lähteen kannattaa päivittää ajoittain, jotta uusimmat asiakkaat ovat mukana ja vanhentunut tieto ei ohjaa Metaa väärään suuntaan.</p>
       <h3>Toimiiko lookalike paikalliselle yritykselle?</h3>
       <p>Toimii, mutta muista rajata se maantieteellisesti omalle toiminta-alueellesi. Muuten tavoitat samankaltaisia ihmisiä väärältä paikkakunnalta.</p>
+      <h3>Kannattaako tehdä lookalike eri lähteistä?</h3>
+      <p>Kannattaa testata. Voit rakentaa yhden ostajista, toisen sivuston kävijöistä ja kolmannen lomakkeen täyttäjistä, ja katsoa kumpi tuo parhaita tuloksia. Eri lähteet löytävät hieman erilaisia ihmisiä, joten vertailu kannattaa.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -58,26 +64,32 @@ export const batch6: Post[] = [
       <h2>Ennen ensimmäistäkään euroa: seuranta kuntoon</h2>
       <p>Meta-mainonta verkkokaupalle on arvailua ilman pikseliä. Meta Pixel on pieni koodinpätkä joka asennetaan verkkokauppaan ja joka kertoo Metalle mitä sivustolla tapahtuu: kuka katsoi tuotetta, kuka lisäsi ostoskoriin, kuka osti ja millä summalla. Ilman tätä tietoa Meta ei osaa optimoida mainontaa myynnin suuntaan, eikä sinä näe paljonko mainonta tuotti.</p>
       <p>Useimmat verkkokauppa-alustat kuten Shopify, WooCommerce ja monet muut tarjoavat valmiin integraation pikselille. Tärkeintä on varmistaa että ostotapahtuma kirjautuu oikein ja että ostoksen arvo siirtyy mukana. Testaa tämä tekemällä koeosto tai käyttämällä Metan testaustyökalua ennen kuin laitat rahaa mainontaan. Jos seuranta on rikki, kaikki muu on hukkaan heitettyä.</p>
+      <p>Tarkista samalla että pikseli mittaa koko polun, ei vain lopullista ostoa: tuotekatselut, koriin lisäykset ja kassan aloitukset. Nämä välivaiheet ovat Metalle arvokkaita signaaleja, joiden avulla se oppii kuka on todennäköinen ostaja jo ennen ostohetkeä. Jos vain osto mitataan, Meta saa dataa hitaammin ja kampanja oppii hitaammin.</p>
 
       <h2>Mitä myydä ja kenelle: aloita siitä mikä jo myy</h2>
       <p>Älä mainosta koko valikoimaa kerralla. Katso mitkä tuotteet myyvät jo orgaanisesti hyvin, mitkä tuotteet ihmiset ymmärtävät heti ja mitkä eivät vaadi pitkää selittämistä. Nämä ovat parhaita ensimmäisiä mainostettavia. Tuote joka kaipaa kymmenen minuutin perehtymistä ennen ostoa on vaikea myydä syötteessä sekunnissa.</p>
       <p>Hinta vaikuttaa myös strategiaan. Edullinen tuote voidaan myydä suoraan kylmälle yleisölle, koska ostopäätös on helppo. Kalliimpi tuote vaatii yleensä useamman kosketuksen: ihminen näkee mainoksen, käy katsomassa, harkitsee, ja ostaa vasta myöhemmin. Tämä vaikuttaa siihen miten kampanja kannattaa rakentaa.</p>
+      <p>Mieti myös mikä tuote houkuttelee uuden asiakkaan ensimmäiseen ostoon. Verkkokaupan kannattavuus syntyy usein vasta toisesta ja kolmannesta tilauksesta, joten edullinen ja helppo sisäänheittotuote voi olla parempi ensimmäinen mainostettava kuin kallein lippulaivatuote. Kun asiakas on kerran ostanut ja ollut tyytyväinen, hän palaa pienemmällä houkuttelulla.</p>
 
       <h2>Ensimmäinen kampanja: pidä se yksinkertaisena</h2>
       <p>Houkutus on rakentaa heti monimutkainen järjestelmä. Älä. Aloita yhdellä kampanjalla joka optimoidaan ostoja kohti. Anna kohdentamisen olla melko väljä ja luota siihen että Meta löytää ostajat datan perusteella, kun pikseli toimii. Tee kaksi tai kolme erilaista mainosta samaan kampanjaan, jotta näet mikä materiaali toimii.</p>
       <p>Anna kampanjan käydä rauhassa muutama päivä ennen kuin teet johtopäätöksiä. Meta tarvitsee aikaa oppiakseen kuka ostaa. Jos sammutat ja säädät kampanjaa joka päivä, et anna sille mahdollisuutta löytää oikeita ihmisiä. Tämä on yleisin syy miksi verkkokaupan ensimmäinen kampanja epäonnistuu: kärsimättömyys.</p>
+      <p>Vältä myös pilkkomasta budjettia liian moneen mainosjoukkoon heti alussa. Kun raha hajaantuu, jokainen mainosjoukko kerää niin vähän ostoja ettei Meta opi mistään niistä kunnolla. Yksi kunnolla rahoitettu kampanja oppii nopeammin kuin viisi nälkäistä.</p>
 
       <h2>Mainosmateriaali: tuote käytössä, ei valkoisella taustalla</h2>
       <p>Verkkokaupan mainoksessa toimii harvoin pelkkä studiokuva valkoisella taustalla. Ihmiset reagoivat tuotteeseen käytössä, oikeassa ympäristössä, oikean ihmisen kanssa. Vaatekaupalla se tarkoittaa ihmistä jonka päällä vaate on, ei riippuvaa tuotetta. Sisustustuotteella se tarkoittaa tuotetta kodissa, ei tyhjässä studiossa.</p>
       <p>Toimivat verkkokaupan mainokset näyttävät usein enemmän tavalliselta julkaisulta kuin kiillotetulta mainokselta. Lyhyt video jossa tuote avataan tai sitä käytetään, asiakkaan oma kuva, tai selkeä ennen ja jälkeen -vertailu toimivat usein paremmin kuin kallis mainostoimiston tuotanto. Tee useita versioita ja anna tulosten kertoa mikä toimii.</p>
+      <p>Ensimmäinen sekunti ratkaisee, koska ihminen selaa nopeasti. Aloita mainos siitä mikä on kiinnostavinta: lopputulos, hyöty tai yllättävä yksityiskohta, älä hitaalla esittelyllä. Lisää tuotteen hinta ja selkeä kehotus, koska ihminen jättää helposti klikkaamatta jos joutuu arvaamaan mitä maksaa ja mitä pitäisi tehdä seuraavaksi.</p>
 
       <h2>Uudelleenmarkkinointi: tärkein osa verkkokaupan mainontaa</h2>
       <p>Suurin osa ihmisistä ei osta ensimmäisellä käynnillä. He katsovat tuotetta, lisäävät ostoskoriin, ja poistuvat. Uudelleenmarkkinointi tarkoittaa mainontaa juuri näille ihmisille: he ovat jo osoittaneet kiinnostusta, joten heidät on halvempi ja helpompi saada takaisin kuin täysin uusi ihminen.</p>
       <p>Käytännössä rakennat erillisen kampanjan joka tavoittaa ihmiset jotka kävivät sivustolla tai lisäsivät tuotteen koriin mutta eivät ostaneet. Heille näytetään muistutus, ehkä juuri se tuote jota he katsoivat. Tämä on usein verkkokaupan kannattavin yksittäinen kampanja, koska se sulkee jo lähes valmiit kaupat.</p>
+      <p>Voit terävöittää uudelleenmarkkinointia porrastamalla viestin sen mukaan kuinka lähellä ostoa ihminen oli. Koriin tuotteen jättänyt tarvitsee eri muistutuksen kuin pelkän etusivun katsonut. Lähimpänä ostoa olleelle toimii suora muistutus tai pieni kannustin kuten ilmainen toimitus, kun taas etäisemmälle kävijälle riittää että muistutat tuotteen olemassaolosta.</p>
 
       <h2>Mitä lukuja seurata</h2>
       <p>Verkkokaupalle tärkein luku on ROAS eli mainostuotto suhteessa mainoskuluun. Jos käytät sata euroa ja saat kolmesataa euroa myyntiä, ROAS on kolme. Mikä on hyvä ROAS riippuu katteistasi: korkeakatteinen tuote kestää matalamman ROASin, matalakatteinen vaatii korkeamman ollakseen kannattava. Laske oma kannattavuusraja ennen kuin tuomitset kampanjan.</p>
       <p>Älä tuijota pelkkää klikkihintaa tai näyttöjä. Ne kertovat liikkeestä, eivät rahasta. Myynti ja ROAS kertovat onko kanava kannattava. Seuraa myös ostoskorin hylkäysastetta, koska jos ihmiset klikkaavat mutta eivät osta, ongelma voi olla verkkokaupassa eikä mainoksessa.</p>
+      <p>Pidä mielessä koko asiakassuhteen arvo, älä vain ensimmäistä ostoa. Jos asiakas tilaa keskimäärin useita kertoja vuodessa, voit kestää matalamman ensiostokampanjan ROASin, koska todellinen tuotto syntyy myöhemmistä tilauksista. Tämä erottaa kärsivällisen verkkokauppiaan siitä joka sammuttaa toimivan kampanjan liian aikaisin.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Paljonko budjettia tarvitsen aloittaakseni?</h3>
@@ -113,17 +125,21 @@ export const batch6: Post[] = [
       <h2>Miten se käytännössä toimii</h2>
       <p>Lataat tuotteesi Metan tuotekatalogiin, yleensä verkkokauppa-alustan integraatiolla. Katalogi sisältää jokaisen tuotteen kuvan, nimen, hinnan ja saatavuuden. Kun nämä yhdistetään pikseliin joka seuraa mitä ihmiset katsovat sivustolla, Meta osaa näyttää oikealle ihmiselle oikean tuotteen oikeaan aikaan.</p>
       <p>Mainos näyttää itsessään usein karusellilta jossa on useita tuotteita, mutta sisältö on dynaamista: jokainen näkijä voi nähdä eri tuotteet sen mukaan mitä hän on selannut. Sinun ei tarvitse rakentaa tätä käsin, vaan Meta hoitaa valinnan.</p>
+      <p>Katalogin laatu vaikuttaa suoraan mainoksen laatuun. Hyvät tuotekuvat, selkeät nimet ja oikeat hinnat tekevät mainoksesta vakuuttavan. Jos kuvat ovat sekalaisia tai nimet epäselviä, mainos näyttää sekavalta vaikka tekniikka toimisi. Käytä katalogiin samoja kuvia jotka myyvät verkkokaupassasi parhaiten.</p>
 
       <h2>Vahvin käyttö: uudelleenmarkkinointi</h2>
       <p>Tuotekatalogimainokset loistavat uudelleenmarkkinoinnissa. Ihminen kävi katsomassa tuotetta mutta ei ostanut. Muutama tunti myöhemmin hän näkee syötteessään juuri sen tuotteen, ehkä hinnan kanssa. Tämä muistutus tuo merkittävän osan keskeneräisistä ostoista takaisin.</p>
       <p>Esimerkki: sisustusverkkokauppa myy lamppuja. Asiakas katsoi tiettyä riippuvalaisinta, lisäsi sen koriin, mutta poistui. Tuotekatalogimainos näyttää hänelle juuri tuon valaisimen seuraavana päivänä. Tämä on huomattavasti tehokkaampaa kuin yleinen mainos, koska se osuu suoraan siihen mitä ihminen jo halusi.</p>
+      <p>Voit myös ohjata Metaa näyttämään koriin jätetyn tuotteen lisäksi siihen sopivia tuotteita, kuten valaisimeen sopivan lampun. Tämä nostaa keskiostoa, koska ihminen joka oli jo ostamassa yhtä tuotetta saa luontevan ehdotuksen täydentävästä. Vaatekaupalla sama toimii esittämällä asua täydentäviä tuotteita.</p>
 
       <h2>Milloin tuotekatalogimainos ei ole oikea valinta</h2>
       <p>Jos sinulla on vain muutama tuote, et tarvitse katalogia. Voit yhtä hyvin tehdä tavalliset mainokset käsin ja säätää viestin tarkasti. Katalogin hyöty syntyy laajasta valikoimasta jota olisi mahdotonta mainostaa yksitellen.</p>
       <p>Palveluyritykselle, ravintolalle tai remonttiyritykselle tuotekatalogi ei yleensä sovi, koska ei ole konkreettista tuotevalikoimaa jota näyttää. Heille tavallinen mainonta toimii paremmin. Katalogimainokset ovat ensisijaisesti verkkokaupan työkalu.</p>
+      <p>Katalogi ei myöskään korjaa heikkoa pohjaa. Jos sivustolla käy vain vähän liikennettä, uudelleenmarkkinoitavaa yleisöä ei kerry tarpeeksi, ja katalogimainos jää tehottomaksi. Tällöin kannattaa ensin tuoda lisää kävijöitä tavallisilla mainoksilla, ja ottaa katalogi käyttöön kun liikennettä on riittävästi.</p>
 
       <h2>Mitä vaaditaan ennen aloitusta</h2>
       <p>Toimiva tuotekatalogimainos vaatii kolme asiaa kuntoon: pikseli asennettuna ja seuraamassa tuotekatselut, ostoskoriin lisäykset ja ostot, tuotesyöte joka päivittyy automaattisesti niin että hinnat ja saatavuudet pysyvät ajan tasalla, sekä tarpeeksi sivustoliikennettä jotta uudelleenmarkkinoitavaa yleisöä kertyy. Jos näistä yksikin puuttuu tai on rikki, katalogimainos ei toimi luotettavasti.</p>
+      <p>Testaa pikseli ja syöte ennen julkaisua. Tee koeosto ja varmista että oikea tuote ja oikea hinta kirjautuvat. Tarkista että loppuunmyydyt tuotteet poistuvat mainonnasta automaattisesti, koska mikään ei turhauta asiakasta enempää kuin klikata mainosta tuotteeseen jota ei voi ostaa.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Tarvitsenko ohjelmointitaitoja katalogin tekemiseen?</h3>
@@ -134,6 +150,8 @@ export const batch6: Post[] = [
       <p>Voit, mutta vahvin tulos tulee uudelleenmarkkinoinnista ihmisille jotka ovat jo katsoneet tuotteitasi. Uusille asiakkaille tavallinen mainonta on usein parempi alku.</p>
       <h3>Sopiiko tämä pienelle verkkokaupalle?</h3>
       <p>Jos valikoima on hyvin pieni, käsin tehdyt mainokset riittävät ja ovat tarkemmin hallittavissa. Katalogin hyöty kasvaa valikoiman koon mukana.</p>
+      <h3>Voinko vaikuttaa siihen mitä tuotteita mainoksessa näkyy?</h3>
+      <p>Voit. Voit rajata mainonnan tiettyihin tuoteryhmiin tai jättää pois esimerkiksi alennustuotteet. Näin ohjaat mainontaa sinne missä kate ja kysyntä ovat parhaat.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -156,10 +174,12 @@ export const batch6: Post[] = [
       <h2>Google Ads: kysynnän nappaamista</h2>
       <p>Kun joku kirjoittaa Googleen "osta juoksukengät netistä", hän on jo päättänyt haluavansa juoksukengät. Google Ads laittaa kauppasi tämän haun kärkeen. Tämä on tehokasta, koska ostohalu on jo olemassa, sinä vain ohjaat sen omaan kauppaasi.</p>
       <p>Tämän heikkous on että voit tavoittaa vain niin monta ihmistä kuin tuotettasi haetaan. Jos myyt jotain mitä ihmiset eivät osaa hakea, koska he eivät tiedä että sellainen on olemassa, Google ei tuo paljoa. Lisäksi suosituilla hakusanoilla kilpailu nostaa hinnat korkealle.</p>
+      <p>Google on luonteva myös silloin kun ihminen vertailee ja etsii parasta hintaa tai saatavuutta. Hän tietää mitä haluaa ja katsoo kuka sen toimittaa parhaiten. Verkkokaupalle tämä tarkoittaa että hyvä tuotetieto, järkevä hinta ja toimitusehto ratkaisevat, koska kävijä on jo ostotunnelmassa.</p>
 
       <h2>Meta: kysynnän luomista</h2>
       <p>Meta ei odota että ihminen etsii sinua. Se näyttää tuotteesi ihmiselle joka selaa Facebookia tai Instagramia eikä etsi mitään tiettyä. Hyvä mainos herättää kiinnostuksen ja synnyttää halun joka ei ollut olemassa hetkeä aiemmin. Tämä on ainoa tapa kasvaa hakuvolyymia laajemmalle.</p>
       <p>Meta toimii erityisen hyvin visuaalisille tuotteille jotka herättävät tunteen: vaatteet, sisustus, korut, ihonhoito, uudet tuotteet joita kukaan ei vielä osaa hakea. Heikkous on että tavoitat ihmisiä jotka eivät ajatelleet ostavansa, joten suostuttelu vaatii enemmän työtä mainokselta.</p>
+      <p>Meta on myös vahva uuden tuotteen lanseerauksessa. Kun mitään hakuvolyymia ei vielä ole, koska kukaan ei tunne tuotetta, Meta luo sen tietoisuuden. Moni verkkokauppa rakentaa kysynnän ensin Metalla ja huomaa sitten, että ihmiset alkavat hakea brändiä nimellä Googlesta. Näin kanavat ruokkivat toisiaan.</p>
 
       <h2>Mihin tilanteeseen kumpikin sopii</h2>
       <p>Jos myyt tuotetta jota ihmiset aktiivisesti hakevat ja vertailevat, kuten varaosia, työkaluja tai tunnettuja brändituotteita, Google on usein luonteva alku. Kysyntä on jo olemassa, tartut siihen.</p>
@@ -167,6 +187,7 @@ export const batch6: Post[] = [
 
       <h2>Jos budjetti riittää vain toiseen</h2>
       <p>Pienellä budjetilla kannattaa valita yksi ja tehdä se kunnolla, ei jakaa rahaa kahtia niin että kumpikaan ei opi. Kysy itseltäsi: hakevatko ihmiset jo tuotettani? Jos kyllä, aloita Googlesta. Jos eivät, koska tuotteesi on uusi tai sen hyöty pitää näyttää, aloita Metasta. Kun toinen kanava on kannattava ja vakaa, laajenna toiseen.</p>
+      <p>Mieti myös kumpi sopii vahvuuksiisi. Jos sinulla on hyvää kuva- ja videomateriaalia tuotteistasi, Meta pääsee oikeuksiinsa. Jos vahvuutesi on laaja valikoima ja kilpailukykyinen hinta jota ihmiset vertailevat, Google hyödyntää sen paremmin. Aloita siitä missä sinulla on jo etumatkaa.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Kumpi on halvempi?</h3>
@@ -177,6 +198,8 @@ export const batch6: Post[] = [
       <p>Aloita siitä kanavasta joka vastaa ostokäyttäytymistä. Jos tuotettasi haetaan, Google. Jos tuotteesi pitää esitellä ja herättää halu, Meta.</p>
       <h3>Toimiiko Meta jos tuotteeni on tylsä tai tekninen?</h3>
       <p>Vaikeammin. Visuaalisesti vetävät ja tunnetta herättävät tuotteet sopivat Metaan paremmin. Tekninen tuote jota ihmiset hakevat nimellä sopii usein paremmin Googleen.</p>
+      <h3>Vaikuttaako sesonki valintaan?</h3>
+      <p>Vaikuttaa. Sesonkituotteen kysyntä näkyy Googlessa hakuina juuri sesongin aikaan, jolloin sieltä saa nopeasti myyntiä. Metalla voit rakentaa kiinnostusta jo ennen sesonkia, jotta olet asiakkaan mielessä kun hän on valmis ostamaan.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -205,19 +228,23 @@ export const batch6: Post[] = [
       <p>Suppilon yläpäässä ovat ihmiset jotka eivät tunne sinua. Tämän vaiheen tehtävä ei ole myydä, vaan herättää huomio ja antaa hyvä ensivaikutelma. Paras sisältö tähän on usein opettavainen, viihdyttävä tai tunnetta herättävä, ei kova myyntimainos.</p>
       <p>Esimerkki remonttiyritykselle: video jossa näytetään lyhyesti vaikuttava ennen ja jälkeen kylpyhuoneremontista, ilman että pyydetään mitään. Ihminen ajattelee "tuon haluaisin omaan kotiini" ja jää mieleen. Tässä vaiheessa et vielä pyydä tarjouspyyntöä, koska se on liian aikaista. Tavoite on että mahdollisimman moni oikea ihminen näkee työsi jäljen ja alkaa muodostaa mielikuvaa.</p>
       <p>Kohdennus tässä vaiheessa on laajempi. Voit käyttää kiinnostuksiin perustuvaa kohdennusta tai lookalike-yleisöä, eli ihmisiä jotka muistuttavat nykyisiä asiakkaitasi. Tärkeintä on tavoittaa uusia ihmisiä, ei niitä jotka jo tuntevat sinut.</p>
+      <p>Tässä vaiheessa et myöskään mittaa onnistumista myynnillä, vaan sillä paljonko ihmisiä katsoo videosi loppuun, käy sivustolla tai muuten osoittaa kiinnostusta. Nämä ihmiset muodostavat seuraavan vaiheen yleisön, joten tietoisuusvaiheen todellinen tehtävä on ruokkia suppilon keskivaihetta.</p>
 
       <h2>Vaihe 2: harkinta, eli lämmin yleisö</h2>
       <p>Keskivaiheessa ovat ihmiset jotka ovat jo reagoineet johonkin: katsoneet videosi loppuun, käyneet sivustollasi, tykänneet tai kommentoineet. He tietävät kuka olet, mutta eivät ole vielä ostaneet. Tämä on suppilon tärkein ja usein laiminlyödyin vaihe.</p>
       <p>Näille ihmisille annat enemmän syitä luottaa ja toimia. Asiakastarinat, suosittelut, vastaukset yleisiin epäilyksiin, tarkempi esittely tuotteesta tai palvelusta. Remonttiyritys voisi näyttää tässä vaiheessa asiakkaan haastattelun jossa kerrotaan miten projekti sujui aikataulussa ja budjetissa. Tämä poistaa epäilyksen joka estää ostopäätöstä.</p>
       <p>Kohdennus tässä vaiheessa rakennetaan ihmisistä jotka ovat olleet tekemisissä kanssasi. Meta osaa rakentaa yleisön sivustokävijöistä, videon katsojista ja sivusi seuraajista. Tämä yleisö on pienempi mutta paljon arvokkaampi, koska he ovat jo osoittaneet kiinnostusta.</p>
+      <p>Mieti mikä epäilys estää juuri sinun asiakastasi ostamasta, ja vastaa siihen tässä vaiheessa. Verkkokaupalla se voi olla huoli koosta tai palautuksesta, palveluyrityksellä epävarmuus hinnasta tai laadusta. Kun poistat suurimman epäilyksen, ihminen siirtyy luontevasti kohti päätöstä.</p>
 
       <h2>Vaihe 3: päätös, eli uudelleenmarkkinointi</h2>
       <p>Suppilon pohjalla ovat ihmiset jotka ovat lähimpänä ostoa: he lisäsivät tuotteen koriin, aloittivat tarjouspyynnön tai kävivät hinnoittelusivulla mutta eivät vieneet asiaa loppuun. Heille näytetään suora ja konkreettinen kehotus toimia, usein jonkin kannustimen kanssa.</p>
       <p>Verkkokaupalle tämä on tuotekatalogimainos joka näyttää juuri sen tuotteen jonka ihminen jätti koriin, ehkä muistutuksella ilmaisesta toimituksesta. Palveluyritykselle se voi olla muistutus "jätä tarjouspyyntö, vastaamme samana päivänä". Tämä vaihe sulkee kaupat jotka olivat jo lähes valmiita ja on usein koko suppilon kannattavin osa.</p>
+      <p>Pidä päätösvaiheen yleisö tuoreena. Ihminen joka jätti korin viikko sitten on aivan eri tilanteessa kuin se joka jätti sen kolme kuukautta sitten. Tuoreelle yleisölle suora muistutus toimii, vanhemmalle kannattaa antaa uusi syy palata, kuten uutuus tai kausitarjous. Liian vanhalle yleisölle mainostaminen vain kuluttaa budjettia ihmisiin jotka ovat jo unohtaneet asian.</p>
 
       <h2>Miten rakennat tämän käytännössä</h2>
       <p>Rakenna kolme erillistä kampanjaa tai mainosjoukkoa, yksi kutakin vaihetta varten. Tärkeintä on että pikseli on asennettu ja kerää tietoa kävijöistä, koska ilman sitä et voi rakentaa lämmintä yleisöä etkä uudelleenmarkkinointia. Aloita siis seurannasta, sitten tietoisuusvaiheesta joka kerryttää yleisöä, ja kun liikennettä kertyy, lisää harkinta- ja päätösvaiheet.</p>
       <p>Älä yritä rakentaa kaikkea kerralla täydellisenä. Aloita tietoisuusvaiheella ja yhdellä uudelleenmarkkinointikampanjalla, koska nämä kaksi tuovat suurimman hyödyn vähimmällä työllä. Lisää keskivaihe kun perusta toimii. Suppilon kauneus on että se rakentaa itse itseään: mitä enemmän ihmisiä yläpäässä, sitä enemmän väkeä virtaa alaspäin ostoon.</p>
+      <p>Varmista myös ettet näytä samalle ihmiselle väärän vaiheen mainosta. Rakenna yleisöt niin, että jo ostaneet eivät enää näe ostokehotusta ja että tietoisuusvaihe tavoittaa vain uusia ihmisiä, ei jo lämmenneitä. Tämä estää sekä rahan haaskauksen että ärsyttävän tunteen joka syntyy kun ihminen näkee tarjouksen tuotteesta jonka jo osti.</p>
 
       <h2>Yleisin virhe suppilon rakentamisessa</h2>
       <p>Tavallisin virhe on laittaa kaikki raha tietoisuusvaiheeseen ja unohtaa loput. Yritys tuo paljon uusia ihmisiä mutta ei tee mitään niille jotka jo kiinnostuivat. Se on kuin täyttäisi ämpäriä jossa on reikä pohjassa. Toinen yleinen virhe on päinvastainen: mainostetaan vain uudelleen samoille ihmisille, jolloin yleisö ei kasva ja tulokset hiipuvat ajan myötä.</p>
@@ -259,16 +286,20 @@ export const batch6: Post[] = [
 
       <h2>Pidä kohdennus riittävän tarkkana mutta älä liian kapeana</h2>
       <p>Paikallisen yrityksen kannattaa rajata mainonta omalle toiminta-alueelle, koska on turhaa maksaa näytöistä ihmisille toisella puolella Suomea. Mutta älä kapeuta yleisöä niin pieneksi että budjetti ei riitä tavoittamaan ketään kunnolla. Anna Metalle tarpeeksi ihmisiä joiden joukosta valita oikeat.</p>
+      <p>Esimerkiksi kaupungin keskustassa toimiva kauneushoitola rajaa mainonnan lähialueelle ja sopivalle kohderyhmälle, mutta ei lisää kymmentä päällekkäistä rajausta. Jokainen lisärajaus pienentää yleisöä, ja pienellä budjetilla liian kapea yleisö johtaa siihen että Meta näyttää saman mainoksen samoille ihmisille yhä uudelleen, jolloin teho laskee nopeasti.</p>
 
       <h2>Panosta materiaaliin, ei määrään</h2>
       <p>Pienellä budjetilla mainoksen laatu ratkaisee kaiken. Et voi ostaa tietä ulos huonosta mainoksesta lisää näkyvyyttä ostamalla. Tee kaksi tai kolme hyvää mainosta, anna niiden kilpailla, ja sammuta heikoin. Yksi pysäyttävä video tai vahva kuva tuottaa enemmän kuin kymmenen keskinkertaista.</p>
       <p>Esimerkki kauneushoitolalle: yksi laadukas ennen ja jälkeen -video hoidosta, selkeä tarjous ja suora kehotus varata aika. Tämä toimii paremmin kuin monta erilaista mainosta joista mikään ei ehdi kerätä dataa.</p>
+      <p>Materiaalin ei tarvitse olla kallista, vaan aitoa ja selkeää. Puhelimella kuvattu video tuotteesta käytössä tai todellisesta lopputuloksesta voittaa usein kiillotetun mainoksen, koska se tuntuu uskottavalta. Käytä rahasi mainostamiseen, ei tuotantoon.</p>
 
       <h2>Anna sen käydä rauhassa</h2>
       <p>Pienellä budjetilla data kertyy hitaammin, joten malttia tarvitaan enemmän. Älä säädä kampanjaa joka päivä. Anna sen käydä rauhassa ja tee johtopäätökset vasta kun tuloksia on kertynyt tarpeeksi. Jatkuva näpertely nollaa oppimisen ja polttaa budjettia turhaan.</p>
+      <p>Sovi itsesi kanssa etukäteen kuinka kauan annat kampanjan rauhassa kerätä dataa ennen kuin teet muutoksia. Kun pidät kiinni tästä, vältät tärkeimmän pienen budjetin virheen: kampanjan tappamisen juuri ennen kuin se ehti oppia.</p>
 
       <h2>Uudelleenmarkkinointi tuo eniten pienellä budjetilla</h2>
       <p>Jos sivustollasi käy edes jonkin verran liikennettä, varaa osa budjetista uudelleenmarkkinointiin eli mainontaan ihmisille jotka ovat jo käyneet sivustollasi. He ovat halvin yleisö muuttaa asiakkaiksi, koska kiinnostus on jo olemassa. Pienellä budjetilla tämä on usein kannattavin yksittäinen kohde.</p>
+      <p>Käytännössä jaat budjetin niin että suurempi osa tuo uusia kävijöitä ja pienempi osa muistuttaa jo kiinnostuneita. Näin pieni summa tekee kaksinkertaisen työn: kerää yleisöä ja sulkee jo lähes valmiit kaupat samaan aikaan.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Riittääkö 500 euroa kuukaudessa tuloksiin?</h3>
@@ -279,6 +310,8 @@ export const batch6: Post[] = [
       <p>Anna Metan päättää aluksi mihin näyttää mainosta, koska se osaa optimoida sijoittelun automaattisesti. Pienellä budjetilla ei kannata rajata käsin, koska se kaventaa tavoittavuutta.</p>
       <h3>Milloin voin kasvattaa budjettia?</h3>
       <p>Kun kampanja tuottaa tasaisesti kannattavasti, kasvata budjettia maltillisesti vähän kerrallaan. Äkillinen iso korotus voi sekoittaa oppimisen ja heikentää tuloksia.</p>
+      <h3>Mitä jos tulokset eivät parane kuukauden jälkeen?</h3>
+      <p>Vaihda ensin mainosmateriaalia, koska se on yleisin syy heikkoihin tuloksiin. Jos sekään ei auta, tarkista että tavoite ja kohde ovat oikein ja että ohjaat ihmisen selkeään seuraavaan askeleeseen. Muuta yksi asia kerrallaan, jotta tiedät mikä vaikutti.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -302,10 +335,12 @@ export const batch6: Post[] = [
       <h2>Kohdenna tiukasti omalle alueelle</h2>
       <p>Ihmiset eivät aja toiselta puolelta kaupunkia lounaalle. He valitsevat paikan joka on lähellä kotia, työpaikkaa tai sen hetkistä sijaintia. Rajaa siis mainonta tiukasti ravintolasi ympärille. Helsingin keskustan lounaspaikka tavoittaa lähikorttelit ja työpaikat, ei koko pääkaupunkiseutua.</p>
       <p>Tämä tekee mainonnasta sekä halvempaa että tehokkaampaa, koska et maksa näytöistä ihmisille jotka eivät koskaan tulisi. Pieni tarkka alue tuo enemmän kävijöitä kuin laaja epätarkka.</p>
+      <p>Erottele myös eri tilanteet. Lounasasiakas tulee läheltä työpaikkaa arkisin, illallisasiakas voi tulla hieman kauempaa ja viikonloppuna. Voit rajata lounasmainonnan tiukemmin lähikortteleihin ja viikonlopun illallismainonnan hieman laajemmalle, koska ihmiset liikkuvat eri matkoja eri syistä.</p>
 
       <h2>Ruoka näkyviin, mutta oikein kuvattuna</h2>
       <p>Ruoka myy itsensä jos se kuvataan hyvin. Hämärä kuva lautasesta ei toimi, mutta houkutteleva, hyvin valaistu kuva tai lyhyt video annoksen valmistuksesta pysäyttää selauksen. Ihmiset reagoivat ruokaan vaistomaisesti, joten anna sen näkyä parhaimmillaan.</p>
       <p>Video toimii usein kuvaa paremmin: pihvin tirinä pannulla, juuston venyminen, pizzan nostaminen uunista. Liike ja ääni herättävät nälän tavalla jota pysäytetty kuva ei. Sinun ei tarvitse ammattikuvaajaa, puhelimen kamera riittää kun valo on hyvä ja ruoka tuoretta.</p>
+      <p>Kuvaa ruoka päivänvalossa lähellä ikkunaa, ei keittiön keinovalossa joka tekee väreistä epämiellyttäviä. Ota kuva juuri kun annos on valmis ja höyryää, koska tuoreus näkyy. Kerää tapa kuvata muutama otos jokaisesta uudesta annoksesta, niin sinulla on jatkuva virta materiaalia eikä mainos lopu kesken.</p>
 
       <h2>Anna konkreettinen syy tulla nyt</h2>
       <p>Pelkkä kaunis kuva ei riitä, ihminen tarvitsee syyn toimia. Lounaslista viikolle, viikonlopun erikoisannos, uusi menu, tai tietty tarjous antaa konkreettisen aiheen tulla juuri nyt. "Tervetuloa" ei ole kehotus, mutta "tämän viikon lounas 12,90 euroa, tarjolla arkisin yhteentoista asti" on.</p>
@@ -317,9 +352,11 @@ export const batch6: Post[] = [
 
       <h2>Ajoita mainonta nälän mukaan</h2>
       <p>Ravintolan mainonnassa ajoitus on poikkeuksellisen tärkeää. Lounasmainos kannattaa näyttää aamupäivällä kun ihmiset miettivät minne mennä syömään, ei iltakymmeneltä. Viikonlopun illallismainos toimii parhaiten torstaina ja perjantaina kun viikonlopun suunnitelmia tehdään. Mieti milloin asiakkaasi tekevät päätöksen ja näytä mainos hieman ennen sitä.</p>
+      <p>Ajattele asiakkaan päivää. Lounaspaikan kannattaa olla mielessä kello yhdentoista tienoilla kun nälkä alkaa, ei kun ihminen on jo syönyt. Brunssipaikan mainos toimii lauantai- ja sunnuntaiaamuna, after work -paikka taas alkuviikon iltapäivinä. Sovita ajoitus siihen hetkeen jolloin päätös syntyy.</p>
 
       <h2>Hyödynnä tyytyväiset asiakkaat</h2>
       <p>Ravintola elää maineesta. Aitojen asiakkaiden kuvat, arvostelut ja täydet pöydät vakuuttavat enemmän kuin oma mainospuhe. Jos voit, näytä mainoksessa todellista tunnelmaa: ihmisiä nauttimassa, täysi terassi, tyytyväinen asiakas. Tämä rakentaa luottamusta ja saa uuden ihmisen uskaltamaan kokeilla.</p>
+      <p>Hyvä arvostelu on vahvaa mainosmateriaalia. Aito sitaatti tyytyväiseltä asiakkaalta annoskuvan vieressä vakuuttaa uuden kävijän nopeammin kuin mikään oma lupaus. Pyydä lupa käyttää arvostelua, niin saat uskottavaa sisältöä jonka joku muu on jo kirjoittanut puolestasi.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Kuinka laaja alue minun pitäisi kohdentaa?</h3>
@@ -355,21 +392,26 @@ export const batch6: Post[] = [
       <h2>Näytä työsi jälki, se myy puolestasi</h2>
       <p>Remonttialalla ennen ja jälkeen -kuvat ovat vahvin yksittäinen mainossisältö. Ihminen joka harkitsee kylpyhuoneremonttia näkee vanhan ja uuden vierekkäin ja ajattelee heti omaa kotiaan. Tämä toimii koska se on konkreettista ja todistaa että osaat työsi, ilman että sinun tarvitsee sanoa sanaakaan.</p>
       <p>Video toimii erityisen hyvin: lyhyt katsaus projektin etenemisestä purkamisesta valmiiseen lopputulokseen. Se näyttää prosessin, herättää luottamusta ja jää mieleen. Kuvaa työmaita rutiininomaisesti puhelimella, niin sinulla on jatkuva virta materiaalia mainoksiin.</p>
+      <p>Eri remonttityypit puhuttelevat eri ihmisiä, joten näytä työsi jälki monipuolisesti. Kylpyhuone, keittiö ja sauna kiinnostavat eri tilanteessa olevia kotitalouksia. Kun sinulla on materiaalia useammasta kohteesta, voit näyttää oikealle ihmiselle oikean esimerkin ja osua paremmin siihen mitä hän juuri nyt suunnittelee.</p>
 
       <h2>Kohdenna omistusasujiin omalla alueella</h2>
       <p>Remontti tilataan paikalliselta tekijältä, joten rajaa mainonta toiminta-alueellesi. Ei ole järkeä mainostaa toisella puolella Suomea jos et tee töitä siellä. Kohdenna alueelle jolla oikeasti operoit ja jolta voit ottaa työkohteita vastaan.</p>
       <p>Mieti myös millaisille ihmisille remontti on ajankohtainen: omistusasujille, tietyn ikäisille kotitalouksille, ihmisille joiden elämäntilanne viittaa kodin kunnostukseen. Et tarvitse täydellistä tarkkuutta, riittää että vältät mainostamasta selvästi väärälle joukolle kuten vuokralla asuville jos myyt suuria remontteja.</p>
+      <p>Jos teet sekä pieniä että suuria töitä, voit harkita eri viestiä eri alueille tai kohderyhmille. Vanhemmalla pientaloalueella korjaustarve on erilainen kuin uudella kerrostaloalueella. Sovita esimerkit ja viesti sen mukaan millaista työtä alueella todennäköisesti tarvitaan.</p>
 
       <h2>Pyydä tarjouspyyntö, älä yritä myydä</h2>
       <p>Mainoksen tavoite remonttialalla on saada yhteydenotto, ei kauppa. Kukaan ei osta kylpyhuoneremonttia napsauttamalla. Tee mainoksesta sellainen joka madaltaa kynnystä ottaa yhteyttä: "Pyydä ilmainen arviokäynti" tai "Saat tarjouksen kahdessa päivässä". Tee yhteydenotosta helppoa ja riskitöntä.</p>
       <p>Voit kerätä yhteystiedot joko Metan oman lomakkeen kautta tai ohjaamalla ihmisen sivustosi tarjouspyyntölomakkeelle. Sivustolle ohjaaminen tuo usein hieman harkitumpia yhteydenottoja, koska ihminen näkee samalla lisää töitäsi ja vakuuttuu. Metan lomake taas tuo enemmän yhteydenottoja mutta osa niistä on kevyempiä. Testaa kumpi tuo sinulle parempaa laatua.</p>
+      <p>Voit karsia kevyitä yhteydenottoja kysymällä lomakkeessa muutaman tarkentavan kysymyksen, kuten minkä tilan remontista on kyse ja milloin se olisi ajankohtainen. Tämä pieni lisävaiva karsii satunnaiset kyselijät ja jättää jäljelle ne joilla on todellinen aikomus, jolloin käytät aikasi laadukkaisiin liideihin.</p>
 
       <h2>Varaudu siihen että myyntisykli on pitkä</h2>
       <p>Remonttiasiakas ei välttämättä ota yhteyttä heti ensimmäisestä mainoksesta. Hän näkee työsi, jää miettimään, näkee toisen mainoksen viikon päästä, käy sivustollasi, ja ottaa yhteyttä vasta kun remontti tulee oikeasti ajankohtaiseksi. Tämä tarkoittaa että uudelleenmarkkinointi on tärkeää: pidä itsesi näkyvissä ihmisille jotka ovat jo osoittaneet kiinnostusta.</p>
       <p>Käytännössä tämä tarkoittaa että näytät kiinnostuneille lisää töitäsi ja asiakastarinoita ajan myötä, jotta olet ensimmäinen mieleen tuleva tekijä kun päätös tehdään. Älä luovuta jos ensimmäinen yhteydenotto ei tule heti, koska kauppa kypsyy hitaasti.</p>
+      <p>Pidä mainonta käynnissä jatkuvasti, älä vain hetkellisinä kampanjoina. Remontti tulee ihmiselle ajankohtaiseksi omaan tahtiinsa, ja jos olet näkyvissä juuri sillä hetkellä kun hänen päätöksensä kypsyy, saat yhteydenoton. Jos mainonta on tauolla, joku toinen on sillä hetkellä paikalla.</p>
 
       <h2>Asiakastarinat poistavat epäilyksen</h2>
       <p>Remontissa pelätään kahta asiaa: että tekijä ei pidä aikataulua tai että lopputulos ei vastaa luvattua. Asiakastarina joka kertoo että projekti sujui sovitussa aikataulussa ja budjetissa poistaa juuri tämän pelon. Aito asiakkaan kommentti tai lyhyt haastattelu vakuuttaa enemmän kuin oma lupauksesi.</p>
+      <p>Kerää tarinoita tyytyväisiltä asiakkailta heti projektin päätyttyä, kun kokemus on tuore. Lyhyt lainaus siitä miten työ sujui ja kuva valmiista lopputuloksesta riittää. Kun näytät näitä kiinnostuneille ihmisille, vastaat juuri niihin epäilyksiin jotka muuten estäisivät yhteydenoton.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Tuleeko Metan kautta laadukkaita tarjouspyyntöjä?</h3>
@@ -405,25 +447,30 @@ export const batch6: Post[] = [
       <h2>Visuaalisuus on valttisi</h2>
       <p>Kauneudenhoito on poikkeuksellisen visuaalinen ala, ja se on etu Metassa. Ennen ja jälkeen -kuvat ripsistä, kynsistä, kasvohoidoista tai hiuksista pysäyttävät selauksen ja todistavat osaamisesi heti. Ihminen näkee tuloksen ja haluaa saman itselleen. Tämä on suoraviivaisin tapa myydä hoito.</p>
       <p>Käytä aitoja kuvia omasta työstäsi, älä stockkuvia. Aito tulos tutusta hoitolasta vakuuttaa, kun täydellinen mainoskuva tuntuu etäiseltä. Lyhyt video hoidon kulusta tai lopputuloksesta toimii usein vielä kuvaakin paremmin, koska se näyttää prosessin ja luo luottamusta.</p>
+      <p>Kuvaa tulokset hyvässä, tasaisessa valossa ja samasta kuvakulmasta sekä ennen että jälkeen, jotta ero näkyy rehellisesti. Pieni video jossa näkyy hoidon rauhallinen tunnelma ja lopputulos toimii hyvin, koska se myy myös kokemusta, ei vain tulosta. Kerää materiaalia jatkuvasti, niin mainoksesi pysyvät tuoreina.</p>
 
       <h2>Luottamus ratkaisee, kun ihminen päästää lähelle</h2>
       <p>Kauneushoito on intiimi palvelu. Ihminen päästää sinut iholleen tai luottaa ulkonäkönsä käsiisi, joten luottamus on edellytys varaukselle. Mainonnan pitää rakentaa tätä luottamusta. Aidot asiakaskuvat, arvostelut ja hoitajan esittely tekevät hoitolasta turvallisen ja lähestyttävän tuntuisen.</p>
       <p>Uusi asiakas pohtii usein onko paikka siisti, onko tekijä ammattitaitoinen ja saako hän mitä lupaa. Mainos joka näyttää siistin tilan, osaavan tekijän ja todellisia tuloksia poistaa nämä epäilykset ennen kuin ne ehtivät estää varauksen.</p>
+      <p>Hoitajan kasvot ja oma ääni rakentavat luottamusta nopeasti. Lyhyt video jossa esittelet itsesi ja kerrot mitä hoidossa tapahtuu tekee paikasta tutun jo ennen ensimmäistä käyntiä. Ihminen varaa helpommin kun hän tietää kenen luokse on menossa.</p>
 
       <h2>Kohdenna paikallisesti ja oikealle yleisölle</h2>
       <p>Asiakas tulee hoitolaan läheltä, joten rajaa mainonta toiminta-alueellesi. Ei kannata mainostaa kaupungin toiselle laidalle jos asiakkaat tulevat lähikortteleista. Tarkka paikallinen kohdennus tekee mainonnasta sekä halvempaa että osuvampaa.</p>
       <p>Mieti myös kenelle kukin hoito on suunnattu. Tietyt hoidot puhuttelevat eri ikäryhmiä ja eri tarpeita. Sinun ei tarvitse tehdä monimutkaista kohdennusta, mutta kannattaa sovittaa viesti sille joukolle joka oikeasti varaa kyseisen hoidon.</p>
+      <p>Esimerkiksi ripsihoito ja juhlameikki puhuttelevat eri tilanteessa olevia ihmisiä kuin rentouttava kasvohoito. Voit tehdä eri hoidoille omat mainoksensa joissa kuva ja viesti vastaavat juuri sen hoidon asiakasta. Näin mainos tuntuu puhuvan suoraan katsojalle, mikä nostaa varausten määrää.</p>
 
       <h2>Tee varaamisesta vaivatonta</h2>
       <p>Paras mainos menee hukkaan jos varaaminen on hankalaa. Ohjaa ihminen suoraan ajanvaraukseen, ei etusivulle josta hänen pitää etsiä miten varataan. Mitä vähemmän klikkauksia varauksen ja mainoksen välissä, sitä enemmän varauksia saat. Jos varaus tapahtuu verkossa, linkitä suoraan oikeaan hoitoon ja vapaisiin aikoihin.</p>
       <p>Selkeä kehotus auttaa: "Varaa aika kasvohoitoon" on parempi kuin pelkkä esittely. Kerro mainoksessa myös hoidon hinta tai hintahaarukka jos voit, koska epävarmuus hinnasta estää monen varauksen.</p>
 
       <h2>Houkuttele ensimmäinen käynti, sitten pidä asiakas</h2>
-      <p>Kauneushoitolan arvo ei ole yhdessä käynnissä vaan siinä että asiakas palaa uudelleen. Siksi ensimmäisen käynnin houkuttelu kannattaa, vaikka tarjoaisit uudelle asiakkaalle pienen kannustimen. Kun ihminen on kerran tyytväinen, hän varaa jatkossa ilman mainontaa ja suosittelee eteenpäin.</p>
+      <p>Kauneushoitolan arvo ei ole yhdessä käynnissä vaan siinä että asiakas palaa uudelleen. Siksi ensimmäisen käynnin houkuttelu kannattaa, vaikka tarjoaisit uudelle asiakkaalle pienen kannustimen. Kun ihminen on kerran tyytyväinen, hän varaa jatkossa ilman mainontaa ja suosittelee eteenpäin.</p>
       <p>Uudelleenmarkkinointi tukee tätä: muistuta ihmisiä jotka kävivät sivustollasi tai katsoivat hoitoja mutta eivät varanneet. Heille pieni muistutus tai tarjous sulkee varauksen joka jäi tekemättä.</p>
+      <p>Laske yhden asiakkaan arvo pidemmällä aikavälillä, älä vain ensimmäisen käynnin hintaa. Jos säännöllinen asiakas käy useita kertoja vuodessa, ensikäynnin houkuttimeen käytetty raha maksaa itsensä takaisin monin verroin. Tämä auttaa sinua näkemään mainonnan kannattavuuden oikein.</p>
 
       <h2>Hyödynnä kausia ja täytä hiljaiset ajat</h2>
       <p>Kauneudenhoidossa on selkeitä huippuja: juhlakaudet, kesä, valmistujaiset, joulu. Ajoita mainontaa näiden mukaan, mutta käytä mainontaa myös päinvastoin täyttämään hiljaisia jaksoja. Tarjous arkipäivän hiljaisiin aikoihin tuo asiakkaita silloin kun kalenteri muuten ammottaisi tyhjyyttään.</p>
+      <p>Sesonkien edellä kannattaa aloittaa mainonta hyvissä ajoin, koska ihmiset varaavat juhlia ja kesää varten etukäteen. Joulun ja valmistujaisten alla kysyntä on suurta, mutta hiljaisina viikkoina kohdennettu tarjous tasaa kalenteria ja pitää tulot vakaina läpi vuoden.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Saanko Metan kautta oikeasti varauksia, en vain tykkäyksiä?</h3>
@@ -457,9 +504,11 @@ export const batch6: Post[] = [
 
       <h2>Et pysty palvelemaan lisää asiakkaita</h2>
       <p>Jos olet jo täysin varattu etkä voi ottaa enempää töitä, mainonta on hukkaan heitettyä rahaa. Yhden hengen palveluyritys jonka kalenteri on täynnä ei hyödy uusista yhteydenotoista, joita ei ehdi hoitaa. Ratkaise ensin kapasiteetti, sitten mainosta. Joskus oikea liike on nostaa hintoja, ei hankkia lisää kysyntää.</p>
+      <p>Pahin lopputulos on että mainonta tuo yhteydenottoja joihin et ehdi vastata. Vastaamaton tarjouspyyntö jättää huonon kuvan ja voi päätyä kilpailijalle. Jos kapasiteettisi on täynnä, raha kannattaa laittaa pikemminkin toiminnan tehostamiseen tai hinnoittelun korjaamiseen kuin uuden kysynnän hankkimiseen.</p>
 
       <h2>Sinulla ei ole mitään mihin ohjata ihminen</h2>
       <p>Mainonta tuo ihmisiä, mutta heidän pitää päätyä jonnekin. Jos sinulla ei ole toimivaa sivustoa, varausjärjestelmää tai selkeää tapaa ottaa yhteyttä, mainos tuo liikennettä joka katoaa. Rakenna ensin se paikka johon ihminen päätyy, sitten vasta mainosta sinne.</p>
+      <p>Sama pätee jos sivustosi on sekava tai hidas. Mainos voi olla erinomainen, mutta jos ihminen ei löydä miten ostaa tai varata, hän poistuu. Korjaa siis se mihin ohjaat ihmisen ennen kuin maksat heidän tuomisestaan sinne.</p>
 
       <h2>Tuotteesi on puhdas hakutuote</h2>
       <p>Jos myyt jotain mitä ihmiset hakevat nimellä silloin kun tarvitsevat, kuten kiireellistä korjauspalvelua tai tiettyä varaosaa, Meta ei välttämättä ole paras kanava. Ihminen jonka putki vuotaa ei selaa Facebookia, hän hakee Googlesta putkimiehen heti. Tällaisessa tilanteessa hakukoneeseen panostaminen tuottaa usein paremmin.</p>
@@ -469,6 +518,7 @@ export const batch6: Post[] = [
 
       <h2>Katteesi ei kestä mainoskuluja</h2>
       <p>Jos myyt tuotetta jonka kate on hyvin pieni, mainoskulut voivat syödä koko voiton. Laske ennen aloitusta paljonko sinulla on varaa maksaa yhdestä asiakkaasta. Jos luku on niin pieni että realistinen mainoskulu ylittää sen, mainonta ei kannata ennen kuin parannat katetta tai keskiostoa.</p>
+      <p>Tästä on yksi tärkeä poikkeus: jos asiakas ostaa toistuvasti, voit kestää matalan katteen ensimmäisestä ostosta, koska todellinen voitto syntyy myöhemmistä. Laske siis koko asiakassuhteen arvo, älä vain ensimmäisen kaupan katetta, ennen kuin tuomitset mainonnan kannattamattomaksi.</p>
 
       <h2>Mitä tehdä sen sijaan</h2>
       <p>Jos Meta ei sovi tilanteeseesi nyt, vaihtoehtoja on. Hakukonenäkyvyys tavoittaa ihmiset jotka jo etsivät palveluasi. Olemassa olevien asiakkaiden hoitaminen ja suositusten pyytäminen tuo usein parasta tulosta pienellä vaivalla. Paikallinen näkyvyys ja Google-profiili auttavat löydettävyyttä. Meta-mainonta kannattaa ottaa käyttöön kun perusta on kunnossa ja kapasiteettia on kasvaa.</p>

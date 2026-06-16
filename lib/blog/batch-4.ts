@@ -16,14 +16,14 @@ export const batch4: Post[] = [
 
       <h2>Miksi korkea frequency on ongelma</h2>
       <p>Kun sama ihminen näkee saman mainoksen yhä uudelleen, kaksi asiaa tapahtuu samaan aikaan. Klikkausprosentti laskee, koska kiinnostuneet ovat jo klikanneet ja loput ovat oppineet ohittamaan mainoksen. Samalla klikkauksen hinta nousee, koska Meta joutuu näyttämään mainosta yhä useammin saadakseen saman tuloksen.</p>
-      <p>Pahin seuraus on negatiivinen palaute. Jos ihmiset alkavat piilottaa mainosta tai merkitä sen häiritseväksi, Meta tulkitsee mainoksen huonoksi ja nostaa sen hintaa kaikille. Yksi väsynyt mainos voi siis vetää koko kampanjan kustannukset ylös.</p>
+      <p>Pahin seuraus on negatiivinen palaute. Jos ihmiset alkavat piilottaa mainosta tai merkitä sen häiritseväksi, Meta tulkitsee mainoksen huonoksi ja nostaa sen hintaa kaikille. Yksi väsynyt mainos voi siis vetää koko kampanjan kustannukset ylös. Pieni yleisö pahentaa tilannetta: paikallinen kauneushoitola, joka kohdentaa vain yhden kaupungin asiakkaisiin, polttaa yleisönsä loppuun nopeammin kuin verkkokauppa, joka mainostaa koko maahan.</p>
 
       <h2>Mikä on liikaa</h2>
       <p>Tarkkaa raja-arvoa ei ole, mutta käytännön nyrkkisääntö auttaa. Kylmälle yleisölle, eli ihmisille jotka eivät vielä tunne yritystäsi, frequency kannattaa pitää matalana. Kun se nousee selvästi yli muutaman per viikko, kannattaa reagoida. Uudelleenmarkkinoinnissa, eli sivustollasi jo käyneille, korkeampi frequency on luonnollista ja jopa toivottua, koska tarkoitus on muistuttaa.</p>
       <p>Älä tuijota pelkkää lukua. Katso frequencya yhdessä tulosten kanssa. Jos frequency nousee mutta klikit ja myynnit pysyvät hyvinä, kaikki on kunnossa. Jos frequency nousee ja tulokset laskevat samaan aikaan, sinulla on creative fatigue, eli mainos on väsynyt.</p>
 
       <h2>Näin hallitset frequencya</h2>
-      <p><strong>Ratkaisu:</strong> vaihda mainosmateriaalia ennen kuin se ehtii väsyä. Pidä valmiina kaksi tai kolme erilaista versiota ja kierrätä niitä. Sama tarjous, eri kuva ja eri ensimmäinen lause riittää usein nollaamaan tilanteen, koska yleisölle se näyttää uudelta mainokselta.</p>
+      <p><strong>Ratkaisu:</strong> vaihda mainosmateriaalia ennen kuin se ehtii väsyä. Pidä valmiina kaksi tai kolme erilaista versiota ja kierrätä niitä. Sama tarjous, eri kuva ja eri ensimmäinen lause riittää usein nollaamaan tilanteen, koska yleisölle se näyttää uudelta mainokselta. Ravintola voi vaihtaa lounaskuvan brunssikuvaan ja päivittää otsikon, vaikka tarjous pysyy samana.</p>
       <p>Toinen keino on laajentaa yleisöä. Jos kohdennat kovin pieneen ryhmään, samat ihmiset tulevat väistämättä vastaan yhä uudelleen. Hieman laajempi yleisö antaa Metalle enemmän tilaa näyttää mainosta uusille silmille. Paikallinen remonttiyritys voi esimerkiksi laajentaa aluetta naapurikuntiin sen sijaan että jauhaa samaa pientä postinumeroa.</p>
       <p>Kolmas keino on tehdä uudelleenmarkkinoinnissa rajaus, jolla suljet pois jo ostaneet tai jo yhteyttä ottaneet. Ei ole järkeä näyttää lounastarjousta kymmenettä kertaa ihmiselle joka kävi jo syömässä eilen.</p>
 
@@ -34,6 +34,8 @@ export const batch4: Post[] = [
       <p>Ei. Uudelleenmarkkinoinnissa ja kalliissa ostopäätöksissä ihminen tarvitsee useita kosketuksia ennen kuin toimii. Ongelma syntyy vasta kun frequency nousee ja tulokset laskevat samanaikaisesti.</p>
       <h3>Pitääkö frequencyä rajoittaa asetuksilla?</h3>
       <p>Joissakin kampanjatyypeissä voit asettaa rajan näyttökerroille. Useimmiten parempi ratkaisu on kuitenkin pitää materiaali tuoreena ja yleisö riittävän laajana, jolloin frequency pysyy kurissa luonnostaan.</p>
+      <h3>Kuinka nopeasti frequency nousee liian korkeaksi?</h3>
+      <p>Se riippuu yleisön koosta ja budjetista. Pieni paikallinen yleisö ja reilu budjetti nostavat frequencyn nopeasti, joskus parissa viikossa. Laajemmalla yleisöllä sama materiaali kestää pidempään ennen väsymistä.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -55,18 +57,19 @@ export const batch4: Post[] = [
 
       <h2>Mitä Meta-mainonta oikeasti tekee</h2>
       <p>Meta-mainonta keskeyttää ihmisen. Toisin kuin Google, jossa ihminen hakee aktiivisesti palvelua, Facebookissa ja Instagramissa ihminen selaa vapaa-ajallaan eikä etsi sinua. Tämä tarkoittaa kahta asiaa. Tavoitat ihmisiä jotka eivät vielä tienneet tarvitsevansa sinua, mikä on suuri mahdollisuus. Mutta heitä pitää lämmittää, koska he eivät ole valmiina ostamaan juuri nyt.</p>
-      <p>Siksi realistinen odotus ei ole myynti ensimmäisestä klikistä. Realistinen odotus on, että rakennat kysyntää ja keräät yhteydenottoja niiltä, jotka olivat lähellä päätöstä.</p>
+      <p>Siksi realistinen odotus ei ole myynti ensimmäisestä klikistä. Realistinen odotus on, että rakennat kysyntää ja keräät yhteydenottoja niiltä, jotka olivat lähellä päätöstä. Ajattele kauneushoitolaa: harva varaa kasvohoidon ensimmäisellä mainoskerralla, mutta moni muistaa nimen kun tarve tulee, jos olet näkynyt riittävästi.</p>
 
       <h2>Paljonko liidejä ja millä hinnalla</h2>
       <p>Liidin hinta vaihtelee toimialan mukaan rajusti, joten yhtä lukua on turha luvata. Pienen keskihinnan palvelu kuten kauneushoitola saa yhteydenottoja edullisemmin kuin korkean kaupan remonttiyritys, jonka yksi asiakkuus voi olla kymmeniätuhansia euroja. Oikea kysymys ei kuitenkaan ole mitä liidi maksaa, vaan paljonko liidi saa maksaa.</p>
       <p>Laske se itse. Jos yksi asiakas tuo sinulle keskimäärin kaksituhatta euroa ja joka neljäs liidi muuttuu asiakkaaksi, sinulla on varaa maksaa liidistä reilusti ja olla silti voitolla. Verkkokaupalle sama ajattelu pätee tilauksen keskiostoksen ja katteen kautta. Kun tiedät nämä luvut, lopetat tuijottamasta klikkauksen hintaa ja alat katsoa onko mainonta kokonaisuutena kannattavaa.</p>
+      <p>Muista myös laatu, ei vain määrä. Remonttiyritys voi saada paljon halpoja yhteydenottoja, joista valtaosa on hintatiedustelijoita ilman aikomusta ostaa. Toinen yritys saa vähemmän mutta vakavampia tarjouspyyntöjä. Jälkimmäinen voi olla paljon kannattavampi, vaikka liidin näennäinen hinta on korkeampi. Seuraa siis kuinka moni liidi muuttuu maksavaksi asiakkaaksi, älä pelkkää yhteydenottojen lukumäärää.</p>
 
       <h2>Missä ajassa</h2>
       <p>Tässä on tärkein realistinen odotus. Uusi kampanja käy ensin läpi oppimisvaiheen, jonka aikana Meta etsii ketkä reagoivat. Tulokset heittelevät ja saattavat näyttää huonoilta. Tämä on normaalia. Ensimmäisten viikkojen perusteella ei kannata vetää johtopäätöksiä eikä varsinkaan sammuttaa kampanjaa paniikissa.</p>
-      <p>Anna kanavalle muutama kuukausi rauhassa. Sinä aikana opit mikä materiaali toimii, kuka asiakkaasi oikeasti on ja millä viestillä hänet tavoittaa. Meta-mainonta on enemmän maraton kuin pikajuoksu. Yritykset jotka pärjäävät, eivät hyppää kanavasta toiseen vaan parantavat samaa konetta kuukausi kuukaudelta.</p>
+      <p>Anna kanavalle muutama kuukausi rauhassa. Sinä aikana opit mikä materiaali toimii, kuka asiakkaasi oikeasti on ja millä viestillä hänet tavoittaa. Meta-mainonta on enemmän maraton kuin pikajuoksu. Yritykset jotka pärjäävät, eivät hyppää kanavasta toiseen vaan parantavat samaa konetta kuukausi kuukaudelta. Tyypillinen virhe on vaihtaa mainosta, yleisöä ja budjettia yhtä aikaa joka viikko, jolloin et koskaan opi mikä toimi.</p>
 
       <h2>Mitä Meta ei tee</h2>
-      <p>Meta-mainonta ei korjaa huonoa tarjousta, kallista hintaa suhteessa kilpailijoihin tai sekavaa verkkosivua. Jos ihmiset klikkaavat mutta eivät osta, vika on harvoin mainoksessa. Mainonta tuo liikennettä ovelle. Jos myymälä on sekaisin, kävijät kääntyvät pois. Aseta odotukset sen mukaan, että mainonta on yksi osa kokonaisuutta, ei taikatemppu.</p>
+      <p>Meta-mainonta ei korjaa huonoa tarjousta, kallista hintaa suhteessa kilpailijoihin tai sekavaa verkkosivua. Jos ihmiset klikkaavat mutta eivät osta, vika on harvoin mainoksessa. Mainonta tuo liikennettä ovelle. Jos myymälä on sekaisin, kävijät kääntyvät pois. Verkkokaupalla tämä tarkoittaa hidasta sivua, epäselvää hintaa tai monimutkaista kassaa. Palveluyrityksellä se tarkoittaa lomaketta johon ei kukaan jaksa vastata. Aseta odotukset sen mukaan, että mainonta on yksi osa kokonaisuutta, ei taikatemppu.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Kuinka nopeasti pitäisi alkaa nähdä tuloksia?</h3>
@@ -77,6 +80,8 @@ export const batch4: Post[] = [
       <p>Harvoin. Ensimmäisten kuukausien tarkoitus on löytää toimiva yhdistelmä yleisöä, viestiä ja tarjousta. Voitto tulee tyypillisesti vasta kun tämä on löytynyt ja kampanjaa skaalataan hallitusti.</p>
       <h3>Mistä tiedän onko tavoitteeni realistinen?</h3>
       <p>Laske taaksepäin asiakkaan arvosta. Jos haluamasi liidihinta vaatii epärealistisen halpaa hankintaa toimialallasi, tavoite on liian tiukka. Realistinen tavoite jättää tilaa myös oppimisvaiheelle.</p>
+      <h3>Kannattaako tavoitteet asettaa määränä vai eurona?</h3>
+      <p>Eurona. Yhteydenottojen lukumäärä ei kerro kannattavuudesta mitään, jos et tiedä mitä asiakas on sinulle arvoltaan. Aseta tavoite muotoon paljonko saat maksaa yhdestä asiakkaasta, ja johda liidihinta siitä.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -99,7 +104,7 @@ export const batch4: Post[] = [
 
       <h2>Aloita tuloksesta, älä yksityiskohdista</h2>
       <p>Raportin ensimmäisen rivin pitää kertoa lopputulos. Paljonko käytettiin, montako yhteydenottoa tai kauppaa tuli, ja paljonko yksi tulos maksoi. Verkkokaupalle tärkein luku on mainonnan tuotto suhteessa kuluun, eli paljonko euroa mainonta toi takaisin jokaista käytettyä euroa kohden. Palveluyritykselle tärkein on yhden liidin tai varauksen hinta.</p>
-      <p>Kaikki muu on tämän selittämistä. Jos joudut selaamaan kolme sivua ennen kuin näet kannattiko kuukausi, raportti on rakennettu väärin päin.</p>
+      <p>Kaikki muu on tämän selittämistä. Jos joudut selaamaan kolme sivua ennen kuin näet kannattiko kuukausi, raportti on rakennettu väärin päin. Kuvittele kiireinen ravintoloitsija, joka lukee raporttia keittiön ovella: hänen pitää nähdä ensimmäisestä lauseesta tuliko pöytävarauksia ja paljonko ne maksoivat.</p>
 
       <h2>Mitä lukuja oikeasti tarvitaan</h2>
       <p>Pidä raportti suppeana. Liika data hämärtää viestin. Olennaiset luvut palveluyritykselle ovat käytetty budjetti, saatujen yhteydenottojen määrä, yhden yhteydenoton hinta ja näiden kehitys edelliseen kuukauteen verrattuna. Verkkokaupalle lisää myynnin määrä euroina ja mainonnan tuotto suhteessa kuluun.</p>
@@ -107,13 +112,14 @@ export const batch4: Post[] = [
 
       <h2>Vertaa, älä esitä yksittäistä lukua</h2>
       <p>Yksittäinen luku ei kerro mitään. Kahdenkymmenen euron liidihinta voi olla loistava remonttiyritykselle ja katastrofi kynsistudiolle. Siksi jokaisen tärkeän luvun viereen kuuluu vertailu. Mikä se oli viime kuussa? Mihin pyritään? Kun raportissa näkyy että liidihinta laski edellisestä kuukaudesta, tarina on heti selvä, vaikka katsoja ei tuntisi toimialan vertailulukuja.</p>
+      <p>Hyvä vertailu paljastaa myös kausivaihtelun. Remonttiyrityksen kysyntä nousee keväällä ja laskee joulun alla. Jos vertaat vain edelliseen kuukauteen, voit luulla mainonnan heikentyneen, vaikka kyse on luonnollisesta sesongista. Vertaa siksi myös samaan ajankohtaan vuotta aiemmin, jos dataa on.</p>
 
       <h2>Selitä mitä tehtiin ja miksi</h2>
       <p>Pelkät luvut jättävät auki tärkeimmän: miksi näin kävi. Hyvä raportti sisältää muutaman lauseen selitystä. Vaihdettiin mainoskuvaa kun vanha alkoi väsyä, ja klikkihinta laski. Kokeiltiin uutta yleisöä joka ei toiminut, joten se sammutettiin. Tämä osoittaa että mainontaa hoidetaan aktiivisesti eikä se vain pyöri taustalla itsekseen.</p>
       <p>Jos teet raporttia asiakkaalle, tämä osa on tärkein. Asiakas ei osta lukuja, hän ostaa tunteen siitä että joku ajattelee hänen rahojaan.</p>
 
       <h2>Lopeta seuraaviin askeliin</h2>
-      <p>Raportin viimeinen osa katsoo eteenpäin. Mitä tehdään ensi kuussa ja miksi? Nostetaanko toimivan kampanjan budjettia, testataanko uutta tarjousta, vai korjataanko jokin pullonkaula? Tämä muuttaa raportin pelkästä menneen kuvauksesta työkaluksi, joka ohjaa päätöksiä.</p>
+      <p>Raportin viimeinen osa katsoo eteenpäin. Mitä tehdään ensi kuussa ja miksi? Nostetaanko toimivan kampanjan budjettia, testataanko uutta tarjousta, vai korjataanko jokin pullonkaula? Tämä muuttaa raportin pelkästä menneen kuvauksesta työkaluksi, joka ohjaa päätöksiä. Konkreettinen seuraava askel kuten kokeillaan videomainosta kuvan rinnalla on arvokkaampi kuin yleinen lupaus jatketaan optimointia.</p>
 
       <h2>Kuinka usein ja missä muodossa</h2>
       <p>Kuukausittainen raportti riittää useimmille pk-yrityksille. Viikoittainen on liian tiheä, koska luvut heittelevät lyhyellä aikavälillä ja johtavat ylireagointiin. Muoto saa olla yksinkertainen. Yhden sivun yhteenveto, jossa on tärkeimmät luvut, vertailu ja selitys, on parempi kuin kaksikymmentäsivuinen dataröykkiö. Tavoite on että kiireinen yrittäjä ymmärtää tilanteen kahdessa minuutissa.</p>
@@ -127,6 +133,8 @@ export const batch4: Post[] = [
       <p>Ehdottomasti. Raportti joka näyttää vain hyvät luvut menettää uskottavuutensa heti kun jokin menee pieleen. Rehellinen raportti, joka kertoo mikä ei toiminut ja mitä sille tehdään, rakentaa luottamusta.</p>
       <h3>Kuinka usein raportti kannattaa tehdä?</h3>
       <p>Kerran kuukaudessa on hyvä rytmi pk-yritykselle. Se antaa tarpeeksi dataa luotettaviin johtopäätöksiin ilman että reagoidaan satunnaiseen lyhyen aikavälin heilahteluun.</p>
+      <h3>Pitääkö raportissa yhdistää Meta ja oman myynnin luvut?</h3>
+      <p>Kannattaa. Meta raportoi vain osan tuloksista seurannan rajoitusten takia. Kun lisäät raporttiin oman kassajärjestelmän tai varausjärjestelmän luvut, näet kokonaiskuvan etkä tee päätöksiä pelkän vajaan datan varassa.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -148,19 +156,19 @@ export const batch4: Post[] = [
 
       <h2>Mitä oikeastaan tapahtui</h2>
       <p>Ennen muutosta Meta-pikseli pystyi seuraamaan tarkasti, mitä ihminen teki klikattuaan mainosta: kävi sivulla, lisäsi tuotteen koriin, osti. Tämä tieto kulki selaimen kautta takaisin Metalle. Kun iPhone-käyttäjä kieltää seurannan, tuo tiedonkulku katkeaa tai vajaaksi. Meta ei enää näe luotettavasti koko polkua mainoksesta ostoon.</p>
-      <p>Koska iPhone on Suomessa hyvin yleinen, tämä koskee isoa osaa asiakaskunnastasi. Et siis menetä vain pientä siivua datasta.</p>
+      <p>Koska iPhone on Suomessa hyvin yleinen, tämä koskee isoa osaa asiakaskunnastasi. Et siis menetä vain pientä siivua datasta. Jos verkkokauppasi asiakkaista suuri osa selaa puhelimella, vaikutus on tuntuva juuri sinun raporteissasi.</p>
 
       <h2>Miksi raporttisi näyttää vähemmän tuloksia kuin todellisuus</h2>
       <p>Tämä on tärkein käytännön seuraus. Meta raportoi nyt todennäköisesti vähemmän konversioita kuin oikeasti tapahtui. Jos myit kuukaudessa sata tuotetta mainonnan ansiosta, Ads Manager saattaa näyttää selvästi pienemmän luvun, koska osa ostajista oli seurannan kieltäneitä iPhone-käyttäjiä joita Meta ei pystynyt yhdistämään mainokseen.</p>
-      <p>Tästä syntyy klassinen tilanne: verkkokauppias näkee kassajärjestelmässään enemmän myyntiä kuin Meta raportoi, ja luulee mainonnan epäonnistuneen. Todellisuudessa mainonta toimi, mutta osa tuloksista jäi näkymättömiin. Luota oman myynnin kokonaiskuvaan, älä pelkkään Metan lukuun.</p>
+      <p>Tästä syntyy klassinen tilanne: verkkokauppias näkee kassajärjestelmässään enemmän myyntiä kuin Meta raportoi, ja luulee mainonnan epäonnistuneen. Todellisuudessa mainonta toimi, mutta osa tuloksista jäi näkymättömiin. Luota oman myynnin kokonaiskuvaan, älä pelkkään Metan lukuun. Sama koskee palveluyritystä: kauneushoitolan kalenteri voi täyttyä varauksista, vaikka Meta raportoi vain murto-osan niistä.</p>
 
       <h2>Miten se vaikuttaa kohdentamiseen ja optimointiin</h2>
       <p>Vähemmän dataa tarkoittaa, että Meta oppii hitaammin ketkä ovat hyviä asiakkaita. Algoritmi tarvitsee signaaleja onnistuneista konversioista voidakseen etsiä lisää samankaltaisia ihmisiä. Kun osa noista signaaleista katoaa, optimointi muuttuu epätarkemmaksi ja oppimisvaihe voi venyä.</p>
-      <p>Tämä ei tarkoita että mainonta lakkasi toimimasta. Se tarkoittaa, että sinun pitää auttaa Metaa saamaan dataa muilla keinoilla.</p>
+      <p>Tämä ei tarkoita että mainonta lakkasi toimimasta. Se tarkoittaa, että sinun pitää auttaa Metaa saamaan dataa muilla keinoilla. Mitä vähemmän kohinaa datassa on, sitä paremmin algoritmi löytää oikeat ihmiset, joten datan paikkaaminen on suora keino parantaa tuloksia.</p>
 
       <h2>Mitä tehdä tänään</h2>
       <p><strong>Ratkaisu:</strong> ota käyttöön Conversions API, eli palvelinpuolen seuranta. Se lähettää konversiotiedot suoraan verkkosivusi palvelimelta Metalle, ohittaen selaimen rajoitukset. Näin osa kadonneesta datasta palautuu, ja Meta saa luotettavampia signaaleja optimointiin. Useimpiin verkkokauppa-alustoihin ja WordPressiin tämä saadaan lisäosalla tai integraatiolla ilman raskasta koodausta.</p>
-      <p>Toinen toimenpide on verkkotunnuksen vahvistaminen Metan Business-asetuksissa. Se varmistaa että sinulla on oikeus optimoida oman sivustosi tapahtumiin ja vakauttaa raportointia.</p>
+      <p>Toinen toimenpide on verkkotunnuksen vahvistaminen Metan Business-asetuksissa. Se varmistaa että sinulla on oikeus optimoida oman sivustosi tapahtumiin ja vakauttaa raportointia. Samalla kannattaa järjestää seurattavat tapahtumat tärkeysjärjestykseen Metan asetuksissa, jotta tärkein konversiosi kuten osto tai yhteydenotto on etusijalla.</p>
       <p>Kolmas on asenteen muutos. Älä arvioi mainontaa pelkän Metan raportin perusteella. Katso myyntiäsi kokonaisuutena: nousiko kassavirta kun mainonta käynnistyi, kysytkö uusilta asiakkailta mistä he kuulivat sinusta, näkyykö verkkosivun kävijämäärissä piikki. Nämä antavat totuudenmukaisemman kuvan kuin yksittäinen luku Ads Managerissa.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
@@ -172,6 +180,8 @@ export const batch4: Post[] = [
       <p>Se on tapa lähettää tieto onnistuneesta ostosta tai yhteydenotosta Metalle suoraan palvelimeltasi sen sijaan että luotettaisiin vain selaimeen. Koska se ei ole riippuvainen selaimen rajoituksista, osa muuten kadonneesta datasta saadaan talteen.</p>
       <h3>Pitääkö minun olla huolissani jos myyntini näyttää hyvältä mutta Meta raportoi vähän?</h3>
       <p>Ristiriita on tavallinen ja johtuu juuri tästä seurannan vajeesta. Jos oma myyntisi kasvaa mainonnan aikana, mainonta todennäköisesti toimii, vaikka Meta näyttäisi pienempiä lukuja.</p>
+      <h3>Koskeeko tämä myös Android-käyttäjiä?</h3>
+      <p>Suoraan iOS 14.5 koskee iPhonea, mutta yleinen suunta kohti tiukempaa seurannan rajoitusta koskee kaikkia laitteita ja selaimia. Siksi palvelinpuolen seuranta kannattaa ottaa käyttöön riippumatta siitä millä laitteilla asiakkaasi selaavat.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -193,22 +203,22 @@ export const batch4: Post[] = [
 
       <h2>Mitä Pixel käytännössä tekee</h2>
       <p>Kun joku klikkaa mainostasi ja saapuu sivullesi, Pixel rekisteröi sen. Jos hän selaa tuotetta, lisää sen koriin ja ostaa, Pixel kertoo jokaisen näistä vaiheista Metalle. Verkkokaupalle tämä tarkoittaa, että näet mustaa valkoisella mitkä mainokset tuottivat myyntiä ja mitkä eivät, sen sijaan että arvailisit klikkien perusteella.</p>
-      <p>Pixel ei ole vain mittari. Se on myös opettaja. Mitä enemmän tietoa se kerää onnistuneista ostoista, sitä paremmin Meta osaa etsiä lisää samankaltaisia ostajia.</p>
+      <p>Pixel ei ole vain mittari. Se on myös opettaja. Mitä enemmän tietoa se kerää onnistuneista ostoista, sitä paremmin Meta osaa etsiä lisää samankaltaisia ostajia. Ensimmäisten viikkojen aikana Pixel siis sekä mittaa että kouluttaa algoritmia, ja molemmat paranevat ajan myötä.</p>
 
       <h2>Kolme asiaa, jotka Pixel mahdollistaa</h2>
       <p>Ensimmäinen on optimointi konversioihin. Voit pyytää Metaa etsimään ihmisiä jotka todennäköisesti ostavat, etkä vain ihmisiä jotka klikkaavat. Ero on valtava. Klikkaaja maksaa rahaa, ostaja tuo rahaa.</p>
-      <p>Toinen on uudelleenmarkkinointi. Pixel tunnistaa sivustollasi käyneet, joten voit näyttää mainoksia juuri niille jotka katsoivat tuotetta mutta eivät ostaneet. Nämä ovat lämpimimpiä mahdollisia asiakkaita, ja heidän tavoittamisensa on yleensä mainonnan kannattavinta osaa.</p>
+      <p>Toinen on uudelleenmarkkinointi. Pixel tunnistaa sivustollasi käyneet, joten voit näyttää mainoksia juuri niille jotka katsoivat tuotetta mutta eivät ostaneet. Nämä ovat lämpimimpiä mahdollisia asiakkaita, ja heidän tavoittamisensa on yleensä mainonnan kannattavinta osaa. Verkkokauppa voi näyttää tarkalleen sen tuotteen, jota kävijä katsoi, ja muistuttaa siitä parin päivän kuluttua.</p>
       <p>Kolmas on samankaltaisten yleisöjen rakentaminen. Pixelin keräämän ostajatiedon pohjalta Meta voi etsiä uusia ihmisiä, jotka muistuttavat nykyisiä asiakkaitasi. Tämä on yksi tehokkaimmista tavoista löytää uusia asiakkaita.</p>
 
       <h2>Miksi ilman sitä mainonta on arvailua</h2>
       <p>Ilman Pixeliä Ads Manager näyttää sinulle klikkien ja näyttöjen määrän, mutta ei mitä klikin jälkeen tapahtui. Et voi optimoida myyntiin, koska Meta ei tiedä mikä on myynti. Et voi tehdä uudelleenmarkkinointia, koska et tiedä kuka kävi. Et voi rakentaa samankaltaisia yleisöjä, koska sinulla ei ole pohjadataa. Mainonta typistyy liikenteen ostamiseksi ilman tietoa siitä, onko liikenne oikeaa.</p>
-      <p>Tämä koskee myös palveluyrityksiä. Vaikka et myisi verkossa, Pixel voi seurata kun joku täyttää yhteydenottolomakkeen tai painaa soita-nappia. Kauneushoitola näkee mitkä mainokset tuottivat ajanvarauksia, ei vain klikkejä.</p>
+      <p>Tämä koskee myös palveluyrityksiä. Vaikka et myisi verkossa, Pixel voi seurata kun joku täyttää yhteydenottolomakkeen tai painaa soita-nappia. Kauneushoitola näkee mitkä mainokset tuottivat ajanvarauksia, ei vain klikkejä. Remonttiyritys näkee mitkä mainokset toivat tarjouspyyntöjä, ja voi siirtää budjetin niihin.</p>
 
       <h2>Onko sen asentaminen vaikeaa</h2>
-      <p>Ei. Pixel luodaan Metan Business-työkaluissa, ja saat valmiin koodinpätkän. WordPressiin ja yleisiin verkkokauppa-alustoihin se asennetaan lisäosalla tai sisäänrakennetulla integraatiolla ilman koodausta. Olennaista on, että sen asentaa kerran oikein ja varmistaa että se rekisteröi tärkeimmät tapahtumat, kuten ostot ja yhteydenotot.</p>
+      <p>Ei. Pixel luodaan Metan Business-työkaluissa, ja saat valmiin koodinpätkän. WordPressiin ja yleisiin verkkokauppa-alustoihin se asennetaan lisäosalla tai sisäänrakennetulla integraatiolla ilman koodausta. Olennaista on, että sen asentaa kerran oikein ja varmistaa että se rekisteröi tärkeimmät tapahtumat, kuten ostot ja yhteydenotot. Asennuksen jälkeen kannattaa aina testata, ettei seuranta jää vajaaksi.</p>
 
       <h2>Entä tietosuoja</h2>
-      <p>Pixelin käyttö edellyttää, että kerrot kävijöille seurannasta ja pyydät suostumuksen evästeisiin, kuten laki vaatii. Suostumusbanneri ja asianmukainen tietosuojaseloste kuuluvat asiaan. Tämä ei estä Pixelin käyttöä, vaan kuuluu normaaliin verkkosivun ylläpitoon Suomessa.</p>
+      <p>Pixelin käyttö edellyttää, että kerrot kävijöille seurannasta ja pyydät suostumuksen evästeisiin, kuten laki vaatii. Suostumusbanneri ja asianmukainen tietosuojaseloste kuuluvat asiaan. Tämä ei estä Pixelin käyttöä, vaan kuuluu normaaliin verkkosivun ylläpitoon Suomessa. Hyvin toteutettu suostumus ei myöskään romahduta seurantaa, kunhan banneri ja Pixel keskustelevat keskenään oikein.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Tarvitsenko Pixelin jos en myy verkossa?</h3>
@@ -219,6 +229,8 @@ export const batch4: Post[] = [
       <p>Pixel on perusta, mutta selaimen rajoitusten takia sen rinnalle suositellaan palvelinpuolen seurantaa, joka palauttaa osan muuten kadonneesta datasta. Yhdessä ne antavat luotettavamman kuvan.</p>
       <h3>Hidastaako Pixel verkkosivua?</h3>
       <p>Vaikutus on käytännössä olematon oikein asennettuna. Se on kevyt koodi, jonka miljoonat sivustot käyttävät ilman havaittavaa hidastumista.</p>
+      <h3>Kuinka kauan kestää ennen kuin Pixelistä on hyötyä?</h3>
+      <p>Mittaaminen alkaa heti, mutta optimoinnin ja yleisöjen rakentamisen hyöty kasvaa sitä mukaa kun Pixel kerää dataa onnistuneista ostoista tai yhteydenotoista. Mitä enemmän konversioita kertyy, sitä tarkemmin Meta osaa kohdentaa.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -239,23 +251,23 @@ export const batch4: Post[] = [
       <p>Meta Pixelin asentaminen WordPressiin kuulostaa tekniseltä, mutta käytännössä se on lisäosan asennus ja yhden tunnisteen kopiointi. Et tarvitse koodaria etkä kehittäjää. Käydään läpi vaihe vaiheelta miten se tehdään oikein, jotta seuranta toimii heti.</p>
 
       <h2>Vaihe 1: Luo Pixel Metan työkaluissa</h2>
-      <p>Mene Metan Business-asetuksiin ja avaa tapahtumienhallinta, eli Events Manager. Luo uusi tietolähde ja valitse verkkosivu. Anna sille selkeä nimi, esimerkiksi yrityksesi nimi, jotta löydät sen myöhemmin. Tässä vaiheessa Meta antaa sinulle Pixelin tunnisteen, joka on numerosarja. Se on ainoa asia jonka oikeasti tarvitset siirtää WordPressiin.</p>
+      <p>Mene Metan Business-asetuksiin ja avaa tapahtumienhallinta, eli Events Manager. Luo uusi tietolähde ja valitse verkkosivu. Anna sille selkeä nimi, esimerkiksi yrityksesi nimi, jotta löydät sen myöhemmin. Tässä vaiheessa Meta antaa sinulle Pixelin tunnisteen, joka on numerosarja. Se on ainoa asia jonka oikeasti tarvitset siirtää WordPressiin. Kopioi se talteen.</p>
 
       <h2>Vaihe 2: Valitse asennustapa</h2>
       <p>WordPressissä on kaksi järkevää reittiä. Jos sinulla on verkkokauppa WooCommercella, asenna Metan virallinen lisäosa, joka yhdistää kaupan suoraan Metaan ja tuo tuotetiedot mukanaan. Jos sinulla on tavallinen sivusto ilman verkkokauppaa, kevyt seurantalisäosa riittää. Älä liimaa koodia suoraan teeman tiedostoihin, koska se katoaa teemapäivityksessä ja on hankala ylläpitää.</p>
-      <p><strong>Ratkaisu:</strong> käytä aina lisäosaa. Se selviää päivityksistä, lisää tarvittavat tapahtumat automaattisesti eikä riko sivua jos teema vaihtuu.</p>
+      <p><strong>Ratkaisu:</strong> käytä aina lisäosaa. Se selviää päivityksistä, lisää tarvittavat tapahtumat automaattisesti eikä riko sivua jos teema vaihtuu. Tämä on tärkeää erityisesti pienelle yritykselle, jolla ei ole kehittäjää korjaamassa rikkoutunutta seurantaa.</p>
 
       <h2>Vaihe 3: Liitä Pixelin tunniste lisäosaan</h2>
-      <p>Asenna ja aktivoi valitsemasi lisäosa WordPressin ohjausnäkymästä. Avaa sen asetukset ja liitä kenttään se numerosarja, jonka sait Metalta. Tallenna. Tämä riittää yhdistämään sivustosi ja Metan. Useimmat lisäosat lisäävät automaattisesti perustapahtuman, joka rekisteröi sivunkatselut.</p>
+      <p>Asenna ja aktivoi valitsemasi lisäosa WordPressin ohjausnäkymästä. Avaa sen asetukset ja liitä kenttään se numerosarja, jonka sait Metalta. Tallenna. Tämä riittää yhdistämään sivustosi ja Metan. Useimmat lisäosat lisäävät automaattisesti perustapahtuman, joka rekisteröi sivunkatselut. Varmista samalla, ettei sinulla ole jo vanhaa Pixel-asennusta päällä, sillä kaksi yhtä aikaa aiheuttaa tuplaseurantaa.</p>
 
       <h2>Vaihe 4: Varmista että tärkeät tapahtumat seurataan</h2>
-      <p>Pelkkä sivunkatselu ei riitä. Sinun pitää seurata sitä mikä on liiketoiminnallesi tärkeää. Verkkokaupalle se on ostos ja ostoskoriin lisäys. Palveluyritykselle se on yhteydenottolomakkeen lähetys tai ajanvaraus. WooCommerce-lisäosa hoitaa ostotapahtumat itse. Lomakkeiden seuranta saattaa vaatia, että määrität lomakkeen kiitossivun seurattavaksi tapahtumaksi lisäosan asetuksissa.</p>
+      <p>Pelkkä sivunkatselu ei riitä. Sinun pitää seurata sitä mikä on liiketoiminnallesi tärkeää. Verkkokaupalle se on ostos ja ostoskoriin lisäys. Palveluyritykselle se on yhteydenottolomakkeen lähetys tai ajanvaraus. WooCommerce-lisäosa hoitaa ostotapahtumat itse. Lomakkeiden seuranta saattaa vaatia, että määrität lomakkeen kiitossivun seurattavaksi tapahtumaksi lisäosan asetuksissa. Esimerkiksi remonttiyrityksen tarjouspyyntölomakkeen kohdalla seuranta sidotaan kiitossivuun, ei lähetä-napin painallukseen.</p>
 
       <h2>Vaihe 5: Testaa heti</h2>
-      <p>Älä luota siihen että asennus onnistui, vaan tarkista se. Asenna selaimeesi Metan tarjoama testaustyökalu, eli Meta Pixel Helper, ja avaa oma sivustosi. Sen pitäisi näyttää että Pixel on aktiivinen ja kirjaa sivunkatselun. Tee sitten testitilaus tai testilomake ja katso että myös se tapahtuma näkyy Metan tapahtumienhallinnassa muutaman minuutin sisällä.</p>
+      <p>Älä luota siihen että asennus onnistui, vaan tarkista se. Asenna selaimeesi Metan tarjoama testaustyökalu, eli Meta Pixel Helper, ja avaa oma sivustosi. Sen pitäisi näyttää että Pixel on aktiivinen ja kirjaa sivunkatselun. Tee sitten testitilaus tai testilomake ja katso että myös se tapahtuma näkyy Metan tapahtumienhallinnassa muutaman minuutin sisällä. Jos sivunkatselu toimii mutta osto ei, tapahtumien määrityksessä on vielä korjattavaa.</p>
 
       <h2>Muista suostumus</h2>
-      <p>Suomessa kävijältä on pyydettävä suostumus seurantaevästeisiin. Varmista että sivustollasi on toimiva evästebanneri ja että Pixel kunnioittaa kävijän valintaa. Useimmat suostumuslisäosat osaavat keskustella Pixel-lisäosan kanssa, kunhan asetukset on tehty oikein. Tämä kuuluu asennukseen, ei ole valinnainen lisä.</p>
+      <p>Suomessa kävijältä on pyydettävä suostumus seurantaevästeisiin. Varmista että sivustollasi on toimiva evästebanneri ja että Pixel kunnioittaa kävijän valintaa. Useimmat suostumuslisäosat osaavat keskustella Pixel-lisäosan kanssa, kunhan asetukset on tehty oikein. Tämä kuuluu asennukseen, ei ole valinnainen lisä. Testaa myös, että Pixel käynnistyy vasta kun kävijä hyväksyy evästeet, jotta olet linjassa lain kanssa.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Tarvitsenko koodausosaamista?</h3>
@@ -266,6 +278,8 @@ export const batch4: Post[] = [
       <p>Tarkista Meta Pixel Helper -työkalulla että Pixel on aktiivinen, ja varmista tapahtumienhallinnasta että testitilaus tai testilomake kirjautuu. Jos molemmat näkyvät, asennus on kunnossa.</p>
       <h3>Voinko asentaa Pixelin myös ilman WordPressiä?</h3>
       <p>Kyllä, mutta tämä ohje koskee WordPressiä. Muilla alustoilla periaate on sama: luo Pixel Metassa, liitä tunniste alustan integraatioon ja varmista tärkeät tapahtumat sekä testaa.</p>
+      <h3>Pitääkö Pixel asentaa uudelleen jos vaihdan teemaa?</h3>
+      <p>Ei, jos käytit lisäosaa. Lisäosa on teemasta riippumaton, joten Pixel säilyy teemanvaihdossa. Tämä on yksi tärkein syy olla liimaamatta koodia suoraan teeman tiedostoihin.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -289,7 +303,7 @@ export const batch4: Post[] = [
       <p>Pixel toimii kävijän selaimessa. Kun joku ostaa tuotteen, selain lähettää tiedon Metalle. Tämä on toiminut hyvin vuosia, mutta sillä on heikkous. Selaimet ja puhelimet rajoittavat nykyään seurantaa, ja moni käyttäjä estää sen kokonaan. Mainosten estäjät ja yksityisyysasetukset katkaisevat osan tiedonkulusta. Lopputulos: osa ostoista ei koskaan päädy Metan tietoon, vaikka ne tapahtuivat.</p>
 
       <h2>Conversions API: palvelimen kautta</h2>
-      <p>Conversions API, lyhyemmin CAPI, lähettää saman tiedon verkkosivusi palvelimelta suoraan Metalle. Koska se ei kulje kävijän selaimen läpi, selainrajoitukset ja estäjät eivät katkaise sitä samalla tavalla. Käytännössä se palauttaa osan siitä datasta, joka pelkän Pixelin kanssa katoaisi. Mitä luotettavampaa data on, sitä paremmin Meta osaa optimoida ja sitä tarkemmin näet todelliset tulokset.</p>
+      <p>Conversions API, lyhyemmin CAPI, lähettää saman tiedon verkkosivusi palvelimelta suoraan Metalle. Koska se ei kulje kävijän selaimen läpi, selainrajoitukset ja estäjät eivät katkaise sitä samalla tavalla. Käytännössä se palauttaa osan siitä datasta, joka pelkän Pixelin kanssa katoaisi. Mitä luotettavampaa data on, sitä paremmin Meta osaa optimoida ja sitä tarkemmin näet todelliset tulokset. Verkkokaupalle tämä näkyy suoraan siinä, että raportoitu myynti on lähempänä kassajärjestelmän todellista lukua.</p>
 
       <h2>Tarvitsetko molemmat</h2>
       <p>Kyllä, ja tämä on tärkein viesti. Ne eivät ole vaihtoehtoja toisilleen vaan täydentävät toisiaan. Meta suosittelee käyttämään molempia yhdessä, koska silloin ne kattavat toistensa aukot. Selaimesta tuleva ja palvelimelta tuleva tieto yhdistetään, ja päällekkäiset tapahtumat poistetaan automaattisesti, joten et päädy laskemaan samaa ostoa kahdesti.</p>
@@ -297,10 +311,10 @@ export const batch4: Post[] = [
 
       <h2>Onko CAPI vaikea ottaa käyttöön</h2>
       <p>Helpommin kuin moni luulee. Verkkokauppa-alustoissa ja WordPressissä on valmiita integraatioita, jotka hoitavat palvelinpuolen seurannan ilman omaa koodausta. Esimerkiksi WooCommercen Meta-integraatio osaa lähettää tapahtumat sekä selaimesta että palvelimelta, kun se on määritetty oikein. Jos sivustosi on rakennettu erikoisemmin, kehittäjä voi tarvita hetken työtä, mutta useimmille pk-yrityksille tämä on lisäosatason asia.</p>
-      <p><strong>Ratkaisu:</strong> jos käytät valmista alustaa, etsi sen Meta-integraatiosta palvelinpuolen seurannan asetus ja kytke se päälle samalla Pixelin tunnisteella. Näin molemmat lähettävät dataa rinnakkain.</p>
+      <p><strong>Ratkaisu:</strong> jos käytät valmista alustaa, etsi sen Meta-integraatiosta palvelinpuolen seurannan asetus ja kytke se päälle samalla Pixelin tunnisteella. Näin molemmat lähettävät dataa rinnakkain. Yhteinen tunniste on tärkeä, koska se kertoo Metalle että selaimesta ja palvelimelta tuleva tapahtuma on sama, eikä kahta erillistä.</p>
 
       <h2>Miten varmistat että molemmat toimivat</h2>
-      <p>Metan tapahtumienhallinnassa näet mistä tapahtumat tulevat. Jos asennus on oikein, näet saman ostotapahtuman saapuvan sekä selaimesta että palvelimelta, ja Meta merkitsee ne yhdistetyiksi. Tapahtumienhallinta antaa myös laatupisteytyksen, joka kertoo onko data riittävän kattavaa ja oikein muotoiltua. Jos pisteytys on matala, se vihjaa että jotain puuttuu.</p>
+      <p>Metan tapahtumienhallinnassa näet mistä tapahtumat tulevat. Jos asennus on oikein, näet saman ostotapahtuman saapuvan sekä selaimesta että palvelimelta, ja Meta merkitsee ne yhdistetyiksi. Tapahtumienhallinta antaa myös laatupisteytyksen, joka kertoo onko data riittävän kattavaa ja oikein muotoiltua. Jos pisteytys on matala, se vihjaa että jotain puuttuu, esimerkiksi ostoksen arvo tai jokin tunnistetieto jota voitaisiin välittää.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Voinko käyttää pelkkää Conversions APIa ilman Pixeliä?</h3>
@@ -311,6 +325,8 @@ export const batch4: Post[] = [
       <p>Tarkkaa lukua ei voi luvata, koska se riippuu kävijöistäsi ja asennuksesta. Olennaista on, että se palauttaa merkittävän osan siitä, mitä pelkkä selainpohjainen seuranta menettää, ja parantaa siten optimointia.</p>
       <h3>Onko tämä sama asia kuin iOS-päivityksen ratkaisu?</h3>
       <p>Conversions API on juuri se keino, jolla selainrajoitusten ja iPhonen seurantakieltojen aiheuttamaa datan menetystä paikataan. Se ei palauta kaikkea, mutta se on paras käytettävissä oleva tapa.</p>
+      <h3>Vaikuttaako CAPI tietosuojaan tai suostumukseen?</h3>
+      <p>Suostumus pätee yhä. CAPI ei ole keino kiertää kävijän valintaa, vaan tapa välittää sallittu tieto luotettavammin. Varmista että palvelinpuolen seuranta kunnioittaa samaa suostumusta kuin selainpuolen Pixel.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -336,18 +352,18 @@ export const batch4: Post[] = [
 
       <h2>Verkkokauppa</h2>
       <p>Verkkokaupan ydintapahtuma on osto. Sen lisäksi kannattaa seurata ostoskoriin lisäystä ja maksutapahtuman aloitusta. Nämä kolme muodostavat ostopolun. Kun näet montako lisäsi koriin, montako aloitti maksun ja montako vei sen loppuun, näet missä kohtaa ihmiset putoavat pois. Jos moni lisää koriin mutta harva ostaa, ongelma on kassalla, esimerkiksi yllättävissä toimituskuluissa.</p>
-      <p>Ostotapahtuman mukaan kannattaa välittää myös ostoksen arvo, jotta näet mainonnan tuoton euroissa etkä vain ostojen lukumääränä. Sata pientä ostoa ja kymmenen suurta voivat tarkoittaa eri kannattavuutta.</p>
+      <p>Ostotapahtuman mukaan kannattaa välittää myös ostoksen arvo, jotta näet mainonnan tuoton euroissa etkä vain ostojen lukumääränä. Sata pientä ostoa ja kymmenen suurta voivat tarkoittaa eri kannattavuutta. Arvon välittäminen mahdollistaa myös sen, että Meta osaa etsiä todennäköisesti enemmän kuluttavia asiakkaita, ei vain ketä tahansa ostajaa.</p>
 
       <h2>Palveluyritys, ravintola, kauneushoitola, remonttiyritys</h2>
       <p>Jos et myy verkossa, ydintapahtuma on yhteydenotto. Käytännössä se tarkoittaa yhteydenottolomakkeen lähetystä, ajanvarauksen tekemistä tai soita-napin painallusta. Kauneushoitolalle se on varauksen vahvistus, remonttiyritykselle tarjouspyynnön lähetys, ravintolalle pöytävarauksen vahvistus.</p>
-      <p>Tässä piilee tärkeä yksityiskohta. Lomakkeen seuranta pitää sitoa kiitossivuun tai vahvistukseen, ei nappulan painallukseen. Muuten laskennassa on mukana ihmiset jotka avasivat lomakkeen mutta eivät lähettäneet sitä. Halua mitata valmiita yhteydenottoja, et keskeneräisiä.</p>
+      <p>Tässä piilee tärkeä yksityiskohta. Lomakkeen seuranta pitää sitoa kiitossivuun tai vahvistukseen, ei nappulan painallukseen. Muuten laskennassa on mukana ihmiset jotka avasivat lomakkeen mutta eivät lähettäneet sitä. Halua mitata valmiita yhteydenottoja, et keskeneräisiä. Jos käytät erillistä ajanvarausjärjestelmää, varmista että vahvistussivulla on Pixel, muuten varaukset jäävät kokonaan näkymättömiin.</p>
 
       <h2>Liidikampanjat ja sisältö</h2>
       <p>Jos keräät liidejä esimerkiksi oppaan lataamista vastaan, ydintapahtuma on liidin rekisteröinti. Tukitapahtumina voit seurata sisällön katselua, joka kertoo kiinnostuksesta ennen yhteystietojen jättämistä. Tämä auttaa rakentamaan uudelleenmarkkinointia niille, jotka osoittivat kiinnostusta mutta eivät vielä jättäneet tietojaan.</p>
 
       <h2>Vältä turhaa seurantaa</h2>
       <p>Älä lisää tapahtumia varmuuden vuoksi. Mitä enemmän tapahtumia seuraat, sitä enemmän kohinaa raportteihisi tulee ja sitä helpommin optimoit vahingossa väärään asiaan. Valitse yksi ydintapahtuma ja korkeintaan kaksi tai kolme tukitapahtumaa jotka kuvaavat polkua sinne. Loput voit jättää pois.</p>
-      <p><strong>Ratkaisu:</strong> piirrä paperille polku, jonka asiakas kulkee mainoksesta rahaksi. Jokainen merkittävä askel tuolla polulla on seuraamisen arvoinen tapahtuma. Kaikki muu on melua.</p>
+      <p><strong>Ratkaisu:</strong> piirrä paperille polku, jonka asiakas kulkee mainoksesta rahaksi. Jokainen merkittävä askel tuolla polulla on seuraamisen arvoinen tapahtuma. Kaikki muu on melua. Esimerkiksi kauneushoitolan polku voi olla: näki mainoksen, kävi palvelusivulla, avasi ajanvarauksen, vahvisti ajan. Vain viimeinen on ydintapahtuma, muut ovat tukea.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Pitääkö minun seurata kaikkia Metan tarjoamia tapahtumia?</h3>
@@ -358,6 +374,8 @@ export const batch4: Post[] = [
       <p>Sido tapahtuma lomakkeen kiitossivuun tai vahvistukseen, älä nappulan painallukseen. Näin mittaat valmiit yhteydenotot etkä keskeytyneitä yrityksiä.</p>
       <h3>Pitääkö ostotapahtumaan liittää arvo?</h3>
       <p>Kyllä, jos suinkin mahdollista. Kun välität ostoksen euromäärän, näet mainonnan tuoton rahassa etkä vain ostojen lukumääränä, mikä on paljon hyödyllisempää kannattavuuden arviointiin.</p>
+      <h3>Mitä jos eri palveluillani on eri arvo?</h3>
+      <p>Välitä arvo tapahtuman mukana myös palveluyrityksessä, jos pystyt. Esimerkiksi remonttiyrityksen iso urakkapyyntö ja pieni huoltopyyntö kannattaa erottaa arvon avulla, jotta Meta oppii etsimään arvokkaampia yhteydenottoja.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -383,6 +401,7 @@ export const batch4: Post[] = [
 
       <h2>Testi 2: Kirjautuvatko tärkeät tapahtumat</h2>
       <p>Sivunkatselun toimiminen ei riitä. Tärkein testi on, kirjautuuko ydintapahtumasi. Tee oikea testitilaus verkkokaupassasi tai lähetä testilomake palvelusivultasi. Pidä Pixel Helper auki ja katso, näkyykö ostotapahtuma tai yhteydenotto. Jos sivunkatselu kirjautuu mutta osto ei, seuranta on määritetty puutteellisesti, ja juuri se tapahtuma joka tuo rahaa jää näkymättömiin.</p>
+      <p>Tee testi sillä laitteella ja selaimella, jolla asiakkaasi todennäköisimmin asioivat. Kauneushoitolan asiakkaat varaavat usein puhelimella, joten testaa varaus myös puhelimen selaimessa, ei vain tietokoneella.</p>
 
       <h2>Testi 3: Metan reaaliaikainen näkymä</h2>
       <p>Avaa Metan tapahtumienhallinta ja sieltä testaustyökalu. Syötä oman sivustosi osoite, niin näet reaaliajassa mitä tapahtumia sivultasi saapuu Metalle samalla kun selaat sitä. Tämä on luotettavin tapa varmistaa, että data oikeasti päätyy Metalle eikä jää matkalle. Tee testiosto tai testilomake ja katso että se ilmestyy listaan muutamassa minuutissa.</p>
@@ -428,11 +447,11 @@ export const batch4: Post[] = [
 
       <h2>Miksi ihmiset optimoivat väärin</h2>
       <p>Yleisin syy on, että oikeaa tapahtumaa ei tule tarpeeksi. Meta tarvitsee riittävästi konversioita oppiakseen, ja jos myynnit ovat harvassa, kampanja jää oppimisvaiheeseen jumiin eikä optimointi käynnisty kunnolla. Houkutus on tällöin vaihtaa optimointi runsaampaan mutta merkityksettömään tapahtumaan kuten sivunkatseluun, koska luvut näyttävät heti paremmilta.</p>
-      <p>Tämä on harha. Saat halpoja sivunkatseluja, mutta et myyntiä. Olet vaihtanut oikean mittarin näyttävään mutta tyhjään mittariin.</p>
+      <p>Tämä on harha. Saat halpoja sivunkatseluja, mutta et myyntiä. Olet vaihtanut oikean mittarin näyttävään mutta tyhjään mittariin. Pieni remonttiyritys, jolla tulee vain muutama tarjouspyyntö viikossa, lankeaa tähän helposti: klikit näyttävät mukavilta raportissa, mutta puhelin ei soi.</p>
 
       <h2>Näin varmistat että optimoit oikeaa asiaa</h2>
       <p><strong>Ratkaisu:</strong> optimoi aina lähimpänä rahaa olevaan tapahtumaan, jota tulee riittävästi. Verkkokaupalle se on osto. Palveluyritykselle yhteydenotto tai ajanvaraus. Tarkista kampanjan asetuksista että optimointitapahtuma on juuri tämä, ei klikki eikä sivunkatselu.</p>
-      <p>Jos oikeaa tapahtumaa tulee liian vähän jotta Meta oppisi, älä luovuta rahasta. Siirry yhden askeleen taaksepäin polulla. Verkkokaupassa voit optimoida väliaikaisesti ostoskoriin lisäykseen, joka on lähellä ostoa ja jota tulee enemmän. Kun myynnit kasvavat, siirry takaisin optimoimaan suoraan ostoon. Tämä on hallittu kompromissi, ei luovuttaminen sivunkatselujen tasolle.</p>
+      <p>Jos oikeaa tapahtumaa tulee liian vähän jotta Meta oppisi, älä luovuta rahasta. Siirry yhden askeleen taaksepäin polulla. Verkkokaupassa voit optimoida väliaikaisesti ostoskoriin lisäykseen, joka on lähellä ostoa ja jota tulee enemmän. Palveluyrityksessä voit optimoida ajanvarauksen aloitukseen tai lomakkeen avaukseen, kun valmiita yhteydenottoja on vielä vähän. Kun määrät kasvavat, siirry takaisin optimoimaan suoraan rahaan. Tämä on hallittu kompromissi, ei luovuttaminen sivunkatselujen tasolle.</p>
 
       <h2>Tarkista että tapahtuma ylipäätään kirjautuu</h2>
       <p>Joskus ongelma ei ole valinta vaan tekniikka. Jos optimoit ostoon mutta Pixel ei oikeasti kirjaa ostoja, Metalla ei ole dataa jonka perusteella oppia, ja kampanja jää tehottomaksi. Varmista Metan tapahtumienhallinnasta että ydintapahtumasi kirjautuu todellisuudessa. Väärä optimointi ja rikkinäinen seuranta tuottavat saman lopputuloksen, eli hyvältä näyttäviä lukuja ilman tuloksia.</p>
@@ -446,6 +465,8 @@ export const batch4: Post[] = [
       <p>Koska klikkaaja ja ostaja ovat eri ihmisiä. Klikkiin optimoitu kampanja etsii ihmisiä jotka klikkaavat halvalla, ei ihmisiä jotka ostavat. Optimointi ohjaa Metan etsimään juuri sitä toimintoa jonka valitsit.</p>
       <h3>Voiko väärä optimointi pilata muuten hyvän kampanjan?</h3>
       <p>Kyllä, ja se on yleistä. Hyväkin mainos ja oikea yleisö tuottavat heikosti, jos Metaa pyydetään etsimään vääriä ihmisiä. Optimointitapahtuman korjaaminen on usein nopein tapa kääntää kampanja tuottavaksi.</p>
+      <h3>Kuinka kauan oikeaan tapahtumaan optimoitu kampanja tarvitsee aikaa?</h3>
+      <p>Anna sen kerätä riittävästi konversioita ennen johtopäätöksiä. Oppimisvaiheessa luvut heittelevät, ja jos vaihdat optimointia liian aikaisin, kampanja ei ehdi koskaan oppia oikeaa tapahtumaa.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>

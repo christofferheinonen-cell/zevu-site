@@ -17,25 +17,31 @@ export const batch3: Post[] = [
       <h2>1. Ongelma, korjaus, todiste</h2>
       <p>Yksinkertaisin ja luotettavin rakenne. Aloita asiakkaan ongelmalla niin että hän tunnistaa itsensä, kerro miten ratkaiset sen, ja todista että ratkaisu toimii.</p>
       <p>Remonttiyritykselle tämä voi näyttää tältä. Ensimmäinen lause: kylpyhuone vuotaa eikä kukaan vastaa puhelimeen. Toinen osa: teemme tarjouksen kahdessa päivässä ja aloitamme viikon sisällä. Kolmas osa: viime vuonna 140 valmista kylpyhuonetta Tampereen seudulla. Lukija näkee oman tilanteensa, näkee tien ulos ja saa syyn uskoa sinua.</p>
+      <p>Todiste on se osa, jonka useimmat unohtavat. Pelkkä lupaus on yhtä uskottava kuin kenen tahansa kilpailijan lupaus. Todiste voi olla luku, asiakasmäärä, vuodet alalla, takuu tai konkreettinen esimerkki. Se erottaa sinut kaikista, jotka väittävät olevansa luotettavia mutta eivät näytä mitään.</p>
 
       <h2>2. Ennen ja jälkeen</h2>
       <p>Tämä rakenne toimii silloin, kun palvelusi tuottaa selvän muutoksen. Kuvaa ensin tilanne ennen, sitten tilanne jälkeen. Älä myy palvelua, myy lopputulosta.</p>
       <p>Kauneushoitola voi kirjoittaa: ennen kasvohoitoa iho tuntuu kuivalta ja väsyneeltä, peilistä katsoo joku jonka et tunnista. Jälkeen: iho hengittää, meikki istuu paremmin ja näytät levänneeltä vaikket olisi nukkunut yhtään enempää. Kontrasti tekee työn. Ihminen ostaa siirtymää nykytilasta parempaan, ei tuntia hoitopöydällä.</p>
+      <p>Sama rakenne toimii verkkokaupalle. Ennen: kaapit täynnä vaatteita joista mikään ei tunnu omalta. Jälkeen: yksi asu joka istuu täydellisesti ja jonka päällä lähdet ovesta miettimättä asiaa toista kertaa. Pidä molemmat puolet konkreettisina. Mitä tarkemmin kuvaat nykyhetken turhautumisen, sitä houkuttelevammalta lopputulos näyttää.</p>
 
       <h2>3. Suora kysymys ja vastaus</h2>
       <p>Aloita kysymyksellä, johon kohdeasiakas vastaa mielessään kyllä. Tämä pysäyttää selauksen, koska teksti tuntuu puhuvan suoraan hänelle. Sen jälkeen anna vastaus, joka johtaa palveluusi.</p>
       <p>Hyvinvointialalla: oletko kokeillut kaiken niska-hartiasäryn poistamiseen mutta mikään ei auta pidempään kuin pari päivää? Vastaus: useimmiten syy ei ole lihaksissa vaan siinä miten istut töissä kahdeksan tuntia päivässä. Kartoitamme sen ensimmäisellä käynnillä. Kysymys karsii väärät lukijat ja koukuttaa oikeat. Vältä kysymyksiä joihin vastaus on ei, ne karkottavat kaikki.</p>
+      <p>Hyvä kysymys osuu johonkin, mitä asiakas on jo itse miettinyt. Älä kysy haluatko säästää rahaa, koska kaikki haluavat eikä se erota ketään. Kysy tarkasti: turhauttaako kun remonttifirma lupaa soittaa eikä soita. Mitä tarkemmin osut, sitä varmemmin oikea ihminen pysähtyy.</p>
 
       <h2>4. Tarina yhdestä asiakkaasta</h2>
       <p>Ihminen muistaa tarinan, ei listaa ominaisuuksista. Kerro lyhyesti yhdestä oikeasta asiakkaasta: mikä hänen tilanteensa oli, mitä teitte ja mihin se johti. Yksi konkreettinen tarina vakuuttaa enemmän kuin kymmenen yleistä lupausta.</p>
       <p>Ravintola voi kertoa parista joka etsi paikkaa hääpäivän illalliselle eikä halunnut tavallista ravintolakokemusta. Keittiö teki heille oman menun ja pöytä katettiin ikkunan ääreen. He varasivat saman pöydän jo seuraavalle vuodelle. Tarina myy tunnelman, jota ruokakuva ei koskaan välitä. Pidä se lyhyenä, kolme tai neljä lausetta riittää syötteessä.</p>
+      <p>Tarinan voima on siinä, että lukija sijoittaa itsensä asiakkaan paikalle. Jos tunnistat tyypillisen asiakkaasi tilanteen, joku selauksessa ajattelee tuo on juuri minun ongelmani. Älä kaunistele liikaa. Pieni rosoisuus, kuten epäilys jonka asiakas tunsi ennen ostoa, tekee tarinasta uskottavamman.</p>
 
       <h2>5. Selkeä tarjous ja takaraja</h2>
       <p>Joskus paras teksti on suorin. Kerro mitä tarjoat, kenelle se on ja miksi nyt kannattaa toimia. Tämä rakenne sopii kampanjoihin, joissa on oikea tarjous tai rajallinen aika.</p>
       <p>Verkkokauppa voi sanoa: kesän uutuusmallisto saapui, ja ensimmäiset 48 tuntia toimitus on ilmainen. Paikallinen yritys: avaamme uuden toimipisteen Kuopiossa, ja kaksi ensimmäistä viikkoa kaikki hoidot kahdenkympin alennuksella. Tärkeää on että takaraja on aito. Keksitty kiire huomataan, ja se nakertaa luottamusta nopeammin kuin mikään muu.</p>
+      <p>Tämä rakenne palaa kaikkein huonoiten, jos sitä käyttää koko ajan. Kun jokainen mainos huutaa viimeinen tilaisuus, lukija oppii ettei kiire ole totta. Säästä takaraja hetkiin, jolloin se on aito, niin se toimii silloin kun sitä oikeasti tarvitset.</p>
 
       <h2>Pari sääntöä jotka pätevät jokaiseen rakenteeseen</h2>
       <p>Ensimmäinen rivi ratkaisee, koska syötteessä näkyy vain pari riviä ennen näytä lisää -linkkiä. Laita tärkein heti alkuun, älä säästä sitä loppuun. Kirjoita kuten puhuisit asiakkaalle kasvotusten, et kuten kirjoittaisit esitteeseen. Ja lopeta aina yhteen selkeään toimintakehotukseen: varaa aika, pyydä tarjous, katso mallisto. Yksi kehotus per mainos, ei kolmea.</p>
+      <p>Vältä ammattisanastoa ja sisäpiirin termejä. Asiakas ei tiedä mitä tarkoittaa kokonaisvaltainen hyvinvointiratkaisu, mutta hän tietää mitä tarkoittaa selkä joka ei enää säry aamulla. Konkreettinen voittaa abstraktin joka kerta. Lue teksti ääneen ennen julkaisua. Jos se kuulostaa siltä mitä oikeasti sanoisit asiakkaalle, se on valmis. Jos se kuulostaa esitteeltä, kirjoita uudelleen.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Kuinka pitkä Meta-mainostekstin pitäisi olla?</h3>
@@ -46,6 +52,8 @@ export const batch3: Post[] = [
       <p>Maltillisesti kyllä. Yksi tai kaksi emojia voi auttaa erottamaan rivit ja keventää sävyä, mutta rivi täynnä emojeita näyttää roskapostilta ja syö uskottavuutta. Vakavammilla toimialoilla kuten terveydenhoito niitä kannattaa välttää kokonaan.</p>
       <h3>Mistä tiedän mikä rakenne sopii minun yritykselleni?</h3>
       <p>Aloita ongelma, korjaus, todiste -rakenteesta, koska se toimii lähes kaikilla toimialoilla. Jos palvelusi tuottaa näkyvän muutoksen, kokeile ennen ja jälkeen. Jos sinulla on hyviä asiakastarinoita, käytä niitä. Testaa ja katso mikä tuo eniten yhteydenottoja.</p>
+      <h3>Mitä jos mikään rakenne ei tunnu sopivan palveluuni?</h3>
+      <p>Silloin kannattaa aloittaa kirjoittamalla ylös, mikä asiakasta oikeasti vaivaa ennen kuin hän löytää sinut. Lähes jokainen rakenne lähtee tästä samasta pisteestä. Kun ongelma on selvä, sopiva runko löytyy yleensä itsestään: ongelma korjaus todiste, jos haluat suoruutta, tai tarina, jos sinulla on hyvä esimerkki.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -72,10 +80,11 @@ export const batch3: Post[] = [
       <h2>Milloin animaatio kannattaa</h2>
       <p>Animaatiolla tarkoitan tässä kaikkea liikkuvaa: lyhyttä videota, kuvasarjaa joka vaihtuu tai yksinkertaista liikegrafiikkaa. Liike kannattaa, kun sinulla on jotain näytettävää mitä yksi kuva ei kerro.</p>
       <p>Remonttiyritys hyötyy ennen ja jälkeen -videosta, jossa rapistunut kylpyhuone muuttuu valmiiksi parissa sekunnissa. Hyvinvointialalla lyhyt klippi hoidosta tai tilasta rakentaa tunnelmaa, jota stillkuva ei tavoita. Verkkokauppa voi näyttää tuotteen useasta kulmasta tai käytössä. Liike myös pitää katsojan syötteessä hetken pidempään, mikä auttaa varsinkin Reels-sijoittelussa.</p>
+      <p>Animaatio voittaa myös silloin, kun haluat näyttää prosessin. Kauneushoitola voi näyttää hoidon kulun muutamassa sekunnissa, ravintola voi näyttää annoksen valmistumisen. Liike kertoo tarinan, jota staattinen kuva voi vain vihjata.</p>
 
       <h2>Käytännön vastaus pienelle yritykselle</h2>
       <p><strong>Ratkaisu:</strong> Aloita staattisilla kuvilla, varsinkin jos resurssit ovat rajalliset. Tee kolme tai neljä erilaista kuvaa ja katso mikä tuo eniten klikkauksia ja yhteydenottoja. Kun tiedät mikä viesti puree, tee siitä voittajaversiosta liikkuva versio ja testaa kumpi vie pidemmälle. Älä polta budjettia kalliiseen videotuotantoon ennen kuin tiedät mikä sanoma ylipäätään toimii.</p>
-      <p>Muista myös, että animaation ensimmäinen sekunti on käytännössä staattinen kuva. Jos videon alkuruutu ei pysäytä, liike ei pelasta sitä, koska kukaan ei ehdi nähdä loppua.</p>
+      <p>Muista myös, että animaation ensimmäinen sekunti on käytännössä staattinen kuva. Jos videon alkuruutu ei pysäytä, liike ei pelasta sitä, koska kukaan ei ehdi nähdä loppua. Suunnittele siis alkuruutu yhtä huolella kuin suunnittelisit staattisen mainoksen. Hyvä alku ratkaisee kummassakin muodossa.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Maksaako animaatio enemmän näyttökertoina?</h3>
@@ -84,6 +93,8 @@ export const batch3: Post[] = [
       <p>Kyllä. Yksinkertaisen kuvasarjan tai lyhyen klipin saa kasaan ilmaisilla sovelluksilla. Ammattilaatuista videotuotantoa ei tarvita, varsinkaan testausvaiheessa. Aitoa ja hieman rosoista sisältöä pidetään usein uskottavampana kuin kiillotettua.</p>
       <h3>Kannattaako sama mainos tehdä sekä kuvana että videona?</h3>
       <p>Kannattaa, jos haluat tietää kumpi toimii. Anna molempien pyöriä rinnakkain samalla tarjouksella ja vertaa tuloksia parin viikon jälkeen. Älä tee päätöstä fiiliksellä, anna datan kertoa.</p>
+      <h3>Kuluuko animaatio nopeammin loppuun kuin staattinen kuva?</h3>
+      <p>Usein kyllä, koska saman videon katsominen monta kertaa alkaa kyllästyttää nopeammin kuin kuvan vilkaisu. Tämä ei ole syy välttää animaatiota, mutta se kannattaa pitää mielessä: pidä valmiina muutama vaihtoehto, jotta voit vaihtaa väsynyttä materiaalia ennen kuin tulokset laskevat.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -106,21 +117,29 @@ export const batch3: Post[] = [
       <h2>Mieti mihin tilanteeseen myyt</h2>
       <p>Ihminen ei varaa pöytää koska näki kauniin ruokakuvan. Hän varaa, koska hänellä on tilanne: perjantai-ilta ja nälkä, syntymäpäivä tulossa, vieraita kylässä, treffit joihin haluaa vaikuttaa. Hyvä mainos puhuu jollekin näistä tilanteista.</p>
       <p>Sen sijaan että näytät vain annoksen, näytä konteksti. Pari pöydässä, ystäväporukka nauramassa, lasit kilisemässä. Kuva, jossa on ihmisiä ja tunnelmaa, myy kokemuksen. Pelkkä lautanen myy ruokaa, ja ruokaa saa mistä tahansa.</p>
+      <p>Kannattaa miettiä myös vuorokaudenaikaa ja viikonpäivää. Lounaspaikka myy nopeaa ja edullista arkiruokaa kiireiselle työntekijälle. Sama ravintola illalla myy rauhallista hetkeä ja hyvää viiniä. Sama keittiö, eri tilanne, eri mainos. Älä yritä myydä molempia samalla viestillä.</p>
 
       <h2>Anna konkreettinen syy tulla juuri nyt</h2>
       <p>Paras ravintolamainos sisältää aikaan sidotun syyn. Torstain viiniliman erikoismenu, kesäterassin avajaiset, viikonlopun brunssi joka loppuu kun pöydät täyttyvät. Aikaraja muuttaa kiinnostuksen toiminnaksi. Jatkuvasti voimassa oleva tarjous ei kiirehdi ketään.</p>
       <p>Jos sinulla ei ole erikoistarjousta, myy hetkeä joka on jo nyt menossa. Lounas on tarjolla tänään kahteen asti, terassi on auki niin kauan kuin sää sallii. Ajankohtaisuus toimii, vaikka itse tarjous olisi tavallinen.</p>
+      <p>Sesongit ovat ravintolalle ilmaisia syitä mainostaa. Ystävänpäivä, äitienpäivä, pikkujoulukausi ja kesäterassin avaaminen antavat luonnollisen kulman. Ihminen etsii näinä aikoina paikkaa, ja mainos joka osuu oikeaan hetkeen tuntuu palvelukselta, ei tyrkytykseltä.</p>
 
       <h2>Tee varaaminen helpoksi</h2>
       <p>Mainos voi olla täydellinen, mutta jos varaaminen on hankalaa, varaus jää tekemättä. Ohjaa suoraan varausjärjestelmään tai WhatsApp-viestiin, älä etusivulle josta asiakas joutuu etsimään varauslinkin. Mitä vähemmän klikkauksia varauksen ja kiinnostuksen välissä, sitä enemmän varauksia saat.</p>
-      <p>Toimintakehotuksen pitää olla yksiselitteinen. Varaa pöytä, ei lue lisää tai tutustu meihin. Kerro myös mitä varaamisen jälkeen tapahtuu, esimerkiksi että vahvistus tulee tekstiviestillä.</p>
+      <p>Toimintakehotuksen pitää olla yksiselitteinen. Varaa pöytä, ei lue lisää tai tutustu meihin. Kerro myös mitä varaamisen jälkeen tapahtuu, esimerkiksi että vahvistus tulee tekstiviestillä. Pieni selkeys poistaa epävarmuutta, ja epävarma ihminen ei varaa.</p>
 
       <h2>Kohdenna lähialueelle</h2>
       <p>Ravintola elää lähialueen asiakkaista ja ohikulkijoista. Mainoksen ei tarvitse tavoittaa koko kaupunkia, vaan ihmiset jotka ovat realistisesti tulossa syömään. Lähistöllä asuvat ja alueella liikkuvat tuovat eniten varauksia. Laaja kohdennus kuluttaa budjetin ihmisiin, jotka eivät koskaan aja paikalle.</p>
-      <p>Lounaspaikalle toimii myös ajoituksen miettiminen. Mainos kannattaa näyttää aamupäivällä, kun ihmiset miettivät minne mennä syömään, ei illalla kun lounas on jo syöty.</p>
+      <p>Lounaspaikalle toimii myös ajoituksen miettiminen. Mainos kannattaa näyttää aamupäivällä, kun ihmiset miettivät minne mennä syömään, ei illalla kun lounas on jo syöty. Iltaravintolalle taas alkuviikko ja torstai-perjantai-iltapäivä ovat hetkiä, jolloin viikonlopun suunnitelmat lyödään lukkoon.</p>
 
       <h2>Mitä kannattaa testata</h2>
       <p>Tee kaksi tai kolme versiota ja katso mikä tuo varauksia. Kokeile tunnelmakuvaa ihmisistä, kokeile parasta annosta houkuttelevasti kuvattuna ja kokeile lyhyttä videoklippiä keittiöstä tai salista. Vaihtele myös tekstin kulmaa: yksi vetoaa nälkään, toinen tunnelmaan, kolmas tarjoukseen. Pidä se mikä toimii, vaihda muut.</p>
+      <p>Yleisin virhe on tehdä yksi mainos, jättää se pyörimään kuukausiksi ja ihmetellä miksi varauksia tulee yhä vähemmän. Sama lähialue näkee mainoksesi monta kertaa, ja sisältö kuluu. Pidä muutama versio kierrossa ja uudista niitä säännöllisesti.</p>
+
+      <h2>Yleisimmät virheet ravintolan mainoksessa</h2>
+      <p>Ensimmäinen on logon ja yhteystietojen tunkeminen kuvan päälle. Ne eivät myy mitään, ja ne vievät tilan houkuttelevalta ruoalta tai tunnelmalta. Ihminen ei varaa pöytää koska näki osoitteesi, vaan koska sai nälän tai halun tulla. Säästä osoite ja aukioloajat tekstiosioon, ja anna kuvan tehdä työnsä.</p>
+      <p>Toinen yleinen virhe on mainostaa kaikkea kerralla. Sama mainos yrittää myydä lounasta, illallista, brunssia ja yksityistilaisuuksia. Lopputulos ei puhuttele ketään. Valitse yksi asia per mainos. Jos haluat myydä sekä lounasta että iltaa, tee kaksi mainosta eri yleisöille ja eri aikaan päivästä.</p>
+      <p>Kolmas virhe on liian iso budjetti liian laajalle alueelle. Pieni ravintola ei tarvitse koko kaupunkia, se tarvitsee lähistön ihmiset. Tiukka kohdennus pienelläkin budjetilla tuo enemmän varauksia kuin laaja kohdennus, joka näyttää mainosta ihmisille kahdenkymmenen kilometrin päässä.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Kannattaako ravintolan mainostaa Instagramissa vai Facebookissa?</h3>
@@ -131,6 +150,8 @@ export const batch3: Post[] = [
       <p>Koska sama lähialue näkee mainoksesi toistuvasti, sisältö kuluu nopeammin kuin laajalla yleisöllä. Vaihda kuvaa ja tarjousta parin tai kolmen viikon välein, ennen kuin huomaat tulosten laskevan. Sesongit ja viikonpäivät antavat luontevia syitä uudistaa viestiä.</p>
       <h3>Toimiiko Meta-mainonta pienelle lounasravintolalle?</h3>
       <p>Toimii, kun kohdennus pidetään tiukasti lähialueella ja viesti on ajankohtainen. Lounaspaikalle pienikin budjetti riittää, koska tavoitettava alue on pieni ja sama henkilö voi tulla useita kertoja viikossa. Avain on toistuva, paikallinen näkyvyys oikeaan aikaan päivästä.</p>
+      <h3>Mitä jos ravintolalla ei ole varausjärjestelmää?</h3>
+      <p>Silloin ohjaa yhteydenotto sinne, missä asiakas saa nopean vastauksen, esimerkiksi WhatsAppiin tai suoraan puhelinnumeroon. Voit myös käyttää mainosta pelkkään näkyvyyteen ja muistuttaa ihmisiä olemassaolostasi, mutta varauksia tulee aina enemmän, kun toiminta on tehty mahdollisimman helpoksi.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -153,18 +174,21 @@ export const batch3: Post[] = [
       <h2>Aloita asiakkaan kokemasta ongelmasta</h2>
       <p>Tehokkain hyvinvointimainos lähtee liikkeelle siitä, mikä asiakasta vaivaa. Krooninen niskasärky, univaikeudet, stressi joka ei hellitä, kipu joka rajoittaa arkea. Kun ihminen tunnistaa oman ongelmansa mainoksen ensimmäisestä lauseesta, hän pysähtyy lukemaan.</p>
       <p>Vältä yleisiä iskulauseita kuten panosta hyvinvointiisi tai sinä ansaitset tämän. Ne eivät tarkoita mitään. Konkreettinen ongelma puhuttelee, abstrakti hyvinvointi ei. Mitä tarkemmin osut asiakkaan tilanteeseen, sitä uskottavampi olet.</p>
+      <p>Hyvä tapa löytää oikea kulma on kuunnella miten asiakkaat itse puhuvat. He eivät sano tarvitsevani lihashuoltoa, he sanovat etten saa nostettua lasta sängystä ilman että selkä jumittaa. Käytä heidän sanojaan, älä alan termejä. Asiakas tunnistaa itsensä omasta kielestään, ei sinun ammattisanastostasi.</p>
 
       <h2>Rakenna luottamus näkyväksi</h2>
       <p>Luottamus ei synny väittämällä että olet luotettava, vaan näyttämällä todisteita. Hyvinvointialalla niitä on useita. Näytä kasvosi ja kerro kuka olet. Ihminen varaa ajan henkilölle, ei logolle. Mainos jossa näyt itse ja kerrot taustastasi rakentaa enemmän luottamusta kuin kiillotettu kuvituskuva.</p>
       <p>Asiakaspalautteet toimivat poikkeuksellisen hyvin tällä alalla. Aito lainaus asiakkaalta, joka kertoo miten hänen tilanteensa parani, vakuuttaa enemmän kuin mikään oma lupauksesi. Myös koulutus, sertifikaatit ja vuosien kokemus kannattaa mainita lyhyesti, koska ne madaltavat kynnystä varata aika tuntemattomalle.</p>
+      <p>Pieni yksityiskohta tilasta tai työtavasta rakentaa myös turvaa. Kun asiakas näkee siistin vastaanoton, rauhallisen hoitohuoneen tai sen miten ensimmäinen käynti etenee, hän tietää mitä odottaa. Tuntematon pelottaa, tuttu houkuttaa. Mitä konkreettisemmin näytät mitä tapahtuu, sitä helpompi on varata.</p>
 
       <h2>Ole rehellinen siitä mitä lupaat</h2>
       <p>Terveyteen ja hyvinvointiin liittyvässä mainonnassa liioittelu kostautuu. Meta myös valvoo terveysväittämiä tarkasti, ja liian rohkeat lupaukset johtavat mainoksen hylkäykseen. Älä lupaa parantavasi mitään tai takaavasi tuloksia. Kerro sen sijaan mitä teet ja miten asiakkaat ovat sen kokeneet.</p>
       <p>Esimerkiksi sen sijaan että lupaat poistaa selkäkivun, voit kertoa että kartoitat kivun syyn ja teet suunnitelman sen helpottamiseksi. Rehellinen, maltillinen viesti rakentaa enemmän luottamusta kuin ylisuuri lupaus, ja se pysyy myös mainossääntöjen sisällä.</p>
+      <p>Rehellisyys toimii myös myynnillisesti. Ihminen, joka on pettynyt aiempiin lupauksiin, suhtautuu epäluuloisesti kaikkeen liian hyvältä kuulostavaan. Maltillinen ja täsmällinen viesti erottuu juuri siksi, että se ei lupaa ihmeitä. Se kuulostaa ammattilaiselta, joka tietää mistä puhuu.</p>
 
       <h2>Tee ensimmäisestä askeleesta pieni</h2>
       <p>Ihminen ei varaa kallista hoitosarjaa tuntemattomalta yritykseltä yhden mainoksen perusteella. Tarjoa matala kynnys aloittaa. Maksuton kartoitus, edullinen tutustumiskäynti, lyhyt puhelu jossa kysytään tilanteesta. Kun ensimmäinen askel on pieni, sen ottaa moni useampi.</p>
-      <p>Tämä toimii myös siksi, että kun asiakas on kerran tullut ja kokenut palvelun, hänen on paljon helpompi varata jatkokäynti. Iso myynti tapahtuu vasta luottamuksen synnyttyä, ei mainoksessa.</p>
+      <p>Tämä toimii myös siksi, että kun asiakas on kerran tullut ja kokenut palvelun, hänen on paljon helpompi varata jatkokäynti. Iso myynti tapahtuu vasta luottamuksen synnyttyä, ei mainoksessa. Älä siis yritä myydä koko hoitopakettia ensimmäisellä kosketuksella. Myy ensimmäinen käynti, ja anna palvelusi myydä loput.</p>
 
       <h2>Visuaalisuus: rauha ja aitous</h2>
       <p>Hyvinvointialan kuvamaailman pitää viestiä rauhaa ja turvallisuutta. Aidot kuvat tiloistasi, sinusta työssäsi tai asiakkaasta hoidossa toimivat paremmin kuin geneeriset kuvituskuvat kynttilöistä ja kivistä, joita yleisö on nähnyt tuhansia. Aitous erottaa sinut kilpailijoista, jotka käyttävät samoja stockkuvia.</p>
@@ -173,6 +197,11 @@ export const batch3: Post[] = [
       <h2>Kohdennus ja sävy</h2>
       <p>Mieti kuka asiakkaasi todella on. Hyvinvointipalveluiden ostajat painottuvat usein tiettyyn ikäryhmään ja elämäntilanteeseen, ja kohdennus kannattaa rakentaa heidän ympärilleen, ei mahdollisimman laajalle. Paikallisuus on tärkeää, koska ihminen tulee mieluiten lähelle.</p>
       <p>Sävyn pitää olla lämmin ja ymmärtävä, ei myyvä ja painostava. Puhu kuin puhuisit ihmiselle joka istuu vastaanotollasi ensimmäistä kertaa, hieman epävarmana. Se sävy myy hyvinvointialalla paremmin kuin mikään tehoste.</p>
+
+      <h2>Yleisimmät virheet hyvinvointimainoksissa</h2>
+      <p>Suurin virhe on myydä liikaa liian aikaisin. Mainos, joka tyrkyttää kallista kymmenen kerran hoitopakettia tuntemattomalle ihmiselle, ei toimi, koska luottamusta ei vielä ole. Pilko ostopolku pieniin askeliin ja anna ensimmäisen olla helppo ottaa.</p>
+      <p>Toinen virhe on geneerinen kuvamaailma. Kynttilät, kivet ja sumea kuva selästä eivät kerro mitään sinusta, ja yleisö on nähnyt ne tuhansia kertoja. Oma kasvosi, oma tilasi tai aito hetki työssä erottuu heti. Ihminen luottaa siihen, minkä näkee aidoksi.</p>
+      <p>Kolmas virhe on liioiteltu lupaus, joka sekä karkottaa epäilevän asiakkaan että törmää Metan terveyssääntöihin. Maltillinen ja täsmällinen viesti rakentaa enemmän luottamusta ja pysyy myös sääntöjen sisällä, joten mainos ei jää jumiin hyväksyntään.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Saako hyvinvointipalveluita ylipäätään mainostaa Metassa?</h3>
@@ -207,21 +236,29 @@ export const batch3: Post[] = [
       <h2>Aloita lopusta: konversiot ja niiden hinta</h2>
       <p>Tärkein luku on se, joka mittaa haluttua lopputulosta. Jos haluat varauksia, mittaa varauksia. Jos haluat ostoja, mittaa ostoja. Jos haluat yhteydenottoja, mittaa niitä. Tätä kutsutaan konversioksi, ja se on ainoa luku joka suoraan kertoo tuoko mainonta sitä mitä halusit.</p>
       <p>Konversion määrän rinnalla katso aina sen hintaa, eli paljonko yksi varaus, osto tai yhteydenotto maksoi. Tämä on koko mainonnan kannattavuuden ydin. Jos yksi yhteydenotto maksaa kaksikymppiä ja keskimääräinen asiakas tuo satoja euroja, mainonta kannattaa. Jos yhteydenotto maksaa enemmän kuin asiakas tuo, jokin on pielessä riippumatta siitä miltä muut luvut näyttävät.</p>
+      <p>Tämän luvun arviointi vaatii, että tiedät paljonko asiakas tuo sinulle. Remonttiyritykselle yksi tarjouspyyntö voi johtaa tuhansien eurojen työhön, joten sata euroa liidistä on halpa. Lounasravintolalle yksi asiakas tuo kympin, joten kympin yhteydenottohinta on liikaa. Sama luku on hyvä toiselle ja katastrofi toiselle. Vertaa aina omaan asiakkaan arvoosi, älä yleisiin nyrkkisääntöihin.</p>
 
       <h2>Klikkausprosentti kertoo puhutteleeko mainos</h2>
       <p>Klikkausprosentti eli kuinka moni mainoksen nähnyt klikkasi sitä, kertoo osuuko viestisi yleisöön. Matala klikkausprosentti tarkoittaa että mainos ei kiinnosta katsojaa: joko kuva ei pysäytä, teksti ei puhuttele tai kohdennus on väärä. Korkea klikkausprosentti tarkoittaa että saat ihmiset reagoimaan.</p>
       <p>Tämä on hyvä diagnoosityökalu. Jos klikkauksia tulee runsaasti mutta konversioita vähän, ongelma on todennäköisesti laskeutumissivulla tai tarjouksessa, ei mainoksessa. Jos klikkauksiakaan ei tule, ongelma on itse mainoksessa.</p>
+      <p>Klikkausprosentti on myös ennakkovaroitus. Se reagoi nopeammin kuin konversioluvut, koska klikkauksia kertyy aina enemmän kuin ostoja. Jos huomaat klikkausprosentin laskevan vähitellen, mainoksesi on todennäköisesti alkanut kyllästyttää yleisöä. Tällöin kannattaa uudistaa materiaali ennen kuin konversiotkin romahtavat.</p>
 
       <h2>Klikin hinta ja tuhannen näytön hinta</h2>
       <p>Klikin hinta kertoo paljonko maksat yhdestä sivustollesi tulleesta kävijästä. Se auttaa vertaamaan eri mainosten ja yleisöjen tehokkuutta. Tuhannen näytön hinta puolestaan kertoo, kuinka kallista yleisösi tavoittaminen on. Jos se nousee yhtäkkiä, kilpailu yleisöstäsi on kiristynyt tai mainoksesi on alkanut kyllästyttää.</p>
       <p>Nämä luvut eivät ole itsessään tavoitteita, vaan vihjeitä. Halpa klikki ei auta jos klikkaajat eivät osta. Tärkeintä on aina ketju klikistä konversioon, ei yksittäinen hinta irrallaan.</p>
+      <p>Nämä luvut auttavat löytämään ongelman lähteen. Jos klikit ovat kalliita, syy on joko kalliissa yleisössä tai siinä, että harva klikkaa. Tuhannen näytön hinta kertoo kummasta on kyse. Korkea näyttöhinta tarkoittaa kovaa kilpailua, matala klikkausprosentti tarkoittaa heikkoa mainosta. Korjaa se, mistä ongelma juontaa, äläkä arvaa.</p>
 
       <h2>Mittarit jotka voit jättää huomiotta</h2>
       <p>Tykkäykset, kommentit ja jaot tuntuvat tärkeiltä, mutta ne eivät yleensä korreloi myynnin kanssa. Mainos voi kerätä satoja tykkäyksiä ja silti olla täysin kannattamaton. Myös pelkkä tavoittavuus ja näyttökertojen määrä ovat harhaanjohtavia, koska iso yleisö ilman konversioita on vain iso lasku.</p>
-      <p>Käytä näitä korkeintaan taustatietona. Älä koskaan tee päätöstä mainonnan jatkamisesta tai lopettamisesta sosiaalisen sitoutumisen perusteella.</p>
+      <p>Käytä näitä korkeintaan taustatietona. Älä koskaan tee päätöstä mainonnan jatkamisesta tai lopettamisesta sosiaalisen sitoutumisen perusteella. Poikkeus on, jos tavoitteesi on puhtaasti tunnettuus eikä myynti, mutta pienelle yritykselle se on harvoin järkevä lähtökohta. Raha kannattaa laittaa sinne, mistä se tulee mitattavasti takaisin.</p>
 
       <h2>Katso lukuja riittävän ajan päästä</h2>
       <p>Yksittäisen päivän luvut heittelevät, eivätkä kerro totuutta. Anna kampanjan kerätä dataa rauhassa ja tee johtopäätökset vasta kun lukuja on tarpeeksi. Liian aikainen tai liian tiheä tuijottaminen johtaa hätäisiin muutoksiin, jotka sotkevat Metan oppimisen ja heikentävät tuloksia.</p>
+      <p>Käytännössä tämä tarkoittaa, että katsot lukuja viikkotasolla, et tunneittain. Jos teet muutoksia joka päivä reaktiona pieniin heilahteluihin, et koskaan tiedä mikä muutos vaikutti mihinkin. Tee yksi muutos kerrallaan, anna sen vaikuttaa rauhassa ja vertaa sitten. Kärsivällisyys on aliarvostetuin Meta-mainonnan taito.</p>
+
+      <h2>Esimerkki: miten luvut luetaan yhdessä</h2>
+      <p>Kuvitellaan remonttiyritys, joka mainostaa tarjouspyyntöjen keräämistä. Klikkauksia tulee runsaasti, mutta yhteydenottoja vähän. Tästä tietää heti, ettei vika ole mainoksessa, koska se selvästi pysäyttää ja houkuttaa klikkaamaan. Ongelma on siinä mihin klikkaus johtaa: ehkä lomake on liian pitkä, sivu latautuu hitaasti tai siinä ei kerrota mitä tarjouspyynnön jälkeen tapahtuu. Korjaa sivu, älä mainosta.</p>
+      <p>Käännetään tilanne. Verkkokauppa, joka saa tuskin lainkaan klikkauksia ja maksaa silti näytöistä, ei ole epäonnistunut sivullaan, koska kukaan ei ehdi sinne asti. Vika on mainoksessa tai kohdennuksessa: kuva ei erotu, teksti ei puhuttele tai mainos näytetään väärälle yleisölle. Sama logiikka pätee jokaiseen toimialaan. Luvut eivät ole irrallisia, vaan ne kertovat ketjuna missä kohtaa raha valuu hukkaan.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Mikä on yksi tärkein mittari jos seuraan vain yhtä?</h3>
@@ -232,6 +269,8 @@ export const batch3: Post[] = [
       <p>Kerran viikossa riittää useimmille pienille yrityksille. Päivittäinen tuijottaminen johtaa ylireagointiin, koska yksittäisten päivien luvut vaihtelevat luonnostaan paljon. Anna datan kertyä ennen päätöksiä.</p>
       <h3>Mitkä luvut kertovat että mainos itsessään on huono?</h3>
       <p>Matala klikkausprosentti ja korkea näyttöjen hinta yhdessä viittaavat siihen, ettei mainos pysäytä tai puhuttele yleisöä. Jos taas klikkauksia tulee mutta ei konversioita, vika on todennäköisemmin laskeutumissivulla tai tarjouksessa kuin itse mainoksessa.</p>
+      <h3>Tarvitsenko erillisen seurannan jotta näen konversiot?</h3>
+      <p>Verkkokaupalle ja sivustolla tapahtuville toiminnoille kyllä, koska ilman seurantaa Meta ei tiedä mitä sivustollasi tapahtuu eikä osaa raportoida konversioita. Lomakkeen täyttöä tai yhteydenottoa voi seurata myös Metan omilla lomakkeilla. Ilman jonkinlaista mittausta jäljelle jää vain arvailu, ja silloin et tiedä toimiiko mainonta.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -258,6 +297,7 @@ export const batch3: Post[] = [
       <h2>Mikä on hyvä ROAS</h2>
       <p>Tähän ei ole yhtä oikeaa vastausta, koska hyvä ROAS riippuu täysin katteestasi. Ratkaiseva kysymys ei ole onko ROAS suuri vai pieni, vaan jääkö viivan alle voittoa kulujen jälkeen.</p>
       <p>Jos tuotteesi kate on ohut, esimerkiksi jälleenmyyntiä pienellä marginaalilla, tarvitset korkean ROASin jotta jää voittoa. Jos taas valmistat tuotteen itse ja kate on suuri, voit olla kannattava jo matalalla ROASilla. Sama luku voi siis olla erinomainen yhdelle kaupalle ja tappiollinen toiselle. Laske oma kannattavuuden raja, älä vertaa naapurin lukuihin.</p>
+      <p>Käytännön esimerkki: jos myyt tuotetta, jonka katteesta puolet jää sinulle, tarvitset vähintään ROASin kaksi pelkkään nollatulokseen, ja sitä korkeamman jotta jää voittoa. Jos kate on vain neljännes, tarvitset ROASin neljä päästäksesi tasoihin. Tästä syystä toinen verkkokauppa juhlii ROASia kolme ja toinen tekee samalla luvulla tappiota.</p>
 
       <h2>Älä tuijota pelkkää ROASia</h2>
       <p>ROAS kertoo kannattavuuden, mutta ei kasvua. Voit nostaa ROASia näyttämällä mainoksia vain ihmisille, jotka olisivat ostaneet muutenkin, esimerkiksi entisille asiakkaillesi. Luku näyttää loistavalta, mutta uusia asiakkaita ei tule ja kasvu pysähtyy.</p>
@@ -275,6 +315,8 @@ export const batch3: Post[] = [
       <p>Tavallaan kyllä. Hyvin korkea ROAS voi tarkoittaa, että käytät mainontaan liian vähän rahaa ja tavoitat vain varmimmat ostajat. Tällöin jätät kasvua hyödyntämättä. Maltillisempi ROAS suuremmalla budjetilla voi tuoda enemmän kokonaisvoittoa.</p>
       <h3>Tarvitseeko palveluyritys ROASia?</h3>
       <p>Yleensä ei suoraan. Koska palvelussa yksittäisen yhteydenoton arvo ei ole heti tiedossa, parempi mittari on liidin tai varauksen hinta verrattuna asiakkaan tuomaan kokonaisarvoon. ROAS sopii parhaiten verkkokauppaan, jossa jokaisella ostolla on selkeä hinta.</p>
+      <h3>Pitääkö ROASia katsoa päivittäin?</h3>
+      <p>Ei. Yksittäisen päivän ROAS heittelee voimakkaasti, koska ostoja tulee epätasaisesti ja osa kirjautuu viiveellä. Katso ROASia viikon tai parin jaksoissa, niin näet todellisen suunnan etkä reagoi satunnaiseen heilahteluun.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -301,6 +343,7 @@ export const batch3: Post[] = [
       <h2>CTR: kuinka moni klikkaa</h2>
       <p>CTR on klikkausprosentti, eli kuinka suuri osa mainoksen nähneistä klikkasi sitä. Tämä on paras yksittäinen mittari sille, puhutteleeko mainos yleisöä. Korkea CTR tarkoittaa, että kuva pysäyttää ja teksti houkuttaa. Matala CTR tarkoittaa, että mainos ei kiinnosta tai kohdennus on väärä.</p>
       <p>CTR on ennen kaikkea diagnoosityökalu. Jos se on matala, korjaa ensin mainosta ennen kuin syytät mitään muuta. Vaihda kuvaa, terävöitä otsikkoa tai kohdenna eri yleisölle, ja katso nouseeko luku.</p>
+      <p>CTR on myös ennakkovaroitus kyllästymisestä. Kun sama yleisö on nähnyt mainoksen monta kertaa, klikkausprosentti alkaa laskea ennen kuin muut luvut reagoivat. Jos huomaat CTR:n hiipuvan, on aika uudistaa mainosmateriaali, vaikka konversiot näyttäisivät vielä kohtuullisilta.</p>
 
       <h2>CPC: paljonko yksi kävijä maksaa</h2>
       <p>CPC on klikin hinta, eli paljonko maksat yhdestä sivustollesi tulleesta kävijästä. Se on käytännössä seurausta kahdesta edellisestä: kun yleisön tavoittaminen on edullista ja moni klikkaa, klikki on halpa. Kun tavoittaminen on kallista ja harva klikkaa, klikki on kallis.</p>
@@ -308,6 +351,7 @@ export const batch3: Post[] = [
 
       <h2>Miten käytät näitä yhdessä</h2>
       <p>Lue lukuja ketjuna. CPM kertoo onko yleisö kallis, CTR kertoo toimiiko mainos ja CPC kertoo paljonko kävijä lopulta maksaa. Jos klikit ovat kalliita, katso kummasta se johtuu: korkeasta CPM:stä eli kovasta kilpailusta, vai matalasta CTR:stä eli huonosta mainoksesta. Korjaa se, mistä ongelma juontaa.</p>
+      <p>Tämä ketju säästää aikaa, koska se kertoo mistä päästä korjaaminen kannattaa aloittaa. Ravintolan paikallisessa kampanjassa CPM voi olla korkea, koska yleisö on pieni ja sama porukka kilpailee samoista näytöistä. Verkkokaupalla taas matala CTR on yleisempi pulma, koska kilpailua on enemmän ja mainoksen pitää erottua. Sama logiikka, eri painopiste.</p>
       <p>Mikään näistä kolmesta ei ole lopullinen tavoite. Lopullinen tavoite on konversio ja sen hinta. Nämä luvut auttavat ymmärtämään miksi konversio on kallis tai halpa, ja mistä kohtaa kannattaa korjata.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
@@ -317,6 +361,8 @@ export const batch3: Post[] = [
       <p>Ei itsetarkoituksellisesti. Halpa klikki on hyvä vain jos klikkaajat tekevät haluamasi toiminnon. Tärkeämpää on konversion hinta. Joskus kalliimmat klikit tuovat parempia asiakkaita ja ovat siksi kannattavampia.</p>
       <h3>Miksi CPM nousi vaikka en muuttanut mitään?</h3>
       <p>Yleensä syynä on kiristynyt kilpailu samasta yleisöstä, esimerkiksi sesonkina, tai mainoksesi kyllästyminen, jolloin Meta näyttää sitä kalliimmin. Tuore mainosmateriaali ja hieman laajempi yleisö voivat laskea CPM:ää takaisin.</p>
+      <h3>Voiko CPC olla matala mutta kampanja silti kannattamaton?</h3>
+      <p>Kyllä, ja tämä on yleinen ansa. Halpa klikki houkuttaa, mutta jos kävijät eivät osta tai ota yhteyttä, raha valuu hukkaan halvallakin klikkihinnalla. Katso aina koko ketju klikistä konversioon, älä pelkkää klikin hintaa.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -343,6 +389,7 @@ export const batch3: Post[] = [
       <p>Meta laskee oletuksena myynnin ansiokseen, jos ihminen klikkasi mainosta tai jopa vain näki sen ja osti pian sen jälkeen. Tätä kutsutaan näyttöpohjaiseksi attribuutioksi. Ihminen näki mainoksesi, ei klikannut, mutta meni myöhemmin itse kauppaasi ja osti. Meta laskee tämän omaksi ansiokseen, koska mainos vaikutti päätökseen.</p>
       <p>Google Analytics ajattelee toisin. Se antaa kunnian sille kanavalle, joka toi kävijän sivustolle juuri ostohetkellä. Jos asiakas näki Meta-mainoksen maanantaina mutta tuli torstaina hakukoneen kautta ja osti silloin, Analytics merkitsee myynnin usein hakuliikenteelle, ei Metalle. Sama osto, eri kanava saa kunnian.</p>
       <p>Tästä syntyy iso osa erosta. Meta kerää itselleen myös ne myynnit, joissa se oli mukana matkan varrella mutta ei viimeisenä askeleena. Analytics on tarkempi viimeisen klikin suhteen mutta sokeampi mainoksen pohjustavalle vaikutukselle.</p>
+      <p>Otetaan konkreettinen esimerkki. Verkkokaupan asiakas näkee Meta-mainoksen kengistä, ei klikkaa, mutta jää miettimään. Parin päivän päästä hän hakee kaupan nimen Googlesta ja ostaa. Meta sanoo: minun mainokseni herätti kiinnostuksen, tämä on minun ansiotani. Google sanoo: kävijä tuli haun kautta, myynti kuuluu haulle. Molemmat ovat tavallaan oikeassa, ja juuri siksi luvut eivät täsmää.</p>
 
       <h2>Seuranta: osa ostoista jää näkymättä</h2>
       <p>Toinen syy on tekninen. Selainten yksityisyysrajoitukset ja evästeiden estot katkaisevat osan seurannasta. Kun käyttäjä kieltää seurannan tai käyttää laitetta joka rajoittaa sitä, osa ostoista jää kirjautumatta jommankumman tai molempien työkalujen näkymään.</p>
@@ -351,6 +398,10 @@ export const batch3: Post[] = [
       <h2>Kumpaan kannattaa luottaa</h2>
       <p>Älä yritä saada lukuja täsmäämään, koska ne eivät ole tarkoitettukaan täsmäämään. Käytä niitä eri tarkoituksiin. Metan lukuihin nojaa, kun optimoit kampanjoita Metan sisällä, koska Meta tekee päätökset oman datansa pohjalta. Google Analyticsiin tai oman kaupan kirjanpitoon nojaa, kun arvioit kokonaiskuvaa ja todellista myyntiä.</p>
       <p><strong>Ratkaisu:</strong> Pidä kirjanpito tai verkkokaupan oma myyntiraportti totuuden lähteenä. Se kertoo paljonko rahaa tuli oikeasti sisään. Vertaa sitten mainoskuluja tähän todelliseen myyntiin. Metan ja Analyticsin luvut ovat työkaluja matkan varrella, mutta lopullinen tuomio tehdään pankkitilin perusteella.</p>
+
+      <h2>Käytännön tapa seurata tilannetta</h2>
+      <p>Yksinkertainen ja luotettava mittari pienelle yritykselle on jakaa koko kuukauden myynnin kasvu koko kuukauden mainoskuluilla. Tämä ei kerro yksittäisen mainoksen tarkkuudella mitään, mutta se kertoo karkean totuuden: tuoko mainonta enemmän rahaa kuin se vie. Jos myynti kasvaa selvästi sinä aikana kun mainostat ja laskee kun lopetat, mainonta toimii riippumatta siitä mitä yksittäiset työkalut väittävät.</p>
+      <p>Voit myös kysyä uusilta asiakkailta mistä he kuulivat sinusta. Vastaukset ovat epätarkkoja, koska ihmiset eivät aina muista, mutta ne antavat suuntaa joka täydentää lukuja. Tämä toimii erityisen hyvin palveluyrityksille, kuten remonttiyritykselle tai kauneushoitolalle, joissa asiakaskontakti on henkilökohtainen.</p>
 
       <h2>Mitä tästä seuraa käytännössä</h2>
       <p>Jos luotat sokeasti vain Metan lukuihin, saatat yliarvioida mainonnan tehon, koska Meta laskee itselleen myös ne myynnit jotka olisivat tulleet muutenkin. Jos luotat vain Analyticsiin, saatat aliarvioida mainonnan, koska se ei näe pohjustavaa vaikutusta. Totuus on näiden välissä, ja sitä lähestyy parhaiten katsomalla todellista kokonaismyyntiä suhteessa kaikkiin mainoskuluihin.</p>
@@ -364,6 +415,8 @@ export const batch3: Post[] = [
       <p>Voit, jos haluat Metan laskevan konversiot tiukemmin, esimerkiksi vain klikkauksen jälkeen. Tämä tuo Metan luvut lähemmäs Analyticsia mutta voi heikentää Metan kykyä optimoida. Useimmille pienille yrityksille riittää, että ymmärtää eron ja seuraa todellista myyntiä.</p>
       <h3>Miksi Meta näyttää myynnin vaikka asiakas ei klikannut mainosta?</h3>
       <p>Koska Meta laskee oletuksena myös näyttöpohjaiset konversiot. Jos ihminen näki mainoksesi ja osti pian sen jälkeen ilman klikkausta, Meta tulkitsee mainoksen vaikuttaneen päätökseen. Tämä paisuttaa Metan lukuja verrattuna Analyticsiin.</p>
+      <h3>Tarvitsenko molemmat työkalut vai riittääkö toinen?</h3>
+      <p>Molemmista on hyötyä, koska ne kertovat eri asioita. Meta auttaa optimoimaan kampanjat, Analytics ja kirjanpito kertovat kokonaiskuvan. Jos joudut valitsemaan, pidä totuuden lähteenä oma myyntiraporttisi ja käytä Metaa kampanjoiden säätämiseen.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -390,10 +443,12 @@ export const batch3: Post[] = [
       <h2>Miksi tämä vaikuttaa tuloksiin</h2>
       <p>Mitä pidempi ikkuna ja mitä enemmän siihen lasketaan näyttöpohjaisia konversioita, sitä enemmän myyntiä Meta merkitsee mainonnan ansioksi. Sama kampanja voi siis näyttää eri raportissa tuottavan kaksinkertaisesti, pelkästään siksi että ikkuna on asetettu eri tavalla.</p>
       <p>Tämä on tärkeää kahdesta syystä. Ensinnäkin se vaikuttaa siihen, miltä kannattavuus näyttää. Pitkä ikkuna paisuttaa tuloksia, lyhyt kutistaa niitä. Toiseksi se vaikuttaa siihen, miten Meta optimoi kampanjaasi, koska Meta opettaa algoritmiaan niiden konversioiden perusteella, jotka mahtuvat valittuun ikkunaan.</p>
+      <p>Otetaan esimerkki. Verkkokauppa katsoo kahta raporttia samasta kampanjasta. Toisessa ikkuna laskee vain ostot, jotka tapahtuivat pian klikkauksen jälkeen. Toisessa ikkuna laskee mukaan myös ne, jotka tapahtuivat useita päiviä myöhemmin, ja myös ne, joissa mainos vain nähtiin. Jälkimmäinen raportti näyttää selvästi enemmän ostoja, vaikka todellinen myynti on täsmälleen sama. Ei kannata juhlia eikä murehtia ennen kuin tietää kummalla ikkunalla luvut on laskettu.</p>
 
       <h2>Mikä ikkuna kannattaa valita</h2>
       <p>Oikea valinta riippuu siitä, kuinka nopeasti asiakkaasi tekee ostopäätöksen. Halvat heräteostokset tapahtuvat usein heti, jolloin lyhyt ikkuna riittää ja antaa rehellisemmän kuvan. Kalliimmat ostot ja palvelut, joita harkitaan pidempään, vaativat pidemmän ikkunan, jotta myöhemmin tehty osto ehtii kirjautua mainonnan ansioksi.</p>
       <p>Ravintolan lounastarjous toimii nopeasti, joten lyhyt ikkuna kuvaa todellisuutta. Remontti tai kalliimpi verkkokauppatuote harkitaan pidempään, joten liian lyhyt ikkuna jättäisi suuren osan mainonnan ansioista huomaamatta ja saisi kampanjan näyttämään turhaan kannattamattomalta.</p>
+      <p>Hyvä tapa löytää oikea pituus on miettiä omaa myyntiäsi. Kuinka monta päivää asiakkaaltasi tyypillisesti kuluu siitä kun hän kuulee sinusta siihen kun hän ostaa. Kauneushoitola, jonka asiakas varaa ajan heti nähtyään tarjouksen, tarvitsee lyhyen ikkunan. Remonttiyritys, jonka asiakas pyytää tarjouksen, vertailee ja päättää viikon päästä, tarvitsee pidemmän. Sovita ikkuna myyntisykliisi, älä kopioi jonkun toisen asetusta.</p>
       <p><strong>Ratkaisu:</strong> Mieti kuinka monta päivää asiakkaaltasi tyypillisesti kuluu mainoksen näkemisestä ostoon, ja valitse ikkuna sen mukaan. Älä valitse pisintä mahdollista ikkunaa vain siksi, että luvut näyttäisivät paremmilta. Tärkeintä on, että vertaat kampanjoita aina samalla ikkunalla, jotta vertailu on reilu.</p>
 
       <h2>Yleisin virhe</h2>
@@ -409,6 +464,8 @@ export const batch3: Post[] = [
       <p>Pidempi ikkuna on perusteltu, mutta ei automaattisesti pisin mahdollinen. Valitse ikkuna, joka vastaa todellista harkinta-aikaa. Liian pitkä ikkuna kerää mukaan myyntejä, joilla ei ole aitoa yhteyttä mainokseen, ja antaa liian ruusuisen kuvan.</p>
       <h3>Vaikuttaako ikkuna siihen miten Meta optimoi kampanjaa?</h3>
       <p>Kyllä. Meta opettaa algoritmiaan niiden konversioiden perusteella, jotka mahtuvat valittuun ikkunaan. Liian lyhyt ikkuna pitkän harkinnan tuotteelle voi tarkoittaa, että Meta ei näe suurta osaa myynneistä eikä opi optimoimaan tehokkaasti.</p>
+      <h3>Pitääkö ikkuna asettaa jokaiselle kampanjalle erikseen?</h3>
+      <p>Voit asettaa sen kampanjan tavoitteen mukaan, ja usein onkin järkevää käyttää eri ikkunaa nopeasti ostettaville ja pitkään harkittaville tuotteille. Tärkeintä on, että muistat millä ikkunalla mitäkin kampanjaa luetaan, jotta et vertaile keskenään lukuja jotka on laskettu eri säännöillä.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
@@ -435,10 +492,12 @@ export const batch3: Post[] = [
       <h2>Kolme lukua jotka katsot ensin</h2>
       <p>Ohita aluksi suurin osa sarakkeista. Kolme lukua riittää kertomaan toimiiko mainonta. Ensimmäinen on tulosten määrä, eli kuinka monta varausta, ostoa tai yhteydenottoa sait. Tämä on se asia, jota varten mainostat, joten katso sitä ensin.</p>
       <p>Toinen on tuloksen hinta, eli paljonko yksi varaus tai yhteydenotto maksoi. Tämä kertoo kannattavuuden. Jos tiedät paljonko asiakas tuo sinulle, näet heti onko hinta kunnossa. Kolmas on käytetty summa, jotta tiedät paljonko rahaa kampanja on syönyt suhteessa tuloksiin. Näillä kolmella luvulla teet jo perustellun päätöksen.</p>
+      <p>Otetaan esimerkki. Kauneushoitola näkee raportissa: kaksitoista varausta, varauksen hinta kahdeksan euroa, käytetty summa lähes sata euroa. Jos yksi uusi asiakas tuo keskimäärin useita kymppejä jo ensimmäisellä käynnillä ja palaa myöhemmin, kahdeksan euron varaushinta on erinomainen. Sama luku olisi liikaa, jos hoito maksaisi vain kympin eikä asiakas palaisi. Numero saa merkityksen vasta, kun vertaat sitä asiakkaan arvoon.</p>
 
       <h2>Mitä luvut kertovat yhdessä</h2>
       <p>Jos tuloksia tulee ja niiden hinta on järkevä, kaikki on hyvin, anna kampanjan jatkua. Jos tuloksia tulee mutta hinta on liian korkea, sinun pitää joko parantaa mainosta, tarjousta tai laskeutumissivua. Jos tuloksia ei tule lainkaan vaikka rahaa on kulunut, jokin on perustavalla tavalla pielessä: väärä yleisö, väärä tavoite tai mainos joka ei pysäytä ketään.</p>
       <p>Tässä vaiheessa voit katsoa tukiluvut. Jos klikkauksia tulee mutta tuloksia ei, ongelma on todennäköisesti sivulla johon mainos ohjaa, ei mainoksessa. Jos klikkauksiakaan ei tule, vika on itse mainoksessa tai kohdennuksessa.</p>
+      <p>Tämä yksinkertainen logiikka kattaa suurimman osan tilanteista. Verkkokauppa, joka saa paljon klikkejä mutta vähän ostoja, kannattaa katsoa tuotesivuaan, hintojaan ja toimituskulujaan ennen kuin syyttää mainosta. Remonttiyritys, joka ei saa edes klikkejä, kannattaa katsoa mainoksen kuvaa ja kohdennusta. Luvut kertovat mistä päästä korjaaminen kannattaa aloittaa.</p>
 
       <h2>Vertaa mainoksia keskenään</h2>
       <p>Raportin paras käyttötarkoitus on löytää voittajat ja häviäjät. Kun katsot mainostasolla, näet mikä yksittäinen kuva tai teksti tuo tuloksia halvimmalla ja mikä polttaa rahaa tyhjään. Sammuta heikoimmat ja anna budjetin valua niihin jotka toimivat. Tämä on yksinkertaisin tapa parantaa tuloksia ilman lisärahaa.</p>
@@ -449,6 +508,7 @@ export const batch3: Post[] = [
 
       <h2>Valitse oikea aikaväli</h2>
       <p>Säädä raportin aikaväli järkeväksi. Yhden päivän tarkastelu johtaa harhaan, koska luvut vaihtelevat päivittäin. Katso mieluummin viikkoa tai paria, niin näet todellisen suunnan etkä satunnaista heilahtelua. Tee muutokset rauhassa, älä reagoi jokaiseen päivän notkahdukseen.</p>
+      <p>Aikavälin valinta vaikuttaa myös siihen, miten tasaisesti luvut näyttävät kehittyvän. Aivan kampanjan alussa luvut ovat usein huonoja, koska Meta vasta etsii oikeaa yleisöä. Jos tuomitset kampanjan ensimmäisten päivien perusteella, hylkäät sen ennen kuin se ehti edes lämmetä. Anna sille aikaa asettua, ennen kuin teet johtopäätöksiä.</p>
 
       <h2>Usein kysytyt kysymykset</h2>
       <h3>Mistä tiedän mikä luku on tulokseni?</h3>
@@ -459,6 +519,8 @@ export const batch3: Post[] = [
       <p>Jätä se huomiotta. Tulosten määrä, tuloksen hinta ja käytetty summa riittävät peruspäätöksiin. Loput sarakkeet ovat tarkennuksia, joita tarvitset vasta kun haluat ymmärtää miksi luvut ovat sellaisia kuin ovat.</p>
       <h3>Voinko muokata mitä sarakkeita raportissa näkyy?</h3>
       <p>Kyllä. Meta antaa valita näkyvät sarakkeet, joten voit piilottaa turhat ja jättää näkyviin vain tärkeät luvut. Tämä tekee raportista paljon selkeämmän ja vähentää tunnetta että lukuja on liikaa.</p>
+      <h3>Miksi luvut näyttävät erilaisilta kuin oma kirjanpitoni?</h3>
+      <p>Meta laskee tulokset oman seurantansa ja attribuutionsa mukaan, mikä poikkeaa todellisesta myynnistä. Käytä Metan raporttia kampanjoiden vertailuun ja säätämiseen, mutta pidä lopullisena totuutena oma myyntiraporttisi tai kirjanpitosi. Ne kertovat paljonko rahaa tuli oikeasti sisään.</p>
 
       <hr />
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
