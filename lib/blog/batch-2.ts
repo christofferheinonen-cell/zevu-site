@@ -44,7 +44,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-kampanjan-optimointi',
@@ -55,7 +55,7 @@ export const batch2: Post[] = [
     read: 6,
     grad: 'grad-2',
     excerpt: 'Kuinka usein Meta-kampanjaa pitää optimoida? Mitä lukuja katsotaan ja mitä muutetaan? Käytännön ohje ilman turhaa teknistä jargonia.',
-    content: \`
+    content: `
       <p>Kaksi virhettä tappaa Meta-kampanjat useammin kuin mikään muu. Toinen on se, ettei kampanjaan kosketa koskaan. Toinen on se, että siihen kosketaan joka päivä. Oikea optimointirytmi on jossain siinä välissä, ja se on yllättävän yksinkertainen kun ymmärtää miksi.</p>
 
       <h2>Miksi liiallinen kosketteleminen vahingoittaa</h2>
@@ -95,7 +95,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-mainonnan-creative',
@@ -106,7 +106,7 @@ export const batch2: Post[] = [
     read: 7,
     grad: 'grad-3',
     excerpt: 'Miksi jotkut Meta-mainokset pysäyttävät selauksen ja toiset ei? Tässä mitä hyvä mainosmateriaali vaatii — ilman suunnittelijan palkkaamista.',
-    content: \`
+    content: `
       <p>Ihminen selaa Instagram-syötettä peukalolla, vauhdilla, puolihuolimattomasti. Mainoksellasi on alle sekunti aikaa saada peukalo pysähtymään. Jos se ei pysähdy, kaikki muu on yhdentekevää: paraskin tarjous ja täydellisin teksti jäävät näkemättä. Tämä on koko Meta-mainonnan creativen ydin.</p>
       <p>Creative tarkoittaa mainoksen visuaalista sisältöä, eli kuvaa tai videota ja sen päällä olevaa tekstiä. Se on se osa mainosta jonka ihminen näkee ensin, ja se ratkaisee enemmän kuin mikään tekninen asetus. Voit hioa kohdennusta ja budjettia loputtomiin, mutta jos creative ei pysäytä, mikään muu ei pelasta kampanjaa.</p>
 
@@ -149,7 +149,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-mainonta-kuva-vai-video',
@@ -160,7 +160,7 @@ export const batch2: Post[] = [
     read: 4,
     grad: 'grad-4',
     excerpt: 'Pitääkö Meta-mainoksessa olla video vai riittääkö kuva? Rehellinen vastaus toimialaesimerkkeineen.',
-    content: \`
+    content: `
       <p>Lyhyt vastaus: hyvä kuva päihittää huonon videon joka kerta, ja huono video on rahan haaskausta. Pitkä vastaus riippuu siitä mitä haluat näyttää ja kuka on yleisösi. Ei ole sääntöä, jonka mukaan videon pitäisi aina voittaa, vaikka niin usein väitetään.</p>
 
       <h2>Milloin video toimii paremmin</h2>
@@ -192,7 +192,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-mainosteksti',
@@ -203,7 +203,7 @@ export const batch2: Post[] = [
     read: 6,
     grad: 'grad-5',
     excerpt: 'Hyvä Meta-mainosteksti ei luettele ominaisuuksia — se puhuu asiakkaan ongelmasta. Näin kirjoitat copyn joka toimii.',
-    content: \`
+    content: `
       <p>Suurin osa pienyritysten mainosteksteistä kuulostaa samalta: laadukasta palvelua, vuosien kokemus, ammattitaitoinen tiimi. Asiakas lukee tämän ja ohittaa sen, koska se ei kerro hänelle mitään. Hän miettii vain yhtä asiaa: mitä tästä on minulle hyötyä? Hyvä mainosteksti vastaa siihen kysymykseen heti.</p>
 
       <h2>Aloita asiakkaan ongelmasta, älä itsestäsi</h2>
@@ -246,7 +246,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-mainonnan-hook',
@@ -257,7 +257,7 @@ export const batch2: Post[] = [
     read: 5,
     grad: 'grad-1',
     excerpt: 'Meta-mainoksella on alle sekunti aikaa pysäyttää käyttäjä. Näin rakennat hookin joka toimii.',
-    content: \`
+    content: `
       <p>Hook on mainoksen ensimmäinen sekunti, se hetki joka joko pysäyttää selaajan tai ei. Kaikki muu mainoksessa, paraskin tarjous ja teksti, on turhaa jos hook epäonnistuu. Ihminen on jo selannut ohi ennen kuin viestisi ehtii alkaa.</p>
 
       <h2>Miksi yksi sekunti on koko peli</h2>
@@ -290,7 +290,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-carousel-mainos',
@@ -301,7 +301,7 @@ export const batch2: Post[] = [
     read: 4,
     grad: 'grad-2',
     excerpt: 'Carousel-mainos vai yksittäinen kuva? Selitämme milloin carousel kannattaa ja milloin yksinkertainen ratkaisu on parempi.',
-    content: \`
+    content: `
       <p>Carousel on mainos, jossa käyttäjä voi selata useaa kuvaa tai korttia sivusuunnassa. Yksittäinen kuva on yksi kuva. Kumpi kannattaa? Se riippuu täysin siitä, onko sinulla useita asioita näytettävänä vai yksi vahva viesti.</p>
 
       <h2>Milloin carousel kannattaa</h2>
@@ -331,7 +331,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-ugc-mainokset',
@@ -342,7 +342,7 @@ export const batch2: Post[] = [
     read: 6,
     grad: 'grad-3',
     excerpt: 'UGC-mainokset eli käyttäjien luoma sisältö on iso trendi Meta-mainonnassa. Toimiiko se Suomessa? Rehellinen arvio.',
-    content: \`
+    content: `
       <p>UGC tarkoittaa käyttäjien luomaa sisältöä, eli mainosta joka näyttää tavallisen ihmisen tekemältä julkaisulta eikä yrityksen mainokselta. Asiakas kuvaa puhelimellaan, kertoo kokemuksensa ja suosittelee. Tämä formaatti on noussut isoksi trendiksi, mutta toimiiko se suomalaiselle yleisölle? Pääosin kyllä, tietyin varauksin.</p>
 
       <h2>Miksi UGC toimii</h2>
@@ -377,7 +377,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-mainoskreatiivin-tekeminen',
@@ -388,7 +388,7 @@ export const batch2: Post[] = [
     read: 9,
     grad: 'grad-4',
     excerpt: 'Ei budjettia mainostoimistolle? Et tarvitse. Näin teet toimivan Meta-mainoskreatiivin itse.',
-    content: \`
+    content: `
       <p>Moni pienyrittäjä luulee, että toimiva Meta-mainos vaatii suunnittelijan, kalliin tuotannon ja kiillotetun lopputuloksen. Totuus on päinvastainen. Puhelimella kuvattu aito sisältö toimii Metassa usein paremmin kuin ammattituotanto, koska se näyttää orgaaniselta julkaisulta eikä mainokselta. Tässä miten teet sen itse.</p>
 
       <h2>Aloita siitä mitä sinulla jo on</h2>
@@ -434,7 +434,7 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
   {
     slug: 'meta-creative-fatigue',
@@ -445,7 +445,7 @@ export const batch2: Post[] = [
     read: 9,
     grad: 'grad-5',
     excerpt: 'Meta-mainoksen teho laskee ajan myötä. Tätä kutsutaan creative fatigueksi. Näin tunnistat sen ajoissa ja korjaat tilanteen.',
-    content: \`
+    content: `
       <p>Mainoksesi toimi hyvin pari viikkoa. Sitten tulokset alkoivat hiipua, hinta nousi ja yhteydenotot vähenivät, vaikka et muuttanut mitään. Tämä on creative fatigue, eli mainosväsymys. Sama yleisö on nähnyt saman mainoksen liian monta kertaa, eikä se enää pysäytä ketään. Tämä ei ole vika, vaan väistämätön ilmiö, jonka oppii hallitsemaan.</p>
 
       <h2>Miksi näin käy</h2>
@@ -485,6 +485,6 @@ export const batch2: Post[] = [
       <h2>Haluatko parempia tuloksia Meta-mainonnalla?</h2>
       <p>Pyydä ilmainen mainosanalyysi — kerromme mitä tehdä toisin.</p>
       <p><a href="https://www.zevu.cc/#cta">Pyydä analyysi →</a></p>
-    \`,
+    `,
   },
 ]
