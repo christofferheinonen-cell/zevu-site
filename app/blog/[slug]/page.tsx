@@ -12,6 +12,10 @@ import {
   CONTACT_EMAIL,
 } from '@/lib/seo'
 
+// Re-check publish status and prev/next neighbors periodically, so newly
+// scheduled posts and their navigation links go live without a redeploy.
+export const revalidate = 3600
+
 export async function generateStaticParams() {
   return getAllPosts().map(p => ({ slug: p.slug }))
 }

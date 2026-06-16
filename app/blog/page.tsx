@@ -3,6 +3,10 @@ import BlogList from '@/components/BlogList'
 import RevealWrapper from '@/components/RevealWrapper'
 import { buildMetadata } from '@/lib/seo'
 
+// Re-check which posts have reached their publish date periodically, so
+// scheduled articles go live without a redeploy.
+export const revalidate = 3600
+
 export const metadata = buildMetadata({
   path: '/blog',
   title: 'Blogi — Meta-mainonnan parhaat käytännöt | Zevu',

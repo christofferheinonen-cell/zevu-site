@@ -1,3 +1,4 @@
+import { parseFiDate } from './seo'
 import { batch1 } from './blog/batch-1'
 import { batch2 } from './blog/batch-2'
 import { batch3 } from './blog/batch-3'
@@ -22,9 +23,12 @@ export interface Post {
    */
   publishedTime?: string
   /**
-   * Whether the post is listed on the /blog index page. Defaults to false
-   * (hidden) so newly added articles stay off the Blogi page until explicitly
-   * set to true. Hidden posts are still live by direct URL and in the sitemap.
+   * Listing override for the /blog index page.
+   * - true: always listed, regardless of date.
+   * - false: never listed, even once its date has passed.
+   * - omitted (default): listed automatically once `publishedTime` (or
+   *   `date`) has arrived. Until then it's a scheduled draft.
+   * In every case the post is still live by direct URL and in the sitemap.
    */
   showOnBlog?: boolean
 }
@@ -131,9 +135,25 @@ export function getAllPosts(): Post[] {
   return POSTS
 }
 
-/** Posts shown on the /blog index page (opt-in via showOnBlog). */
-export function getListedPosts(): Post[] {
-  return POSTS.filter(p => p.showOnBlog === true)
+/** The post's effective publish instant, used for scheduling and sorting. */
+export function getPublishDate(post: Post): Date {
+  return post.publishedTime ? new Date(post.publishedTime) : parseFiDate(post.date)
+}
+
+/** Whether a post's scheduled publish date has arrived (or already has). */
+export function isPublished(post: Post, now: Date = new Date()): boolean {
+  return getPublishDate(post).getTime() <= now.getTime()
+}
+
+/**
+ * Posts shown on the /blog index page: listed automatically once their
+ * publish date arrives, unless `showOnBlog` forces it true (always) or
+ * false (never). Sorted newest-first.
+ */
+export function getListedPosts(now: Date = new Date()): Post[] {
+  return POSTS
+    .filter(p => p.showOnBlog ?? isPublished(p, now))
+    .sort((a, b) => getPublishDate(b).getTime() - getPublishDate(a).getTime())
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
