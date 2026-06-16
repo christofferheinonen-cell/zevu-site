@@ -1,16 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { SESSION_COOKIE, adminCreds, sessionToken } from '@/lib/auth'
 
-function unauthorized() {
-  return new NextResponse('Kirjautuminen vaaditaan.', {
-    status: 401,
-    headers: { 'WWW-Authenticate': 'Basic realm="Zevu Admin"' },
-  })
+export const config = {
+  matcher: ['/admin/:path*', '/api/admin/:path*'],
 }
 
-export function middleware(req: NextRequest) {
-  const user = process.env.ADMIN_USER
-  const pass = process.env.ADMIN_PASSWORD
+export async function middleware(req: NextRequest) {
+  const { pathname } = req.nextUrl
 
+  // The login page and login endpoint must stay reachable without a session.
+  if (pathname === '/admin/login' || pathname === '/api/admin/login') {
+    return NextResponse.next()
+  }
+
+  const { user, pass } = adminCreds()
   if (!user || !pass) {
     return new NextResponse(
       'Admin-tunnukset puuttuvat. Aseta ADMIN_USER ja ADMIN_PASSWORD ympäristömuuttujat.',
@@ -18,20 +21,21 @@ export function middleware(req: NextRequest) {
     )
   }
 
-  const auth = req.headers.get('authorization')
-  if (!auth?.startsWith('Basic ')) return unauthorized()
+  const expected = await sessionToken(user, pass)
+  const token = req.cookies.get(SESSION_COOKIE)?.value
+  if (token && token === expected) {
+    return NextResponse.next()
+  }
 
-  const decoded = atob(auth.slice(6))
-  const sep = decoded.indexOf(':')
-  if (sep === -1) return unauthorized()
+  // Unauthenticated API calls get a clean 401; page requests get redirected to
+  // the branded login screen, preserving where they were headed.
+  if (pathname.startsWith('/api/')) {
+    return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
+  }
 
-  const u = decoded.slice(0, sep)
-  const p = decoded.slice(sep + 1)
-  if (u !== user || p !== pass) return unauthorized()
-
-  return NextResponse.next()
-}
-
-export const config = {
-  matcher: ['/admin/:path*'],
+  const url = req.nextUrl.clone()
+  url.pathname = '/admin/login'
+  url.search = ''
+  if (pathname !== '/admin') url.searchParams.set('next', pathname)
+  return NextResponse.redirect(url)
 }

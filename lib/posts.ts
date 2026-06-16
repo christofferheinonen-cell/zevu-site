@@ -1,4 +1,5 @@
 import { parseFiDate } from './seo'
+import { getOverrides } from './articles'
 import { batch1 } from './blog/batch-1'
 import { batch2 } from './blog/batch-2'
 import { batch3 } from './blog/batch-3'
@@ -131,8 +132,19 @@ export const POSTS: Post[] = [
   ...batch6,
 ]
 
+/** Apply any saved editor overrides on top of a base post. */
+function withOverrides(post: Post, overrides = getOverrides()): Post {
+  const o = overrides[post.slug]
+  if (!o) return post
+  // Drop bookkeeping fields and undefined values so they never clobber the base.
+  const { updatedAt, ...fields } = o
+  const clean = Object.fromEntries(Object.entries(fields).filter(([, v]) => v !== undefined))
+  return { ...post, ...clean }
+}
+
 export function getAllPosts(): Post[] {
-  return POSTS
+  const overrides = getOverrides()
+  return POSTS.map(p => withOverrides(p, overrides))
 }
 
 /** The post's effective publish instant, used for scheduling and sorting. */
@@ -151,11 +163,14 @@ export function isPublished(post: Post, now: Date = new Date()): boolean {
  * false (never). Sorted newest-first.
  */
 export function getListedPosts(now: Date = new Date()): Post[] {
+  const overrides = getOverrides()
   return POSTS
+    .map(p => withOverrides(p, overrides))
     .filter(p => p.showOnBlog ?? isPublished(p, now))
     .sort((a, b) => getPublishDate(b).getTime() - getPublishDate(a).getTime())
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
-  return POSTS.find(p => p.slug === slug)
+  const post = POSTS.find(p => p.slug === slug)
+  return post ? withOverrides(post) : undefined
 }

@@ -1,19 +1,12 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
-import Script from 'next/script'
 import './globals.css'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
-import JsonLd from '@/components/JsonLd'
 import {
   SITE_URL,
   SITE_NAME,
   DEFAULT_TITLE,
   DEFAULT_DESCRIPTION,
   LOCALE,
-  CONTACT_EMAIL,
-  GA_MEASUREMENT_ID,
-  absoluteUrl,
 } from '@/lib/seo'
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -64,50 +57,10 @@ export const metadata: Metadata = {
     : undefined,
 }
 
-const organizationLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: SITE_NAME,
-  url: SITE_URL,
-  logo: absoluteUrl('/icon'),
-  image: absoluteUrl('/opengraph-image'),
-  email: CONTACT_EMAIL,
-  description: DEFAULT_DESCRIPTION,
-  areaServed: 'FI',
-}
-
-const websiteLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: SITE_NAME,
-  url: SITE_URL,
-  inLanguage: 'fi-FI',
-}
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fi">
-      <body className={plusJakarta.className}>
-        <JsonLd data={organizationLd} />
-        <JsonLd data={websiteLd} />
-        <Nav />
-        <main style={{ position: 'relative', zIndex: 1 }}>{children}</main>
-        <Footer />
-        {GA_MEASUREMENT_ID ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_MEASUREMENT_ID}');`}
-            </Script>
-          </>
-        ) : null}
-      </body>
+      <body className={plusJakarta.className}>{children}</body>
     </html>
   )
 }
