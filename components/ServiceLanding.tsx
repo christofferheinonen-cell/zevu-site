@@ -4,11 +4,33 @@ import CtaButton from './CtaButton'
 import ServiceFaq from './ServiceFaq'
 import ServiceVisual from './ServiceVisual'
 import StatStrip from './StatStrip'
+import JsonLd from './JsonLd'
 import type { Service } from '@/lib/services'
+import { absoluteUrl } from '@/lib/seo'
 
 export default function ServiceLanding({ data }: { data: Service }) {
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: data.faq.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Etusivu', item: absoluteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: data.navLabel, item: absoluteUrl(`/${data.slug}`) },
+    ],
+  }
+
   return (
     <main>
+      <JsonLd data={faqLd} />
+      <JsonLd data={breadcrumbLd} />
       <div className="wrap">
         <RevealWrapper className="service-hero">
           <div className="service-hero-inner">

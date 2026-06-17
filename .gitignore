@@ -10,6 +10,11 @@ out/
 .env.local
 .env.*.local
 
+# local data (contains real customer PII, never commit)
+/data/
+
 # misc
 .DS_Store
 *.pem
+.tmp-blog-schedule.json
+tsconfig.tsbuildinfo

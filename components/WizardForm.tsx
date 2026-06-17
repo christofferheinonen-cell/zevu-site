@@ -24,6 +24,8 @@ export default function WizardForm({ compact = false }: { compact?: boolean }) {
   })
   const [errors, setErrors] = useState<Record<string, boolean>>({})
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   function set<K extends keyof Data>(k: K, v: Data[K]) {
     setData(d => ({ ...d, [k]: v }))
@@ -45,13 +47,28 @@ export default function WizardForm({ compact = false }: { compact?: boolean }) {
     setStep(s => s - 1)
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     const errs: Record<string, boolean> = {}
     if (!data.name.trim()) errs.name = true
     if (!data.email.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) errs.email = true
     setErrors(errs)
     if (Object.keys(errs).length) return
-    setSubmitted(true)
+
+    setSubmitting(true)
+    setSubmitError(false)
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, source: window.location.pathname }),
+      })
+      if (!res.ok) throw new Error('request_failed')
+      setSubmitted(true)
+    } catch {
+      setSubmitError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const stepLabels = ['Yritys', 'Mainonta', 'Yhteystiedot']
@@ -184,6 +201,12 @@ export default function WizardForm({ compact = false }: { compact?: boolean }) {
             )}
           </div>
 
+          {submitError && (
+            <p className="wfield-err" style={{ display: 'block', marginTop: 8 }}>
+              Lähetys epäonnistui. Tarkista yhteys ja yritä uudelleen.
+            </p>
+          )}
+
           {/* Nav */}
           <div className="wizard-nav">
             {step > 1
@@ -192,7 +215,11 @@ export default function WizardForm({ compact = false }: { compact?: boolean }) {
             }
             {step < 3
               ? <button type="button" className="wizard-next" onClick={goNext}>Seuraava →</button>
-              : <button type="button" className="wizard-next" onClick={handleSubmit}>Pyydä analyysi →</button>
+              : (
+                <button type="button" className="wizard-next" onClick={handleSubmit} disabled={submitting}>
+                  {submitting ? 'Lähetetään…' : 'Pyydä analyysi →'}
+                </button>
+              )
             }
           </div>
         </div>
