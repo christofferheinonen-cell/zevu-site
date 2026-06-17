@@ -797,6 +797,7 @@ body::before{
 
 /* Stat cards */
 .adm-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+.adm-cards--6{grid-template-columns:repeat(6,1fr);}
 .adm-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--sh);}
 .adm-card-num{font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--text);line-height:1;}
 .adm-card-label{font-size:13px;color:var(--sub);margin-top:8px;font-weight:500;}
