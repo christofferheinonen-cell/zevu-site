@@ -7,6 +7,7 @@ const NAV = [
   { href: '/admin', label: 'Yleiskatsaus', exact: true, icon: 'M3 12l9-9 9 9M5 10v10h5v-6h4v6h5V10' },
   { href: '/admin/articles', label: 'Artikkelit', icon: 'M4 5h16M4 12h16M4 19h10' },
   { href: '/admin/leads', label: 'Yhteydenotot', icon: 'M3 8l9 6 9-6M3 6h18v12H3z' },
+  { href: '/admin/search-console', label: 'Hakukonsoli', icon: 'M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z' },
 ]
 
 export default function AdminSidebar({ user }: { user: string }) {

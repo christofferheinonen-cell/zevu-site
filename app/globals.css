@@ -840,6 +840,7 @@ a.adm-list-title:hover{color:var(--blue);}
 .adm-btn--danger{background:var(--white);color:#b91c1c;border-color:#fecaca;}
 .adm-btn--danger:hover:not(:disabled){background:#fee2e2;}
 .adm-btn--block{width:100%;padding:13px;}
+.adm-btn--active{background:var(--text);color:#fff;border-color:var(--text);}
 
 /* Flash messages */
 .adm-flash{padding:12px 16px;border-radius:10px;font-size:13.5px;font-weight:600;margin-bottom:20px;}
