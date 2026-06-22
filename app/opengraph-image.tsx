@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'Zevu — Meta-mainonta, joka toimii'
+export const alt = 'Zevu - Meta mainosten kumppani'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 

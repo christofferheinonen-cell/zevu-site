@@ -9,7 +9,7 @@ export const SITE_URL = (
 ).replace(/\/$/, '')
 
 export const SITE_NAME = 'Zevu'
-export const DEFAULT_TITLE = 'Zevu — Meta-mainonta, joka toimii'
+export const DEFAULT_TITLE = 'Zevu - Meta mainosten kumppani'
 export const DEFAULT_DESCRIPTION =
   'Meta mainonta, joka toimii. Ilman arvailua, geneerisiä kuvia tai tuhlattua budjettia.'
 export const LOCALE = 'fi_FI'
