@@ -13,7 +13,13 @@ export default function FooterForm() {
       return
     }
     setErr(false)
-    setTimeout(() => setSubmitted(true), 600)
+    if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: Function }).gtag === 'function') {
+      ;(window as Window & { gtag: Function }).gtag('event', 'generate_lead', {
+        event_category: 'lead',
+        event_label: 'footer_form',
+      })
+    }
+    setSubmitted(true)
   }
 
   if (submitted) {

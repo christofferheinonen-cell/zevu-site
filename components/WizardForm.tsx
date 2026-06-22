@@ -63,6 +63,12 @@ export default function WizardForm({ compact = false }: { compact?: boolean }) {
         body: JSON.stringify({ ...data, source: window.location.pathname }),
       })
       if (!res.ok) throw new Error('request_failed')
+      if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: Function }).gtag === 'function') {
+        ;(window as Window & { gtag: Function }).gtag('event', 'generate_lead', {
+          event_category: 'lead',
+          event_label: 'wizard_form',
+        })
+      }
       setSubmitted(true)
     } catch {
       setSubmitError(true)
