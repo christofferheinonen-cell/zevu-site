@@ -14,10 +14,7 @@ export default function FooterForm() {
     }
     setErr(false)
     if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: Function }).gtag === 'function') {
-      ;(window as Window & { gtag: Function }).gtag('event', 'generate_lead', {
-        event_category: 'lead',
-        event_label: 'footer_form',
-      })
+      ;(window as Window & { gtag: Function }).gtag('event', 'Leadcaptured')
     }
     setSubmitted(true)
   }

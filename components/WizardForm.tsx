@@ -1,5 +1,11 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+
+function fireGtag(eventName: string) {
+  if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: Function }).gtag === 'function') {
+    ;(window as Window & { gtag: Function }).gtag('event', eventName)
+  }
+}
 
 type Data = {
   company: string
@@ -26,8 +32,13 @@ export default function WizardForm({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState(false)
+  const firedStart = useRef(false)
 
   function set<K extends keyof Data>(k: K, v: Data[K]) {
+    if (!firedStart.current) {
+      firedStart.current = true
+      fireGtag('leadformstarted')
+    }
     setData(d => ({ ...d, [k]: v }))
     setErrors(e => ({ ...e, [k]: false }))
   }
@@ -63,12 +74,7 @@ export default function WizardForm({ compact = false }: { compact?: boolean }) {
         body: JSON.stringify({ ...data, source: window.location.pathname }),
       })
       if (!res.ok) throw new Error('request_failed')
-      if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: Function }).gtag === 'function') {
-        ;(window as Window & { gtag: Function }).gtag('event', 'generate_lead', {
-          event_category: 'lead',
-          event_label: 'wizard_form',
-        })
-      }
+      fireGtag('Leadcaptured')
       setSubmitted(true)
     } catch {
       setSubmitError(true)
