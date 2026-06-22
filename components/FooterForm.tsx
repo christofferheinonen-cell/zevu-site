@@ -1,6 +1,12 @@
 'use client'
 import { useState } from 'react'
 
+function fireGtag(eventName: string) {
+  if (typeof window !== 'undefined' && typeof (window as unknown as { gtag?: unknown }).gtag === 'function') {
+    ;(window as unknown as { gtag: (e: string, n: string) => void }).gtag('event', eventName)
+  }
+}
+
 export default function FooterForm() {
   const [submitted, setSubmitted] = useState(false)
   const [email, setEmail] = useState('')
@@ -13,9 +19,7 @@ export default function FooterForm() {
       return
     }
     setErr(false)
-    if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: Function }).gtag === 'function') {
-      ;(window as Window & { gtag: Function }).gtag('event', 'Leadcaptured')
-    }
+    fireGtag('Leadcaptured')
     setSubmitted(true)
   }
 

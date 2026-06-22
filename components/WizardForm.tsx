@@ -2,8 +2,8 @@
 import { useState, useRef } from 'react'
 
 function fireGtag(eventName: string) {
-  if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: Function }).gtag === 'function') {
-    ;(window as Window & { gtag: Function }).gtag('event', eventName)
+  if (typeof window !== 'undefined' && typeof (window as unknown as { gtag?: unknown }).gtag === 'function') {
+    ;(window as unknown as { gtag: (e: string, n: string) => void }).gtag('event', eventName)
   }
 }
 
