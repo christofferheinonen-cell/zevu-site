@@ -124,6 +124,18 @@ export default function ArticleCalendar({ articles: initial }: { articles: CalAr
             const isToday = isoDate === today
             const isPast = isoDate < today
             const isOver = overTarget === isoDate
+
+            // Count by status for the badge
+            const counts = dayArts.reduce<Record<string, number>>((acc, a) => {
+              acc[a.status] = (acc[a.status] ?? 0) + 1
+              return acc
+            }, {})
+            const badgeLabel = counts.published
+              ? `Julkaistu: ${counts.published}`
+              : counts.scheduled
+              ? `Ajastettu: ${counts.scheduled}`
+              : null
+
             return (
               <div
                 key={isoDate}
@@ -141,7 +153,14 @@ export default function ArticleCalendar({ articles: initial }: { articles: CalAr
                 }}
                 onDrop={e => handleDropOnDay(e, isoDate)}
               >
-                <span className="cal-day-num">{Number(isoDate.slice(8))}</span>
+                <div className="cal-cell-head">
+                  <span className="cal-day-num">{Number(isoDate.slice(8))}</span>
+                  {badgeLabel && (
+                    <span className={`cal-day-badge cal-day-badge--${counts.published ? 'published' : 'scheduled'}`}>
+                      {badgeLabel}
+                    </span>
+                  )}
+                </div>
                 <div className="cal-cell-articles">
                   {dayArts.map(a => (
                     <div
@@ -157,6 +176,7 @@ export default function ArticleCalendar({ articles: initial }: { articles: CalAr
                       onDragEnd={handleDragEnd}
                       title={a.title}
                     >
+                      <span className="cal-article-handle">⠿</span>
                       <span className="cal-article-dot" style={{ background: STATUS_DOT[a.status] }} />
                       <Link
                         href={`/admin/articles/${a.slug}`}
