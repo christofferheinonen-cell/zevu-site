@@ -941,7 +941,7 @@ a.adm-list-title:hover{color:var(--blue);}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);}
 .cal-header{font-size:12px;font-weight:600;color:var(--sub);text-align:center;padding:10px 0 9px;border-bottom:1px solid var(--border);background:var(--bg);}
 
-.cal-cell{min-height:150px;padding:10px 10px 8px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:6px;position:relative;transition:background .1s;}
+.cal-cell{min-height:150px;padding:10px 10px 8px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:6px;position:relative;transition:background .1s;min-width:0;overflow:hidden;}
 .cal-cell:nth-child(7n){border-right:none;}
 .cal-cell:nth-last-child(-n+7){border-bottom:none;}
 .cal-cell--empty{background:var(--bg);opacity:.4;min-height:150px;}
@@ -954,13 +954,13 @@ a.adm-list-title:hover{color:var(--blue);}
 .cal-cell--today .cal-day-num{color:var(--blue);}
 .cal-cell--past .cal-day-num{color:var(--sub);}
 
-.cal-day-badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:100px;white-space:nowrap;}
+.cal-day-badge{font-size:10px;font-weight:600;padding:2px 6px;border-radius:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex-shrink:1;}
 .cal-day-badge--published{background:#dcfce7;color:#15803d;}
 .cal-day-badge--scheduled{background:#ede9fe;color:#7c3aed;}
 
 .cal-cell-articles{display:flex;flex-direction:column;gap:4px;flex:1;}
 
-.cal-article{display:flex;align-items:center;gap:5px;padding:5px 7px;border-radius:7px;cursor:grab;border:1px solid transparent;transition:opacity .14s,box-shadow .14s,border-color .14s;}
+.cal-article{display:flex;align-items:center;gap:5px;padding:5px 7px;border-radius:7px;cursor:grab;border:1px solid transparent;transition:opacity .14s,box-shadow .14s,border-color .14s;min-width:0;overflow:hidden;}
 .cal-article--published{background:#f0fdf4;border-color:#bbf7d0;}
 .cal-article--scheduled{background:#ede9fe;border-color:#ddd6fe;}
 .cal-article:hover{box-shadow:var(--sh);border-color:var(--border);}
