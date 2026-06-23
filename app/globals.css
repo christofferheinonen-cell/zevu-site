@@ -925,3 +925,55 @@ a.adm-list-title:hover{color:var(--blue);}
   .adm-image-picker{flex-direction:column;}
   .adm-image-preview{width:100%;height:140px;}
 }
+
+/* ── Article Calendar ──────────────────────────────────────────── */
+.cal-view-toggle{display:flex;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:3px;gap:2px;}
+.cal-view-btn{font-size:13px;font-weight:600;padding:6px 14px;border-radius:7px;text-decoration:none;color:var(--sub);transition:background .14s,color .14s;}
+.cal-view-btn:hover{color:var(--text);}
+.cal-view-btn--active{background:var(--white);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.08);}
+
+.cal-wrap{display:flex;gap:20px;align-items:flex-start;}
+.cal-main{flex:1;min-width:0;background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh);overflow:hidden;}
+
+.cal-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);}
+.cal-nav-title{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.3px;}
+.cal-nav-btn{padding:6px 12px;font-size:14px;}
+
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);}
+.cal-header{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--sub);text-align:center;padding:10px 0;border-bottom:1px solid var(--border);background:var(--bg);}
+
+.cal-cell{min-height:100px;padding:8px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);vertical-align:top;position:relative;transition:background .1s;}
+.cal-cell:nth-child(7n){border-right:none;}
+.cal-cell:nth-last-child(-n+7){border-bottom:none;}
+.cal-cell--empty{background:var(--bg);opacity:.5;}
+.cal-cell--past{background:#fafafa;}
+.cal-cell--today{background:#eff6ff;}
+.cal-cell--over{background:#dbeafe !important;outline:2px solid var(--blue);outline-offset:-2px;}
+
+.cal-day-num{display:block;font-size:12px;font-weight:700;color:var(--sub);margin-bottom:4px;line-height:1;}
+.cal-cell--today .cal-day-num{color:var(--blue);}
+.cal-cell-articles{display:flex;flex-direction:column;gap:3px;}
+
+.cal-article{display:flex;align-items:center;gap:5px;padding:3px 6px;border-radius:5px;cursor:grab;background:var(--bg);border:1px solid var(--border);transition:opacity .14s,box-shadow .14s;}
+.cal-article:hover{box-shadow:var(--sh);}
+.cal-article--dragging{opacity:.35;}
+.cal-article--saving{opacity:.6;}
+.cal-article-dot{flex-shrink:0;width:7px;height:7px;border-radius:50%;}
+.cal-article-title{font-size:11.5px;font-weight:500;color:var(--text);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;display:block;}
+.cal-article-title:hover{color:var(--blue);}
+
+.cal-drafts{width:260px;flex-shrink:0;background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh);padding:16px;display:flex;flex-direction:column;gap:0;min-height:200px;transition:background .1s,outline .1s;}
+.cal-drafts--over{background:#dbeafe;outline:2px solid var(--blue);}
+.cal-drafts-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+.cal-drafts-title{font-size:14px;font-weight:700;color:var(--text);}
+.cal-drafts-count{font-size:12px;font-weight:700;background:var(--blue-dim);color:var(--blue);padding:2px 8px;border-radius:100px;}
+.cal-drafts-hint{font-size:12px;color:var(--sub);margin-bottom:12px;line-height:1.4;}
+.cal-drafts-empty{font-size:13px;color:var(--sub);text-align:center;padding:24px 0;}
+.cal-drafts-foot{margin-top:auto;padding-top:12px;font-size:11.5px;color:var(--sub);line-height:1.4;border-top:1px dashed var(--border);}
+
+.cal-draft-item{display:flex;align-items:center;gap:8px;padding:8px 6px;border-radius:8px;cursor:grab;border:1px solid var(--border);margin-bottom:6px;transition:box-shadow .14s,opacity .14s;}
+.cal-draft-item:hover{box-shadow:var(--sh);}
+.cal-draft-item--dragging{opacity:.35;}
+.cal-draft-handle{color:var(--sub);font-size:13px;flex-shrink:0;cursor:grab;}
+.cal-draft-link{font-size:12.5px;font-weight:500;color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1;}
+.cal-draft-link:hover{color:var(--blue);}

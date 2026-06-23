@@ -57,6 +57,36 @@ export async function PUT(req: Request, { params }: { params: Promise<{ slug: st
   return NextResponse.json({ ok: true, updatedAt: saved.updatedAt })
 }
 
+/** Lightweight scheduling update — only date and showOnBlog change. */
+export async function PATCH(req: Request, { params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  if (!(await getPostBySlug(slug))) {
+    return NextResponse.json({ error: 'not_found' }, { status: 404 })
+  }
+
+  let body: Record<string, unknown>
+  try {
+    body = await req.json()
+  } catch {
+    return NextResponse.json({ error: 'invalid_json' }, { status: 400 })
+  }
+
+  const patch: ArticleOverride = {}
+  if (typeof body.date === 'string') {
+    patch.date = str(body.date, 20).trim()
+    // Clear publishedTime so the new date drives scheduling, not the old timestamp.
+    patch.publishedTime = ''
+  }
+  if ('showOnBlog' in body) {
+    const s = body.showOnBlog
+    patch.showOnBlog = s === true || s === false ? s : undefined
+  }
+
+  const saved = await saveOverride(slug, patch)
+  revalidateArticle(slug)
+  return NextResponse.json({ ok: true, updatedAt: saved.updatedAt })
+}
+
 export async function DELETE(_req: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   await clearOverride(slug)
