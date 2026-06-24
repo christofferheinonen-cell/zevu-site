@@ -948,7 +948,7 @@ a.adm-list-title:hover{color:var(--blue);}
   .adm-sidebar-foot--drawer{flex-direction:column;border-top:1px solid var(--border);padding-top:14px;}
 
   /* Shell */
-  .adm-shell{flex-direction:column;overflow-x:clip;width:100%;}
+  .adm-shell{flex-direction:column;width:100%;}
   .adm-main{padding:24px 16px 64px;width:100%;box-sizing:border-box;}
 
   /* Stat cards — keep 2×2 grid on all phone sizes */
@@ -972,8 +972,9 @@ a.adm-list-title:hover{color:var(--blue);}
   .adm-list li{flex-wrap:wrap;}
   .adm-list-meta{width:100%;margin-top:2px;}
 
-  /* Calendar: stack vertically */
+  /* Calendar: stack vertically, hard-clip the grid so it never overflows the page */
   .cal-wrap{flex-direction:column;}
+  .cal-main{overflow:hidden;max-width:100%;}
   .cal-drafts{width:100%;}
   .cal-view-toggle{align-self:flex-start;}
 }
