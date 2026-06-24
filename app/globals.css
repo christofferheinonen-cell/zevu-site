@@ -947,11 +947,11 @@ a.adm-list-title:hover{color:var(--blue);}
   .adm-nav--drawer .adm-nav-link{font-size:15px;padding:12px 14px;}
   .adm-sidebar-foot--drawer{flex-direction:column;border-top:1px solid var(--border);padding-top:14px;}
 
-  /* Shell: column so topbar sits above main */
-  .adm-shell{flex-direction:column;}
-  .adm-main{padding:24px 16px 64px;}
+  /* Shell */
+  .adm-shell{flex-direction:column;overflow-x:hidden;width:100%;}
+  .adm-main{padding:24px 16px 64px;width:100%;box-sizing:border-box;overflow-x:hidden;}
 
-  /* Content fixes */
+  /* Stat cards — keep 2×2 grid on all phone sizes */
   .adm-cards{grid-template-columns:repeat(2,1fr);}
   .adm-cards--6{grid-template-columns:repeat(2,1fr);}
   .adm-grid2{grid-template-columns:1fr;}
@@ -961,19 +961,20 @@ a.adm-list-title:hover{color:var(--blue);}
   .adm-field--sm{max-width:none;}
   .adm-image-picker{flex-direction:column;}
   .adm-image-preview{width:100%;height:140px;}
-  .adm-tablewrap{border-radius:12px;}
-  .adm-table th:nth-child(n+4),.adm-table td:nth-child(n+4){display:none;}
+
+  /* Tables — contain within scrollable wrapper, don't spill */
+  .adm-tablewrap{border-radius:12px;max-width:100%;}
+  .adm-table th,.adm-table td{white-space:nowrap;}
+
+  /* Leads table: show Date + Name + Email only */
+  .leads-table th:nth-child(n+4),.leads-table td:nth-child(n+4){display:none;}
+  /* Articles table: show Status + Date + Title only */
+  .articles-table th:nth-child(n+4),.articles-table td:nth-child(n+4){display:none;}
 
   /* Calendar: stack vertically */
   .cal-wrap{flex-direction:column;}
   .cal-drafts{width:100%;}
   .cal-view-toggle{align-self:flex-start;}
-}
-
-@media(max-width:500px){
-  .adm-cards{grid-template-columns:1fr;}
-  .adm-cards--6{grid-template-columns:1fr;}
-  .adm-main{padding:20px 12px 64px;}
 }
 /* ── Article Calendar ──────────────────────────────────────────── */
 .cal-view-toggle{display:flex;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:3px;gap:2px;}

@@ -79,7 +79,7 @@ export default async function ArticlesPage({
         <ArticleCalendar articles={calArticles} />
       ) : (
         <div className="adm-tablewrap">
-          <table className="adm-table">
+          <table className="adm-table articles-table">
             <thead>
               <tr>
                 <th>Tila</th>

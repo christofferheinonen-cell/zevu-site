@@ -23,7 +23,7 @@ export default async function LeadsPage() {
         </div>
       ) : (
         <div className="adm-tablewrap">
-          <table className="adm-table">
+          <table className="adm-table leads-table">
             <thead>
               <tr>
                 <th>Vastaanotettu</th>
