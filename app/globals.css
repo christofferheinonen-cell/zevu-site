@@ -962,7 +962,8 @@ a.adm-list-title:hover{color:var(--blue);}
   .adm-image-picker{flex-direction:column;}
   .adm-image-preview{width:100%;height:140px;}
 
-  /* Tables — contain within scrollable wrapper, don't spill */
+  /* Tables — pull tablewrap inside panels edge-to-edge so it can scroll */
+  .adm-panel .adm-tablewrap{margin-left:-22px;margin-right:-22px;border-radius:0;border-left:none;border-right:none;box-shadow:none;}
   .adm-tablewrap{border-radius:12px;max-width:100%;}
   .adm-table th,.adm-table td{white-space:nowrap;}
 
