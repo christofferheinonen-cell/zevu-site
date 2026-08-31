@@ -1,6 +1,5 @@
 import { absoluteUrl, parseFiDate } from '@/lib/seo'
 import { getAllPosts } from '@/lib/posts'
-import { SERVICES } from '@/lib/services'
 
 export const dynamic = 'force-static'
 
@@ -27,12 +26,6 @@ export async function GET() {
   const entries: Entry[] = [
     { loc: absoluteUrl('/'), lastmod: now, changefreq: 'weekly', priority: 1 },
     { loc: absoluteUrl('/blog'), lastmod: now, changefreq: 'weekly', priority: 0.7 },
-    ...SERVICES.map(service => ({
-      loc: absoluteUrl(`/${service.slug}`),
-      lastmod: now,
-      changefreq: 'monthly',
-      priority: 0.8,
-    })),
     ...posts.map(post => ({
       loc: absoluteUrl(`/blog/${post.slug}`),
       lastmod: post.publishedTime ? new Date(post.publishedTime) : parseFiDate(post.date),

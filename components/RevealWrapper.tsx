@@ -5,9 +5,12 @@ interface Props {
   children: React.ReactNode
   className?: string
   id?: string
+  delay?: 0 | 1 | 2 | 3
 }
 
-export default function RevealWrapper({ children, className = '', id }: Props) {
+const DELAY_MAP = { 0: '', 1: 'd1', 2: 'd2', 3: 'd3' }
+
+export default function RevealWrapper({ children, className = '', id, delay = 0 }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -21,8 +24,10 @@ export default function RevealWrapper({ children, className = '', id }: Props) {
     return () => observer.disconnect()
   }, [])
 
+  const delayClass = DELAY_MAP[delay as 0 | 1 | 2 | 3] || ''
+
   return (
-    <div ref={ref} className={`reveal ${className}`} id={id}>
+    <div ref={ref} className={`reveal ${delayClass} ${className}`.trim()} id={id}>
       {children}
     </div>
   )

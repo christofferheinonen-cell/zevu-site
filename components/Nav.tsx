@@ -2,12 +2,10 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import MetaMenu from './MetaMenu'
 import MobileMenu from './MobileMenu'
 
 export default function Nav() {
   const pathname = usePathname()
-  const isBlog = pathname.startsWith('/blog')
   const [hidden, setHidden] = useState(false)
   const lastY = useRef(0)
 
@@ -26,10 +24,13 @@ export default function Nav() {
   return (
     <nav className={`nav-wrap${hidden ? ' nav-hidden' : ''}`}>
       <Link href="/" className="nav-logo">Zevu</Link>
-      <MetaMenu />
-      <Link href="/blog" className={`nav-link${isBlog ? ' active' : ''}`}>Blogi</Link>
-      <Link href="/#faq" className="nav-link">FAQ</Link>
-      <Link href="/#cta" className="nav-btn">Pyydä analyysi →</Link>
+      <div className="nav-links">
+        <Link href="/#palvelut" className="nav-link">Palvelut</Link>
+        <Link href="/#referenssit" className="nav-link">Referenssit</Link>
+        <Link href="/#hinnat" className="nav-link">Hinnat</Link>
+        <Link href="/blog" className={`nav-link${pathname.startsWith('/blog') ? ' active' : ''}`}>Blogi</Link>
+      </div>
+      <Link href="/#ota-yhteytta" className="nav-btn">Aloita projekti →</Link>
       <MobileMenu />
     </nav>
   )

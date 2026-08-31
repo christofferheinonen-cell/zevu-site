@@ -2,61 +2,105 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <div className="wrap">
-      <div className="hero">
-        <div className="hero-left">
-          <div className="hero-kicker"><span className="kicker-dot"></span>Meta-mainonta</div>
-          <h1>Mainoksesi<br />pyörivät.<br /><span className="muted">Asiakkaat<br />eivät tule.</span></h1>
-          <p className="hero-sub">Meta mainonta, joka toimii. Ilman arvailua, geneerisiä kuvia tai tuhlattua budjettia.</p>
-          <div className="hero-btns">
-            <Link href="/#cta" className="btn-dark">Pyydä ilmainen analyysi →</Link>
-            <Link href="/#prosessi" className="btn-outline">Miten toimii</Link>
+    <section className="hero">
+      {/* Left — copy */}
+      <div>
+        <div className="hero-kicker">
+          <span className="kicker-dot" />
+          Suomalainen verkkosivutoimisto
+        </div>
+
+        <h1>
+          Verkkosivut, jotka{' '}
+          <span className="accent">kasvattavat</span>{' '}
+          liiketoimintaasi
+        </h1>
+
+        <p className="hero-sub">
+          Suunnittelemme ja rakennamme modernit verkkosivut suomalaisille
+          pk-yrityksille — nopeasti, ammattimaisesti ja tuloksiin keskittyen.
+        </p>
+
+        <div className="hero-btns">
+          <Link href="/#ota-yhteytta" className="btn-accent">
+            Aloita projekti →
+          </Link>
+          <Link href="/#referenssit" className="btn-ghost">
+            Katso referenssit
+          </Link>
+        </div>
+      </div>
+
+      {/* Right — visual */}
+      <div className="hero-visual">
+        {/* Floating badge top-right */}
+        <div className="hero-badge hb-1">
+          <div className="hb-icon hb-icon-green">🚀</div>
+          <div>
+            <div className="hb-val">+147%</div>
+            <div className="hb-label">Lisää asiakkaita</div>
           </div>
         </div>
-        <div className="hero-visual">
-          <div className="float-pill fp-1">
-            <div className="pill-icon" style={{ background: '#EEF3FD' }}>📈</div>
-            ROAS 4.8× tällä viikolla
-          </div>
-          <div className="ad-stack">
-            <div className="ad-card ac-main">
-              <div className="ad-topbar">
-                <div className="ad-avatar av-blue">TT</div>
-                <div>
-                  <div className="ad-page-name">Terveystekniikka</div>
-                  <div className="ad-page-meta">Sponsoroitu · 🌐</div>
-                </div>
-                <div className="ad-sponsored">Mainos</div>
-              </div>
-              <div className="ad-image ai-wellness"><span className="ad-image-label">Kivunlievitys kotona</span></div>
-              <div className="ad-body">
-                <div className="ad-body-head">Tunnetko kipua joka päivä?</div>
-                <div className="ad-body-sub">Lääkkeetön hoito kotona — turvallinen ja testattu.</div>
-                <span className="ad-cta-btn cta-blue">Lue lisää →</span>
-              </div>
+
+        {/* Browser mockup */}
+        <div className="hero-browser">
+          <div className="hero-browser-bar">
+            <div className="browser-dots">
+              <span className="browser-dot bd-r" />
+              <span className="browser-dot bd-y" />
+              <span className="browser-dot bd-g" />
             </div>
-            <div className="ad-card ac-secondary">
-              <div className="ad-topbar">
-                <div className="ad-avatar av-slate">RK</div>
-                <div>
-                  <div className="ad-page-name">Ravintola Kulta</div>
-                  <div className="ad-page-meta">Sponsoroitu · 🌐</div>
-                </div>
-                <div className="ad-sponsored">Mainos</div>
-              </div>
-              <div className="ad-image ai-resto"><span className="ad-image-label">Illallinen kahdelle</span></div>
-              <div className="ad-body">
-                <div className="ad-body-head">Pöytä varattu. Kokemus odottaa.</div>
-                <div className="ad-body-sub">Varaa pöytäsi tänään — erikoistarjous viikonlopulle.</div>
-                <span className="ad-cta-btn cta-dark">Varaa pöytä →</span>
-              </div>
+            <div className="browser-url">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              yritys.fi
             </div>
           </div>
-          <div className="float-pill fp-2">
-            <span className="pill-dot"></span>Mainos julkaistu juuri nyt
+          <div className="hero-browser-content">
+            <div className="site-nav-mock">
+              <span className="site-nav-logo">Yritys</span>
+              <div className="site-nav-links">
+                <div className="site-nav-link" />
+                <div className="site-nav-link" />
+                <div className="site-nav-link" />
+              </div>
+              <div className="site-nav-btn" />
+            </div>
+            <div className="site-hero-mock">
+              <div className="site-hero-tag" />
+              <div className="site-hero-h" />
+              <div className="site-hero-h2" />
+              <div className="site-hero-p">
+                <div className="site-hero-line" style={{ width: '100%' }} />
+                <div className="site-hero-line" style={{ width: '85%' }} />
+                <div className="site-hero-line" style={{ width: '70%' }} />
+              </div>
+              <div className="site-hero-btns">
+                <div className="site-btn-p" />
+                <div className="site-btn-s" />
+              </div>
+            </div>
+            <div className="site-cards-mock">
+              {[0, 1, 2].map(i => (
+                <div className="site-card-m" key={i}>
+                  <div className="site-card-icon" />
+                  <div className="site-card-h" />
+                  <div className="site-card-p" />
+                  <div className="site-card-p" style={{ width: '75%' }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Floating badge bottom-left */}
+        <div className="hero-badge hb-2">
+          <div className="hb-icon hb-icon-purple">⚡</div>
+          <div>
+            <div className="hb-val">3–5 vk</div>
+            <div className="hb-label">Toimitusaika</div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
