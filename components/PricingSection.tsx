@@ -68,7 +68,7 @@ export default function PricingSection() {
       <div className="wrap">
         <RevealWrapper>
           <div className="pricing-intro">
-            <div className="eyebrow"><span className="eyebrow-dot" />Hinnat</div>
+            <div className="section-badge">005/ Hinnat</div>
             <h2 className="section-h">Selkeät hinnat,<br />ei yllätyksiä</h2>
             <p className="section-sub">
               Kiinteät hinnat projekteille. Tiedät tarkalleen mitä maksat ja mitä saat.

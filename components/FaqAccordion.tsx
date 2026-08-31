@@ -38,7 +38,7 @@ export default function FaqAccordion() {
         <div className="faq-grid">
           <RevealWrapper>
             <div>
-              <div className="eyebrow"><span className="eyebrow-dot" />FAQ</div>
+              <div className="section-badge">006/ FAQ</div>
               <h2 className="section-h">Usein kysytyt<br />kysymykset</h2>
               <p className="section-sub">
                 Ei löydy vastausta? Kirjoita meille ja vastataan mielellään.

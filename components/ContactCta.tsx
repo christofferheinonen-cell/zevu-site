@@ -43,7 +43,7 @@ export default function ContactCta() {
             {/* Copy */}
             <RevealWrapper>
               <div className="cta-copy">
-                <div className="eyebrow"><span className="eyebrow-dot" />Otetaan yhteyttä</div>
+                <div className="section-badge">007/ Ota yhteyttä</div>
                 <h2 className="section-h">Aloitetaan projekti<br />yhdessä</h2>
                 <p className="section-sub">
                   Kerro lyhyesti yrityksestäsi ja tavoitteistasi. Palaamme sinulle

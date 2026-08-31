@@ -3,7 +3,7 @@ import LogoTicker from '@/components/LogoTicker'
 import ServicesSection from '@/components/ServicesSection'
 import ProcessSection from '@/components/ProcessSection'
 import StatsSection from '@/components/StatsSection'
-import BentoSection from '@/components/BentoSection'
+import ComparisonSection from '@/components/ComparisonSection'
 import PricingSection from '@/components/PricingSection'
 import ContactCta from '@/components/ContactCta'
 import FaqAccordion from '@/components/FaqAccordion'
@@ -33,7 +33,7 @@ export default function HomePage() {
       <ServicesSection />
       <ProcessSection />
       <StatsSection />
-      <BentoSection />
+      <ComparisonSection />
       <PricingSection />
       <ContactCta />
       <FaqAccordion />

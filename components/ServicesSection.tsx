@@ -39,7 +39,7 @@ export default function ServicesSection() {
       <div className="wrap">
         <RevealWrapper>
           <div className="svc-intro">
-            <div className="eyebrow"><span className="eyebrow-dot" />Palvelut</div>
+            <div className="section-badge">001/ Palvelut</div>
             <h2 className="svc-heading">
               Kaikki mitä tarvitset<br />menestyäksesi verkossa.
             </h2>
