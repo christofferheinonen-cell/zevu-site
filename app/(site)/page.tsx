@@ -2,9 +2,9 @@ import HeroSection from '@/components/HeroSection'
 import LogoTicker from '@/components/LogoTicker'
 import ServicesSection from '@/components/ServicesSection'
 import ProcessSection from '@/components/ProcessSection'
-import PortfolioSection from '@/components/PortfolioSection'
+import StatsSection from '@/components/StatsSection'
+import BentoSection from '@/components/BentoSection'
 import PricingSection from '@/components/PricingSection'
-import TestimonialsSection from '@/components/TestimonialsSection'
 import ContactCta from '@/components/ContactCta'
 import FaqAccordion from '@/components/FaqAccordion'
 import JsonLd from '@/components/JsonLd'
@@ -32,8 +32,8 @@ export default function HomePage() {
       <LogoTicker />
       <ServicesSection />
       <ProcessSection />
-      <PortfolioSection />
-      <TestimonialsSection />
+      <StatsSection />
+      <BentoSection />
       <PricingSection />
       <ContactCta />
       <FaqAccordion />
