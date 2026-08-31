@@ -217,61 +217,43 @@ body {
 
 /* ─── SERVICES ────────────────────────────────────────── */
 .svc-section {
-  padding: 100px 0 120px;
-  background: var(--surface);
+  padding-top: 100px;
+  padding-bottom: 220px;
+  background: var(--bg);
   border-top: 1px solid var(--border);
 }
-.svc-sticky-layout {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
-}
-.svc-sticky-pane {
-  position: sticky; top: 80px; display: flex; flex-direction: column; gap: 28px;
-}
-.svc-intro { margin-bottom: 4px; }
+.svc-intro { max-width: 600px; margin-bottom: 52px; }
 .svc-heading {
   font-size: clamp(24px,2.8vw,40px); font-weight: 800;
   letter-spacing: -1.5px; line-height: 1.1;
   color: var(--text); margin-bottom: 12px; margin-top: 10px;
 }
 .svc-sub { font-size: 14px; color: var(--sub); line-height: 1.72; }
-.svc-card-large {
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: 20px; overflow: hidden; box-shadow: var(--sh2);
-}
-.svc-card-large .wv { height: 240px; border-radius: 0; }
-.svc-card-large-body { padding: 24px 26px 28px; }
-.svc-card-large-icon {
-  width: 32px; height: 32px; background: var(--surface); border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text); margin-bottom: 14px; border: 1px solid var(--border);
-}
-.svc-card-large-title { font-size: 18px; font-weight: 700; letter-spacing: -.4px; color: var(--text); margin-bottom: 9px; }
-.svc-card-large-desc { font-size: 14px; color: var(--sub); line-height: 1.68; }
 
-/* Right scroll list */
-.svc-scroll-list { display: flex; flex-direction: column; }
-.svc-list-item {
-  display: flex; gap: 16px; padding: 24px 0;
-  border-bottom: 1px solid var(--border);
-  cursor: pointer; transition: opacity .2s; opacity: 0.35;
-  align-items: flex-start;
+/* Sticky stacked cards — pure CSS, no JS */
+.svc-stack { display: flex; flex-direction: column; gap: 16px; }
+.svc-stack-card {
+  position: sticky; top: 72px;
+  border-radius: 20px; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  display: grid; grid-template-columns: 44% 56%;
+  min-height: 460px;
 }
-.svc-list-item:first-child { border-top: 1px solid var(--border); }
-.svc-list-item.active { opacity: 1; }
-.svc-list-item:hover { opacity: 0.7; }
-.svc-list-item.active:hover { opacity: 1; }
-.svc-list-num {
-  font-size: 10px; font-weight: 700; color: var(--sub2);
-  min-width: 22px; padding-top: 2px; font-variant-numeric: tabular-nums; letter-spacing: .5px;
+.svc-card-visual { border-right: 1px solid var(--border); overflow: hidden; }
+.svc-card-visual .wv { height: 100%; min-height: 400px; border-radius: 0; border-bottom: none; }
+.svc-card-body {
+  padding: 44px 48px; display: flex; flex-direction: column;
+  justify-content: center;
 }
-.svc-list-icon {
-  width: 26px; height: 26px; background: var(--bg); border-radius: 7px;
+.svc-card-num { font-size: 10px; font-weight: 700; color: var(--sub2); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; display: block; }
+.svc-card-icon {
+  width: 32px; height: 32px; background: var(--bg); border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--text); border: 1px solid var(--border); flex-shrink: 0;
+  color: var(--text); border: 1px solid var(--border); margin-bottom: 20px;
 }
-.svc-list-content { flex: 1; }
-.svc-list-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 5px; letter-spacing: -.25px; display: block; }
-.svc-list-desc { font-size: 13px; color: var(--sub); line-height: 1.6; display: block; }
+.svc-card-title { font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: -.6px; margin-bottom: 12px; }
+.svc-card-desc { font-size: 15px; color: var(--sub); line-height: 1.72; max-width: 340px; }
 
 /* ─── PROCESS ─────────────────────────────────────────── */
 .proc-section {
@@ -999,10 +981,9 @@ body {
   .hero-top { padding: 0 24px; }
   .hero-outer { padding: 72px 0 60px; }
   .hero-h1 { font-size: clamp(30px, 8vw, 52px); letter-spacing: -2px; }
-  .svc-sticky-layout { grid-template-columns: 1fr; }
-  .svc-sticky-pane { position: static; }
-  .svc-card-large { display: none; }
-  .svc-list-item { opacity: 1; }
+  .svc-stack-card { grid-template-columns: 1fr; min-height: auto; position: static; }
+  .svc-card-visual .wv { min-height: 240px; }
+  .svc-card-body { padding: 28px 24px; }
   .pricing-grid { grid-template-columns: 1fr; }
   .cmp-outer { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .cmp-table { min-width: 640px; }

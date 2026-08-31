@@ -1,5 +1,3 @@
-'use client'
-import { useRef, useState, useEffect } from 'react'
 import { DesignVisual, TechVisual, SeoVisual, BrandVisual, MaintenanceVisual } from './WebServiceVisuals'
 import RevealWrapper from './RevealWrapper'
 
@@ -64,70 +62,29 @@ const SERVICES = [
 ]
 
 export default function ServicesSection() {
-  const [active, setActive] = useState(0)
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            const idx = itemRefs.current.indexOf(entry.target as HTMLDivElement)
-            if (idx !== -1) setActive(idx)
-          }
-        }
-      },
-      { threshold: 0.6, rootMargin: '-30% 0px -30% 0px' }
-    )
-    itemRefs.current.forEach(el => el && obs.observe(el))
-    return () => obs.disconnect()
-  }, [])
-
-  const S = SERVICES[active]
-
   return (
     <section className="svc-section" id="palvelut">
       <div className="wrap">
-        <div className="svc-sticky-layout">
-          {/* Left sticky pane */}
-          <div className="svc-sticky-pane">
-            <RevealWrapper>
-              <div className="svc-intro">
-                <div className="section-badge">001/ Palvelut</div>
-                <h2 className="svc-heading">Kaikki mitä tarvitset<br />menestyäksesi verkossa.</h2>
-                <p className="svc-sub">Täyden palvelun verkkosivuratkaisuja — suunnittelusta kehitykseen ja ylläpitoon.</p>
-              </div>
-            </RevealWrapper>
-            <div className="svc-card-large">
-              <S.Visual />
-              <div className="svc-card-large-body">
-                <div className="svc-card-large-icon"><S.Icon /></div>
-                <div className="svc-card-large-title">{S.title}</div>
-                <div className="svc-card-large-desc">{S.desc}</div>
-              </div>
-            </div>
+        <RevealWrapper>
+          <div className="svc-intro">
+            <div className="section-badge">001/ Palvelut</div>
+            <h2 className="svc-heading">Kaikki mitä tarvitset<br />menestyäksesi verkossa.</h2>
+            <p className="svc-sub">Täyden palvelun verkkosivuratkaisuja — suunnittelusta kehitykseen ja ylläpitoon.</p>
           </div>
+        </RevealWrapper>
 
-          {/* Right scroll list */}
-          <RevealWrapper delay={1}>
-            <div className="svc-scroll-list">
-              {SERVICES.map((s, i) => (
-                <div
-                  key={s.title}
-                  ref={el => { itemRefs.current[i] = el }}
-                  className={`svc-list-item${active === i ? ' active' : ''}`}
-                  onClick={() => setActive(i)}
-                >
-                  <span className="svc-list-num">0{i + 1}</span>
-                  <span className="svc-list-icon"><s.Icon /></span>
-                  <span className="svc-list-content">
-                    <span className="svc-list-title">{s.title}</span>
-                    <span className="svc-list-desc">{s.desc}</span>
-                  </span>
-                </div>
-              ))}
+        <div className="svc-stack">
+          {SERVICES.map((s, i) => (
+            <div key={s.title} className="svc-stack-card" style={{ zIndex: i + 1 }}>
+              <div className="svc-card-visual"><s.Visual /></div>
+              <div className="svc-card-body">
+                <span className="svc-card-num">0{i + 1}</span>
+                <div className="svc-card-icon"><s.Icon /></div>
+                <div className="svc-card-title">{s.title}</div>
+                <div className="svc-card-desc">{s.desc}</div>
+              </div>
             </div>
-          </RevealWrapper>
+          ))}
         </div>
       </div>
     </section>
