@@ -10,7 +10,7 @@ const STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section className="proc-section">
+    <section className="proc-section" id="prosessi">
       <div className="wrap">
         <div className="proc-layout">
           {/* Left — copy */}

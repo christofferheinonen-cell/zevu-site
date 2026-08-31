@@ -26,7 +26,7 @@ export default function Nav() {
       <Link href="/" className="nav-logo">Zevu</Link>
       <div className="nav-links">
         <Link href="/#palvelut" className="nav-link">Palvelut</Link>
-        <Link href="/#referenssit" className="nav-link">Referenssit</Link>
+        <Link href="/#prosessi" className="nav-link">Prosessi</Link>
         <Link href="/#hinnat" className="nav-link">Hinnat</Link>
         <Link href="/blog" className={`nav-link${pathname.startsWith('/blog') ? ' active' : ''}`}>Blogi</Link>
       </div>
