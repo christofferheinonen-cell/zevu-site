@@ -5,88 +5,81 @@ const PROJECTS = [
     title: 'Heikkinen Kahvila',
     industry: 'Ravintola & Kahvila',
     tag: 'Verkkosivut',
-    pvClass: 'pv-1',
-    themeClass: 'p-purple',
+    stat: '+89%',
+    statLabel: 'lisää varauksia',
+    bg: 'linear-gradient(145deg, #1A1040 0%, #2D1B69 50%, #1A0A3A 100%)',
+    accent: '#A78BFA',
   },
   {
     title: 'Fysio Pohjola',
     industry: 'Terveys & Hyvinvointi',
     tag: 'Verkkovaraukset',
-    pvClass: 'pv-2',
-    themeClass: 'p-green',
+    stat: '+124%',
+    statLabel: 'uusia asiakkaita',
+    bg: 'linear-gradient(145deg, #052E16 0%, #064E3B 50%, #022C22 100%)',
+    accent: '#34D399',
   },
   {
     title: 'Rakennusliike Saarinen',
     industry: 'Rakennusala',
     tag: 'Referenssisivu',
-    pvClass: 'pv-3',
-    themeClass: 'p-blue',
+    stat: '3×',
+    statLabel: 'enemmän tarjouspyyntöjä',
+    bg: 'linear-gradient(145deg, #0C1A2E 0%, #1E3A5F 50%, #0A1520 100%)',
+    accent: '#60A5FA',
     large: true,
   },
   {
     title: 'Lakitalo Mäkinen',
     industry: 'Lakipalvelut',
     tag: 'Verkkosivut',
-    pvClass: 'pv-4',
-    themeClass: 'p-orange',
+    stat: '+67%',
+    statLabel: 'yhteydenottoja',
+    bg: 'linear-gradient(145deg, #2A0A0A 0%, #4A1C1C 50%, #1A0808 100%)',
+    accent: '#FB923C',
   },
 ]
 
-function MiniSite({ theme }: { theme: string }) {
-  return (
-    <div className={`port-mini ${theme}`}>
-      <div className="port-mini-nav">
-        <div className="port-mini-logo" />
-        <div className="port-mini-links">
-          <div className="port-mini-link" />
-          <div className="port-mini-link" />
-          <div className="port-mini-link" />
-        </div>
-        <div className="port-mini-btn" />
-      </div>
-      <div className="port-mini-hero">
-        <div className="port-mini-tag" />
-        <div className="port-mini-h" />
-        <div className="port-mini-h2" />
-        <div className="port-mini-sub">
-          <div className="port-mini-line" style={{ width: '100%' }} />
-          <div className="port-mini-line" style={{ width: '85%' }} />
-          <div className="port-mini-line" style={{ width: '70%' }} />
-        </div>
-        <div className="port-mini-btns">
-          <div className="port-mini-cta" />
-          <div className="port-mini-outline" />
-        </div>
-      </div>
-    </div>
-  )
-}
-
 export default function PortfolioSection() {
   return (
-    <section className="portfolio-section" id="referenssit">
+    <section className="port-section" id="referenssit">
       <div className="wrap">
         <RevealWrapper>
-          <div className="portfolio-intro">
+          <div className="port-intro">
             <div className="eyebrow"><span className="eyebrow-dot" />Referenssit</div>
-            <h2 className="section-h">Sivustoja, joita olemme<br />ylpeitä tekemään</h2>
+            <h2 className="port-heading">
+              Oikeita tuloksia.<br />
+              Oikeille yrityksille.
+            </h2>
             <p className="section-sub">
-              Olemme auttaneet kymmeniä suomalaisia pk-yrityksiä luomaan verkossa vahvan ensiaskeleen.
+              Olemme auttaneet kymmeniä suomalaisia pk-yrityksiä luomaan
+              verkossa vahvan ensiaskeleen.
             </p>
           </div>
         </RevealWrapper>
 
-        <div className="portfolio-grid">
+        <div className="port-grid">
           {PROJECTS.map((p, i) => (
             <RevealWrapper key={p.title} delay={(i % 2) as 0 | 1}>
-              <div className={`portfolio-card${p.large ? ' large' : ''}`}>
-                <div className={`port-visual ${p.pvClass}`}>
-                  <MiniSite theme={p.themeClass} />
+              <div className={`port-card${p.large ? ' port-card-wide' : ''}`}>
+                <div className="port-bg" style={{ background: p.bg }}>
+                  {/* Decorative grid lines */}
+                  <div className="port-grid-lines">
+                    {[0,1,2,3].map(n => <div key={n} className="pgl" />)}
+                  </div>
+                  {/* Abstract shapes */}
+                  <div className="port-shape port-shape-a" style={{ background: p.accent + '22' }} />
+                  <div className="port-shape port-shape-b" style={{ background: p.accent + '14' }} />
+                  {/* Stat */}
+                  <div className="port-stat">
+                    <div className="port-stat-num" style={{ color: p.accent }}>{p.stat}</div>
+                    <div className="port-stat-lbl">{p.statLabel}</div>
+                  </div>
                 </div>
-                <div className="port-info">
+                <div className="port-foot">
                   <div>
-                    <div className="port-title">{p.title}</div>
-                    <div className="port-industry">{p.industry}</div>
+                    <div className="port-name">{p.title}</div>
+                    <div className="port-ind">{p.industry}</div>
                   </div>
                   <span className="port-tag">{p.tag}</span>
                 </div>
