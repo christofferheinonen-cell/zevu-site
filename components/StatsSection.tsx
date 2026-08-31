@@ -2,28 +2,28 @@ import RevealWrapper from './RevealWrapper'
 
 const STATS = [
   {
+    num: '73',
+    suf: '%',
+    label: 'Luotettavuus rakennetaan verkossa',
+    desc: 'Käyttäjistä arvioi yrityksen uskottavuuden verkkosivuston perusteella — ei mainoksilla.',
+  },
+  {
+    num: '53',
+    suf: '%',
+    label: 'Hitaalta sivulta poistutaan',
+    desc: 'Yli puolet kävijöistä hylkää sivun, jos se lataa yli kolme sekuntia.',
+  },
+  {
     num: '3',
-    suf: 'x',
-    label: 'Nopeampi kuin perinteinen toimisto',
-    desc: 'Sivustosi valmis 3–5 viikossa, ei kuukausissa',
+    suf: '×',
+    label: 'Enemmän liidejä optimoiduilla sivuilla',
+    desc: 'Hyvin suunniteltu sivusto tuottaa moninkertaisesti enemmän yhteydenottoja.',
   },
   {
-    num: '100',
-    suf: '+',
-    label: 'Projektia toimitettu',
-    desc: 'Pk-yrityksille eri toimialoilta ympäri Suomen',
-  },
-  {
-    num: '60',
+    num: '94',
     suf: '%',
-    label: 'Kävijöistä mobiililla',
-    desc: 'Sivustosi toimii moitteettomasti kaikilla laitteilla',
-  },
-  {
-    num: '98',
-    suf: '%',
-    label: 'Asiakastyytyväisyys',
-    desc: 'Emme luovuta ennen kuin olet täysin tyytyväinen',
+    label: 'Ensivaikutelmista on visuaalisia',
+    desc: 'Potentiaalinen asiakas muodostaa mielipiteensä sivustosta sekunteissa.',
   },
 ]
 
@@ -33,9 +33,9 @@ export default function StatsSection() {
       <div className="wrap">
         <RevealWrapper>
           <div className="stats-header">
-            <div className="section-badge">003/ Numerot</div>
+            <div className="section-badge">003/ Miksi sivusto merkitsee</div>
             <h2 className="stats-heading">
-              Numerot puhuvat<br />puolestaan.
+              Hyvä sivusto on<br />paras myyntimies.
             </h2>
           </div>
         </RevealWrapper>
