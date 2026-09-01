@@ -1,62 +1,61 @@
 import RevealWrapper from './RevealWrapper'
 
-const TESTIMONIALS = [
-  {
-    quote: 'Zevu teki meille täsmälleen sellaisen sivuston kuin halusimme. Prosessi oli selkeä ja toimitus aikataulussa. Asiakkaita on tullut sivuston kautta jo ensimmäisenä kuukautena!',
-    name: 'Tiina Heikkinen',
-    company: 'Kahvila Aroma, Tampere',
-    initials: 'TH',
-    avatarClass: 'ta-purple',
-  },
-  {
-    quote: 'Olen yrittänyt tehdä itse sivuja vuosia — turha stressi. Zevun kanssa sain ammattimaisen lopputuloksen kolmessa viikossa. Suosittelen lämpimästi.',
-    name: 'Markku Virtanen',
-    company: 'Putkipalvelu Virtanen Ky, Oulu',
-    initials: 'MV',
-    avatarClass: 'ta-green',
-  },
-  {
-    quote: 'Uusi sivusto nosti meidät Googlen hakutuloksissa kolmeen kuukauteen. Yhteydenottoja on tullut huomattavasti enemmän ja laatu on parantunut.',
-    name: 'Laura Mäkinen',
-    company: 'Lakitalo Mäkinen, Helsinki',
-    initials: 'LM',
-    avatarClass: 'ta-blue',
-  },
+const INDUSTRIES = [
+  { emoji: '🏗️', label: 'Rakennusyritykset' },
+  { emoji: '🍽️', label: 'Ravintolat & kahvilat' },
+  { emoji: '✂️', label: 'Kampaamot & kauneushoitolat' },
+  { emoji: '🦷', label: 'Hammaslääkärit & klinikat' },
+  { emoji: '⚖️', label: 'Lakitoimistot' },
+  { emoji: '🧹', label: 'Siivous & kiinteistöpalvelut' },
+  { emoji: '🔧', label: 'Autokorjaamot & huolto' },
+  { emoji: '📊', label: 'Tilitoimistot' },
+  { emoji: '🧘', label: 'Terapia & hyvinvointi' },
+  { emoji: '🏠', label: 'Sisustussuunnittelu' },
+  { emoji: '📸', label: 'Valokuvaajat' },
+  { emoji: '💪', label: 'Personal trainerit & salit' },
+  { emoji: '🌿', label: 'Piha- & puutarhapalvelut' },
+  { emoji: '🎓', label: 'Koulutus & valmennus' },
+  { emoji: '🛠️', label: 'LVI & sähkötyöt' },
+  { emoji: '🐾', label: 'Lemmikkipalvelut' },
 ]
 
-const STARS = Array.from({ length: 5 }, (_, i) => i)
+// Duplicate for seamless loop
+const ROW1 = [...INDUSTRIES.slice(0, 8), ...INDUSTRIES.slice(0, 8)]
+const ROW2 = [...INDUSTRIES.slice(8), ...INDUSTRIES.slice(8)]
 
 export default function TestimonialsSection() {
   return (
-    <section className="testimonials-section">
+    <section className="industries-section">
       <div className="wrap">
         <RevealWrapper>
-          <div className="testimonials-intro">
-            <div className="eyebrow"><span className="eyebrow-dot" />Asiakaskokemukset</div>
-            <h2 className="section-h">Mitä asiakkaamme sanovat</h2>
-            <p className="section-sub">
-              Olemme auttaneet yli 50 suomalaista yritystä rakentamaan verkkoläsnäolonsa.
+          <div className="industries-intro">
+            <div className="section-badge">005/ Keitä autamme</div>
+            <h2 className="industries-heading">
+              Toimii jokaiselle<br />palvelualalle.
+            </h2>
+            <p className="industries-sub">
+              Rakensimme sivustoja kymmenille eri toimialoille — rakentamisesta terveydenhuoltoon.
+              Jos myyt palvelua, teemme sivuston joka tuo sinulle asiakkaita.
             </p>
           </div>
         </RevealWrapper>
+      </div>
 
-        <div className="testimonials-grid">
-          {TESTIMONIALS.map((t, i) => (
-            <RevealWrapper key={t.name} delay={i as 0 | 1 | 2}>
-              <div className="testi-card">
-                <div className="testi-stars">
-                  {STARS.map(s => <span key={s} className="testi-star">★</span>)}
-                </div>
-                <p className="testi-quote">"{t.quote}"</p>
-                <div className="testi-author">
-                  <div className={`testi-avatar ${t.avatarClass}`}>{t.initials}</div>
-                  <div>
-                    <div className="testi-name">{t.name}</div>
-                    <div className="testi-company">{t.company}</div>
-                  </div>
-                </div>
-              </div>
-            </RevealWrapper>
+      <div className="industries-marquee-wrap">
+        <div className="industries-row industries-row-fwd">
+          {ROW1.map((item, i) => (
+            <div key={i} className="industry-chip">
+              <span className="industry-emoji">{item.emoji}</span>
+              <span className="industry-label">{item.label}</span>
+            </div>
+          ))}
+        </div>
+        <div className="industries-row industries-row-rev">
+          {ROW2.map((item, i) => (
+            <div key={i} className="industry-chip">
+              <span className="industry-emoji">{item.emoji}</span>
+              <span className="industry-label">{item.label}</span>
+            </div>
           ))}
         </div>
       </div>

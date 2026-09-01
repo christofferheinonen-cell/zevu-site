@@ -471,36 +471,38 @@ body {
 .price-card.popular .price-cta:hover { opacity: .88; }
 .pricing-note { margin-top: 28px; font-size: 13px; color: var(--sub2); }
 
-/* ─── TESTIMONIALS ────────────────────────────────────── */
-.testimonials-section {
-  padding: 140px 0; position: relative; z-index: 1;
+/* ─── INDUSTRIES ──────────────────────────────────────── */
+.industries-section {
+  padding: 100px 0 0; position: relative; z-index: 1;
   background: var(--surface);
   border-top: 1px solid var(--border);
+  overflow: hidden;
 }
-.testimonials-intro { margin-bottom: 64px; }
-.testimonials-intro .section-h { margin-bottom: 14px; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-.testi-card {
+.industries-intro { margin-bottom: 64px; max-width: 560px; }
+.industries-heading {
+  font-size: clamp(24px,2.8vw,40px); font-weight: 800;
+  letter-spacing: -1.5px; line-height: 1.1;
+  color: var(--text); margin: 10px 0 12px;
+}
+.industries-sub { font-size: 14px; color: var(--sub); line-height: 1.72; }
+.industries-marquee-wrap { display: flex; flex-direction: column; gap: 12px; padding-bottom: 100px; }
+.industries-row {
+  display: flex; gap: 12px; width: max-content;
+}
+.industries-row-fwd { animation: marquee-fwd 32s linear infinite; }
+.industries-row-rev { animation: marquee-rev 36s linear infinite; }
+@keyframes marquee-fwd { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marquee-rev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+.industry-chip {
+  display: inline-flex; align-items: center; gap: 9px;
   background: var(--bg); border: 1px solid var(--border);
-  border-radius: 20px; padding: 28px; position: relative;
-  box-shadow: var(--sh);
-  transition: border-color .2s, box-shadow .2s, transform .2s;
+  border-radius: 100px; padding: 10px 20px;
+  white-space: nowrap; flex-shrink: 0;
+  transition: border-color .2s, box-shadow .2s;
 }
-.testi-card:hover { border-color: var(--border-h); box-shadow: var(--sh2); transform: translateY(-3px); }
-.testi-stars { display: flex; gap: 3px; margin-bottom: 18px; }
-.testi-star  { color: #FBBF24; font-size: 14px; }
-.testi-quote { font-size: 15px; line-height: 1.75; color: var(--sub); margin-bottom: 22px; }
-.testi-author  { display: flex; align-items: center; gap: 12px; }
-.testi-avatar  {
-  width: 40px; height: 40px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0;
-}
-.ta-purple { background: linear-gradient(135deg, #7C6FFF, #5B4FFF); }
-.ta-green  { background: linear-gradient(135deg, #4ADE80, #22C55E); }
-.ta-blue   { background: linear-gradient(135deg, #5B8FFF, #3B6FFF); }
-.testi-name    { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-.testi-company { font-size: 12px; color: var(--sub); }
+.industry-chip:hover { border-color: var(--border-h); box-shadow: var(--sh); }
+.industry-emoji { font-size: 16px; line-height: 1; }
+.industry-label { font-size: 13px; font-weight: 600; color: var(--text); letter-spacing: -.2px; }
 
 /* ─── CTA / CONTACT ───────────────────────────────────── */
 .cta-section { padding: 0; position: relative; z-index: 1; }
