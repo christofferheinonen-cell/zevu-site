@@ -4,6 +4,7 @@ import ServicesSection from '@/components/ServicesSection'
 import ProcessSection from '@/components/ProcessSection'
 import StatsSection from '@/components/StatsSection'
 import ComparisonSection from '@/components/ComparisonSection'
+import TestimonialsSection from '@/components/TestimonialsSection'
 import PricingSection from '@/components/PricingSection'
 import ContactCta from '@/components/ContactCta'
 import FaqAccordion from '@/components/FaqAccordion'
@@ -34,6 +35,7 @@ export default function HomePage() {
       <ProcessSection />
       <StatsSection />
       <ComparisonSection />
+      <TestimonialsSection />
       <PricingSection />
       <ContactCta />
       <FaqAccordion />

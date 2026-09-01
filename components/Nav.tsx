@@ -28,7 +28,6 @@ export default function Nav() {
         <Link href="/#palvelut" className="nav-link">Palvelut</Link>
         <Link href="/#prosessi" className="nav-link">Prosessi</Link>
         <Link href="/#hinnat" className="nav-link">Hinnat</Link>
-        <Link href="/blog" className={`nav-link${pathname.startsWith('/blog') ? ' active' : ''}`}>Blogi</Link>
       </div>
       <Link href="/#ota-yhteytta" className="nav-btn">Aloita projekti →</Link>
       <MobileMenu />

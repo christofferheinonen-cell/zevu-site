@@ -40,7 +40,6 @@ export default function Footer() {
               <a href="/#palvelut" className="footer-link">Verkkosivusuunnittelu</a>
               <a href="/#palvelut" className="footer-link">Tekninen kehitys</a>
               <a href="/#palvelut" className="footer-link">Hakukoneoptimointi</a>
-              <a href="/#palvelut" className="footer-link">Verkkokauppa</a>
               <a href="/#palvelut" className="footer-link">Brändi-identiteetti</a>
             </div>
           </div>
@@ -51,7 +50,6 @@ export default function Footer() {
               <a href="/#prosessi" className="footer-link">Prosessi</a>
               <a href="/#hinnat" className="footer-link">Hinnat</a>
               <a href="/#faq" className="footer-link">FAQ</a>
-              <Link href="/blog" className="footer-link">Blogi</Link>
               <a href="/#ota-yhteytta" className="footer-link">Ota yhteyttä</a>
             </div>
           </div>

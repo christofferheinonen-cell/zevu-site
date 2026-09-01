@@ -40,7 +40,6 @@ export default function MobileMenu() {
               <Link href="/#palvelut" className="m-menu-row" onClick={() => setOpen(false)}>Palvelut</Link>
               <Link href="/#referenssit" className="m-menu-row" onClick={() => setOpen(false)}>Referenssit</Link>
               <Link href="/#hinnat" className="m-menu-row" onClick={() => setOpen(false)}>Hinnat</Link>
-              <Link href="/blog" className="m-menu-row" onClick={() => setOpen(false)}>Blogi</Link>
               <Link href="/#faq" className="m-menu-row" onClick={() => setOpen(false)}>FAQ</Link>
             </div>
           </div>
