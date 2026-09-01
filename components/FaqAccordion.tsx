@@ -5,7 +5,7 @@ import RevealWrapper from './RevealWrapper'
 const FAQS = [
   {
     q: 'Kuinka kauan projekti kestää?',
-    a: 'Tyypillinen verkkosivuprojekti valmistuu 3–5 viikossa. Laajemmat projektit, kuten verkkokaupat, voivat kestää 6–8 viikkoa. Saat tarkan aikataulun heti projektin alussa.',
+    a: 'Tyypillinen verkkosivuprojekti valmistuu kahdessa viikossa. Prosessi etenee kartoituksesta suunnitteluun, kehitykseen ja julkaisuun — ja tiedät aina missä mennään. Saat tarkan aikataulun heti projektin alussa.',
   },
   {
     q: 'Mitä projekti maksaa kokonaisuudessaan?',
