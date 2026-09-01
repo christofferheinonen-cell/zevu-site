@@ -65,23 +65,25 @@ export function SeoVisual() {
   return (
     <div className="wv wv-light">
       <Badge green>Sijoitus #1 Googlessa</Badge>
-      <div className="wv-serp">
-        <div className="wv-serp-lbl">Hakutulokset</div>
-        <div className="wv-serp-card">
-          <div className="wv-serp-url">yritys.fi</div>
-          <div className="wv-serp-title" />
-          <div className="wv-serp-desc" />
-          <div className="wv-serp-desc wv-serp-short" />
+      <div className="wv-seo-wrap">
+        <div className="wv-serp">
+          <div className="wv-serp-lbl">Hakutulokset</div>
+          <div className="wv-serp-card">
+            <div className="wv-serp-url">yritys.fi</div>
+            <div className="wv-serp-title" />
+            <div className="wv-serp-desc" />
+            <div className="wv-serp-desc wv-serp-short" />
+          </div>
         </div>
-      </div>
-      <div className="wv-chart">
-        {[30, 38, 34, 52, 48, 68, 62, 88].map((h, i) => (
-          <div
-            key={i}
-            className="wv-bar-col"
-            style={{ height: `${h}%`, opacity: 0.35 + i * 0.09 }}
-          />
-        ))}
+        <div className="wv-chart">
+          {[30, 38, 34, 52, 48, 68, 62, 88].map((h, i) => (
+            <div
+              key={i}
+              className="wv-bar-col"
+              style={{ height: `${h}%`, opacity: 0.35 + i * 0.09 }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

@@ -903,9 +903,10 @@ body {
 .wv-buildok { width: 6px; height: 6px; border-radius: 50%; background: #28C840; flex-shrink: 0; }
 
 /* SEO / SERP */
+.wv-seo-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 80%; }
 .wv-serp {
-  width: 80%; background: #fff; border-radius: 8px;
-  padding: 12px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); margin-bottom: 10px;
+  width: 100%; background: #fff; border-radius: 8px;
+  padding: 12px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 .wv-serp-lbl { font-size: 8px; color: #70757A; margin-bottom: 8px; font-family: Arial,sans-serif; }
 .wv-serp-card { display: flex; flex-direction: column; gap: 4px; }
@@ -913,7 +914,7 @@ body {
 .wv-serp-title { height: 9px; width: 78%; background: #1A0DAB; border-radius: 2px; opacity: 0.75; }
 .wv-serp-desc { height: 6px; background: #70757A; border-radius: 2px; opacity: 0.25; }
 .wv-serp-short { width: 52%; }
-.wv-chart { width: 80%; display: flex; align-items: flex-end; gap: 4px; height: 44px; }
+.wv-chart { width: 100%; display: flex; align-items: flex-end; gap: 4px; height: 44px; }
 .wv-bar-col { flex: 1; background: var(--accent); border-radius: 3px 3px 0 0; }
 
 /* Brand kit */

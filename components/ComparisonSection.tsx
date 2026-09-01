@@ -20,15 +20,9 @@ type Col = {
 
 const COLS: Col[] = [
   {
-    key: 'freelancer',
-    name: 'Freelancer',
-    badge: 'Vaihtoehto 1',
-    values: [false, false, false, true, false, false, false],
-  },
-  {
     key: 'agency',
     name: 'Muut toimistot',
-    badge: 'Vaihtoehto 2',
+    badge: 'Vaihtoehto 1',
     values: [true, false, true, true, false, false, true],
   },
   {
@@ -52,7 +46,7 @@ export default function ComparisonSection() {
             </h2>
             <p className="cmp-sub">
               Vertaa — katso miksi satoja suomalaisia pk-yrityksiä valitsee
-              meidät freelancerin tai suuren toimiston sijaan.
+              meidät muiden toimistojen sijaan.
             </p>
           </div>
         </RevealWrapper>
