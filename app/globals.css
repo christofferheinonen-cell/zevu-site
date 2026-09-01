@@ -920,9 +920,11 @@ body {
   .pricing-grid { grid-template-columns: 1fr; }
   .cmp-outer { overflow: visible; }
   .cmp-table { grid-template-columns: 1fr 88px 88px; min-width: 0; }
-  .cmp-col-head { padding: 16px 10px; }
-  .cmp-cell { padding: 14px 10px; }
-  .cmp-col-name { font-size: 13px; }
+  .cmp-col-head { padding: 14px 10px; }
+  .cmp-cell { padding: 12px 10px; font-size: 12px; }
+  .cmp-cell-label { font-size: 12px; }
+  .cmp-col-name { font-size: 12px; }
+  .cmp-check { width: 18px; height: 18px; font-size: 10px; }
   .cmp-col-badge { display: none; }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
   .stat-item { padding: 28px 20px; }
