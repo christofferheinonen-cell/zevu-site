@@ -1,20 +1,19 @@
-const CLIENTS = [
-  'Kahvila Aromas', 'Lakiasiaintoimisto Mäkinen', 'Putkipalvelu Virtanen',
-  'Hammaslääkäri Koskinen', 'Rakennusliike Nykänen', 'Hieronta Studio Zen',
-  'Autokorjaamo Peltonen', 'Tilitoimisto Ahola', 'Parturi Salone',
-  'Fysioterapia Nord', 'Siivouspalvelu Puhtaus', 'Kukkakauppa Keidas',
+const INDUSTRIES = [
+  'Rakennusyritykset', 'Ravintolat & kahvilat', 'Kampaamot', 'Hammaslääkärit',
+  'Lakitoimistot', 'Siivouspalvelut', 'Autokorjaamot', 'Tilitoimistot',
+  'Terapia & hyvinvointi', 'Sisustussuunnittelu', 'Valokuvaajat', 'Personal trainerit',
+  'LVI & sähkötyöt', 'Piha- & puutarhapalvelut', 'Koulutus & valmennus', 'Lemmikkipalvelut',
 ]
 
-const ITEMS = [...CLIENTS, ...CLIENTS]
+const ITEMS = [...INDUSTRIES, ...INDUSTRIES]
 
 export default function LogoTicker() {
   return (
     <div className="ticker-wrap">
-      <span className="ticker-label">Asiakkaitamme</span>
       <div className="ticker-run" aria-hidden>
         {ITEMS.map((name, i) => (
           <span key={i}>
-            {i > 0 && i % 1 === 0 && <span className="ticker-sep" />}
+            {i > 0 && <span className="ticker-sep" />}
             {name}
           </span>
         ))}
