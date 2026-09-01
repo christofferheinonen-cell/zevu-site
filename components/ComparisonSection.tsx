@@ -2,7 +2,7 @@ import RevealWrapper from './RevealWrapper'
 
 const FEATURES = [
   'Räätälöity design',
-  'Nopea toimitusaika (3–5 vk)',
+  'Nopea toimitusaika (1–2 vk)',
   'SEO-optimoitu rakenne',
   'Mobiiliyhteensopiva',
   'Jatkuva tuki & ylläpito',
