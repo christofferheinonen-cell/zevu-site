@@ -919,11 +919,11 @@ body {
   .svc-card-body { padding: 28px 24px; }
   .pricing-grid { grid-template-columns: 1fr; }
   .cmp-outer { overflow: visible; }
-  .cmp-table { grid-template-columns: 1fr 80px 80px; min-width: 0; }
+  .cmp-table { grid-template-columns: 1fr 88px 88px; min-width: 0; }
   .cmp-col-head { padding: 16px 10px; }
   .cmp-cell { padding: 14px 10px; }
   .cmp-col-name { font-size: 13px; }
-  .cmp-col-badge { font-size: 8px; padding: 2px 7px; }
+  .cmp-col-badge { display: none; }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
   .stat-item { padding: 28px 20px; }
   .cta-grid { grid-template-columns: 1fr; gap: 48px; }
