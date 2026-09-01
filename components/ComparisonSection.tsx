@@ -41,9 +41,7 @@ export default function ComparisonSection() {
         <RevealWrapper>
           <div className="cmp-intro">
             <div className="section-badge">004/ Miksi Zevu</div>
-            <h2 className="cmp-heading">
-              Miksi valita Zevu?
-            </h2>
+            <h2 className="cmp-heading">Miksi valita Zevu?</h2>
             <p className="cmp-sub">
               Vertaa — katso miksi satoja suomalaisia pk-yrityksiä valitsee
               meidät muiden toimistojen sijaan.
@@ -54,32 +52,32 @@ export default function ComparisonSection() {
         <RevealWrapper delay={1}>
           <div className="cmp-outer">
             <div className="cmp-table">
-              {/* Feature label column */}
-              <div className="cmp-col">
-                <div className="cmp-col-head" style={{ background: 'var(--bg)' }}>
-                  <div className="cmp-col-name" style={{ color: 'var(--sub2)' }}>Ominaisuus</div>
-                </div>
-                {FEATURES.map((f) => (
-                  <div key={f} className="cmp-cell cmp-cell-label">{f}</div>
-                ))}
-              </div>
 
-              {/* Data columns */}
-              {COLS.map((col) => (
-                <div key={col.key} className={`cmp-col${col.featured ? ' cmp-col-feat' : ''}`}>
-                  <div className="cmp-col-head">
+              {/* Header row */}
+              <div className="cmp-row">
+                <div className="cmp-cell cmp-cell-label cmp-head-label">Ominaisuus</div>
+                {COLS.map(col => (
+                  <div key={col.key} className={`cmp-col-head${col.featured ? ' cmp-col-head-feat' : ''}`}>
                     <div className="cmp-col-badge">{col.badge}</div>
                     <div className="cmp-col-name">{col.name}</div>
                   </div>
-                  {col.values.map((yes, i) => (
-                    <div key={i} className={`cmp-cell${col.featured ? ' cmp-cell-feat' : ''}`}>
-                      <span className={`cmp-check ${yes ? (col.featured ? 'cmp-yes-feat' : 'cmp-yes') : 'cmp-no'}`}>
-                        {yes ? '✓' : '✕'}
+                ))}
+              </div>
+
+              {/* Data rows */}
+              {FEATURES.map((feature, fi) => (
+                <div key={feature} className="cmp-row">
+                  <div className="cmp-cell cmp-cell-label">{feature}</div>
+                  {COLS.map(col => (
+                    <div key={col.key} className={`cmp-cell${col.featured ? ' cmp-cell-feat' : ''}`}>
+                      <span className={`cmp-check ${col.values[fi] ? (col.featured ? 'cmp-yes-feat' : 'cmp-yes') : 'cmp-no'}`}>
+                        {col.values[fi] ? '✓' : '✕'}
                       </span>
                     </div>
                   ))}
                 </div>
               ))}
+
             </div>
           </div>
         </RevealWrapper>
