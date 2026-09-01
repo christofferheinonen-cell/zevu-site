@@ -20,8 +20,10 @@ const faqLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Kuinka kauan projekti kestää?', acceptedAnswer: { '@type': 'Answer', text: 'Tyypillinen verkkosivuprojekti valmistuu 3–5 viikossa.' } },
-    { '@type': 'Question', name: 'Mitä projekti maksaa?', acceptedAnswer: { '@type': 'Answer', text: 'Hinnat alkavat 1 490 eurosta. Tarkat hinnat löytyvät hinnoittelusivulta.' } },
+    { '@type': 'Question', name: 'Kuinka kauan projekti kestää?', acceptedAnswer: { '@type': 'Answer', text: 'Tyypillinen verkkosivuprojekti valmistuu kahdessa viikossa kartoituksesta valmiiseen sivustoon.' } },
+    { '@type': 'Question', name: 'Mitä projekti maksaa?', acceptedAnswer: { '@type': 'Answer', text: 'Hinnat alkavat 1 490 eurosta. Saat tarjouksen ennen projektin aloittamista — ei yllätyksiä laskussa.' } },
+    { '@type': 'Question', name: 'Voinko päivittää sivustoa itse?', acceptedAnswer: { '@type': 'Answer', text: 'Kyllä. Kasvu- ja Pro-paketeissa rakennamme helppokäyttöisen sisällönhallintajärjestelmän ilman teknistä osaamista.' } },
+    { '@type': 'Question', name: 'Näkyykö sivustoni Googlessa?', acceptedAnswer: { '@type': 'Answer', text: 'Kaikki sivustomme rakennetaan hakukoneoptimointia silmällä pitäen.' } },
   ],
 }
 

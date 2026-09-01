@@ -7,7 +7,7 @@ export const SITE_URL = (
 export const SITE_NAME = 'Zevu'
 export const DEFAULT_TITLE = 'Zevu — Verkkosivut pk-yrityksille'
 export const DEFAULT_DESCRIPTION =
-  'Suomalainen verkkosivutoimisto. Suunnittelemme ja rakennamme modernit verkkosivut, jotka houkuttelevat asiakkaita ja kasvattavat liiketoimintaasi.'
+  'Zevu rakentaa modernit verkkosivut suomalaisille pk-yrityksille kahdessa viikossa. Ammattimainen suunnittelu, nopea toteutus ja selkeä hinta — ilman yllätyksiä.'
 export const LOCALE = 'fi_FI'
 export const CONTACT_EMAIL = 'hei@zevu.cc'
 
