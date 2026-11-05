@@ -1,9 +1,11 @@
 import { ImageResponse } from 'next/og'
+import { loadGoogleFont } from '@/lib/og-font'
 
 export const size = { width: 96, height: 96 }
 export const contentType = 'image/png'
 
-export default function Icon() {
+export default async function Icon() {
+  const italic = await loadGoogleFont('Fraunces', 'ital,opsz,wght@1,144,500', 'z.')
   return new ImageResponse(
     (
       <div
@@ -13,17 +15,18 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#0C1121',
-          color: '#FFFFFF',
-          fontSize: 66,
-          fontWeight: 800,
-          fontFamily: 'sans-serif',
-          borderRadius: 21,
+          background: '#1a1612',
+          color: '#f2ece1',
+          fontSize: 84,
+          fontStyle: 'italic',
+          fontFamily: italic ? 'Fraunces' : 'serif',
+          borderRadius: 22,
+          paddingBottom: 14,
         }}
       >
-        Z
+        z<span style={{ color: '#d4452a' }}>.</span>
       </div>
     ),
-    { ...size }
+    { ...size, fonts: italic ? [{ name: 'Fraunces', data: italic, style: 'italic', weight: 500 }] : undefined }
   )
 }

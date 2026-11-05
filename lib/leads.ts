@@ -15,6 +15,7 @@ export interface Lead {
   name: string
   email: string
   phone: string
+  message?: string
 }
 
 // Production (Vercel) runs on a read-only filesystem, so leads are stored in

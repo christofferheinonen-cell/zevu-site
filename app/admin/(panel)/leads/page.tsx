@@ -35,6 +35,7 @@ export default async function LeadsPage() {
                 <th>Mainostaa?</th>
                 <th>Budjetti</th>
                 <th className="adm-num">Tyytyväisyys</th>
+                <th>Viesti</th>
                 <th>Lähde</th>
               </tr>
             </thead>
@@ -50,6 +51,7 @@ export default async function LeadsPage() {
                   <td>{l.runsAds === 'yes' ? 'Kyllä' : l.runsAds === 'no' ? 'Ei' : '—'}</td>
                   <td className="adm-nowrap">{l.budget || '—'}</td>
                   <td className="adm-num">{l.satisfaction ?? '—'}</td>
+                  <td style={{ minWidth: 240, whiteSpace: 'pre-wrap' }}>{l.message || '—'}</td>
                   <td className="adm-nowrap">{l.source || '—'}</td>
                 </tr>
               ))}

@@ -9,11 +9,17 @@ export const SITE_URL = (
 ).replace(/\/$/, '')
 
 export const SITE_NAME = 'Zevu'
-export const DEFAULT_TITLE = 'Zevu - Meta mainosten kumppani'
+export const DEFAULT_TITLE = 'Zevu — Websites for restaurants, bars & coffee shops in Spain'
 export const DEFAULT_DESCRIPTION =
-  'Meta mainonta, joka toimii. Ilman arvailua, geneerisiä kuvia tai tuhlattua budjettia.'
-export const LOCALE = 'fi_FI'
+  'A small design studio in Spain building fast, beautiful websites for restaurants, bars and coffee shops — menus you can edit, bookings that land in your inbox, and a Google profile that shows up.'
+export const LOCALE = 'en_GB'
 export const CONTACT_EMAIL = 'hey@zevu.cc'
+
+/**
+ * WhatsApp number in international format without "+" or spaces
+ * (e.g. 34600111222). Leave unset and the WhatsApp buttons are hidden.
+ */
+export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
 
 /** Google Analytics 4 measurement ID (overridable via NEXT_PUBLIC_GA_ID). */
 export const GA_MEASUREMENT_ID =
