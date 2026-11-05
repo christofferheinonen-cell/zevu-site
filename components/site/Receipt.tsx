@@ -23,13 +23,17 @@ export default function Receipt({ t }: { t: SiteContent['receipt'] }) {
         <div className="zv-receipt-thanks">{t.thanks}</div>
       </div>
       <div className="zv-stamp" aria-hidden="true">
-        <svg viewBox="0 0 100 100">
-          <defs><path id="zv-stamp-c" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0" /></defs>
-          <text fill="currentColor" fontSize="9" letterSpacing="2.2" fontFamily="system-ui, sans-serif" fontWeight="600">
-            <textPath href="#zv-stamp-c">{t.ring}</textPath>
+        {/* Ring text sits on a circle near the edge; textLength stretches it to close the loop exactly in any language. */}
+        <svg className="zv-stamp-ring" viewBox="0 0 100 100">
+          <defs><path id="zv-stamp-c" d="M50 50m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0" /></defs>
+          <text fill="currentColor" fontSize="7.4" fontFamily="system-ui, sans-serif" fontWeight="700" textLength="251" lengthAdjust="spacing">
+            <textPath href="#zv-stamp-c" textLength="251" lengthAdjust="spacing">{t.ring}</textPath>
           </text>
         </svg>
-        <strong>EN·ES</strong>
+        <svg className="zv-stamp-inner" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="33" fill="none" stroke="currentColor" strokeWidth="0.6" strokeDasharray="1.4 1.6" opacity="0.7" />
+        </svg>
+        <strong>EN<i>·</i>ES</strong>
       </div>
     </div>
   )

@@ -189,7 +189,7 @@ export const en: SiteContent = {
     total: 'TOTAL',
     totalValue: 'More regulars',
     thanks: '*** GRACIAS · VUELVA PRONTO ***',
-    ring: 'BILINGUAL SITES · FAST · YOURS · ',
+    ring: 'BILINGUAL SITES · FAST · YOURS ·\u00A0',
   },
   marquee: ['Tapas bars', 'Coffee shops', 'Cocktail bars', 'Chiringuitos', 'Bakeries', 'Wine bars', 'Brunch spots', 'Restaurants'],
   problem: {

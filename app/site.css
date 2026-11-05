@@ -262,12 +262,17 @@ body:has(.zv)::before { display: none; }
 .zv-receipt-thanks { text-align: center; margin-top: 12px; font-size: 10.5px; letter-spacing: 0.1em; color: var(--ink-2); }
 .zv-barcode { height: 34px; margin: 12px 8px 0; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 8px, var(--ink) 8px 11px, transparent 11px 12px); opacity: 0.85; }
 .zv-stamp {
-  position: absolute; right: -34px; top: -30px; width: 108px; height: 108px; border-radius: 50%;
+  position: absolute; right: -38px; top: -34px; width: 112px; height: 112px; border-radius: 50%;
   background: var(--tomato); color: var(--cream); display: grid; place-items: center; transform: rotate(-12deg);
-  box-shadow: 0 10px 24px rgba(212, 69, 42, 0.35);
+  box-shadow: 0 10px 24px rgba(212, 69, 42, 0.35), inset 0 0 0 1px rgba(251, 248, 242, 0.12);
 }
-.zv-stamp svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: zv-spin 18s linear infinite; }
-.zv-stamp strong { font-family: var(--serif); font-style: italic; font-size: 30px; font-weight: 400; font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1; }
+.zv-stamp svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.zv-stamp-ring { animation: zv-spin 22s linear infinite; }
+.zv-stamp strong {
+  position: relative; font-family: var(--serif); font-style: italic; font-size: 21px; font-weight: 420; line-height: 1; letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1; padding-bottom: 2px;
+}
+.zv-stamp strong i { font-style: normal; display: inline-block; margin: 0 1px; color: var(--saffron); }
 @keyframes zv-spin { to { transform: rotate(360deg); } }
 
 /* ---------- Marquee ---------- */
@@ -684,7 +689,8 @@ body:has(.zv)::before { display: none; }
   .zv-hero-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'h' 'f' 'r'; }
   .zv-hero-foot { padding: 32px 0 24px; }
   .zv-hero-grid .zv-receipt-wrap { width: min(300px, 86%); justify-self: center; margin: 24px 0 64px; transform: rotate(2deg); }
-  .zv-stamp { right: -12px; top: -36px; width: 88px; height: 88px; }
+  .zv-stamp { right: -12px; top: -38px; width: 96px; height: 96px; }
+  .zv-stamp strong { font-size: 18px; }
   .zv-section-head { grid-template-columns: 1fr; }
   .zv-section-head p { justify-self: start; }
   .zv-problem-grid, .zv-faq-grid, .zv-contact-grid, .zv-shero-grid { grid-template-columns: 1fr; }

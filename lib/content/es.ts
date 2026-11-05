@@ -192,7 +192,7 @@ export const es: SiteContent = {
     total: 'TOTAL',
     totalValue: 'Más habituales',
     thanks: '*** GRACIAS · VUELVA PRONTO ***',
-    ring: 'WEBS BILINGÜES · RÁPIDAS · TUYAS · ',
+    ring: 'WEBS BILINGÜES · RÁPIDAS · TUYAS ·\u00A0',
   },
   marquee: ['Bares de tapas', 'Cafeterías', 'Cocteleras', 'Chiringuitos', 'Panaderías', 'Vinotecas', 'Brunch', 'Restaurantes'],
   problem: {
