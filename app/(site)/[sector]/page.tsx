@@ -79,9 +79,13 @@ export default async function SectorPage({ params }: { params: Promise<{ sector:
                 <a href="#features" className="zv-link">What’s included ↓</a>
               </div>
             </div>
-            <div data-rv="" style={{ ['--d' as string]: 400 }}>
-              <SectorIllustration slug={s.slug} className="zv-shero-ill" />
-            </div>
+            <figure className="zv-shero-visual" data-rv="" style={{ ['--d' as string]: 400 }}>
+              <ConceptFrame k={concept.key} />
+              <figcaption>
+                <span>Concept · {concept.name}, {concept.kind.toLowerCase()}</span>
+                <Link href="/#work" className="zv-link">All concepts <Arrow size={14} /></Link>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -123,20 +127,6 @@ export default async function SectorPage({ params }: { params: Promise<{ sector:
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="zv-section zv-work" aria-labelledby="concept-h">
-        <div className="zv-wrap">
-          <div className="zv-section-head">
-            <div>
-              <span className="zv-eyebrow">Concept study</span>
-              <Lines id="concept-h" className="zv-h2" lines={['What it could', <em key="e">look like.</em>]} />
-            </div>
-            <p className="zv-lede" data-rv=""><strong style={{ color: 'var(--ink)' }}>{concept.name}</strong>, an imaginary {concept.kind.toLowerCase()}. {concept.note}</p>
-          </div>
-          <div data-rv=""><ConceptFrame k={concept.key} /></div>
-          <div style={{ marginTop: 40 }} data-rv=""><Link href="/#work" className="zv-link">See all concepts <Arrow size={14} /></Link></div>
         </div>
       </section>
 

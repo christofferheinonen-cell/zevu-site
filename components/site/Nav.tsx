@@ -20,18 +20,42 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const lastY = useRef(0)
+  const travel = useRef(0)
 
   useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY
-      setScrolled(y > 24)
-      setHidden(y > 240 && y > lastY.current + 4)
-      if (y < lastY.current - 4 || y < 240) setHidden(false)
+    // Hide on the way down, show again only after a deliberate upward scroll.
+    // Small back-and-forth jitter (iOS momentum, address bar resizing, reveal
+    // animations) accumulates in `travel` and is ignored until it passes the
+    // threshold, so the bar no longer pops in at every section.
+    const SHOW_AFTER = 120
+    const HIDE_AFTER = 24
+    let frame = 0
+    const update = () => {
+      frame = 0
+      const y = Math.max(0, window.scrollY)
+      const dy = y - lastY.current
       lastY.current = y
+      setScrolled(y > 24)
+      if (y < 160) {
+        travel.current = 0
+        setHidden(false)
+        return
+      }
+      // Reset the accumulator whenever direction flips.
+      if ((dy > 0 && travel.current < 0) || (dy < 0 && travel.current > 0)) travel.current = 0
+      travel.current += dy
+      if (travel.current > HIDE_AFTER) setHidden(true)
+      else if (travel.current < -SHOW_AFTER) setHidden(false)
     }
-    onScroll()
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update)
+    }
+    update()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (frame) cancelAnimationFrame(frame)
+    }
   }, [])
 
   useEffect(() => setOpen(false), [pathname])

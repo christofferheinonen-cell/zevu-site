@@ -28,7 +28,7 @@ export interface Sector {
   faqs: { q: string; a: string }[]
 }
 
-export type ConceptKey = 'oleaje' | 'nocturno' | 'almendro'
+export type ConceptKey = 'oleaje' | 'nocturno' | 'almendro' | 'raiz' | 'olaola' | 'mies'
 
 export const SECTORS: Sector[] = [
   {
@@ -156,7 +156,7 @@ export const SECTORS: Sector[] = [
       { title: 'Fast on every phone', body: 'Your site loads quickly on a patchy 4G connection, because that’s where your customers are.' },
       { title: 'Yours to edit', body: 'Change prices, photos and opening hours yourself, without calling anyone.' },
     ],
-    concept: 'almendro',
+    concept: 'mies',
     faqs: [
       { q: 'What kinds of businesses do you work with?', a: 'Any local business with customers who come through the door: salons, studios, shops, guesthouses, clinics, tour operators, and more.' },
       { q: 'Can customers book appointments online?', a: 'Yes. We connect the booking tool you already use, or recommend one that fits how you work.' },
@@ -218,9 +218,12 @@ export interface Concept {
 }
 
 export const CONCEPTS: Concept[] = [
-  { key: 'oleaje', name: 'Taberna Oleaje', kind: 'Seafood restaurant', place: 'Coastal', note: 'Editorial serif, sea-glass blue, a reservation button that never leaves the screen.' },
+  { key: 'oleaje', name: 'Taberna Oleaje', kind: 'Seafood restaurant', place: 'Coastal', note: 'Editorial serif, sea-glass blue, and today’s catch priced along the bottom of the screen.' },
   { key: 'nocturno', name: 'Nocturno', kind: 'Cocktail bar', place: 'Old town', note: 'Dark, loud and condensed. Tonight’s line-up is the first thing you see.' },
-  { key: 'almendro', name: 'Almendro', kind: 'Specialty coffee', place: 'Neighbourhood', note: 'Soft, warm and rounded. Hours, the bean of the week, and order-ahead.' },
+  { key: 'almendro', name: 'Almendro', kind: 'Coffee bar', place: 'Neighbourhood', note: 'The café as a departures board: a live clock, and the day’s bakes listed like trains. Printed in two-colour riso.' },
+  { key: 'raiz', name: 'Raíz', kind: 'Natural wine bar', place: 'Barrio', note: 'A wine label blown up to full screen. Every bottle gets a body, funk and fizz meter instead of tasting notes.' },
+  { key: 'olaola', name: 'Ola Ola', kind: 'Chiringuito', place: 'Beach', note: 'Seventies sunset supergraphics, a countdown to golden hour, and how many sunbeds are left.' },
+  { key: 'mies', name: 'Mies', kind: 'Bakery', place: 'Corner shop', note: 'Butcher-paper brown and rubber stamps. Loaves get stamped “agotado” on screen as they sell out.' },
 ]
 
 export const MENU = {

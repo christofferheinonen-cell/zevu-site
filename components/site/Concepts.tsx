@@ -1,6 +1,7 @@
 import type { ConceptKey } from '@/lib/site-content'
 import { CONCEPTS } from '@/lib/site-content'
 import Tilt from './Tilt'
+import { SpainTime } from './Clock'
 
 function Oleaje() {
   return (
@@ -58,27 +59,125 @@ function Nocturno() {
 }
 
 function Almendro() {
+  const board = [
+    { t: '07:30', what: 'Doors open', status: 'On time' },
+    { t: '08:00', what: 'Croissants, out of the oven', status: 'Boarding' },
+    { t: '09:30', what: 'Banana bread', status: 'On time' },
+    { t: '11:00', what: 'Pour-over: Huila, Colombia', status: 'Delayed 5′' },
+    { t: '15:00', what: 'Last call', status: 'Final' },
+  ]
   return (
     <div className="c-al">
-      <div className="c-al-nav">
-        <span className="c-al-logo">almendro</span>
-        <span className="c-al-open"><i /> Open now · until 15:00</span>
+      <div className="c-al-top">
+        <span className="c-al-logo">almendro<i>®</i></span>
+        <span>Coffee &amp; departures</span>
+        <span>Calle del Olmo 12</span>
       </div>
-      <div className="c-al-grid">
-        <div>
-          <div className="c-al-h">Good coffee,<br /><em>slow</em> mornings.</div>
-          <div className="c-al-btns"><span>Order ahead</span><span>See the menu</span></div>
+      <div className="c-al-main">
+        <div className="c-al-clock">
+          <span className="c-al-now">Now serving</span>
+          <span className="c-al-time" data-t="08:47"><SpainTime /></span>
+          <span className="c-al-dot" aria-hidden="true" />
         </div>
-        <div className="c-al-cards">
-          <div className="c-al-cup"><span>Flat white · 2.80</span></div>
-          <div className="c-al-bean">Bean of the week<b>Huila, Colombia</b>Panela, orange, cacao nib.</div>
+        <div className="c-al-board">
+          <div className="c-al-row c-al-head"><span>Time</span><span>Departure</span><span>Status</span></div>
+          {board.map(r => (
+            <div key={r.t} className="c-al-row">
+              <span>{r.t}</span>
+              <span>{r.what}</span>
+              <span className={r.status === 'Boarding' ? 'is-hot' : ''}>{r.status}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="c-al-foot"><span>Order ahead →</span><span>Oat milk, no extra charge</span></div>
+    </div>
+  )
+}
+
+function Raiz() {
+  const wines = [
+    { n: 'Xarel·lo brisat', r: 'Penedès', m: [3, 4, 1] },
+    { n: 'Garnacha de pie franco', r: 'Gredos', m: [4, 2, 0] },
+    { n: 'Ancestral rosado', r: 'Jumilla', m: [2, 3, 5] },
+  ]
+  return (
+    <div className="c-rz">
+      <div className="c-rz-side" aria-hidden="true">RAÍZ</div>
+      <div className="c-rz-stain" aria-hidden="true" />
+      <div className="c-rz-body">
+        <div className="c-rz-top"><span>Vino natural · Barrio</span><span>Abierto 18–01</span></div>
+        <div className="c-rz-label">
+          <span className="c-rz-small">Cosecha 2026 · Embotellado en origen</span>
+          <div className="c-rz-h">Wine with<br /><em>dirt</em> on it.</div>
+          <span className="c-rz-small">No sulphites added · Lots of opinions</span>
+        </div>
+        <div className="c-rz-list">
+          <div className="c-rz-key"><span /><span>Body</span><span>Funk</span><span>Fizz</span></div>
+          {wines.map(w => (
+            <div key={w.n} className="c-rz-wine">
+              <span><b>{w.n}</b> {w.r}</span>
+              {w.m.map((v, i) => (
+                <span key={i} className="c-rz-meter">{[0, 1, 2, 3, 4].map(d => <i key={d} className={d < v ? 'on' : ''} />)}</span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>
   )
 }
 
-const RENDER: Record<ConceptKey, () => React.ReactElement> = { oleaje: Oleaje, nocturno: Nocturno, almendro: Almendro }
+function OlaOla() {
+  return (
+    <div className="c-oo">
+      <div className="c-oo-sun" aria-hidden="true" />
+      <div className="c-oo-top">
+        <span className="c-oo-logo">ola ola</span>
+        <span className="c-oo-pill">☀ Sunset in 2h 14m</span>
+      </div>
+      <div className="c-oo-h">Feet in<br />the sand,<br />drink in<br />the hand.</div>
+      <div className="c-oo-cards">
+        <div><b>12</b>sunbeds free</div>
+        <div><b>28°</b>water 22°</div>
+        <div><b>DJ</b>from 19:00</div>
+      </div>
+    </div>
+  )
+}
+
+function Mies() {
+  const loaves = [
+    { n: 'Hogaza de centeno', p: '6.50', out: false },
+    { n: 'Pan de cristal', p: '4.20', out: true },
+    { n: 'Ensaimada', p: '3.10', out: false },
+    { n: 'Barra de masa madre', p: '2.40', out: true },
+  ]
+  return (
+    <div className="c-mi">
+      <div className="c-mi-top"><span className="c-mi-logo">MIES</span><span>Horno de leña · desde 05:00</span></div>
+      <div className="c-mi-main">
+        <div className="c-mi-count">
+          <span className="c-mi-big">14</span>
+          <span className="c-mi-cap">loaves left<br />today</span>
+          <span className="c-mi-stamp">Recién<br />hecho</span>
+        </div>
+        <div className="c-mi-grid">
+          {loaves.map((l, i) => (
+            <div key={l.n} className={`c-mi-loaf${l.out ? ' is-out' : ''}`}>
+              <span className={`c-mi-bread c-mi-b${i}`} aria-hidden="true" />
+              <span className="c-mi-name">{l.n}</span>
+              <span className="c-mi-price">€{l.p}</span>
+              {l.out ? <span className="c-mi-sold">Agotado</span> : null}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const RENDER: Record<ConceptKey, () => React.ReactElement> = { oleaje: Oleaje, nocturno: Nocturno, almendro: Almendro, raiz: Raiz, olaola: OlaOla, mies: Mies }
 
 export function ConceptFrame({ k }: { k: ConceptKey }) {
   const c = CONCEPTS.find(x => x.key === k)!
@@ -99,19 +198,25 @@ export function ConceptFrame({ k }: { k: ConceptKey }) {
 const TAGS: Record<ConceptKey, string[]> = {
   oleaje: ['Bookings', 'Daily menu', 'EN / ES'],
   nocturno: ['Events calendar', 'Happy hour', 'Group bookings'],
-  almendro: ['Live hours', 'Order ahead', 'Bean shop'],
+  almendro: ['Live clock', 'Daily bakes', 'Order ahead'],
+  raiz: ['Wine list you edit', 'Events', 'EN / ES'],
+  olaola: ['Sunbed bookings', 'Live conditions', 'Menu'],
+  mies: ['Live stock', 'Pre-orders', 'Opening hours'],
 }
 
 export default function Concepts() {
   return (
     <div className="zv-concepts">
       {CONCEPTS.map((c, i) => (
-        <article key={c.key} className="zv-concept">
+        <article key={c.key} className={`zv-concept zv-concept--${i}`}>
           <div data-rv=""><ConceptFrame k={c.key} /></div>
-          <div className="zv-concept-meta" data-rv="" style={{ ['--d' as string]: 150 }}>
-            <span className="zv-label" style={{ color: 'var(--ink-3)' }}>0{i + 1} · Concept study</span>
-            <h3 className="zv-h3">{c.name}</h3>
-            <p><strong style={{ color: 'var(--ink)' }}>{c.kind}.</strong> {c.note}</p>
+          <div className="zv-concept-meta" data-rv="" style={{ ['--d' as string]: 120 }}>
+            <div className="zv-concept-line">
+              <span className="zv-label">0{i + 1}</span>
+              <h3 className="zv-h3">{c.name}</h3>
+              <span className="zv-concept-kind">{c.kind}</span>
+            </div>
+            <p>{c.note}</p>
             <div className="zv-concept-tags">
               {TAGS[c.key].map(t => <span key={t} className="zv-tag">{t}</span>)}
             </div>
