@@ -31,12 +31,6 @@ export function absoluteUrl(path = '/'): string {
   return clean === '/' ? SITE_URL : `${SITE_URL}${clean}`
 }
 
-/** Parse a Finnish "D.M.YYYY" date string into a Date (UTC). */
-export function parseFiDate(input: string): Date {
-  const [day, month, year] = input.split('.').map(Number)
-  return new Date(Date.UTC(year ?? 1970, (month ?? 1) - 1, day ?? 1))
-}
-
 interface PageMetaInput {
   title?: string
   description?: string

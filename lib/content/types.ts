@@ -72,4 +72,12 @@ export interface SiteContent {
   }
   footer: { tag: [string, string, string]; whoFor: string; studio: string; process: string; sayHi: string; localTime: string; rights: (year: number) => string; whatsapp: string }
   notFound: { eyebrow: string; title: [string, string]; body: string; back: string }
+  blog: {
+    nav: string; metaTitle: string; metaDescription: string
+    eyebrow: string; title: [string, string]; lede: string; empty: string
+    all: string; general: string; minRead: (n: number) => string; by: string
+    published: string; updated: string; faqTitle: [string, string]; related: string
+    ctaEyebrow: string; ctaTitle: [string, string]; ctaBody: string; cta: string
+    back: string; readArticle: string; onThisPage: string
+  }
 }

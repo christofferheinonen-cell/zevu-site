@@ -127,7 +127,7 @@ export default function RichTextEditor({ value, onChange }: { value: string; onC
   return (
     <div className="adm-rte">
       <Toolbar editor={editor} />
-      <EditorContent editor={editor} className="adm-rte-content single-content" />
+      <EditorContent editor={editor} className="adm-rte-content zv-prose" />
     </div>
   )
 }

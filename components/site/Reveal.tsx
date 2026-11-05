@@ -1,18 +1,22 @@
 'use client'
 import { useEffect } from 'react'
-import { usePathname } from 'next/navigation'
+
+const SELECTOR = '.zv [data-rv]:not(.is-in), .zv .zv-lines:not(.is-in)'
 
 /**
- * One observer for the whole page: anything with [data-rv] or .zv-lines
- * gets `.is-in` the first time it scrolls into view.
+ * One observer for the whole site: anything with [data-rv] or .zv-lines gets
+ * `.is-in` the first time it scrolls into view. A MutationObserver picks up
+ * content that streams in after hydration (async pages) or on client-side
+ * navigation, so nothing is left invisible.
  */
 export default function Reveal() {
-  const pathname = usePathname()
   useEffect(() => {
-    const els = document.querySelectorAll<HTMLElement>('.zv [data-rv]:not(.is-in), .zv .zv-lines:not(.is-in)')
     if (!('IntersectionObserver' in window)) {
-      els.forEach(el => el.classList.add('is-in'))
-      return
+      const showAll = () => document.querySelectorAll(SELECTOR).forEach(el => el.classList.add('is-in'))
+      showAll()
+      const mo = new MutationObserver(showAll)
+      mo.observe(document.body, { childList: true, subtree: true })
+      return () => mo.disconnect()
     }
     const io = new IntersectionObserver(
       entries => {
@@ -25,8 +29,29 @@ export default function Reveal() {
       },
       { rootMargin: '0px 0px -8% 0px', threshold: 0.01 }
     )
-    els.forEach(el => io.observe(el))
-    return () => io.disconnect()
-  }, [pathname])
+    const watched = new WeakSet<Element>()
+    const scan = () =>
+      document.querySelectorAll(SELECTOR).forEach(el => {
+        if (!watched.has(el)) {
+          watched.add(el)
+          io.observe(el)
+        }
+      })
+    scan()
+    let queued = false
+    const mo = new MutationObserver(() => {
+      if (queued) return
+      queued = true
+      requestAnimationFrame(() => {
+        queued = false
+        scan()
+      })
+    })
+    mo.observe(document.body, { childList: true, subtree: true })
+    return () => {
+      mo.disconnect()
+      io.disconnect()
+    }
+  }, [])
   return null
 }

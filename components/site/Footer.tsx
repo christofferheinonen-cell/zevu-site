@@ -30,6 +30,7 @@ export default function Footer({ c }: { c: SiteContent }) {
               <li><Link href={anchor('work')}>{c.nav.links.work}</Link></li>
               <li><Link href={anchor('prices')}>{c.nav.links.prices}</Link></li>
               <li><Link href={anchor('process')}>{c.footer.process}</Link></li>
+              <li><Link href={pathFor(c.locale, 'blog')}>{c.blog.nav}</Link></li>
               <li><Link href={pathFor(c.locale, 'contact')}>{c.nav.contact}</Link></li>
             </ul>
           </div>

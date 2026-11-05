@@ -4,7 +4,7 @@ import { loadGoogleFont } from '@/lib/og-font'
 export const OG_SIZE = { width: 1200, height: 630 }
 const size = OG_SIZE
 
-export async function renderOg({ line1, line2, tagline }: { line1: string; line2: string; tagline: string }) {
+export async function renderOg({ line1, line2, tagline, small = false }: { line1: string; line2: string; tagline: string; small?: boolean }) {
   const LINE1 = line1
   const LINE2 = line2
   const [regular, italic] = await Promise.all([
@@ -37,7 +37,7 @@ export async function renderOg({ line1, line2, tagline }: { line1: string; line2
           </div>
           <div style={{ display: 'flex' }}>{tagline}</div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', fontSize: 150, lineHeight: 0.92, letterSpacing: -6 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', fontSize: small ? 84 : 150, lineHeight: small ? 1 : 0.92, letterSpacing: small ? -3 : -6 }}>
           <div style={{ display: 'flex' }}>{LINE1}</div>
           <div style={{ display: 'flex', fontStyle: 'italic', color: '#d4452a' }}>{LINE2}</div>
         </div>

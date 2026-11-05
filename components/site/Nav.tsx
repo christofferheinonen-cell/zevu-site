@@ -21,6 +21,9 @@ export interface NavProps {
 function otherLanguagePath(pathname: string, locale: Locale, pairs: [string, string][]) {
   const pair = pairs.find(([en, es]) => (locale === 'en' ? en : es) === pathname)
   if (pair) return locale === 'en' ? pair[1] : pair[0]
+  // Article pages: fall back to the other language's blog until the page's
+  // hreflang link is read (see useEffect below).
+  if (pathname.startsWith(locale === 'en' ? '/blog' : '/es/blog')) return locale === 'en' ? '/es/blog' : '/blog'
   return locale === 'en' ? '/es' : '/'
 }
 
@@ -75,8 +78,21 @@ export default function Nav({ locale, homeHref, contactHref, links, sheetExtra, 
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
+  // Pages with a translation declare it via <link rel="alternate" hreflang>;
+  // prefer that so articles switch to their exact counterpart.
+  const [altFromHead, setAltFromHead] = useState<string | null>(null)
+  useEffect(() => {
+    const other = locale === 'en' ? 'es' : 'en'
+    const el = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${other}"]`)
+    try {
+      setAltFromHead(el ? new URL(el.href).pathname : null)
+    } catch {
+      setAltFromHead(null)
+    }
+  }, [pathname, locale])
+
   const cls = ['zv-nav', scrolled && !open && 'is-scrolled', hidden && !open && 'is-hidden'].filter(Boolean).join(' ')
-  const altHref = otherLanguagePath(pathname, locale, pairs)
+  const altHref = altFromHead ?? otherLanguagePath(pathname, locale, pairs)
 
   const lang = (
     <div className="zv-lang" role="group" aria-label={t.langLabel}>

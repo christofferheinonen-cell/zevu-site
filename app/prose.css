@@ -1,0 +1,50 @@
+/* Article typography. Shared by the public site (.zv) and the admin preview (.adm-root). */
+.zv-prose {
+  --p-ink: var(--ink, var(--text, #1a1612));
+  --p-sub: var(--ink-2, var(--sub, #554b40));
+  --p-line: var(--line-2, var(--border, #ddd3c3));
+  --p-accent: var(--tomato, var(--blue, #d4452a));
+  --p-serif: var(--serif, var(--font-fraunces), Georgia, serif);
+  color: var(--p-ink);
+  font-size: 19px;
+  line-height: 1.7;
+  max-width: 40rem;
+}
+.zv-prose > * + * { margin-top: 1.15em; }
+.zv-prose p { color: var(--p-ink); }
+.zv-prose > p:first-child { font-size: 1.18em; line-height: 1.55; color: var(--p-sub); }
+.zv-prose h2 {
+  font-family: var(--p-serif); font-weight: 360; font-size: clamp(30px, 3vw, 40px); line-height: 1.08; letter-spacing: -0.025em;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30; margin-top: 2.2em; scroll-margin-top: 110px;
+}
+.zv-prose h3 {
+  font-family: var(--p-serif); font-weight: 420; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em;
+  font-variation-settings: 'opsz' 72, 'SOFT' 40; margin-top: 1.8em;
+}
+.zv-prose h2 + *, .zv-prose h3 + * { margin-top: 0.6em; }
+.zv-prose a { color: inherit; text-decoration: underline; text-decoration-color: var(--p-accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; transition: color 0.2s; }
+.zv-prose a:hover { color: var(--p-accent); }
+.zv-prose strong { font-weight: 650; }
+.zv-prose ul, .zv-prose ol { padding-left: 0; list-style: none; display: grid; gap: 0.55em; }
+.zv-prose ul > li, .zv-prose ol > li { position: relative; padding-left: 1.9em; }
+.zv-prose ul > li::before { content: ''; position: absolute; left: 0.35em; top: 0.72em; width: 0.5em; height: 0.5em; border-radius: 50%; background: var(--p-accent); }
+.zv-prose ol { counter-reset: zvli; }
+.zv-prose ol > li { counter-increment: zvli; }
+.zv-prose ol > li::before {
+  content: counter(zvli, decimal-leading-zero); position: absolute; left: 0; top: 0.28em;
+  font-size: 0.68em; font-weight: 700; letter-spacing: 0.06em; color: var(--p-accent);
+}
+.zv-prose blockquote {
+  margin: 2em 0; padding: 0 0 0 1.2em; border-left: 3px solid var(--p-accent);
+  font-family: var(--p-serif); font-style: italic; font-size: 1.3em; line-height: 1.35; letter-spacing: -0.015em;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+}
+.zv-prose blockquote p { color: var(--p-ink); }
+.zv-prose img { max-width: 100%; height: auto; border-radius: 6px; margin: 2em 0; }
+.zv-prose hr { border: 0; border-top: 1px solid var(--p-line); margin: 2.5em 0; }
+.zv-prose table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+.zv-prose th, .zv-prose td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--p-line); vertical-align: top; }
+.zv-prose th { font-size: 0.78em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--p-sub); border-bottom-color: var(--p-ink); }
+.zv-prose .zv-callout { padding: 22px 24px; border-radius: 6px; background: rgba(212, 69, 42, 0.07); border: 1px solid rgba(212, 69, 42, 0.25); }
+.zv-prose .zv-callout > * + * { margin-top: 0.6em; }
+@media (max-width: 760px) { .zv-prose { font-size: 17.5px; } }

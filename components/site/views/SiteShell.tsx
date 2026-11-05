@@ -7,6 +7,7 @@ import { fraunces, interTight } from '@/lib/fonts'
 import { PATH_PAIRS, getContent, pathFor, type Locale } from '@/lib/content'
 import { SITE_URL, SITE_NAME, CONTACT_EMAIL, GA_MEASUREMENT_ID, absoluteUrl } from '@/lib/seo'
 import '@/app/site.css'
+import '@/app/prose.css'
 
 export default function SiteShell({ locale, children }: { locale: Locale; children: React.ReactNode }) {
   const c = getContent(locale)
@@ -47,7 +48,7 @@ export default function SiteShell({ locale, children }: { locale: Locale; childr
         locale={locale}
         homeHref={home}
         contactHref={pathFor(locale, 'contact')}
-        links={[...sectorLinks, { href: anchor('work'), label: c.nav.links.work }, { href: anchor('prices'), label: c.nav.links.prices }]}
+        links={[...sectorLinks, { href: anchor('work'), label: c.nav.links.work }, { href: anchor('prices'), label: c.nav.links.prices }, { href: pathFor(locale, 'blog'), label: c.blog.nav }]}
         sheetExtra={[{ href: pathFor(locale, 'other-businesses'), label: other.label }, { href: pathFor(locale, 'contact'), label: c.nav.contact }]}
         t={{ start: c.nav.start, menu: c.nav.menu, close: c.nav.close, clock: c.nav.clock, home: c.nav.home, langLabel: c.nav.langLabel }}
         pairs={PATH_PAIRS}
