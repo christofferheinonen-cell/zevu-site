@@ -4,9 +4,9 @@ import { fetchSearchConsoleData, GscRow } from '@/lib/search-console'
 export const dynamic = 'force-dynamic'
 
 const PERIODS = [
-  { label: '7 pv', days: 7 },
-  { label: '28 pv', days: 28 },
-  { label: '90 pv', days: 90 },
+  { label: '7 days', days: 7 },
+  { label: '28 days', days: 28 },
+  { label: '90 days', days: 90 },
 ]
 
 function pct(n: number) {
@@ -18,7 +18,7 @@ function pos(n: number) {
 }
 
 function num(n: number) {
-  return n.toLocaleString('fi-FI')
+  return n.toLocaleString('en-GB')
 }
 
 function shortUrl(url: string) {
@@ -43,7 +43,7 @@ export default async function SearchConsolePage({ searchParams }: Props) {
   try {
     data = await fetchSearchConsoleData(validDays)
   } catch (err) {
-    error = err instanceof Error ? err.message : 'Tuntematon virhe'
+    error = err instanceof Error ? err.message : 'Unknown error'
   }
 
   return (
@@ -73,11 +73,11 @@ export default async function SearchConsolePage({ searchParams }: Props) {
       {error ? (
         <div className="adm-panel">
           <p className="adm-empty" style={{ color: '#dc2626' }}>
-            Virhe ladattaessa dataa: {error}
+            Couldn’t load data: {error}
           </p>
           <p className="adm-empty" style={{ marginTop: '0.5rem', fontSize: '0.8rem' }}>
-            Varmista, että <code>GOOGLE_SERVICE_ACCOUNT_JSON</code> ja{' '}
-            <code>GOOGLE_SEARCH_CONSOLE_SITE_URL</code> ovat asetettu oikein.
+            Check that <code>GOOGLE_SERVICE_ACCOUNT_JSON</code> and{' '}
+            <code>GOOGLE_SEARCH_CONSOLE_SITE_URL</code> are set correctly.
           </p>
         </div>
       ) : data ? (
@@ -85,39 +85,39 @@ export default async function SearchConsolePage({ searchParams }: Props) {
           <div className="adm-cards">
             <div className="adm-card">
               <div className="adm-card-num">{num(data.summary.clicks)}</div>
-              <div className="adm-card-label">Klikkaukset</div>
+              <div className="adm-card-label">Clicks</div>
             </div>
             <div className="adm-card">
               <div className="adm-card-num">{num(data.summary.impressions)}</div>
-              <div className="adm-card-label">Näyttökerrat</div>
+              <div className="adm-card-label">Impressions</div>
             </div>
             <div className="adm-card">
               <div className="adm-card-num">{pct(data.summary.ctr)}</div>
-              <div className="adm-card-label">Klikkausprosentti</div>
+              <div className="adm-card-label">Click-through rate</div>
             </div>
             <div className="adm-card">
               <div className="adm-card-num">{pos(data.summary.position)}</div>
-              <div className="adm-card-label">Keskisijoitus</div>
+              <div className="adm-card-label">Avg. position</div>
             </div>
           </div>
 
           <div className="adm-grid2">
             <section className="adm-panel">
               <div className="adm-panel-head">
-                <h2>Top hakusanat</h2>
+                <h2>Top queries</h2>
               </div>
               {data.queries.length === 0 ? (
-                <p className="adm-empty">Ei dataa.</p>
+                <p className="adm-empty">No data.</p>
               ) : (
                 <div className="adm-tablewrap">
                   <table className="adm-table">
                     <thead>
                       <tr>
-                        <th>Hakusana</th>
-                        <th className="adm-num">Klik.</th>
-                        <th className="adm-num">Näyt.</th>
+                        <th>Query</th>
+                        <th className="adm-num">Clicks</th>
+                        <th className="adm-num">Impr.</th>
                         <th className="adm-num">CTR</th>
-                        <th className="adm-num">Sij.</th>
+                        <th className="adm-num">Pos.</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -138,20 +138,20 @@ export default async function SearchConsolePage({ searchParams }: Props) {
 
             <section className="adm-panel">
               <div className="adm-panel-head">
-                <h2>Top sivut</h2>
+                <h2>Top pages</h2>
               </div>
               {data.pages.length === 0 ? (
-                <p className="adm-empty">Ei dataa.</p>
+                <p className="adm-empty">No data.</p>
               ) : (
                 <div className="adm-tablewrap">
                   <table className="adm-table">
                     <thead>
                       <tr>
-                        <th>Sivu</th>
-                        <th className="adm-num">Klik.</th>
-                        <th className="adm-num">Näyt.</th>
+                        <th>Page</th>
+                        <th className="adm-num">Clicks</th>
+                        <th className="adm-num">Impr.</th>
                         <th className="adm-num">CTR</th>
-                        <th className="adm-num">Sij.</th>
+                        <th className="adm-num">Pos.</th>
                       </tr>
                     </thead>
                     <tbody>

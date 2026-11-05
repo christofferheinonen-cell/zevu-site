@@ -490,3 +490,11 @@ body:has(.adm-root)::before{display:none;}
   .adm-root .adm-cards .adm-card:nth-child(2n){border-right:0;}
   .adm-root .adm-login-card{padding:32px 24px;}
 }
+
+/* Article image placeholders (admin editor swatches), in the site palette */
+.grad-1{background:linear-gradient(135deg,#d4452a,#e8a93b);}
+.grad-2{background:linear-gradient(135deg,#283222,#4f6142);}
+.grad-3{background:linear-gradient(135deg,#e8a93b,#f2d79b);}
+.grad-4{background:linear-gradient(135deg,#1a1612,#554b40);}
+.grad-5{background:linear-gradient(135deg,#2f6f8f,#14284a);}
+.grad-6{background:linear-gradient(135deg,#b8381f,#4a0f1e);}

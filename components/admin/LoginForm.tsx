@@ -36,11 +36,11 @@ export default function LoginForm({ next }: { next?: string }) {
           <span className="adm-brand-logo">zevu<i>.</i></span>
           <span className="adm-brand-tag">Admin</span>
         </div>
-        <h1>Kirjaudu sisään</h1>
-        <p className="adm-login-sub">Hallintapaneeli on suojattu. Kirjaudu jatkaaksesi.</p>
+        <h1>Log in</h1>
+        <p className="adm-login-sub">The admin panel is protected. Log in to continue.</p>
 
         <label className="adm-field">
-          <span>Sähköposti</span>
+          <span>Email</span>
           <input
             type="email"
             autoComplete="username"
@@ -52,7 +52,7 @@ export default function LoginForm({ next }: { next?: string }) {
         </label>
 
         <label className="adm-field">
-          <span>Salasana</span>
+          <span>Password</span>
           <input
             type="password"
             autoComplete="current-password"
@@ -62,10 +62,10 @@ export default function LoginForm({ next }: { next?: string }) {
           />
         </label>
 
-        {error && <p className="adm-login-err">Virheellinen sähköposti tai salasana.</p>}
+        {error && <p className="adm-login-err">Incorrect email or password.</p>}
 
         <button type="submit" className="adm-btn adm-btn--primary adm-btn--block" disabled={loading}>
-          {loading ? 'Kirjaudutaan…' : 'Kirjaudu sisään'}
+          {loading ? 'Logging in…' : 'Log in'}
         </button>
       </form>
     </div>

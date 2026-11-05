@@ -4,9 +4,9 @@ import { getPublishDate, isPublished } from './posts'
 export type ArticleStatus = 'published' | 'scheduled' | 'hidden'
 
 export const STATUS_LABEL: Record<ArticleStatus, string> = {
-  published: 'Julkaistu',
-  scheduled: 'Ajastettu',
-  hidden: 'Piilotettu',
+  published: 'Published',
+  scheduled: 'Scheduled',
+  hidden: 'Hidden',
 }
 
 export const STATUS_COLOR: Record<ArticleStatus, string> = {
@@ -26,12 +26,13 @@ export function wordCount(html: string): number {
   return text ? text.split(' ').length : 0
 }
 
-export function fiDateTime(d: Date): string {
-  return d.toLocaleString('fi-FI', { timeZone: 'Europe/Helsinki', dateStyle: 'medium', timeStyle: 'short' })
+/** Display dates in English; times stay on Finland time because blog publish dates are scheduled in it. */
+export function adminDateTime(d: Date): string {
+  return d.toLocaleString('en-GB', { timeZone: 'Europe/Helsinki', dateStyle: 'medium', timeStyle: 'short' })
 }
 
-export function fiDate(d: Date): string {
-  return d.toLocaleDateString('fi-FI', { timeZone: 'Europe/Helsinki', dateStyle: 'medium' })
+export function adminDate(d: Date): string {
+  return d.toLocaleDateString('en-GB', { timeZone: 'Europe/Helsinki', dateStyle: 'medium' })
 }
 
 export { getPublishDate }

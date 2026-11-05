@@ -1,5 +1,5 @@
 import { getLeads } from '@/lib/leads'
-import { fiDateTime } from '@/lib/admin-format'
+import { adminDateTime } from '@/lib/admin-format'
 
 export const dynamic = 'force-dynamic'
 
@@ -12,45 +12,39 @@ export default async function LeadsPage() {
     <>
       <header className="adm-head">
         <div>
-          <h1>Yhteydenotot</h1>
-          <p className="adm-sub">{leads.length} yhteydenottoa lomakkeen kautta</p>
+          <h1>Enquiries</h1>
+          <p className="adm-sub">{leads.length} enquiries from the contact form</p>
         </div>
       </header>
 
       {leads.length === 0 ? (
         <div className="adm-panel">
-          <p className="adm-empty">Ei vielä yhteydenottoja. Yhteydenottolomakkeen vastaukset näkyvät täällä.</p>
+          <p className="adm-empty">No enquiries yet. Contact form submissions will show up here.</p>
         </div>
       ) : (
         <div className="adm-tablewrap">
           <table className="adm-table leads-table">
             <thead>
               <tr>
-                <th>Vastaanotettu</th>
-                <th>Nimi</th>
-                <th>Sähköposti</th>
-                <th>Puhelin</th>
-                <th>Yritys</th>
-                <th>Toimiala</th>
-                <th>Mainostaa?</th>
-                <th>Budjetti</th>
-                <th className="adm-num">Tyytyväisyys</th>
-                <th>Viesti</th>
-                <th>Lähde</th>
+                <th>Received</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Business</th>
+                <th>Type</th>
+                <th>Message</th>
+                <th>Source</th>
               </tr>
             </thead>
             <tbody>
               {leads.map(l => (
                 <tr key={l.id}>
-                  <td className="adm-nowrap">{fiDateTime(new Date(l.createdAt))}</td>
+                  <td className="adm-nowrap">{adminDateTime(new Date(l.createdAt))}</td>
                   <td>{l.name || '—'}</td>
                   <td><a href={`mailto:${l.email}`} className="adm-link">{l.email}</a></td>
                   <td className="adm-nowrap">{l.phone || '—'}</td>
                   <td>{l.company || '—'}</td>
                   <td>{l.industry || '—'}</td>
-                  <td>{l.runsAds === 'yes' ? 'Kyllä' : l.runsAds === 'no' ? 'Ei' : '—'}</td>
-                  <td className="adm-nowrap">{l.budget || '—'}</td>
-                  <td className="adm-num">{l.satisfaction ?? '—'}</td>
                   <td style={{ minWidth: 240, whiteSpace: 'pre-wrap' }}>{l.message || '—'}</td>
                   <td className="adm-nowrap">{l.source || '—'}</td>
                 </tr>

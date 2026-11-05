@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getAllPosts, getPublishDate } from '@/lib/posts'
-import { articleStatus, fiDateTime, wordCount, STATUS_LABEL, STATUS_COLOR } from '@/lib/admin-format'
+import { articleStatus, adminDateTime, wordCount, STATUS_LABEL, STATUS_COLOR } from '@/lib/admin-format'
 import { getOverrides } from '@/lib/articles'
 import ArticleCalendar, { type CalArticle } from '@/components/admin/ArticleCalendar'
 
@@ -26,7 +26,7 @@ export default async function ArticlesPage({
       words: wordCount(p.content),
       read: p.read,
       status: articleStatus(p, now),
-      publishAt: fiDateTime(getPublishDate(p)),
+      publishAt: adminDateTime(getPublishDate(p)),
       sort: getPublishDate(p).getTime(),
       edited: Boolean(overrides[p.slug]),
     }))
@@ -34,7 +34,7 @@ export default async function ArticlesPage({
 
   const calArticles: CalArticle[] = posts.map(p => {
     const pd = getPublishDate(p)
-    // Use Helsinki date for calendar placement so it matches Finnish dates
+    // Place articles by their Finland-time date, matching how publish dates are stored
     const isoDate = pd.toLocaleDateString('sv-SE', { timeZone: 'Europe/Helsinki' }) // YYYY-MM-DD
     return {
       slug: p.slug,
@@ -54,8 +54,8 @@ export default async function ArticlesPage({
     <>
       <header className="adm-head">
         <div>
-          <h1>Artikkelit</h1>
-          <p className="adm-sub">{rows.length} artikkelia · klikkaa muokataksesi ja esikatsellaksesi</p>
+          <h1>Articles</h1>
+          <p className="adm-sub">{rows.length} articles · click one to edit and preview</p>
         </div>
         <div className="adm-head-actions">
           <div className="cal-view-toggle">
@@ -63,13 +63,13 @@ export default async function ArticlesPage({
               href="/admin/articles"
               className={`cal-view-btn${!isCalendar ? ' cal-view-btn--active' : ''}`}
             >
-              ☰ Lista
+              ☰ List
             </Link>
             <Link
               href="/admin/articles?view=calendar"
               className={`cal-view-btn${isCalendar ? ' cal-view-btn--active' : ''}`}
             >
-              📅 Kalenteri
+              📅 Calendar
             </Link>
           </div>
         </div>
@@ -82,12 +82,12 @@ export default async function ArticlesPage({
           <table className="adm-table articles-table">
             <thead>
               <tr>
-                <th>Tila</th>
-                <th>Julkaisu</th>
-                <th>Otsikko</th>
-                <th>Kategoria</th>
-                <th className="adm-num">Sanat</th>
-                <th className="adm-num">Lukuaika</th>
+                <th>Status</th>
+                <th>Publish date</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th className="adm-num">Words</th>
+                <th className="adm-num">Reading time</th>
                 <th></th>
               </tr>
             </thead>
@@ -102,13 +102,13 @@ export default async function ArticlesPage({
                   <td className="adm-nowrap">{r.publishAt}</td>
                   <td>
                     <Link href={`/admin/articles/${r.slug}`} className="adm-rowtitle">{r.title}</Link>
-                    {r.edited && <span className="adm-edited">muokattu</span>}
+                    {r.edited && <span className="adm-edited">edited</span>}
                   </td>
                   <td>{r.cats}</td>
                   <td className="adm-num">{r.words}</td>
                   <td className="adm-num">{r.read} min</td>
                   <td className="adm-nowrap">
-                    <Link href={`/admin/articles/${r.slug}`} className="adm-link">Muokkaa →</Link>
+                    <Link href={`/admin/articles/${r.slug}`} className="adm-link">Edit →</Link>
                   </td>
                 </tr>
               ))}

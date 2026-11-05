@@ -40,16 +40,16 @@ const FontSize = Extension.create({
 })
 
 const FONT_SIZES = [
-  { label: 'Pieni', value: '0.875rem' },
-  { label: 'Normaali', value: '' },
-  { label: 'Suuri', value: '1.25rem' },
-  { label: 'Erittäin suuri', value: '1.5rem' },
+  { label: 'Small', value: '0.875rem' },
+  { label: 'Normal', value: '' },
+  { label: 'Large', value: '1.25rem' },
+  { label: 'Extra large', value: '1.5rem' },
 ]
 
 function Toolbar({ editor }: { editor: Editor }) {
   function addLink() {
     const prev = editor.getAttributes('link').href as string | undefined
-    const url = window.prompt('Linkin osoite (URL):', prev ?? 'https://')
+    const url = window.prompt('Link address (URL):', prev ?? 'https://')
     if (url === null) return
     if (!url.trim()) {
       editor.chain().focus().extendMarkRange('link').unsetLink().run()
@@ -59,7 +59,7 @@ function Toolbar({ editor }: { editor: Editor }) {
   }
 
   function addImage() {
-    const url = window.prompt('Kuvan osoite (esim. /blog/kuva.png tai https://...):')
+    const url = window.prompt('Image address (e.g. /blog/image.png or https://...):')
     if (!url || !url.trim()) return
     editor.chain().focus().setImage({ src: url.trim() }).run()
   }
@@ -68,13 +68,13 @@ function Toolbar({ editor }: { editor: Editor }) {
 
   return (
     <div className="adm-rte-toolbar">
-      <button type="button" className={btn(editor.isActive('bold'))} title="Lihavoitu" onClick={() => editor.chain().focus().toggleBold().run()}><strong>B</strong></button>
-      <button type="button" className={btn(editor.isActive('italic'))} title="Kursivoitu" onClick={() => editor.chain().focus().toggleItalic().run()}><em>I</em></button>
-      <button type="button" className={btn(editor.isActive('underline'))} title="Alleviivattu" onClick={() => editor.chain().focus().toggleUnderline().run()}><u>U</u></button>
+      <button type="button" className={btn(editor.isActive('bold'))} title="Bold" onClick={() => editor.chain().focus().toggleBold().run()}><strong>B</strong></button>
+      <button type="button" className={btn(editor.isActive('italic'))} title="Italic" onClick={() => editor.chain().focus().toggleItalic().run()}><em>I</em></button>
+      <button type="button" className={btn(editor.isActive('underline'))} title="Underline" onClick={() => editor.chain().focus().toggleUnderline().run()}><u>U</u></button>
       <span className="adm-rte-sep" />
       <select
         className="adm-rte-select"
-        title="Tekstin koko"
+        title="Text size"
         value={(editor.getAttributes('textStyle').fontSize as string) ?? ''}
         onChange={e => {
           const v = e.target.value
@@ -85,19 +85,19 @@ function Toolbar({ editor }: { editor: Editor }) {
         {FONT_SIZES.map(s => <option key={s.label} value={s.value}>{s.label}</option>)}
       </select>
       <span className="adm-rte-sep" />
-      <button type="button" className={btn(editor.isActive('paragraph'))} title="Leipäteksti" onClick={() => editor.chain().focus().setParagraph().run()}>P</button>
-      <button type="button" className={btn(editor.isActive('heading', { level: 2 }))} title="Väliotsikko (H2)" onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}>H2</button>
-      <button type="button" className={btn(editor.isActive('heading', { level: 3 }))} title="Alaotsikko (H3)" onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}>H3</button>
+      <button type="button" className={btn(editor.isActive('paragraph'))} title="Paragraph" onClick={() => editor.chain().focus().setParagraph().run()}>P</button>
+      <button type="button" className={btn(editor.isActive('heading', { level: 2 }))} title="Heading (H2)" onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}>H2</button>
+      <button type="button" className={btn(editor.isActive('heading', { level: 3 }))} title="Subheading (H3)" onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}>H3</button>
       <span className="adm-rte-sep" />
-      <button type="button" className={btn(editor.isActive('bulletList'))} title="Luettelo" onClick={() => editor.chain().focus().toggleBulletList().run()}>• Lista</button>
-      <button type="button" className={btn(editor.isActive('orderedList'))} title="Numeroitu luettelo" onClick={() => editor.chain().focus().toggleOrderedList().run()}>1. Lista</button>
-      <button type="button" className={btn(editor.isActive('blockquote'))} title="Lainaus" onClick={() => editor.chain().focus().toggleBlockquote().run()}>” Lainaus</button>
+      <button type="button" className={btn(editor.isActive('bulletList'))} title="Bullet list" onClick={() => editor.chain().focus().toggleBulletList().run()}>• List</button>
+      <button type="button" className={btn(editor.isActive('orderedList'))} title="Numbered list" onClick={() => editor.chain().focus().toggleOrderedList().run()}>1. List</button>
+      <button type="button" className={btn(editor.isActive('blockquote'))} title="Quote" onClick={() => editor.chain().focus().toggleBlockquote().run()}>” Quote</button>
       <span className="adm-rte-sep" />
-      <button type="button" className={btn(editor.isActive('link'))} title="Linkki" onClick={addLink}>🔗 Linkki</button>
-      <button type="button" className="adm-rte-btn" title="Lisää kuva" onClick={addImage}>🖼 Kuva</button>
+      <button type="button" className={btn(editor.isActive('link'))} title="Link" onClick={addLink}>🔗 Link</button>
+      <button type="button" className="adm-rte-btn" title="Insert image" onClick={addImage}>🖼 Image</button>
       <span className="adm-rte-sep" />
-      <button type="button" className="adm-rte-btn" title="Kumoa" onClick={() => editor.chain().focus().undo().run()}>↶</button>
-      <button type="button" className="adm-rte-btn" title="Tee uudelleen" onClick={() => editor.chain().focus().redo().run()}>↷</button>
+      <button type="button" className="adm-rte-btn" title="Undo" onClick={() => editor.chain().focus().undo().run()}>↶</button>
+      <button type="button" className="adm-rte-btn" title="Redo" onClick={() => editor.chain().focus().redo().run()}>↷</button>
     </div>
   )
 }
@@ -117,7 +117,7 @@ export default function RichTextEditor({ value, onChange }: { value: string; onC
     onUpdate: ({ editor }) => onChange(editor.getHTML()),
   })
 
-  // Keep the editor in sync if the form is reset/reloaded from outside (e.g. after "Palauta alkuperäinen").
+  // Keep the editor in sync if the form is reset/reloaded from outside (e.g. after "Restore original").
   useEffect(() => {
     if (editor && value !== editor.getHTML()) editor.commands.setContent(value)
   }, [value, editor])

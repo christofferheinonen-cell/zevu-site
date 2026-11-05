@@ -2,7 +2,7 @@ import LoginForm from '@/components/admin/LoginForm'
 
 export const dynamic = 'force-dynamic'
 export const metadata = {
-  title: 'Kirjaudu — Zevu Admin',
+  title: 'Log in — Zevu Admin',
   robots: { index: false, follow: false },
 }
 

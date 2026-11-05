@@ -43,7 +43,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ slug: st
     title,
     excerpt: str(body.excerpt, 600).trim(),
     content: str(body.content, 200000),
-    cats: cats.length ? cats : ['Meta-mainonta'],
+    cats: cats.length ? cats : ['General'],
     read: Number.isFinite(readNum) && readNum > 0 ? Math.round(readNum) : 1,
     date: str(body.date, 20).trim(),
     publishedTime: str(body.publishedTime, 40).trim() || undefined,

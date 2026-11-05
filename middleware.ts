@@ -16,7 +16,7 @@ export async function middleware(req: NextRequest) {
   const { user, pass } = adminCreds()
   if (!user || !pass) {
     return new NextResponse(
-      'Admin-tunnukset puuttuvat. Aseta ADMIN_USER ja ADMIN_PASSWORD ympäristömuuttujat.',
+      'Admin credentials are missing. Set the ADMIN_USER and ADMIN_PASSWORD environment variables.',
       { status: 500 }
     )
   }

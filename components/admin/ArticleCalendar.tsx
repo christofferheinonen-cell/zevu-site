@@ -9,10 +9,10 @@ export type CalArticle = {
   isoDate: string // YYYY-MM-DD
 }
 
-const WEEKDAYS = ['Ma', 'Ti', 'Ke', 'To', 'Pe', 'La', 'Su']
+const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 const MONTHS = [
-  'Tammikuu', 'Helmikuu', 'Maaliskuu', 'Huhtikuu', 'Toukokuu', 'Kesäkuu',
-  'Heinäkuu', 'Elokuu', 'Syyskuu', 'Lokakuu', 'Marraskuu', 'Joulukuu',
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
 ]
 
 function isoToFi(iso: string): string {
@@ -131,9 +131,9 @@ export default function ArticleCalendar({ articles: initial }: { articles: CalAr
               return acc
             }, {})
             const badgeLabel = counts.published
-              ? `Julkaistu: ${counts.published}`
+              ? `Published: ${counts.published}`
               : counts.scheduled
-              ? `Ajastettu: ${counts.scheduled}`
+              ? `Scheduled: ${counts.scheduled}`
               : null
 
             return (
@@ -206,13 +206,13 @@ export default function ArticleCalendar({ articles: initial }: { articles: CalAr
         onDrop={handleDropOnDrafts}
       >
         <div className="cal-drafts-head">
-          <span className="cal-drafts-title">Luonnokset</span>
+          <span className="cal-drafts-title">Drafts</span>
           {drafts.length > 0 && <span className="cal-drafts-count">{drafts.length}</span>}
         </div>
-        <p className="cal-drafts-hint">Vedä kalenteriin aikatauluttaaksesi</p>
+        <p className="cal-drafts-hint">Drag onto the calendar to schedule</p>
 
         {drafts.length === 0
-          ? <p className="cal-drafts-empty">Ei luonnoksia</p>
+          ? <p className="cal-drafts-empty">No drafts</p>
           : drafts.map(a => (
             <div
               key={a.slug}
@@ -234,7 +234,7 @@ export default function ArticleCalendar({ articles: initial }: { articles: CalAr
         }
 
         <div className="cal-drafts-foot">
-          Vedä artikkeli tähän palauttaaksesi sen luonnokseksi
+          Drag an article here to turn it back into a draft
         </div>
       </div>
     </div>
