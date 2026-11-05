@@ -1,16 +1,18 @@
-import { INCLUDED, PROCESS } from '@/lib/site-content'
+import type { SiteContent } from '@/lib/content'
 import Lines from './Lines'
 
-export default function Process() {
+export default function Process({ c }: { c: SiteContent }) {
+  const PROCESS = c.process
+  const INCLUDED = c.included
   return (
     <section className="zv-section" id="process" aria-labelledby="process-h">
       <div className="zv-wrap">
         <div className="zv-section-head">
           <div>
             <span className="zv-eyebrow">{PROCESS.eyebrow}</span>
-            <Lines id="process-h" className="zv-h2" lines={['Four courses.', <em key="e">No homework.</em>]} />
+            <Lines id="process-h" className="zv-h2" lines={[PROCESS.title[0], <em key="e">{PROCESS.title[1]}</em>]} />
           </div>
-          <p className="zv-lede" data-rv="">You run a business. We run the project, from first coffee to launch, with one person you can always reach.</p>
+          <p className="zv-lede" data-rv="">{PROCESS.lede}</p>
         </div>
         <ol className="zv-courses" style={{ listStyle: 'none' }}>
           {PROCESS.steps.map((s, i) => (

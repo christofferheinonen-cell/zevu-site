@@ -1,10 +1,10 @@
-import SiteLayout from './(site)/layout'
-import NotFound from './(site)/not-found'
+import SiteShell from '@/components/site/views/SiteShell'
+import NotFoundView from '@/components/site/views/NotFoundView'
 
 export default function RootNotFound() {
   return (
-    <SiteLayout>
-      <NotFound />
-    </SiteLayout>
+    <SiteShell locale="en">
+      <NotFoundView locale="en" />
+    </SiteShell>
   )
 }

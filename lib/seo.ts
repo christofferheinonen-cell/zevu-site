@@ -31,12 +31,6 @@ export function absoluteUrl(path = '/'): string {
   return clean === '/' ? SITE_URL : `${SITE_URL}${clean}`
 }
 
-/** Parse a Finnish "D.M.YYYY" date string into a Date (UTC). */
-export function parseFiDate(input: string): Date {
-  const [day, month, year] = input.split('.').map(Number)
-  return new Date(Date.UTC(year ?? 1970, (month ?? 1) - 1, day ?? 1))
-}
-
 interface PageMetaInput {
   title?: string
   description?: string
@@ -46,6 +40,10 @@ interface PageMetaInput {
   images?: string[]
   type?: 'website' | 'article'
   publishedTime?: string
+  /** Open Graph locale, e.g. es_ES. Defaults to the English locale. */
+  locale?: string
+  /** Equivalent pages in other languages, for hreflang. */
+  languages?: { en: string; es: string }
 }
 
 /**
@@ -60,6 +58,8 @@ export function buildMetadata({
   images,
   type = 'website',
   publishedTime,
+  locale = LOCALE,
+  languages,
 }: PageMetaInput): Metadata {
   const url = absoluteUrl(path)
   const desc = description ?? DEFAULT_DESCRIPTION
@@ -70,14 +70,19 @@ export function buildMetadata({
   return {
     title,
     description: desc,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      ...(languages
+        ? { languages: { en: absoluteUrl(languages.en), es: absoluteUrl(languages.es), 'x-default': absoluteUrl(languages.en) } }
+        : {}),
+    },
     openGraph: {
       type,
       url,
       siteName: SITE_NAME,
       title: title ?? DEFAULT_TITLE,
       description: desc,
-      locale: LOCALE,
+      locale,
       ...(resolvedImages ? { images: resolvedImages } : {}),
       ...(publishedTime ? { publishedTime } : {}),
     },

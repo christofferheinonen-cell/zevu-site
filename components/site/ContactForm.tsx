@@ -1,29 +1,29 @@
 'use client'
 import { useState } from 'react'
-import { CONTACT } from '@/lib/site-content'
+import type { SiteContent } from '@/lib/content'
 import { Arrow } from './Icons'
 
 type Status = 'idle' | 'sending' | 'done' | 'error'
 
-export default function ContactForm({ defaultType, pkg }: { defaultType?: string; pkg?: string }) {
+export default function ContactForm({ t, defaultType, pkg }: { t: SiteContent['contact']; defaultType?: string; pkg?: string }) {
+  const f = t.form
   const [status, setStatus] = useState<Status>('idle')
   const [error, setError] = useState('')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
-    if (fd.get('website_hp')) return // bot trap
     const name = String(fd.get('name') ?? '').trim()
     const email = String(fd.get('email') ?? '').trim()
     if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      setError('Please add your name and a valid email so we can reply.')
+      setError(f.errFields)
       setStatus('error')
       return
     }
     setStatus('sending')
     setError('')
     const site = String(fd.get('site') ?? '').trim()
-    const message = [pkg ? `Package: ${pkg}` : '', site ? `Current site: ${site}` : '', String(fd.get('message') ?? '').trim()]
+    const message = [pkg ? `${f.pkgPrefix}: ${pkg}` : '', site ? `${f.sitePrefix}: ${site}` : '', String(fd.get('message') ?? '').trim()]
       .filter(Boolean)
       .join('\n')
     try {
@@ -38,12 +38,14 @@ export default function ContactForm({ defaultType, pkg }: { defaultType?: string
           company: fd.get('company'),
           industry: fd.get('type'),
           message,
+          website_hp: fd.get('website_hp'),
         }),
       })
+      if (res.status === 429) throw new Error('rate')
       if (!res.ok) throw new Error(String(res.status))
       setStatus('done')
-    } catch {
-      setError('Something went wrong on our side. Please try again, or email us directly.')
+    } catch (err) {
+      setError(err instanceof Error && err.message === 'rate' ? f.errRate : f.errServer)
       setStatus('error')
     }
   }
@@ -52,9 +54,9 @@ export default function ContactForm({ defaultType, pkg }: { defaultType?: string
     return (
       <div className="zv-form" role="status">
         <div className="zv-form-done">
-          <span className="zv-eyebrow">Order received</span>
-          <h3 className="zv-h3">¡Gracias! We’ll be in touch shortly.</h3>
-          <p>Expect a reply within one working day, usually much sooner. In the meantime, have a coffee on us (figuratively, for now).</p>
+          <span className="zv-eyebrow">{f.doneEyebrow}</span>
+          <h3 className="zv-h3">{f.doneTitle}</h3>
+          <p>{f.doneBody}</p>
         </div>
       </div>
     )
@@ -63,29 +65,29 @@ export default function ContactForm({ defaultType, pkg }: { defaultType?: string
   return (
     <form className="zv-form" onSubmit={onSubmit} noValidate>
       <fieldset className="zv-chips">
-        <legend>What kind of place?</legend>
-        {CONTACT.types.map(t => (
-          <label key={t} className="zv-chip">
-            <input type="radio" name="type" value={t} defaultChecked={t === (defaultType ?? CONTACT.types[0])} />
-            <span>{t}</span>
+        <legend>{f.kind}</legend>
+        {t.types.map(x => (
+          <label key={x.value} className="zv-chip">
+            <input type="radio" name="type" value={x.value} defaultChecked={x.value === (defaultType ?? t.types[0].value)} />
+            <span>{x.label}</span>
           </label>
         ))}
       </fieldset>
       <div className="zv-form-row">
-        <label className="zv-field"><span>Your name</span><input name="name" autoComplete="name" required placeholder="María García" /></label>
-        <label className="zv-field"><span>Business name</span><input name="company" autoComplete="organization" placeholder="Bar La Esquina" /></label>
+        <label className="zv-field"><span>{f.name}</span><input name="name" autoComplete="name" required placeholder={f.namePh} /></label>
+        <label className="zv-field"><span>{f.company}</span><input name="company" autoComplete="organization" placeholder={f.companyPh} /></label>
       </div>
       <div className="zv-form-row">
-        <label className="zv-field"><span>Email</span><input name="email" type="email" autoComplete="email" required placeholder="hola@example.com" /></label>
-        <label className="zv-field"><span>Phone / WhatsApp</span><input name="phone" type="tel" autoComplete="tel" placeholder="+34 …" /></label>
+        <label className="zv-field"><span>{f.email}</span><input name="email" type="email" autoComplete="email" required placeholder={f.emailPh} /></label>
+        <label className="zv-field"><span>{f.phone}</span><input name="phone" type="tel" autoComplete="tel" placeholder="+34 …" /></label>
       </div>
-      <label className="zv-field"><span>Current website or Instagram</span><input name="site" placeholder="Optional" /></label>
-      <label className="zv-field"><span>Anything we should know?</span><textarea name="message" rows={3} placeholder="Opening soon, need bookings, menu changes every week…" /></label>
-      <label className="zv-hp" aria-hidden="true">Leave empty<input name="website_hp" tabIndex={-1} autoComplete="off" /></label>
+      <label className="zv-field"><span>{f.site}</span><input name="site" placeholder={f.sitePh} /></label>
+      <label className="zv-field"><span>{f.message}</span><textarea name="message" rows={3} placeholder={f.messagePh} /></label>
+      <label className="zv-hp" aria-hidden="true">{f.honeypot}<input name="website_hp" tabIndex={-1} autoComplete="off" /></label>
       <div className="zv-form-foot">
-        <small>We reply within one working day. No spam, no newsletter, ever.</small>
+        <small>{f.foot}</small>
         <button type="submit" className="zv-btn" disabled={status === 'sending'}>
-          {status === 'sending' ? 'Sending…' : 'Send enquiry'}
+          {status === 'sending' ? f.sending : f.send}
           <span className="zv-btn-ico"><Arrow /></span>
         </button>
       </div>

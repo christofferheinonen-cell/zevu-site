@@ -1,8 +1,9 @@
-import { MENU } from '@/lib/site-content'
+import { pathFor, type SiteContent } from '@/lib/content'
 import Lines from './Lines'
 import Button from './Button'
 
-export default function SetMenus() {
+export default function SetMenus({ c }: { c: SiteContent }) {
+  const MENU = c.menu
   return (
     <section className="zv-section zv-menu" id="prices" aria-labelledby="prices-h">
       <div className="zv-wrap">
@@ -16,7 +17,7 @@ export default function SetMenus() {
         <div className="zv-menu-card" data-rv="">
           {MENU.items.map(item => (
             <div key={item.name} className={`zv-dish${item.featured ? ' zv-dish--featured' : ''}`}>
-              {item.featured ? <span className="zv-chef">Chef’s<br />pick</span> : null}
+              {item.featured ? <span className="zv-chef">{MENU.chef[0]}<br />{MENU.chef[1]}</span> : null}
               <div className="zv-dish-top">
                 <span className="zv-dish-name">{item.name}</span>
                 <span className="zv-dish-dots" aria-hidden="true" />
@@ -24,8 +25,8 @@ export default function SetMenus() {
               </div>
               <div className="zv-dish-sub">{item.sub}</div>
               <ul>{item.lines.map(l => <li key={l}>{l}</li>)}</ul>
-              <Button href={`/contact?package=${encodeURIComponent(item.name)}`} variant={item.featured ? 'light' : undefined} size="sm">
-                Order this
+              <Button href={`${pathFor(c.locale, 'contact')}?package=${encodeURIComponent(item.name)}`} variant={item.featured ? 'light' : undefined} size="sm">
+                {MENU.order}
               </Button>
             </div>
           ))}

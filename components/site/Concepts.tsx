@@ -1,5 +1,4 @@
-import type { ConceptKey } from '@/lib/site-content'
-import { CONCEPTS } from '@/lib/site-content'
+import type { ConceptKey, SiteContent } from '@/lib/content'
 import Tilt from './Tilt'
 import { SpainTime } from './Clock'
 
@@ -179,46 +178,37 @@ function Mies() {
 
 const RENDER: Record<ConceptKey, () => React.ReactElement> = { oleaje: Oleaje, nocturno: Nocturno, almendro: Almendro, raiz: Raiz, olaola: OlaOla, mies: Mies }
 
-export function ConceptFrame({ k }: { k: ConceptKey }) {
-  const c = CONCEPTS.find(x => x.key === k)!
+export function ConceptFrame({ k, c }: { k: ConceptKey; c: SiteContent }) {
+  const concept = c.concepts.find(x => x.key === k)!
   const Body = RENDER[k]
   return (
     <Tilt className="zv-frame">
       <div className="zv-frame-bar" aria-hidden="true">
         <span className="zv-frame-dots"><i /><i /><i /></span>
-        <span className="zv-frame-url">{c.name.toLowerCase()} · concept</span>
+        <span className="zv-frame-url">{concept.name.toLowerCase()} · {c.workSection.conceptLabel}</span>
       </div>
-      <div className="zv-frame-body" role="img" aria-label={`Concept website for ${c.name}, a ${c.kind.toLowerCase()}`}>
+      <div className="zv-frame-body" role="img" aria-label={c.workSection.frameAria(concept.name, concept.kind)}>
         <Body />
       </div>
     </Tilt>
   )
 }
 
-const TAGS: Record<ConceptKey, string[]> = {
-  oleaje: ['Bookings', 'Daily menu', 'EN / ES'],
-  nocturno: ['Events calendar', 'Happy hour', 'Group bookings'],
-  almendro: ['Live clock', 'Daily bakes', 'Order ahead'],
-  raiz: ['Wine list you edit', 'Events', 'EN / ES'],
-  olaola: ['Sunbed bookings', 'Live conditions', 'Menu'],
-  mies: ['Live stock', 'Pre-orders', 'Opening hours'],
-}
-
-export default function Concepts() {
+export default function Concepts({ c }: { c: SiteContent }) {
   return (
     <div className="zv-concepts">
-      {CONCEPTS.map((c, i) => (
-        <article key={c.key} className={`zv-concept zv-concept--${i}`}>
-          <div data-rv=""><ConceptFrame k={c.key} /></div>
+      {c.concepts.map((x, i) => (
+        <article key={x.key} className={`zv-concept zv-concept--${i}`}>
+          <div data-rv=""><ConceptFrame k={x.key} c={c} /></div>
           <div className="zv-concept-meta" data-rv="" style={{ ['--d' as string]: 120 }}>
             <div className="zv-concept-line">
               <span className="zv-label">0{i + 1}</span>
-              <h3 className="zv-h3">{c.name}</h3>
-              <span className="zv-concept-kind">{c.kind}</span>
+              <h3 className="zv-h3">{x.name}</h3>
+              <span className="zv-concept-kind">{x.kind}</span>
             </div>
-            <p>{c.note}</p>
+            <p>{x.note}</p>
             <div className="zv-concept-tags">
-              {TAGS[c.key].map(t => <span key={t} className="zv-tag">{t}</span>)}
+              {x.tags.map(t => <span key={t} className="zv-tag">{t}</span>)}
             </div>
           </div>
         </article>

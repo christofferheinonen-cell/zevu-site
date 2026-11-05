@@ -4,13 +4,13 @@ import { fetchGa4Data } from '@/lib/analytics'
 export const dynamic = 'force-dynamic'
 
 const PERIODS = [
-  { label: '7 pv', days: 7 },
-  { label: '28 pv', days: 28 },
-  { label: '90 pv', days: 90 },
+  { label: '7 days', days: 7 },
+  { label: '28 days', days: 28 },
+  { label: '90 days', days: 90 },
 ]
 
 function num(n: number) {
-  return n.toLocaleString('fi-FI')
+  return n.toLocaleString('en-GB')
 }
 
 function dur(seconds: number) {
@@ -36,7 +36,7 @@ export default async function AnalyticsPage({ searchParams }: Props) {
   try {
     data = await fetchGa4Data(validDays)
   } catch (err) {
-    error = err instanceof Error ? err.message : 'Tuntematon virhe'
+    error = err instanceof Error ? err.message : 'Unknown error'
   }
 
   return (
@@ -66,12 +66,12 @@ export default async function AnalyticsPage({ searchParams }: Props) {
       {error ? (
         <div className="adm-panel">
           <p className="adm-empty" style={{ color: '#dc2626' }}>
-            Virhe ladattaessa dataa: {error}
+            Couldn’t load data: {error}
           </p>
           <p className="adm-empty" style={{ marginTop: '0.5rem', fontSize: '0.8rem' }}>
-            Varmista, että <code>GOOGLE_SERVICE_ACCOUNT_JSON</code> ja{' '}
-            <code>GOOGLE_GA4_PROPERTY_ID</code> ovat asetettu oikein, ja että
-            palvelutili on lisätty GA4-propertyyn.
+            Check that <code>GOOGLE_SERVICE_ACCOUNT_JSON</code> and{' '}
+            <code>GOOGLE_GA4_PROPERTY_ID</code> are set correctly, and that
+            the service account has been added to the GA4 property.
           </p>
         </div>
       ) : data ? (
@@ -80,27 +80,27 @@ export default async function AnalyticsPage({ searchParams }: Props) {
           <div className="adm-cards adm-cards--6">
             <div className="adm-card">
               <div className="adm-card-num">{num(data.summary.sessions)}</div>
-              <div className="adm-card-label">Istunnot</div>
+              <div className="adm-card-label">Sessions</div>
             </div>
             <div className="adm-card">
               <div className="adm-card-num">{num(data.summary.users)}</div>
-              <div className="adm-card-label">Käyttäjät</div>
+              <div className="adm-card-label">Users</div>
             </div>
             <div className="adm-card">
               <div className="adm-card-num">{num(data.summary.newUsers)}</div>
-              <div className="adm-card-label">Uudet käyttäjät</div>
+              <div className="adm-card-label">New users</div>
             </div>
             <div className="adm-card">
               <div className="adm-card-num">{num(data.summary.pageviews)}</div>
-              <div className="adm-card-label">Sivunäytöt</div>
+              <div className="adm-card-label">Page views</div>
             </div>
             <div className="adm-card">
               <div className="adm-card-num">{dur(data.summary.avgSessionDuration)}</div>
-              <div className="adm-card-label">Kesk. istunnon kesto</div>
+              <div className="adm-card-label">Avg. session duration</div>
             </div>
             <div className="adm-card">
               <div className="adm-card-num">{pct(data.summary.bounceRate)}</div>
-              <div className="adm-card-label">Välittömät poistumiset</div>
+              <div className="adm-card-label">Bounce rate</div>
             </div>
           </div>
 
@@ -108,14 +108,14 @@ export default async function AnalyticsPage({ searchParams }: Props) {
           {data.conversions.length > 0 && (
             <section className="adm-panel" style={{ marginBottom: '16px' }}>
               <div className="adm-panel-head">
-                <h2>Konversiotapahtumat</h2>
+                <h2>Conversion events</h2>
               </div>
               <div className="adm-tablewrap">
                 <table className="adm-table">
                   <thead>
                     <tr>
-                      <th>Tapahtuma</th>
-                      <th className="adm-num">Määrä</th>
+                      <th>Event</th>
+                      <th className="adm-num">Count</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -134,11 +134,11 @@ export default async function AnalyticsPage({ searchParams }: Props) {
           {data.conversions.length === 0 && (
             <section className="adm-panel" style={{ marginBottom: '16px' }}>
               <div className="adm-panel-head">
-                <h2>Konversiotapahtumat</h2>
+                <h2>Conversion events</h2>
               </div>
               <p className="adm-empty">
-                Ei konversiotapahtumia valitulla ajanjaksolla. Merkitse tapahtumat
-                avaintapahtumiksi GA4:ssä (Admin → Events → Mark as key event).
+                No conversion events in this period. Mark events as key events
+                in GA4 (Admin → Events → Mark as key event).
               </p>
             </section>
           )}
@@ -147,18 +147,18 @@ export default async function AnalyticsPage({ searchParams }: Props) {
             {/* Top pages */}
             <section className="adm-panel">
               <div className="adm-panel-head">
-                <h2>Top sivut</h2>
+                <h2>Top pages</h2>
               </div>
               {data.topPages.length === 0 ? (
-                <p className="adm-empty">Ei dataa.</p>
+                <p className="adm-empty">No data.</p>
               ) : (
                 <div className="adm-tablewrap">
                   <table className="adm-table">
                     <thead>
                       <tr>
-                        <th>Sivu</th>
-                        <th className="adm-num">Näytöt</th>
-                        <th className="adm-num">Käyttäjät</th>
+                        <th>Page</th>
+                        <th className="adm-num">Views</th>
+                        <th className="adm-num">Users</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -188,18 +188,18 @@ export default async function AnalyticsPage({ searchParams }: Props) {
             {/* Traffic sources */}
             <section className="adm-panel">
               <div className="adm-panel-head">
-                <h2>Liikenteen lähteet</h2>
+                <h2>Traffic sources</h2>
               </div>
               {data.topSources.length === 0 ? (
-                <p className="adm-empty">Ei dataa.</p>
+                <p className="adm-empty">No data.</p>
               ) : (
                 <div className="adm-tablewrap">
                   <table className="adm-table">
                     <thead>
                       <tr>
-                        <th>Kanava</th>
-                        <th className="adm-num">Istunnot</th>
-                        <th className="adm-num">Käyttäjät</th>
+                        <th>Channel</th>
+                        <th className="adm-num">Sessions</th>
+                        <th className="adm-num">Users</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -1,6 +1,8 @@
+import 'server-only'
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
+import { unstable_rethrow } from 'next/navigation'
 import { getRedis } from './redis'
 
 export interface Lead {
@@ -43,6 +45,17 @@ export async function getLeads(): Promise<Lead[]> {
   // The Upstash client deserializes JSON automatically, so we get Lead objects
   // back directly — no manual JSON.parse (which would double-decode and throw).
   return await redis.lrange<Lead>(REDIS_KEY, 0, -1)
+}
+
+/** Like getLeads, but reports an unreachable database instead of throwing. */
+export async function getLeadsSafe(): Promise<{ leads: Lead[]; error?: string }> {
+  try {
+    return { leads: await getLeads() }
+  } catch (err) {
+    unstable_rethrow(err)
+    console.error('[leads] storage unreachable:', err)
+    return { leads: [], error: err instanceof Error ? err.message : String(err) }
+  }
 }
 
 export async function appendLead(input: Omit<Lead, 'id' | 'createdAt'>): Promise<Lead> {

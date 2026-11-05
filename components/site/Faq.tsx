@@ -2,18 +2,22 @@ import Lines from './Lines'
 
 export default function Faq({
   items,
-  title = ['Questions,', 'answered.'],
+  title,
+  eyebrow,
+  side,
 }: {
   items: { q: string; a: string }[]
-  title?: [string, string]
+  title: [string, string]
+  eyebrow: string
+  side: string
 }) {
   return (
     <section className="zv-section" aria-labelledby="faq-h">
       <div className="zv-wrap zv-faq-grid">
         <div className="zv-faq-side">
-          <span className="zv-eyebrow">FAQ</span>
+          <span className="zv-eyebrow">{eyebrow}</span>
           <Lines id="faq-h" className="zv-h2" lines={[title[0], <em key="e">{title[1]}</em>]} />
-          <p data-rv="">Something else on your mind? Ask us. You’ll get a straight answer, not a sales pitch.</p>
+          <p data-rv="">{side}</p>
         </div>
         <div className="zv-faq" data-rv="">
           {items.map(f => (

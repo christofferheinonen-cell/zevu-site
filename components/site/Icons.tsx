@@ -1,4 +1,4 @@
-import type { SectorSlug } from '@/lib/site-content'
+import type { SectorKey } from '@/lib/content'
 
 export function Arrow({ size = 16 }: { size?: number }) {
   return (
@@ -17,7 +17,7 @@ export function Asterisk() {
 }
 
 /** Hand-drawn style line illustrations, one per sector. */
-export function SectorIllustration({ slug, className }: { slug: SectorSlug; className?: string }) {
+export function SectorIllustration({ slug, className }: { slug: SectorKey; className?: string }) {
   const common = {
     viewBox: '0 0 120 120',
     fill: 'none',

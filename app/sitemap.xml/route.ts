@@ -1,7 +1,11 @@
 import { absoluteUrl } from '@/lib/seo'
-import { SECTORS } from '@/lib/site-content'
+import { CONTENT, pathFor } from '@/lib/content'
+import { getAllArticles } from '@/lib/articles/store'
+import { articleState } from '@/lib/articles/types'
+import { blogPath } from '@/lib/articles/validate'
 
-export const dynamic = 'force-static'
+// Rebuilt hourly so new and scheduled articles appear without a redeploy.
+export const revalidate = 3600
 
 interface Entry {
   loc: string
@@ -22,16 +26,20 @@ function escapeXml(value: string): string {
 export async function GET() {
   const now = new Date()
 
-  const entries: Entry[] = [
-    { loc: absoluteUrl('/'), lastmod: now, changefreq: 'weekly', priority: 1 },
-    ...SECTORS.map(s => ({
-      loc: absoluteUrl(`/${s.slug}`),
+  const pages = ['home', ...CONTENT.en.sectors.map(s => s.key), 'blog', 'contact'] as const
+  const priority = (p: string) => (p === 'home' ? 1 : p === 'contact' ? 0.5 : 0.8)
+  const entries: Entry[] = (['en', 'es'] as const).flatMap(locale =>
+    pages.map(p => ({
+      loc: absoluteUrl(pathFor(locale, p)),
       lastmod: now,
-      changefreq: 'monthly',
-      priority: 0.8,
-    })),
-    { loc: absoluteUrl('/contact'), lastmod: now, changefreq: 'yearly', priority: 0.5 },
-  ]
+      changefreq: p === 'contact' ? 'yearly' : 'monthly',
+      priority: priority(p),
+    }))
+  )
+  const articles = (await getAllArticles()).filter(a => articleState(a, now) === 'live')
+  for (const a of articles) {
+    entries.push({ loc: absoluteUrl(blogPath(a.locale, a.slug)), lastmod: new Date(a.updatedAt), changefreq: 'monthly', priority: 0.7 })
+  }
 
   const urls = entries
     .map(
