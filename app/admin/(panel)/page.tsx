@@ -36,11 +36,11 @@ export default async function AdminHome() {
           <div className="adm-card-label">Artikkelia yhteensä</div>
         </div>
         <div className="adm-card">
-          <div className="adm-card-num" style={{ color: '#16a34a' }}>{counts.published}</div>
+          <div className="adm-card-num" style={{ color: '#3f7d4e' }}>{counts.published}</div>
           <div className="adm-card-label">Julkaistu</div>
         </div>
         <div className="adm-card">
-          <div className="adm-card-num" style={{ color: '#d97706' }}>{counts.scheduled}</div>
+          <div className="adm-card-num" style={{ color: '#b7791f' }}>{counts.scheduled}</div>
           <div className="adm-card-label">Ajastettu</div>
         </div>
         <div className="adm-card">

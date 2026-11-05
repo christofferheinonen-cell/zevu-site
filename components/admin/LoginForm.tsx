@@ -33,7 +33,7 @@ export default function LoginForm({ next }: { next?: string }) {
     <div className="adm-login">
       <form className="adm-login-card" onSubmit={submit}>
         <div className="adm-login-brand">
-          <span className="adm-brand-logo">Zevu</span>
+          <span className="adm-brand-logo">zevu<i>.</i></span>
           <span className="adm-brand-tag">Admin</span>
         </div>
         <h1>Kirjaudu sisään</h1>

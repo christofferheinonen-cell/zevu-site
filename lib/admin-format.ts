@@ -10,9 +10,9 @@ export const STATUS_LABEL: Record<ArticleStatus, string> = {
 }
 
 export const STATUS_COLOR: Record<ArticleStatus, string> = {
-  published: '#16a34a',
-  scheduled: '#d97706',
-  hidden: '#6b7280',
+  published: '#3f7d4e',
+  scheduled: '#b7791f',
+  hidden: '#8a7f72',
 }
 
 export function articleStatus(post: Post, now: Date = new Date()): ArticleStatus {

@@ -33,9 +33,9 @@ function getMonthCells(year: number, month: number): (string | null)[] {
 }
 
 const STATUS_DOT: Record<string, string> = {
-  published: '#16a34a',
-  scheduled: '#d97706',
-  hidden: '#6b7280',
+  published: '#3f7d4e',
+  scheduled: '#b7791f',
+  hidden: '#8a7f72',
 }
 
 export default function ArticleCalendar({ articles: initial }: { articles: CalArticle[] }) {

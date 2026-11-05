@@ -61,7 +61,7 @@ export default function AdminSidebar({ user }: { user: string }) {
       {/* ── Desktop sidebar ── */}
       <aside className="adm-sidebar">
         <div className="adm-brand">
-          <span className="adm-brand-logo">Zevu</span>
+          <span className="adm-brand-logo">zevu<i>.</i></span>
           <span className="adm-brand-tag">Admin</span>
         </div>
         <nav className="adm-nav">{navLinks}</nav>
@@ -80,7 +80,7 @@ export default function AdminSidebar({ user }: { user: string }) {
       {/* ── Mobile top bar ── */}
       <header className="adm-topbar">
         <div className="adm-topbar-brand">
-          <span className="adm-brand-logo">Zevu</span>
+          <span className="adm-brand-logo">zevu<i>.</i></span>
           <span className="adm-brand-tag">Admin</span>
         </div>
         <button
@@ -102,7 +102,7 @@ export default function AdminSidebar({ user }: { user: string }) {
       <div className={`adm-drawer${mobileOpen ? ' adm-drawer--open' : ''}`}>
         <div className="adm-drawer-head">
           <div className="adm-brand">
-            <span className="adm-brand-logo">Zevu</span>
+            <span className="adm-brand-logo">zevu<i>.</i></span>
             <span className="adm-brand-tag">Admin</span>
           </div>
           <button className="adm-drawer-close" aria-label="Sulje valikko" onClick={() => setMobileOpen(false)}>

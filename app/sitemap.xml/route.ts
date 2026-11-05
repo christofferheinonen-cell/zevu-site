@@ -1,5 +1,5 @@
 import { absoluteUrl } from '@/lib/seo'
-import { SECTORS } from '@/lib/site-content'
+import { CONTENT, pathFor } from '@/lib/content'
 
 export const dynamic = 'force-static'
 
@@ -22,16 +22,16 @@ function escapeXml(value: string): string {
 export async function GET() {
   const now = new Date()
 
-  const entries: Entry[] = [
-    { loc: absoluteUrl('/'), lastmod: now, changefreq: 'weekly', priority: 1 },
-    ...SECTORS.map(s => ({
-      loc: absoluteUrl(`/${s.slug}`),
+  const pages = ['home', ...CONTENT.en.sectors.map(s => s.key), 'contact'] as const
+  const priority = (p: string) => (p === 'home' ? 1 : p === 'contact' ? 0.5 : 0.8)
+  const entries: Entry[] = (['en', 'es'] as const).flatMap(locale =>
+    pages.map(p => ({
+      loc: absoluteUrl(pathFor(locale, p)),
       lastmod: now,
-      changefreq: 'monthly',
-      priority: 0.8,
-    })),
-    { loc: absoluteUrl('/contact'), lastmod: now, changefreq: 'yearly', priority: 0.5 },
-  ]
+      changefreq: p === 'contact' ? 'yearly' : 'monthly',
+      priority: priority(p),
+    }))
+  )
 
   const urls = entries
     .map(

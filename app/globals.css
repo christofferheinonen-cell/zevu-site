@@ -364,3 +364,129 @@ a.adm-list-title:hover{color:var(--blue);}
 .cal-draft-handle{color:var(--sub);font-size:13px;flex-shrink:0;cursor:grab;}
 .cal-draft-link{font-size:12.5px;font-weight:500;color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1;}
 .cal-draft-link:hover{color:var(--blue);}
+
+/* ==========================================================================
+   ADMIN — Zevu editorial skin
+   Same palette and type as the public site. Everything is scoped under
+   .adm-root (app/admin/layout.tsx), so the rules above only provide layout.
+   ========================================================================== */
+.adm-root{
+  --bg:#f2ece1;--white:#fbf8f2;--text:#1a1612;--sub:#6b6156;--border:#ddd3c3;
+  --blue:#d4452a;--blue-dim:#f7e1d8;--dark:#1a1612;--dark2:#283222;
+  --paper-2:#e8dfcf;--olive:#283222;--saffron:#e8a93b;
+  --sh:0 1px 0 rgba(26,22,18,.04);--sh2:0 30px 60px -30px rgba(60,40,20,.35);
+  --serif:var(--font-fraunces),'Times New Roman',serif;
+  --sans:var(--font-inter-tight),system-ui,sans-serif;
+  min-height:100vh;background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:15px;-webkit-font-smoothing:antialiased;
+}
+body:has(.adm-root){background:#f2ece1;}
+body:has(.adm-root)::before{display:none;}
+.adm-root ::selection{background:var(--blue);color:var(--white);}
+.adm-root :focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+
+/* Brand */
+.adm-root .adm-brand-logo{font-family:var(--serif);font-style:italic;font-weight:420;font-size:28px;letter-spacing:-.04em;line-height:1;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;}
+.adm-root .adm-brand-logo i{font-style:normal;color:var(--blue);}
+.adm-root .adm-brand-tag{background:none;color:var(--sub);border:1px solid var(--border);border-radius:999px;padding:3px 9px;font-size:10.5px;letter-spacing:.14em;}
+
+/* Sidebar */
+.adm-root .adm-sidebar{background:var(--bg);border-right:1px solid var(--border);padding:28px 18px;}
+.adm-root .adm-nav-link{border-radius:999px;font-weight:500;color:var(--text);padding:10px 14px;}
+.adm-root .adm-nav-link:hover{background:rgba(26,22,18,.06);}
+.adm-root .adm-nav-link.active{background:var(--text);color:var(--white);}
+.adm-root .adm-nav-link--muted{color:var(--sub);}
+.adm-root .adm-logout{border-radius:999px;background:transparent;}
+.adm-root .adm-logout:hover{background:var(--text);color:var(--white);border-color:var(--text);}
+
+/* Headings */
+.adm-root .adm-main{padding:48px 56px 96px;}
+.adm-root .adm-head{margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--text);align-items:flex-end;}
+.adm-root .adm-head h1{font-family:var(--serif);font-weight:340;font-size:clamp(36px,4vw,56px);line-height:.95;letter-spacing:-.035em;font-variation-settings:'opsz' 144,'SOFT' 30;}
+.adm-root .adm-sub{font-size:14px;margin-top:10px;}
+.adm-root .adm-back{font-size:12px;letter-spacing:.12em;text-transform:uppercase;}
+
+/* Cards & panels: flat paper, thin rules, serif numbers */
+.adm-root .adm-card,.adm-root .adm-panel,.adm-root .adm-tablewrap,.adm-root .cal-main,.adm-root .cal-drafts,.adm-root .adm-editor-preview,.adm-root .adm-login-card{
+  background:var(--white);border:1px solid var(--border);border-radius:6px;box-shadow:var(--sh);
+}
+.adm-root .adm-cards{gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;background:var(--white);}
+.adm-root .adm-cards .adm-card{border:0;border-radius:0;box-shadow:none;border-right:1px solid var(--border);padding:26px 24px;}
+.adm-root .adm-cards .adm-card:last-child{border-right:0;}
+.adm-root .adm-card-num{font-family:var(--serif);font-weight:340;font-size:48px;letter-spacing:-.04em;font-variation-settings:'opsz' 144,'SOFT' 30;}
+.adm-root .adm-card-label{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-top:12px;}
+.adm-root .adm-panel-head{padding-bottom:12px;border-bottom:1px solid var(--text);margin-bottom:4px;}
+.adm-root .adm-panel-head h2{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:-.02em;font-variation-settings:'opsz' 72,'SOFT' 40;}
+.adm-root .adm-link{color:var(--text);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--blue);}
+.adm-root .adm-link:hover{color:var(--blue);}
+.adm-root .adm-list-title{font-weight:500;}
+.adm-root a.adm-list-title:hover,.adm-root .adm-rowtitle:hover{color:var(--blue);}
+
+/* Tables */
+.adm-root .adm-table th{font-size:11px;letter-spacing:.14em;color:var(--sub);background:var(--bg);border-bottom:1px solid var(--text);}
+.adm-root .adm-table td{border-bottom-color:var(--border);}
+.adm-root .adm-table tbody tr:hover{background:#f6f0e6;}
+.adm-root .adm-badge{border-radius:999px;font-weight:600;letter-spacing:.02em;}
+.adm-root .adm-edited{border-radius:999px;color:var(--blue);background:var(--blue-dim);}
+
+/* Buttons: pills, ink → tomato on hover */
+.adm-root .adm-btn{border-radius:999px;font-weight:600;padding:11px 20px;}
+.adm-root .adm-btn--primary{background:var(--text);color:var(--white);}
+.adm-root .adm-btn--primary:hover:not(:disabled){background:var(--blue);}
+.adm-root .adm-btn--ghost{background:transparent;border-color:#c9bda9;}
+.adm-root .adm-btn--ghost:hover:not(:disabled){background:var(--text);color:var(--white);border-color:var(--text);}
+.adm-root .adm-btn--danger{background:transparent;color:#a3301b;border-color:#e4b4a6;}
+.adm-root .adm-btn--danger:hover:not(:disabled){background:#a3301b;color:var(--white);border-color:#a3301b;}
+.adm-root .adm-btn--active{background:var(--text);color:var(--white);border-color:var(--text);}
+
+/* Flash */
+.adm-root .adm-flash{border-radius:6px;font-weight:500;}
+.adm-root .adm-flash--ok{background:#e3ecdc;color:#2f5a37;}
+.adm-root .adm-flash--err{background:#f7e1d8;color:#a3301b;}
+
+/* Fields: underline style like the public contact form */
+.adm-root .adm-field>span{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);}
+.adm-root .adm-field input,.adm-root .adm-field textarea,.adm-root .adm-field select{background:var(--white);border:1px solid var(--border);border-radius:6px;}
+.adm-root .adm-field input:focus,.adm-root .adm-field textarea:focus,.adm-root .adm-field select:focus{border-color:var(--text);box-shadow:0 0 0 3px rgba(212,69,42,.14);}
+
+/* Editor */
+.adm-root .adm-preview-bar{background:var(--bg);letter-spacing:.14em;}
+.adm-root .adm-preview-title{font-family:var(--serif);font-weight:360;letter-spacing:-.03em;font-variation-settings:'opsz' 144,'SOFT' 30;}
+.adm-root .adm-rte{border-radius:6px;}
+.adm-root .adm-rte-toolbar{background:var(--bg);}
+.adm-root .adm-rte-btn{border-radius:999px;}
+.adm-root .adm-rte-btn.is-active{background:var(--text);border-color:var(--text);color:var(--white);}
+
+/* Login: paper card with a printed-receipt feel */
+.adm-root .adm-login{background:var(--bg);}
+.adm-root .adm-login-card{padding:44px 40px;}
+.adm-root .adm-login-card h1{font-family:var(--serif);font-weight:340;font-size:40px;letter-spacing:-.035em;line-height:1;font-variation-settings:'opsz' 144,'SOFT' 30;}
+.adm-root .adm-login-err{color:#a3301b;}
+
+/* Calendar */
+.adm-root .cal-view-toggle{border-radius:999px;background:transparent;}
+.adm-root .cal-view-btn{border-radius:999px;}
+.adm-root .cal-view-btn--active{background:var(--text);color:var(--white);box-shadow:none;}
+.adm-root .cal-nav{border-bottom-color:var(--text);}
+.adm-root .cal-nav-title{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:-.02em;}
+.adm-root .cal-header{background:var(--bg);letter-spacing:.12em;text-transform:uppercase;font-size:11px;}
+.adm-root .cal-day-num{font-family:var(--serif);font-weight:400;font-size:20px;}
+.adm-root .cal-cell--past{background:#f6f1e8;}
+.adm-root .cal-cell--today{background:#f9e6dd;}
+.adm-root .cal-cell--over{background:#f7d9cc !important;}
+.adm-root .cal-drafts--over{background:#f7d9cc;}
+.adm-root .cal-day-badge--published,.adm-root .cal-article--published{background:#e3ecdc;color:#2f5a37;border-color:#c9dbbf;}
+.adm-root .cal-day-badge--scheduled,.adm-root .cal-article--scheduled{background:#f6e7c8;color:#7a5410;border-color:#ecd59f;}
+.adm-root .cal-drafts-count{border-radius:999px;}
+.adm-root .cal-draft-item{border-radius:6px;}
+
+/* Mobile */
+.adm-root .adm-topbar{background:var(--bg);}
+.adm-root .adm-drawer{background:var(--bg);}
+.adm-root .adm-burger,.adm-root .adm-drawer-close{border-radius:999px;}
+@media(max-width:860px){
+  .adm-root .adm-main{padding:28px 16px 72px;}
+  .adm-root .adm-cards .adm-card{border-bottom:1px solid var(--border);}
+  .adm-root .adm-cards .adm-card:nth-child(2n){border-right:0;}
+  .adm-root .adm-login-card{padding:32px 24px;}
+}
