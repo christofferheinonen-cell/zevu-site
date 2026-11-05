@@ -91,7 +91,7 @@ export default function HomePage() {
               <span className="zv-eyebrow">Selected concepts</span>
               <Lines id="work-h" className="zv-h2" lines={['No templates.', <em key="e">Ever.</em>]} />
             </div>
-            <p className="zv-lede" data-rv="">Three concept studies for imaginary venues, so you can see the range. Your place gets its own look, built around your food, your room and your people.</p>
+            <p className="zv-lede" data-rv="">Six concept studies for imaginary venues, so you can see the range. Your place gets its own look, built around your food, your room and your people.</p>
           </div>
           <Concepts />
         </div>
