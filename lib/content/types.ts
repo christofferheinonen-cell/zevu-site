@@ -60,7 +60,7 @@ export interface SiteContent {
     form: {
       kind: string; name: string; namePh: string; company: string; companyPh: string; email: string; emailPh: string
       phone: string; site: string; sitePh: string; message: string; messagePh: string; honeypot: string
-      foot: string; send: string; sending: string; errFields: string; errServer: string
+      foot: string; send: string; sending: string; errFields: string; errServer: string; errRate: string
       doneEyebrow: string; doneTitle: string; doneBody: string; pkgPrefix: string; sitePrefix: string
     }
   }

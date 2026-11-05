@@ -55,7 +55,7 @@ export const coffeeShopWebsite: Article[] = [
 <p>Most people will see your <a href="/blog/restaurant-on-google-maps">Google Business Profile</a> before your website. Keep the hours, address and phone identical in both places, add good photos to the profile, and link to your menu page from it.</p>
 
 <h2>Keep it small and keep it current</h2>
-<p>A café doesn’t need a large website. One well-made page, or a few, with accurate hours, a great menu and honest details, beats a big site that goes out of date. What matters is that you can update it yourself in a minute when the hours change or a new cake arrives.</p>
+<p>A café doesn’t need a large website. One well-made page, or a few, with accurate hours, a great menu and honest details, beats a big site that goes out of date. What matters is that it changes the same day the hours do, or when a new cake arrives.</p>
 <p>We design <a href="/coffee-shops">websites for coffee shops</a> that do exactly this, in English and Spanish. <a href="/contact">Tell us about your café</a> and we’ll suggest what’s worth building, and what isn’t.</p>
 `,
     faqs: [
@@ -116,7 +116,7 @@ export const coffeeShopWebsite: Article[] = [
 <p>La mayoría de la gente verá tu <a href="/es/blog/aparecer-en-google-maps">ficha de Google</a> antes que tu web. Mantén el horario, la dirección y el teléfono idénticos en los dos sitios, sube buenas fotos a la ficha y enlaza desde ella a tu carta.</p>
 
 <h2>Pequeña y siempre al día</h2>
-<p>Una cafetería no necesita una web grande. Una página bien hecha, o unas pocas, con el horario correcto, una gran carta y detalles honestos, funciona mejor que una web enorme que se queda anticuada. Lo importante es que puedas actualizarla tú en un minuto cuando cambie el horario o llegue una tarta nueva.</p>
+<p>Una cafetería no necesita una web grande. Una página bien hecha, o unas pocas, con el horario correcto, una gran carta y detalles honestos, funciona mejor que una web enorme que se queda anticuada. Lo importante es que cambie el mismo día que cambia el horario o llega una tarta nueva.</p>
 <p>Diseñamos <a href="/es/cafeterias">webs para cafeterías</a> que hacen exactamente esto, en español y en inglés. <a href="/es/contacto">Cuéntanos cómo es tu cafetería</a> y te diremos qué merece la pena hacer y qué no.</p>
 `,
     faqs: [

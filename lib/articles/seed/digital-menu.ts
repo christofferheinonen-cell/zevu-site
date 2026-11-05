@@ -31,7 +31,7 @@ export const digitalMenu: Article[] = [
 <h2>What a good digital menu looks like</h2>
 <p>A good digital menu is simply a well-designed page: sections you can jump between, clear dish names, a short description where it helps, and prices that are easy to scan. It loads in a moment, reads comfortably with one hand, and matches the look of your restaurant.</p>
 <p>It should also work well for guests with accessibility needs: real text that screen readers can read aloud, and good contrast between text and background.</p>
-<p>Most importantly, you can update it yourself. Add tonight’s special, mark a dish as sold out, change a price. If the menu is quick to change, it stays accurate, and an accurate menu builds trust.</p>
+<p>Most importantly, it stays current. Tonight’s special, a dish that’s sold out, a new price: a web page can reflect all of it the same day, without reprinting anything. An accurate menu builds trust.</p>
 
 <h2>Allergens: clear, not hidden</h2>
 <p>EU rules list fourteen allergens that must be declared, and in Spain this information has to be available to guests for food you serve, not only for packaged products. The fourteen are: cereals containing gluten, crustaceans, eggs, fish, peanuts, soybeans, milk, tree nuts, celery, mustard, sesame, sulphites, lupin and molluscs.</p>
@@ -41,7 +41,7 @@ export const digitalMenu: Article[] = [
 <p>If your guests include visitors, your digital menu should have English and Spanish versions, written properly rather than machine-translated. Dish names often work best kept in Spanish with a short English explanation underneath: <em>“Pulpo a la brasa, chargrilled octopus with paprika and potato”</em>. That keeps the character of your food and still helps people order with confidence.</p>
 
 <h2>Where QR codes fit in</h2>
-<p>QR codes on tables are useful, as long as they open your digital menu page rather than a PDF. Point the code at a stable address on your own website, so you can update the menu without ever reprinting the codes. Keep a few printed menus too: some guests simply prefer paper, and that’s part of good hospitality.</p>
+<p>QR codes on tables are useful, as long as they open your digital menu page rather than a PDF. Point the code at a stable address on your own website, so the menu can change without ever reprinting the codes. Keep a few printed menus too: some guests simply prefer paper, and that’s part of good hospitality.</p>
 
 <h2>How it helps you get found</h2>
 <p>When your menu is a real page, the names of your dishes become part of your website. Someone searching for “paella in the old town” or “vegan brunch” is more likely to find a restaurant whose menu actually mentions those things in text Google can read.</p>
@@ -56,13 +56,13 @@ export const digitalMenu: Article[] = [
 <li>Prepare the English version (or Spanish, if you started in English).</li>
 <li>Publish it as a page on your website and link it everywhere: Google, Instagram and QR codes.</li>
 </ol>
-<p>Every <a href="/restaurants">restaurant website</a> we build includes a digital menu you can edit yourself, with allergens and both languages built in. <a href="/contact">Tell us about your menu</a> and we’ll show you how it would look.</p>
+<p>Every <a href="/restaurants">restaurant website</a> we build includes a digital menu with allergens and both languages built in. <a href="/contact">Tell us about your menu</a> and we’ll show you how it would look.</p>
 `,
     faqs: [
       { q: 'Is a QR code menu the same as a digital menu?', a: 'Not necessarily. A QR code is just a link. It only gives guests a good experience if it opens a proper menu page that loads quickly and reads well on a phone, rather than a PDF.' },
       { q: 'Do I have to show allergens on my menu in Spain?', a: 'Allergen information for the fourteen allergens in EU rules must be available to guests for the food you serve. A menu with clear allergen icons is the simplest way to do it, but check the exact presentation rules with your local authority.' },
       { q: 'Should dish names be translated?', a: 'Often it works best to keep the Spanish name and add a short explanation in English underneath. That preserves the character of the dish and still helps visitors order with confidence.' },
-      { q: 'How often should I update my digital menu?', a: 'Whenever something changes. Because a digital menu is quick to edit, you can update prices, specials and sold-out dishes the same day.' },
+      { q: 'How often should a digital menu be updated?', a: 'Whenever something changes. Unlike a printed or PDF menu, a web page can show new prices, specials and sold-out dishes the same day.' },
     ],
   },
   {
@@ -92,7 +92,7 @@ export const digitalMenu: Article[] = [
 <h2>Cómo es una buena carta digital</h2>
 <p>Una buena carta digital es, sencillamente, una página bien diseñada: secciones entre las que saltar, nombres de platos claros, una breve descripción cuando hace falta y precios fáciles de leer. Carga en un momento, se lee cómodamente con una mano y tiene el mismo estilo que tu restaurante.</p>
 <p>También debería ser accesible: texto real que los lectores de pantalla puedan leer en voz alta y buen contraste entre el texto y el fondo.</p>
-<p>Y, sobre todo, la puedes actualizar tú. Añadir el plato del día, marcar algo como agotado, cambiar un precio. Si la carta es fácil de cambiar, se mantiene al día, y una carta al día genera confianza.</p>
+<p>Y, sobre todo, se mantiene al día. El plato del día, algo agotado, un precio nuevo: una página web puede reflejarlo el mismo día, sin reimprimir nada. Una carta al día genera confianza.</p>
 
 <h2>Alérgenos: a la vista, no escondidos</h2>
 <p>La normativa europea recoge catorce alérgenos que hay que declarar y, en España, esta información debe estar a disposición del cliente también en la comida que sirves, no solo en los productos envasados. Son estos catorce: cereales con gluten, crustáceos, huevos, pescado, cacahuetes, soja, leche, frutos de cáscara, apio, mostaza, sésamo, sulfitos, altramuces y moluscos.</p>
@@ -102,7 +102,7 @@ export const digitalMenu: Article[] = [
 <p>Si entre tus clientes hay visitantes, tu carta digital debería tener versión en español y en inglés, bien escrita y no traducida automáticamente. Los nombres de los platos suelen funcionar mejor en español, con una breve explicación en inglés debajo: <em>“Pulpo a la brasa, chargrilled octopus with paprika and potato”</em>. Así se mantiene el carácter de tu cocina y el cliente pide con seguridad.</p>
 
 <h2>Qué papel tienen los códigos QR</h2>
-<p>Los códigos QR en las mesas son útiles, siempre que abran tu carta digital y no un PDF. Haz que el código apunte a una dirección fija de tu propia web, para poder actualizar la carta sin volver a imprimir los códigos. Ten también algunas cartas en papel: hay clientes que lo prefieren, y eso también es hospitalidad.</p>
+<p>Los códigos QR en las mesas son útiles, siempre que abran tu carta digital y no un PDF. Haz que el código apunte a una dirección fija de tu propia web, para que la carta pueda cambiar sin volver a imprimir los códigos. Ten también algunas cartas en papel: hay clientes que lo prefieren, y eso también es hospitalidad.</p>
 
 <h2>Cómo te ayuda a que te encuentren</h2>
 <p>Cuando tu carta es una página de verdad, los nombres de tus platos pasan a formar parte de tu web. Quien busca “paella en el casco antiguo” o “brunch vegano” tiene más opciones de encontrar un restaurante cuya carta menciona esas cosas en un texto que Google puede leer.</p>
@@ -117,13 +117,13 @@ export const digitalMenu: Article[] = [
 <li>Prepara la versión en inglés.</li>
 <li>Publícala como página en tu web y enlázala en todas partes: Google, Instagram y los códigos QR.</li>
 </ol>
-<p>Todas las <a href="/es/restaurantes">webs para restaurantes</a> que hacemos incluyen una carta digital que editas tú, con alérgenos y los dos idiomas. <a href="/es/contacto">Cuéntanos cómo es tu carta</a> y te enseñamos cómo quedaría.</p>
+<p>Todas las <a href="/es/restaurantes">webs para restaurantes</a> que hacemos incluyen una carta digital con alérgenos y los dos idiomas. <a href="/es/contacto">Cuéntanos cómo es tu carta</a> y te enseñamos cómo quedaría.</p>
 `,
     faqs: [
       { q: '¿Una carta con código QR es lo mismo que una carta digital?', a: 'No necesariamente. El QR es solo un enlace. Solo ofrece una buena experiencia si abre una página de carta que cargue rápido y se lea bien en el móvil, en lugar de un PDF.' },
       { q: '¿Tengo que mostrar los alérgenos en la carta en España?', a: 'La información sobre los catorce alérgenos de la normativa europea debe estar a disposición del cliente en la comida que sirves. Una carta con iconos de alérgenos claros es la forma más sencilla, pero confirma las normas concretas de presentación con la administración local.' },
       { q: '¿Hay que traducir los nombres de los platos?', a: 'Suele funcionar mejor mantener el nombre en español y añadir debajo una breve explicación en inglés. Así se conserva el carácter del plato y los visitantes piden con seguridad.' },
-      { q: '¿Cada cuánto debo actualizar la carta digital?', a: 'Cada vez que algo cambie. Como una carta digital se edita en un momento, puedes actualizar precios, sugerencias y platos agotados el mismo día.' },
+      { q: '¿Cada cuánto hay que actualizar la carta digital?', a: 'Cada vez que algo cambie. A diferencia de una carta impresa o en PDF, una página web puede mostrar precios nuevos, sugerencias y platos agotados el mismo día.' },
     ],
   },
 ]

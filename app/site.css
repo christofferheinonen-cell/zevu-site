@@ -303,7 +303,7 @@ body:has(.zv)::before { display: none; }
 /* Sector index */
 .zv-index { border-top: 1px solid var(--ink); }
 .zv-row {
-  position: relative; display: grid; grid-template-columns: 90px minmax(0, 1.1fr) minmax(0, 1fr) 64px; gap: 24px; align-items: center;
+  position: relative; display: grid; grid-template-columns: 90px minmax(0, 1.1fr) minmax(0, 1fr) 112px 64px; gap: 24px; align-items: center;
   padding: 34px 0; border-bottom: 1px solid var(--line-2); isolation: isolate;
 }
 .zv-row::before {
@@ -321,10 +321,11 @@ body:has(.zv)::before { display: none; }
 .zv-row-a { justify-self: end; width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; }
 .zv-row:hover .zv-row-a { background: var(--tomato); border-color: var(--tomato); transform: rotate(-45deg); }
 .zv-row-ill {
-  position: absolute; right: 22%; top: 50%; width: 150px; height: 150px; pointer-events: none; color: var(--saffron);
-  transform: translate(0, -50%) scale(0.6) rotate(-14deg); opacity: 0; transition: opacity 0.4s var(--ease), transform 0.7s var(--ease);
+  grid-column: 4; grid-row: 1; justify-self: center; width: 96px; height: 96px; pointer-events: none; color: var(--saffron);
+  transform: scale(0.6) rotate(-14deg); opacity: 0; transition: opacity 0.4s var(--ease), transform 0.7s var(--ease);
 }
-.zv-row:hover .zv-row-ill { opacity: 1; transform: translate(0, -50%) scale(1) rotate(6deg); }
+.zv-row:hover .zv-row-ill { opacity: 1; transform: scale(1) rotate(6deg); }
+.zv-row-a { grid-column: 5; }
 
 /* Work / concepts */
 .zv-work { background: var(--paper-2); }

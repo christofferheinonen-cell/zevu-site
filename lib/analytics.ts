@@ -1,3 +1,4 @@
+import 'server-only'
 import { createSign } from 'node:crypto'
 
 function base64url(input: string | Buffer): string {

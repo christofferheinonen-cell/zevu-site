@@ -26,7 +26,7 @@ export const restaurantWebsite: Article[] = [
 
 <h2>The five things every restaurant website needs</h2>
 <ol>
-<li><strong>A menu that opens instantly.</strong> A real web page, not a PDF. It loads faster, reads well on a phone, Google can understand it, and you can change a price in a minute.</li>
+<li><strong>A menu that opens instantly.</strong> A real web page, not a PDF. It loads faster, reads well on a phone, Google can understand it, and it can be kept current the same day.</li>
 <li><strong>Booking in one tap.</strong> Connect the reservation system you already use, or a simple form that sends bookings straight to your phone. Put the button at the top and keep it visible.</li>
 <li><strong>Opening hours you can trust.</strong> Including holidays and summer changes. Wrong hours are one of the fastest ways to lose a guest for good.</li>
 <li><strong>Location and how to get there.</strong> A map, the nearest landmark, and parking or public transport tips if they help.</li>
@@ -45,9 +45,9 @@ export const restaurantWebsite: Article[] = [
 <p>You don’t need an intro video, a slideshow of twelve photos, a page about your history that nobody reads, or a newsletter pop-up the moment someone arrives. These slow the page down and get in the way of booking.</p>
 <p>A short “about us” paragraph with real personality is enough. Guests are deciding where to eat tonight, not reading a biography.</p>
 
-<h2>Keep it easy to update</h2>
-<p>The best restaurant website is the one that stays accurate. If changing the menu means emailing a designer and waiting a week, it won’t happen, and the site slowly goes out of date.</p>
-<p>Make sure you can edit the menu, prices, hours and photos yourself in a few minutes. That is the difference between a website that works for years and one that is embarrassing after six months.</p>
+<h2>Keep it accurate</h2>
+<p>The best restaurant website is the one that stays accurate. Guests trust a site when the menu, prices and hours match what they find on arrival, and they stop trusting it the first time they don’t.</p>
+<p>Plan for change from the start: seasonal menus, summer hours, holiday closures, a new chef. Updates should happen the same day, not whenever someone finds the time. That is the difference between a website that works for years and one that is embarrassing after six months.</p>
 
 <h2>A quick checklist</h2>
 <ul>
@@ -57,13 +57,13 @@ export const restaurantWebsite: Article[] = [
 <li>Hours, address and phone identical to Google</li>
 <li>English and Spanish versions of every page</li>
 <li>Recent, good-quality photos</li>
-<li>You can update everything yourself</li>
+<li>Menu, hours and photos kept current</li>
 </ul>
 <p>If your current site misses more than a couple of these, it is probably costing you bookings. We build <a href="/restaurants">websites for restaurants</a> that tick every box, and you can <a href="/contact">tell us about your place</a> for an honest opinion and a fixed price.</p>
 `,
     faqs: [
       { q: 'Does a restaurant still need its own website if it has Instagram?', a: 'Yes. Instagram is great for atmosphere, but it is a poor place to check opening hours, read a menu or book a table, and you don’t control it. A website is the one place you own, and it is what Google links to from your listing.' },
-      { q: 'Should my menu be a PDF or a web page?', a: 'A web page. PDFs are slow and awkward on phones, hard for Google to read, and painful to update. A web page menu loads instantly and you can change a price in a minute.' },
+      { q: 'Should my menu be a PDF or a web page?', a: 'A web page. PDFs are slow and awkward on phones, hard for Google to read, and painful to update. A web page menu loads instantly and is easy to keep current.' },
       { q: 'How long does it take to build a restaurant website?', a: 'A simple one-page site can be ready in about two weeks. A full site with menu, bookings and two languages usually takes three to four weeks, and most of that time is gathering photos and text.' },
       { q: 'Does my website need to be in English and Spanish?', a: 'In most of Spain, yes. Locals and visitors both search for places to eat, and each group is more likely to book when the site speaks their language.' },
     ],
@@ -90,7 +90,7 @@ export const restaurantWebsite: Article[] = [
 
 <h2>Las cinco cosas que necesita una página web para restaurante</h2>
 <ol>
-<li><strong>Una carta que se abra al instante.</strong> Una página de verdad, no un PDF. Carga más rápido, se lee bien en el móvil, Google la entiende y puedes cambiar un precio en un minuto.</li>
+<li><strong>Una carta que se abra al instante.</strong> Una página de verdad, no un PDF. Carga más rápido, se lee bien en el móvil, Google la entiende y se puede mantener al día en el mismo día.</li>
 <li><strong>Reservar con un toque.</strong> Conecta el sistema de reservas que ya usas o un formulario sencillo que te mande cada reserva al móvil. Pon el botón arriba y que esté siempre visible.</li>
 <li><strong>Un horario del que fiarse.</strong> Con festivos y cambios de verano incluidos. Un horario equivocado es una de las formas más rápidas de perder a un cliente para siempre.</li>
 <li><strong>Dónde estás y cómo llegar.</strong> Un mapa, la referencia más cercana y, si ayuda, dónde aparcar o qué transporte público coger.</li>
@@ -109,9 +109,9 @@ export const restaurantWebsite: Article[] = [
 <p>No necesitas un vídeo de bienvenida, un carrusel de doce fotos, una página de historia que nadie lee ni una ventana para suscribirse a la newsletter nada más entrar. Todo eso ralentiza la página y se interpone entre el cliente y la reserva.</p>
 <p>Basta con un párrafo breve sobre vosotros, con personalidad. El cliente está decidiendo dónde cenar esta noche, no leyendo una biografía.</p>
 
-<h2>Que sea fácil de actualizar</h2>
-<p>La mejor página web para restaurante es la que se mantiene al día. Si cambiar la carta significa escribir a un diseñador y esperar una semana, no se hará, y la web se quedará anticuada poco a poco.</p>
-<p>Asegúrate de poder editar tú mismo la carta, los precios, el horario y las fotos en pocos minutos. Esa es la diferencia entre una web que funciona durante años y otra que da vergüenza a los seis meses.</p>
+<h2>Que esté siempre al día</h2>
+<p>La mejor página web para restaurante es la que se mantiene al día. El cliente confía en una web cuando la carta, los precios y el horario coinciden con lo que encuentra al llegar, y deja de confiar la primera vez que no es así.</p>
+<p>Piensa en los cambios desde el principio: cartas de temporada, horario de verano, cierres por festivos, un cocinero nuevo. Las actualizaciones deberían hacerse el mismo día, no cuando alguien encuentre un hueco. Esa es la diferencia entre una web que funciona durante años y otra que da vergüenza a los seis meses.</p>
 
 <h2>Lista rápida de comprobación</h2>
 <ul>
@@ -121,13 +121,13 @@ export const restaurantWebsite: Article[] = [
 <li>Horario, dirección y teléfono idénticos a Google</li>
 <li>Versión en español y en inglés de cada página</li>
 <li>Fotos recientes y de calidad</li>
-<li>Puedes actualizarlo todo tú</li>
+<li>Carta, horario y fotos siempre al día</li>
 </ul>
 <p>Si tu web actual falla en más de un par de puntos, probablemente te está costando reservas. Hacemos <a href="/es/restaurantes">webs para restaurantes</a> que cumplen con todo, y puedes <a href="/es/contacto">contarnos cómo es tu local</a> para recibir una opinión sincera y un precio cerrado.</p>
 `,
     faqs: [
       { q: '¿Un restaurante necesita web propia si ya tiene Instagram?', a: 'Sí. Instagram está muy bien para transmitir ambiente, pero es un mal sitio para consultar el horario, leer la carta o reservar, y no lo controlas tú. La web es el único espacio que es tuyo, y es lo que enlaza Google desde tu ficha.' },
-      { q: '¿La carta debe ser un PDF o una página web?', a: 'Una página web. Los PDF son lentos e incómodos en el móvil, Google los lee mal y cuesta actualizarlos. Una carta en la web carga al instante y puedes cambiar un precio en un minuto.' },
+      { q: '¿La carta debe ser un PDF o una página web?', a: 'Una página web. Los PDF son lentos e incómodos en el móvil, Google los lee mal y cuesta actualizarlos. Una carta en la web carga al instante y es fácil de mantener al día.' },
       { q: '¿Cuánto se tarda en hacer la web de un restaurante?', a: 'Una web sencilla de una página puede estar lista en unas dos semanas. Una web completa con carta, reservas y dos idiomas suele llevar de tres a cuatro semanas, y la mayor parte del tiempo se va en reunir fotos y textos.' },
       { q: '¿Mi web tiene que estar en español y en inglés?', a: 'En la mayor parte de España, sí. Tanto vecinos como visitantes buscan dónde comer, y cada grupo reserva más cuando la web habla su idioma.' },
     ],

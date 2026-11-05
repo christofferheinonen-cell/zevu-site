@@ -29,8 +29,10 @@ FAQPage). The editor scores each article against an on-page SEO checklist (`lib/
 
 | Variable | Purpose |
 | --- | --- |
-| `ADMIN_USER`, `ADMIN_PASSWORD` | Admin login |
-| `KV_REST_API_URL`, `KV_REST_API_TOKEN` (or Upstash equivalents) | Leads and article storage |
+| `ADMIN_EMAIL` | Admin login and where enquiries are emailed. The password is set via an emailed link (`/admin/forgot`) and stored only as a scrypt hash in Redis. |
+| `RESEND_API_KEY` | Resend API key (secret). Sends enquiry notifications and password-reset links. |
+| `RESEND_FROM` | Sender, e.g. `Zevu <hello@zevu.cc>` once the domain is verified in Resend. Defaults to `onboarding@resend.dev`. |
+| `KV_REST_API_URL`, `KV_REST_API_TOKEN` (or Upstash equivalents) | Leads, articles, admin password hash, sessions and rate limits. Required for admin login in production. |
 | `NEXT_PUBLIC_WHATSAPP` | WhatsApp number (e.g. `34600111222`); buttons are hidden until set |
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin, defaults to `https://www.zevu.cc` |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 measurement ID |
@@ -42,3 +44,9 @@ FAQPage). The editor scores each article against an on-page SEO checklist (`lib/
 npm install
 npm run dev
 ```
+
+## Security
+
+- Admin pages and APIs are guarded by `proxy.ts`: server-side sessions (random token, only its hash stored, 7-day expiry, revoked on logout and on password reset) and a same-origin check on every state-changing request.
+- Rate limits: login 5 per 15 min per IP and 20 per hour overall; password-reset emails 3 per hour per IP; contact form 5 per 10 min per IP.
+- Article HTML is sanitized on save. Secrets live only in Vercel environment variables; modules that read them are marked `server-only`.

@@ -15,10 +15,10 @@ const SECTORS_ES: Sector[] = [
     leadType: 'Restaurant',
     label: 'Restaurantes',
     index: '01',
-    teaser: 'Reservas, cartas que se actualizan en un minuto y una primera impresión a la altura de tu cocina.',
+    teaser: 'Reservas, una carta siempre al día y una primera impresión a la altura de tu cocina.',
     metaTitle: 'Webs para restaurantes en España | Zevu',
     metaDescription:
-      'Webs para restaurantes con reservas online, carta editable, alérgenos y versión en español e inglés. Diseñadas y desarrolladas en España.',
+      'Webs para restaurantes con reservas online, carta digital rápida, alérgenos y versión en español e inglés. Diseñadas y desarrolladas en España.',
     eyebrow: 'Para restaurantes',
     headline: ['Una web que reserva la mesa', 'antes de que vean la carta.'],
     intro:
@@ -31,7 +31,7 @@ const SECTORS_ES: Sector[] = [
     ],
     features: [
       { title: 'Reservas online', body: 'Conectamos el sistema de reservas que ya usas o te montamos uno sencillo que manda cada reserva directa a tu móvil.' },
-      { title: 'Una carta que editas tú', body: 'Cambia un precio o añade el plato del día en un minuto. Sin PDFs, sin diseñadores, sin esperas.' },
+      { title: 'Una carta siempre al día', body: 'El plato del día, un precio nuevo, algo agotado: la carta que ve el cliente es la que sirves. Sin PDFs ni reimpresiones.' },
       { title: 'Alérgenos, bien claros', body: 'Etiquetas de alérgenos en cada plato, para que el cliente lo sepa antes de preguntar y nadie interrumpa al equipo en pleno servicio.' },
       { title: 'Español, English y más', body: 'Tu web habla el idioma de tus clientes. Añade alemán, francés u holandés si tu calle está llena de ellos.' },
       { title: 'En Google Maps', body: 'Configuramos y pulimos tu ficha de Google Business para que aparezcas cuando alguien busca “cenar cerca de mí”.' },
@@ -41,7 +41,7 @@ const SECTORS_ES: Sector[] = [
     faqs: [
       { q: '¿Podéis conectar mi sistema de reservas actual?', a: 'Normalmente, sí. La mayoría de herramientas de reservas tienen un widget o un enlace que integramos para que parezca parte de tu web. Si no tienes ninguna, te recomendamos una opción sencilla.' },
       { q: '¿Hacéis las fotos?', a: 'Podemos dirigir una sesión con un fotógrafo local o trabajar con las fotos que ya tienes. Una buena fotografía de producto cambia más que casi cualquier otra cosa de la página.' },
-      { q: '¿Es difícil actualizar la carta?', a: 'Entras, cambias el texto o el precio y guardas. Si sabes mandar un WhatsApp, sabes actualizar tu carta.' },
+      { q: '¿La carta funciona bien en el móvil?', a: 'Sí. Es una página web de verdad, no un PDF: se abre al instante, se lee cómodamente con una mano y Google puede leer cada plato.' },
     ],
   },
   {
@@ -65,7 +65,7 @@ const SECTORS_ES: Sector[] = [
       'Tu web no se parece en nada a tu bar.',
     ],
     features: [
-      { title: 'Agenda siempre al día', body: 'Música en directo, DJs, quiz, el partido. Un calendario que actualizas tú y que aparece en todas partes.' },
+      { title: 'Agenda siempre al día', body: 'Música en directo, DJs, quiz, el partido. Un calendario claro que la gente puede encontrar, planear y compartir.' },
       { title: 'Una carta de copas que vende', body: 'Cócteles de autor con una frase de historia cada uno. Funciona mejor que una lista de ingredientes.' },
       { title: 'El happy hour, en primer plano', body: 'La oferta que trae a la gente a las 19:00 en lugar de a las 23:00, en la primera pantalla.' },
       { title: 'Reservas de grupo y fiestas', body: 'Cumpleaños, despedidas, afterworks. Un formulario, todos los detalles, directo a tu correo.' },
@@ -74,7 +74,7 @@ const SECTORS_ES: Sector[] = [
     ],
     concept: 'nocturno',
     faqs: [
-      { q: '¿Puedo actualizar los eventos yo mismo?', a: 'Sí. Añadir un evento lleva un minuto: título, fecha, una foto y listo. Aparece en tu web al momento.' },
+      { q: '¿Cómo aparecen los eventos en la web?', a: 'Cada evento tiene su título, su fecha y su foto en un calendario de tu web, para que se pueda encontrar y compartir en lugar de desaparecer como una story de Instagram.' },
       { q: '¿Se puede conectar con nuestro Instagram?', a: 'Podemos mostrar tus últimas publicaciones en la web y hacer que todo lleve a la gente al mismo sitio para reservar.' },
       { q: 'Somos un bar pequeño. ¿No es demasiado?', a: 'Nuestro paquete más pequeño es una sola página bien hecha con tu horario, tus copas, tus eventos y una forma de reservar. Muchos bares no necesitan más.' },
     ],
@@ -100,7 +100,7 @@ const SECTORS_ES: Sector[] = [
       'Vendes café en grano o merchandising, pero solo en el mostrador.',
     ],
     features: [
-      { title: 'Horarios de fiar', body: 'Festivos, cierres antes de hora, horario de verano. Cámbialos una vez y estarán bien en todas partes.' },
+      { title: 'Horarios de fiar', body: 'Festivos, cierres antes de hora, horario de verano. Bien visibles y coincidiendo con tu ficha de Google.' },
       { title: 'Una carta con personalidad', body: 'Tus cafés de origen, tu brunch, tu vitrina de bollería, presentados con el cariño que les pones.' },
       { title: 'Pedir para recoger', body: 'Recogida opcional para que tus habituales se salten la cola de camino al trabajo.' },
       { title: 'Una pequeña tienda online', body: 'Vende café en grano, tarjetas regalo o merchandising a quienes ya adoran tu café.' },
@@ -110,7 +110,7 @@ const SECTORS_ES: Sector[] = [
     concept: 'almendro',
     faqs: [
       { q: '¿Necesito pedidos online?', a: 'No necesariamente. A muchas cafeterías les basta con horarios correctos y una gran carta. Te diremos con sinceridad si te compensa.' },
-      { q: '¿Puedo vender café en grano online?', a: 'Sí. Podemos añadir una pequeña tienda con pago con tarjeta para café, tarjetas regalo o merchandising, fácil de gestionar tú mismo.' },
+      { q: '¿Puedo vender café en grano online?', a: 'Sí. Podemos añadir una pequeña tienda con pago con tarjeta para café, tarjetas regalo o merchandising.' },
       { q: 'Vamos a abrir una cafetería. ¿Cuándo empezamos?', a: 'Lo ideal es seis u ocho semanas antes de abrir, para que tu web y tu ficha de Google estén activas y generando interés desde el primer día.' },
     ],
   },
@@ -140,7 +140,7 @@ const SECTORS_ES: Sector[] = [
       { title: 'En dos idiomas desde el primer día', body: 'Versión en español y en inglés de cada página, para que vecinos y visitantes se sientan como en casa.' },
       { title: 'Google Maps y reseñas', body: 'Una ficha de Google cuidada y una forma sencilla de que tus clientes contentos dejen su reseña.' },
       { title: 'Rápida en cualquier móvil', body: 'Tu web carga deprisa incluso con un 4G irregular, que es donde están tus clientes.' },
-      { title: 'La editas tú', body: 'Cambia precios, fotos y horarios tú mismo, sin llamar a nadie.' },
+      { title: 'Siempre correcta', body: 'Precios, fotos y horarios que coinciden con la realidad, para que nadie se lleve una sorpresa al llegar.' },
     ],
     concept: 'mies',
     faqs: [
@@ -158,7 +158,7 @@ export const es: SiteContent = {
   meta: {
     homeTitle: 'Zevu — Webs para restaurantes, bares y cafeterías en España',
     homeDescription:
-      'Un pequeño estudio de diseño en España que crea webs rápidas y bonitas para restaurantes, bares y cafeterías: cartas que editas tú, reservas que llegan a tu correo y una ficha de Google que de verdad aparece.',
+      'Un pequeño estudio de diseño en España que crea webs rápidas y bonitas para restaurantes, bares y cafeterías: cartas que se abren al instante, reservas que llegan a tu correo y una ficha de Google que de verdad aparece.',
     contactTitle: 'Empieza tu proyecto | Zevu',
     contactDescription: 'Cuéntanos cómo es tu restaurante, bar o cafetería. Respondemos en un día laborable con consejos sinceros y un precio cerrado.',
     ogAlt: 'Zevu — Webs para restaurantes, bares y cafeterías en España',
@@ -179,7 +179,7 @@ export const es: SiteContent = {
     lead: 'Webs que',
     rotating: ['llenan mesas.', 'sirven más copas.', 'agotan el pan.', 'crean habituales.'],
     body:
-      'Zevu diseña y desarrolla webs rápidas y bonitas para restaurantes, bares y cafeterías. Cartas que editas tú, reservas que llegan a tu correo y una ficha de Google que de verdad aparece.',
+      'Zevu diseña y desarrolla webs rápidas y bonitas para restaurantes, bares y cafeterías. Cartas que se abren al instante, reservas que llegan a tu correo y una ficha de Google que de verdad aparece.',
     primary: 'Empieza tu proyecto',
     secondary: 'Ver trabajos',
   },
@@ -188,7 +188,7 @@ export const es: SiteContent = {
     sub: 'Estudio web · España',
     table: 'Mesa 04 · Comensales 2',
     server: 'Le atiende: Zevu',
-    items: ['Diseño web a medida', 'Carta que editas tú', 'Reservas online', 'Ficha de Google Maps', 'Español + English', 'Hosting y mantenimiento'],
+    items: ['Diseño web a medida', 'Carta digital y alérgenos', 'Reservas online', 'Ficha de Google Maps', 'Español + English', 'Hosting y mantenimiento'],
     total: 'TOTAL',
     totalValue: 'Más habituales',
     thanks: '*** GRACIAS · VUELVA PRONTO ***',
@@ -218,7 +218,7 @@ export const es: SiteContent = {
     { key: 'oleaje', name: 'Taberna Oleaje', kind: 'Marisquería', note: 'Serif editorial, azul vidrio de mar y la pesca del día con precio a pie de pantalla.', tags: ['Reservas', 'Menú del día', 'ES / EN'] },
     { key: 'nocturno', name: 'Nocturno', kind: 'Coctelería', note: 'Oscura, potente y condensada. Lo primero que ves es el cartel de esta noche.', tags: ['Agenda de eventos', 'Happy hour', 'Reservas de grupo'] },
     { key: 'almendro', name: 'Almendro', kind: 'Cafetería', note: 'La cafetería como un panel de salidas: un reloj en directo y la bollería del día listada como trenes. Impresa en risografía a dos tintas.', tags: ['Reloj en directo', 'Bollería del día', 'Pedir para recoger'] },
-    { key: 'raiz', name: 'Raíz', kind: 'Bar de vino natural', note: 'Una etiqueta de vino a pantalla completa. Cada botella tiene un medidor de cuerpo, funk y burbuja en vez de notas de cata.', tags: ['Carta de vinos editable', 'Eventos', 'ES / EN'] },
+    { key: 'raiz', name: 'Raíz', kind: 'Bar de vino natural', note: 'Una etiqueta de vino a pantalla completa. Cada botella tiene un medidor de cuerpo, funk y burbuja en vez de notas de cata.', tags: ['Carta de vinos', 'Eventos', 'ES / EN'] },
     { key: 'olaola', name: 'Ola Ola', kind: 'Chiringuito', note: 'Supergráficos de atardecer setenteros, una cuenta atrás hasta la hora dorada y las hamacas que quedan libres.', tags: ['Reserva de hamacas', 'Condiciones en directo', 'Carta'] },
     { key: 'mies', name: 'Mies', kind: 'Panadería', note: 'Papel de estraza y sellos de goma. Los panes reciben el sello de “agotado” en pantalla según se venden.', tags: ['Stock en directo', 'Encargos', 'Horario'] },
   ],
@@ -230,7 +230,7 @@ export const es: SiteContent = {
     order: 'Lo quiero',
     items: [
       { name: 'La Tapa', price: '590 €', sub: 'Una página bien hecha', lines: ['Web de una sola página', 'Carta, horario, ubicación y contacto', 'Botón de reserva o WhatsApp', 'Lista en unas 2 semanas'] },
-      { name: 'El Menú', price: '1.290 €', sub: 'La mayoría empieza aquí', featured: true, lines: ['Hasta 6 páginas', 'Carta que editas tú', 'Reservas online y grupos', 'Sección de eventos o sugerencias', 'Lista en unas 3–4 semanas'] },
+      { name: 'El Menú', price: '1.290 €', sub: 'La mayoría empieza aquí', featured: true, lines: ['Hasta 6 páginas', 'Carta digital con alérgenos', 'Reservas online y grupos', 'Sección de eventos o sugerencias', 'Lista en unas 3–4 semanas'] },
       { name: 'Degustación', price: '2.400 €+', sub: 'La experiencia completa', lines: ['Diseño totalmente a medida', 'Pedidos, tienda o tarjetas regalo', 'Dirección de sesión de fotos', 'Idiomas adicionales', 'Lista en unas 5–6 semanas'] },
     ],
     care: { name: 'Mantenimiento', price: '39 € / mes', body: 'Hosting, seguridad, copias de seguridad y pequeños cambios cuando los necesites. Sin permanencia.' },
@@ -243,13 +243,13 @@ export const es: SiteContent = {
       { course: 'Aperitivo', title: 'Un café y una charla', body: 'Una llamada corta o una visita. Entendemos qué hace único tu local y te damos un precio cerrado, por escrito.' },
       { course: 'Primero', title: 'Diseño', body: 'Ves tu nueva página de inicio diseñada de verdad, en tu móvil, antes de construir nada. Dos rondas de cambios incluidas.' },
       { course: 'Segundo', title: 'Desarrollo', body: 'La construimos rápido y bien: carta, reservas, idiomas, Google. Tú mandas fotos y textos; del resto nos ocupamos nosotros.' },
-      { course: 'Postre', title: 'Lanzamiento', body: 'Publicamos la web, te enseñamos a editarlo todo en 20 minutos y seguimos en WhatsApp para lo que venga después.' },
+      { course: 'Postre', title: 'Lanzamiento', body: 'Publicamos la web, lo revisamos todo contigo en tu propio móvil y seguimos en WhatsApp para lo que venga después.' },
     ],
   },
   included: [
     { k: 'Rápida', v: 'Pensada para cargar deprisa incluso con el 4G irregular de un chiringuito.' },
     { k: 'Tuya', v: 'El dominio, el contenido y la web son tuyos. Sin ataduras.' },
-    { k: 'Editable', v: 'Cambia la carta, el horario y las fotos tú mismo en minutos.' },
+    { k: 'Bilingüe', v: 'Versión en español y en inglés de cada página, para vecinos y visitantes.' },
     { k: 'Cercana', v: 'Un estudio con base en España. Disponible por WhatsApp y encantados de vernos en persona.' },
   ],
   faq: {
@@ -258,10 +258,10 @@ export const es: SiteContent = {
     side: '¿Tienes otra duda? Pregúntanos. Recibirás una respuesta clara, no un discurso de ventas.',
     items: [
       { q: '¿Cuánto se tarda?', a: 'Una web de una página suele estar lista en unas dos semanas. Una web completa con carta y reservas, en tres o cuatro. La mayor parte de ese tiempo es esperar fotos y textos, y te ayudamos con ambos.' },
-      { q: '¿Necesito saber algo técnico?', a: 'No. Nos encargamos del dominio, el hosting, el correo y Google. Tú recibes un acceso sencillo para editar la carta, el horario y las fotos.' },
+      { q: '¿Necesito saber algo técnico?', a: 'No. Nos encargamos del dominio, el hosting, el correo y Google. No tienes que tocar nada.' },
       { q: '¿Mi web estará en español y en inglés?', a: 'Sí. Todas las webs que hacemos tienen versión en español y en inglés, y podemos añadir más idiomas en zonas con mucho turismo.' },
       { q: '¿Podéis rediseñar mi web actual?', a: 'Claro. Mantenemos lo que funciona, trasladamos tu dominio sin cortes y nos aseguramos de que Google no te pierda la pista.' },
-      { q: '¿Qué pasa después del lanzamiento?', a: 'Puedes editarlo todo tú. Si prefieres no hacerlo, el plan de mantenimiento cubre hosting, actualizaciones y pequeños cambios cuando los necesites.' },
+      { q: '¿Qué pasa después del lanzamiento?', a: 'Tu web sigue rápida, segura y con copias de seguridad. El plan de mantenimiento cubre hosting, actualizaciones y pequeños cambios cuando los necesites.' },
     ],
   },
   contact: {
@@ -288,6 +288,7 @@ export const es: SiteContent = {
       foot: 'Respondemos en un día laborable. Sin spam ni newsletters, nunca.',
       send: 'Enviar', sending: 'Enviando…',
       errFields: 'Añade tu nombre y un email válido para que podamos responderte.',
+      errRate: 'Ya has enviado varios. Espera unos minutos o escríbenos directamente por email.',
       errServer: 'Algo ha fallado por nuestra parte. Inténtalo de nuevo o escríbenos directamente por email.',
       doneEyebrow: 'Comanda recibida',
       doneTitle: '¡Gracias! Te escribimos muy pronto.',
@@ -344,7 +345,7 @@ export const es: SiteContent = {
     related: 'Sigue leyendo',
     ctaEyebrow: '¿Prefieres que lo hagamos por ti?',
     ctaTitle: ['Hacemos webs que', 'llenan mesas.'],
-    ctaBody: 'Webs rápidas y en dos idiomas para restaurantes, bares y cafeterías, con cartas que editas tú y reservas que llegan a tu correo.',
+    ctaBody: 'Webs rápidas y en dos idiomas para restaurantes, bares y cafeterías, con cartas que se abren al instante y reservas que llegan a tu correo.',
     cta: 'Empieza tu proyecto',
     back: 'Todos los artículos',
     readArticle: 'Leer artículo',

@@ -12,10 +12,10 @@ export const SECTORS_EN: Sector[] = [
     leadType: 'Restaurant',
     label: 'Restaurants',
     index: '01',
-    teaser: 'Bookings, menus that update in minutes, and a first impression as good as your food.',
+    teaser: 'Bookings, a menu that’s always current, and a first impression as good as your food.',
     metaTitle: 'Websites for Restaurants in Spain | Zevu',
     metaDescription:
-      'Restaurant websites with online bookings, menus you edit yourself, allergen info and English + Spanish built in. Designed and built in Spain.',
+      'Restaurant websites with online bookings, a fast digital menu, allergen info and English + Spanish built in. Designed and built in Spain.',
     eyebrow: 'For restaurants',
     headline: ['A website that books the table', 'before they’ve seen the menu.'],
     intro:
@@ -28,7 +28,7 @@ export const SECTORS_EN: Sector[] = [
     ],
     features: [
       { title: 'Online bookings', body: 'Connect the booking system you already use, or we set up a simple one that sends reservations straight to your phone.' },
-      { title: 'A menu you edit yourself', body: 'Change a price or add tonight’s special in a minute. No PDFs, no designer, no waiting.' },
+      { title: 'A menu that’s always current', body: 'Tonight’s special, a new price, a dish that’s sold out: the menu guests see is the menu you serve. No PDFs, no reprints.' },
       { title: 'Allergens, clearly', body: 'Allergen labels on every dish, so guests know before they ask, and staff aren’t interrupted mid-service.' },
       { title: 'English, Español & more', body: 'Your site speaks your guests’ language. Add German, French or Dutch if your street is full of them.' },
       { title: 'Found on Google Maps', body: 'We set up and polish your Google Business Profile so you appear when someone searches “dinner near me”.' },
@@ -38,7 +38,7 @@ export const SECTORS_EN: Sector[] = [
     faqs: [
       { q: 'Can you connect my existing booking system?', a: 'Usually, yes. Most booking tools offer a widget or link we can build in so it feels like part of your site. If you don’t have one, we’ll recommend a simple option.' },
       { q: 'Do you take the photos?', a: 'We can direct a shoot with a local photographer or work with photos you already have. Good food photography makes a bigger difference than almost anything else on the page.' },
-      { q: 'How hard is it to update the menu?', a: 'You log in, change the text or price, and press save. If you can write a WhatsApp message, you can update your menu.' },
+      { q: 'Will the menu work on phones?', a: 'Yes. It’s a real web page, not a PDF, so it opens instantly, reads comfortably with one hand, and Google can read every dish on it.' },
     ],
   },
   {
@@ -62,7 +62,7 @@ export const SECTORS_EN: Sector[] = [
       'Your site doesn’t look anything like the bar.',
     ],
     features: [
-      { title: 'What’s on, always current', body: 'Live music, DJs, quiz nights, the match. One calendar you update, shown everywhere.' },
+      { title: 'What’s on, always current', body: 'Live music, DJs, quiz nights, the match. One clear calendar people can find, plan around and share.' },
       { title: 'Drinks menu that sells', body: 'Signature cocktails with a line of story each. It works better than a list of ingredients.' },
       { title: 'Happy hour, front and centre', body: 'The offer that brings people in at 7 instead of 11, on the first screen.' },
       { title: 'Group & party bookings', body: 'Birthdays, hen dos, after-work. One form, every detail you need, straight to your inbox.' },
@@ -71,7 +71,7 @@ export const SECTORS_EN: Sector[] = [
     ],
     concept: 'nocturno',
     faqs: [
-      { q: 'Can I update the events myself?', a: 'Yes. Adding an event takes about a minute: title, date, a photo, done. It shows on your site straight away.' },
+      { q: 'How do events appear on the site?', a: 'Each event gets its own clear title, date and photo in a calendar on your site, so it can be found and shared instead of vanishing like an Instagram story.' },
       { q: 'Can you link it to our Instagram?', a: 'We can show your latest posts on the site and make sure everything points people back to the same place to book.' },
       { q: 'We’re a small bar. Is this overkill?', a: 'Our smallest package is a single, sharp page with your hours, drinks, events and a way to book. Many bars need nothing more.' },
     ],
@@ -97,7 +97,7 @@ export const SECTORS_EN: Sector[] = [
       'You sell beans or merch, but only over the counter.',
     ],
     features: [
-      { title: 'Hours you can trust', body: 'Holiday hours, early closes, summer schedules. Change them once and they’re right everywhere.' },
+      { title: 'Hours you can trust', body: 'Holiday hours, early closes, summer schedules. Shown clearly, and matching your Google listing.' },
       { title: 'Menu with personality', body: 'Your origin coffees, your brunch, your pastry case, presented like you care about them (because you do).' },
       { title: 'Order ahead', body: 'Optional click-and-collect, so regulars can skip the queue on their way to work.' },
       { title: 'A small online shop', body: 'Sell beans, gift cards or merch to the people who already love your coffee.' },
@@ -107,7 +107,7 @@ export const SECTORS_EN: Sector[] = [
     concept: 'almendro',
     faqs: [
       { q: 'Do I need online ordering?', a: 'Not necessarily. For many cafés, correct hours and a great menu do most of the work. We’ll tell you honestly whether ordering ahead is worth it for you.' },
-      { q: 'Can I sell coffee beans online?', a: 'Yes. We can add a small shop with card payments for beans, gift cards or merch, and it’s easy to manage yourself.' },
+      { q: 'Can I sell coffee beans online?', a: 'Yes. We can add a small shop with card payments for beans, gift cards or merch.' },
       { q: 'We’re opening a new café. When should we start?', a: 'Ideally six to eight weeks before opening, so your site and Google profile are live and collecting interest on day one.' },
     ],
   },
@@ -137,7 +137,7 @@ export const SECTORS_EN: Sector[] = [
       { title: 'Bilingual from day one', body: 'English and Spanish versions of every page, so locals and visitors both feel at home.' },
       { title: 'Google Maps & reviews', body: 'A polished Google profile and a simple way for happy customers to leave reviews.' },
       { title: 'Fast on every phone', body: 'Your site loads quickly on a patchy 4G connection, because that’s where your customers are.' },
-      { title: 'Yours to edit', body: 'Change prices, photos and opening hours yourself, without calling anyone.' },
+      { title: 'Always accurate', body: 'Prices, photos and opening hours that match reality, so customers never turn up to a surprise.' },
     ],
     concept: 'mies',
     faqs: [
@@ -155,7 +155,7 @@ export const en: SiteContent = {
   meta: {
     homeTitle: 'Zevu — Websites for restaurants, bars & coffee shops in Spain',
     homeDescription:
-      'A small design studio in Spain building fast, beautiful websites for restaurants, bars and coffee shops — menus you can edit, bookings that land in your inbox, and a Google profile that shows up.',
+      'A small design studio in Spain building fast, beautiful websites for restaurants, bars and coffee shops — menus that open instantly, bookings that land in your inbox, and a Google profile that shows up.',
     contactTitle: 'Start a project | Zevu',
     contactDescription: 'Tell us about your restaurant, bar or coffee shop. We reply within one working day with honest advice and a fixed price.',
     ogAlt: 'Zevu — Websites for restaurants, bars & coffee shops in Spain',
@@ -176,7 +176,7 @@ export const en: SiteContent = {
     lead: 'Websites that',
     rotating: ['fill tables.', 'pour more drinks.', 'sell out by noon.', 'bring locals back.'],
     body:
-      'Zevu designs and builds fast, beautiful websites for restaurants, bars and coffee shops. Menus you can edit yourself, bookings that land in your inbox, and a Google profile that actually shows up.',
+      'Zevu designs and builds fast, beautiful websites for restaurants, bars and coffee shops. Menus that open instantly, bookings that land in your inbox, and a Google profile that actually shows up.',
     primary: 'Start a project',
     secondary: 'See the work',
   },
@@ -185,7 +185,7 @@ export const en: SiteContent = {
     sub: 'Website studio · España',
     table: 'Mesa 04 · Covers 2',
     server: 'Server: Zevu',
-    items: ['Custom website design', 'Menu you edit yourself', 'Online bookings', 'Google Maps profile', 'English + Español', 'Hosting & care'],
+    items: ['Custom website design', 'Digital menu & allergens', 'Online bookings', 'Google Maps profile', 'English + Español', 'Hosting & care'],
     total: 'TOTAL',
     totalValue: 'More regulars',
     thanks: '*** GRACIAS · VUELVA PRONTO ***',
@@ -215,7 +215,7 @@ export const en: SiteContent = {
     { key: 'oleaje', name: 'Taberna Oleaje', kind: 'Seafood restaurant', note: 'Editorial serif, sea-glass blue, and today’s catch priced along the bottom of the screen.', tags: ['Bookings', 'Daily menu', 'EN / ES'] },
     { key: 'nocturno', name: 'Nocturno', kind: 'Cocktail bar', note: 'Dark, loud and condensed. Tonight’s line-up is the first thing you see.', tags: ['Events calendar', 'Happy hour', 'Group bookings'] },
     { key: 'almendro', name: 'Almendro', kind: 'Coffee bar', note: 'The café as a departures board: a live clock, and the day’s bakes listed like trains. Printed in two-colour riso.', tags: ['Live clock', 'Daily bakes', 'Order ahead'] },
-    { key: 'raiz', name: 'Raíz', kind: 'Natural wine bar', note: 'A wine label blown up to full screen. Every bottle gets a body, funk and fizz meter instead of tasting notes.', tags: ['Wine list you edit', 'Events', 'EN / ES'] },
+    { key: 'raiz', name: 'Raíz', kind: 'Natural wine bar', note: 'A wine label blown up to full screen. Every bottle gets a body, funk and fizz meter instead of tasting notes.', tags: ['Wine list', 'Events', 'EN / ES'] },
     { key: 'olaola', name: 'Ola Ola', kind: 'Chiringuito', note: 'Seventies sunset supergraphics, a countdown to golden hour, and how many sunbeds are left.', tags: ['Sunbed bookings', 'Live conditions', 'Menu'] },
     { key: 'mies', name: 'Mies', kind: 'Bakery', note: 'Butcher-paper brown and rubber stamps. Loaves get stamped “agotado” on screen as they sell out.', tags: ['Live stock', 'Pre-orders', 'Opening hours'] },
   ],
@@ -227,7 +227,7 @@ export const en: SiteContent = {
     order: 'Order this',
     items: [
       { name: 'La Tapa', price: '€590', sub: 'One sharp page', lines: ['Single-page website', 'Menu, hours, location & contact', 'Booking or WhatsApp button', 'Live in about 2 weeks'] },
-      { name: 'El Menú', price: '€1,290', sub: 'Most places start here', featured: true, lines: ['Up to 6 pages', 'Menu you edit yourself', 'Online bookings & group enquiries', 'Events or specials section', 'Live in about 3–4 weeks'] },
+      { name: 'El Menú', price: '€1,290', sub: 'Most places start here', featured: true, lines: ['Up to 6 pages', 'Digital menu with allergens', 'Online bookings & group enquiries', 'Events or specials section', 'Live in about 3–4 weeks'] },
       { name: 'Degustación', price: '€2,400+', sub: 'The full experience', lines: ['Fully custom design', 'Ordering, shop or gift cards', 'Photo shoot direction', 'Extra languages', 'Live in about 5–6 weeks'] },
     ],
     care: { name: 'Care plan', price: '€39 / month', body: 'Hosting, security, backups, and small edits whenever you need them. Cancel any time.' },
@@ -240,13 +240,13 @@ export const en: SiteContent = {
       { course: 'Aperitivo', title: 'A coffee and a chat', body: 'A short call or visit. We learn what makes your place yours, and you get a fixed price, in writing.' },
       { course: 'Primero', title: 'Design', body: 'You see your new homepage designed for real, on your phone, before anything is built. Two rounds of changes included.' },
       { course: 'Segundo', title: 'Build', body: 'We build it fast and properly: menus, bookings, translations, Google. You send photos and text; we handle the rest.' },
-      { course: 'Postre', title: 'Launch & care', body: 'We go live, show you how to edit everything in 20 minutes, and stay on WhatsApp for whatever comes next.' },
+      { course: 'Postre', title: 'Launch & care', body: 'We go live, check everything with you on your own phone, and stay on WhatsApp for whatever comes next.' },
     ],
   },
   included: [
     { k: 'Fast', v: 'Built to load quickly on a patchy beach-bar 4G connection.' },
     { k: 'Yours', v: 'You own the domain, the content and the site. No lock-in.' },
-    { k: 'Editable', v: 'Change menus, hours and photos yourself in minutes.' },
+    { k: 'Bilingual', v: 'English and Spanish versions of every page, for locals and visitors alike.' },
     { k: 'Local', v: 'A studio based in Spain. Reachable on WhatsApp, and happy to meet in person.' },
   ],
   faq: {
@@ -255,10 +255,10 @@ export const en: SiteContent = {
     side: 'Something else on your mind? Ask us. You’ll get a straight answer, not a sales pitch.',
     items: [
       { q: 'How long does it take?', a: 'A one-page site is usually live in about two weeks. A full site with menus and bookings takes three to four weeks. Most of that time is waiting for photos and text, and we help with both.' },
-      { q: 'Do I need to know anything technical?', a: 'No. We handle the domain, hosting, email setup and Google. You get a simple login to edit menus, hours and photos.' },
+      { q: 'Do I need to know anything technical?', a: 'No. We handle the domain, hosting, email setup and Google. You don’t need to touch any of it.' },
       { q: 'Will my site be in Spanish and English?', a: 'Yes. Every site we build has English and Spanish versions by default, and we can add other languages for tourist-heavy areas.' },
       { q: 'Can you redesign my existing website?', a: 'Of course. We keep what works, move your domain without downtime, and make sure Google doesn’t lose track of you.' },
-      { q: 'What happens after launch?', a: 'You can edit everything yourself. If you’d rather not, the care plan covers hosting, updates and small changes whenever you need them.' },
+      { q: 'What happens after launch?', a: 'Your site stays fast, secure and backed up. The care plan covers hosting, updates and small changes whenever you need them.' },
     ],
   },
   contact: {
@@ -285,6 +285,7 @@ export const en: SiteContent = {
       foot: 'We reply within one working day. No spam, no newsletter, ever.',
       send: 'Send enquiry', sending: 'Sending…',
       errFields: 'Please add your name and a valid email so we can reply.',
+      errRate: 'You’ve sent a few already. Please wait a few minutes, or email us directly.',
       errServer: 'Something went wrong on our side. Please try again, or email us directly.',
       doneEyebrow: 'Order received',
       doneTitle: 'Thank you! We’ll be in touch shortly.',
@@ -341,7 +342,7 @@ export const en: SiteContent = {
     related: 'Keep reading',
     ctaEyebrow: 'Want this done for you?',
     ctaTitle: ['We build websites that', 'fill tables.'],
-    ctaBody: 'Fast, bilingual websites for restaurants, bars and coffee shops, with menus you edit yourself and bookings that land in your inbox.',
+    ctaBody: 'Fast, bilingual websites for restaurants, bars and coffee shops, with menus that open instantly and bookings that land in your inbox.',
     cta: 'Start a project',
     back: 'All articles',
     readArticle: 'Read article',

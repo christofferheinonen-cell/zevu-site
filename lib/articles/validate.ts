@@ -3,6 +3,7 @@ import { revalidatePath } from 'next/cache'
 import { CONTENT } from '@/lib/content'
 import { getAllArticles } from './store'
 import { slugify, type Article, type ArticleSector } from './types'
+import { sanitizeArticleHtml } from './sanitize'
 
 const SECTORS: ArticleSector[] = ['general', 'restaurants', 'bars', 'coffee-shops', 'other-businesses']
 const str = (v: unknown, max: number) => String(v ?? '').slice(0, max).trim()
@@ -38,9 +39,9 @@ export async function parseArticle(body: Record<string, unknown>, id?: string): 
     focusKeyword: str(body.focusKeyword, 120),
     excerpt: str(body.excerpt, 600),
     sector,
-    coverImage: str(body.coverImage, 500),
+    coverImage: /^(https:\/\/|\/)[^\s"'<>]*$/.test(str(body.coverImage, 500)) ? str(body.coverImage, 500) : '',
     coverAlt: str(body.coverAlt, 300),
-    body: String(body.body ?? '').slice(0, 300000),
+    body: sanitizeArticleHtml(String(body.body ?? '').slice(0, 300000)),
     faqs,
     status: body.status === 'published' ? 'published' : 'draft',
     publishAt: Number.isNaN(publishAt.getTime()) ? new Date().toISOString() : publishAt.toISOString(),

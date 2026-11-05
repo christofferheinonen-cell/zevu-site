@@ -21,7 +21,7 @@ export const barWebsite: Article[] = [
 
 <h2>Lead with what’s happening tonight</h2>
 <p>People rarely visit a bar website to read about the owners. They want to know what’s on. Make the first screen answer that: tonight’s live music, the quiz, the match, the DJ, or simply the happy hour. If nothing special is happening, say what makes a normal night good.</p>
-<p>An events calendar you can update yourself in a minute is the single most useful feature of a bar website. It turns one-off Instagram stories that vanish in 24 hours into something people can find, plan around and share in the group chat.</p>
+<p>An events calendar that is always current is the single most useful feature of a bar website. It turns one-off Instagram stories that vanish in 24 hours into something people can find, plan around and share in the group chat.</p>
 
 <h2>Put happy hour on the first screen</h2>
 <p>An early-evening offer is what moves people from “later” to “now”. Show the times and the offer clearly, near the top, on every page. If it changes by day, show today’s automatically, so nobody has to work it out.</p>
@@ -58,7 +58,7 @@ export const barWebsite: Article[] = [
 `,
     faqs: [
       { q: 'What should be on a bar website?', a: 'What’s on tonight, your happy hour, an events calendar, a drinks menu with prices, a group booking form, and your hours and location. Most bars need little more.' },
-      { q: 'Can I update the events calendar myself?', a: 'You should be able to. Adding an event should take about a minute: a title, a date and a photo.' },
+      { q: 'What makes a good bar events calendar?', a: 'Every event gets a clear title, date, time and photo, past events disappear on their own, and each one has its own link that is easy to share in a group chat.' },
       { q: 'Should my bar website link to Instagram?', a: 'Yes, but as a supporting channel. Instagram is great for atmosphere, while your website is where people check hours, see what’s on and book.' },
       { q: 'How do I show opening hours past midnight on Google?', a: 'Set the closing time for the following morning in your Google Business Profile, check how it displays, and add special hours for holidays. Keep your website identical.' },
     ],
@@ -80,7 +80,7 @@ export const barWebsite: Article[] = [
 
 <h2>Empieza por lo que pasa esta noche</h2>
 <p>Casi nadie entra en la web de un bar para leer sobre los dueños. Quieren saber qué hay. Haz que la primera pantalla lo responda: la música en directo de esta noche, el quiz, el partido, el DJ o, simplemente, el happy hour. Si no hay nada especial, cuenta qué hace buena una noche normal.</p>
-<p>Una agenda de eventos que actualizas tú en un minuto es lo más útil que puede tener una web para bares. Convierte las stories de Instagram que desaparecen en 24 horas en algo que la gente puede encontrar, planear y compartir en el grupo.</p>
+<p>Una agenda de eventos siempre al día es lo más útil que puede tener una web para bares. Convierte las stories de Instagram que desaparecen en 24 horas en algo que la gente puede encontrar, planear y compartir en el grupo.</p>
 
 <h2>El happy hour, en la primera pantalla</h2>
 <p>Una oferta a primera hora de la tarde es lo que hace pasar a la gente del “luego” al “ahora”. Enseña el horario y la oferta con claridad, arriba, en todas las páginas. Si cambia según el día, muestra automáticamente la de hoy, para que nadie tenga que calcularlo.</p>
@@ -116,7 +116,7 @@ export const barWebsite: Article[] = [
 `,
     faqs: [
       { q: '¿Qué debe tener la web de un bar?', a: 'Lo que hay esta noche, tu happy hour, una agenda de eventos, una carta de copas con precios, un formulario de reservas de grupo, y tu horario y ubicación. La mayoría de bares no necesita mucho más.' },
-      { q: '¿Puedo actualizar yo la agenda de eventos?', a: 'Deberías poder. Añadir un evento debería llevar un minuto: un título, una fecha y una foto.' },
+      { q: '¿Qué hace buena la agenda de eventos de un bar?', a: 'Que cada evento tenga un título, una fecha, una hora y una foto claros, que los eventos pasados desaparezcan solos y que cada uno tenga su propio enlace, fácil de compartir en un grupo.' },
       { q: '¿La web de mi bar debe enlazar a Instagram?', a: 'Sí, pero como canal de apoyo. Instagram es ideal para transmitir ambiente, mientras que la web es donde la gente consulta el horario, ve qué hay y reserva.' },
       { q: '¿Cómo pongo en Google un horario que pasa de medianoche?', a: 'Indica en tu ficha de Google la hora de cierre de la madrugada siguiente, comprueba cómo se muestra y añade horarios especiales para festivos. Mantén tu web idéntica.' },
     ],

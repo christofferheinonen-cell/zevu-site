@@ -524,3 +524,4 @@ body:has(.adm-root)::before{display:none;}
   .adm-root .adm-editor{grid-template-columns:1fr;}
   .adm-root .adm-editor-side{position:static;max-height:none;}
 }
+.adm-root .adm-login-foot{margin-top:18px;text-align:center;font-size:13.5px;}

@@ -13,7 +13,6 @@ export default function ContactForm({ t, defaultType, pkg }: { t: SiteContent['c
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
-    if (fd.get('website_hp')) return // bot trap
     const name = String(fd.get('name') ?? '').trim()
     const email = String(fd.get('email') ?? '').trim()
     if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
@@ -39,12 +38,14 @@ export default function ContactForm({ t, defaultType, pkg }: { t: SiteContent['c
           company: fd.get('company'),
           industry: fd.get('type'),
           message,
+          website_hp: fd.get('website_hp'),
         }),
       })
+      if (res.status === 429) throw new Error('rate')
       if (!res.ok) throw new Error(String(res.status))
       setStatus('done')
-    } catch {
-      setError(f.errServer)
+    } catch (err) {
+      setError(err instanceof Error && err.message === 'rate' ? f.errRate : f.errServer)
       setStatus('error')
     }
   }
