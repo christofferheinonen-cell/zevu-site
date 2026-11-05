@@ -1,6 +1,5 @@
-import { absoluteUrl, parseFiDate } from '@/lib/seo'
-import { getAllPosts } from '@/lib/posts'
-import { SERVICES } from '@/lib/services'
+import { absoluteUrl } from '@/lib/seo'
+import { SECTORS } from '@/lib/site-content'
 
 export const dynamic = 'force-static'
 
@@ -22,23 +21,16 @@ function escapeXml(value: string): string {
 
 export async function GET() {
   const now = new Date()
-  const posts = await getAllPosts()
 
   const entries: Entry[] = [
     { loc: absoluteUrl('/'), lastmod: now, changefreq: 'weekly', priority: 1 },
-    { loc: absoluteUrl('/blog'), lastmod: now, changefreq: 'weekly', priority: 0.7 },
-    ...SERVICES.map(service => ({
-      loc: absoluteUrl(`/${service.slug}`),
+    ...SECTORS.map(s => ({
+      loc: absoluteUrl(`/${s.slug}`),
       lastmod: now,
       changefreq: 'monthly',
       priority: 0.8,
     })),
-    ...posts.map(post => ({
-      loc: absoluteUrl(`/blog/${post.slug}`),
-      lastmod: post.publishedTime ? new Date(post.publishedTime) : parseFiDate(post.date),
-      changefreq: 'monthly',
-      priority: 0.6,
-    })),
+    { loc: absoluteUrl('/contact'), lastmod: now, changefreq: 'yearly', priority: 0.5 },
   ]
 
   const urls = entries

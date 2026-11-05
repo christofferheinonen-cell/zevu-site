@@ -34,6 +34,7 @@ export async function POST(req: NextRequest) {
       name,
       email,
       phone: String(body.phone ?? '').trim().slice(0, 50),
+      message: String(body.message ?? '').trim().slice(0, 4000),
     })
     return NextResponse.json({ ok: true, id: lead.id })
   } catch (err) {
