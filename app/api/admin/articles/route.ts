@@ -1,4 +1,9 @@
 import { NextResponse } from 'next/server'
+
+const unavailable = (err: unknown) => {
+  console.error('[articles] write failed:', err)
+  return NextResponse.json({ error: 'storage_unavailable' }, { status: 503 })
+}
 import { saveArticle } from '@/lib/articles/store'
 import { parseArticle, revalidateArticle } from '@/lib/articles/validate'
 
@@ -11,7 +16,11 @@ export async function POST(req: Request) {
   }
   const article = await parseArticle(body)
   if ('error' in article) return NextResponse.json(article, { status: 400 })
-  await saveArticle(article)
+  try {
+    await saveArticle(article)
+  } catch (err) {
+    return unavailable(err)
+  }
   revalidateArticle(article)
   return NextResponse.json({ ok: true, id: article.id, slug: article.slug, updatedAt: article.updatedAt })
 }

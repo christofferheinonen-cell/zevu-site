@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { unstable_rethrow } from 'next/navigation'
 import { getRedis } from '@/lib/redis'
 import type { Locale } from '@/lib/content/types'
 import { SEED_ARTICLES } from './seed'
@@ -38,11 +39,30 @@ async function readSaved(): Promise<{ saved: Record<string, Article>; deleted: S
     const f = readFile()
     return { saved: f.articles, deleted: new Set(f.deleted) }
   }
-  const [saved, deleted] = await Promise.all([
-    redis.hgetall<Record<string, Article>>(KEY),
-    redis.smembers(DELETED_KEY),
-  ])
-  return { saved: saved ?? {}, deleted: new Set(deleted ?? []) }
+  try {
+    const [saved, deleted] = await Promise.all([
+      redis.hgetall<Record<string, Article>>(KEY),
+      redis.smembers(DELETED_KEY),
+    ])
+    return { saved: saved ?? {}, deleted: new Set(deleted ?? []) }
+  } catch (err) {
+    // Let Next.js' own control-flow signals (e.g. switching to dynamic rendering) through.
+    unstable_rethrow(err)
+    // Never let an unreachable database take the site (or the build) down:
+    // fall back to the articles shipped in code. Writes still fail loudly.
+    console.error('[articles] storage unreachable, serving seed articles only:', err)
+    storageError = err instanceof Error ? err.message : String(err)
+    return { saved: {}, deleted: new Set() }
+  }
+}
+
+let storageError: string | null = null
+
+/** Set when the last read from Redis failed; shown in the admin. */
+export async function articleStorageStatus(): Promise<{ ok: boolean; error?: string }> {
+  storageError = null
+  await readSaved()
+  return storageError ? { ok: false, error: storageError } : { ok: true }
 }
 
 export async function getAllArticles(): Promise<Article[]> {

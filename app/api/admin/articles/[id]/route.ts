@@ -1,4 +1,9 @@
 import { NextResponse } from 'next/server'
+
+const unavailable = (err: unknown) => {
+  console.error('[articles] write failed:', err)
+  return NextResponse.json({ error: 'storage_unavailable' }, { status: 503 })
+}
 import { deleteArticle, getArticleById, saveArticle } from '@/lib/articles/store'
 import { parseArticle, revalidateArticle } from '@/lib/articles/validate'
 
@@ -16,7 +21,11 @@ export async function PUT(req: Request, { params }: Ctx) {
   }
   const article = await parseArticle(body, id)
   if ('error' in article) return NextResponse.json(article, { status: 400 })
-  await saveArticle(article)
+  try {
+    await saveArticle(article)
+  } catch (err) {
+    return unavailable(err)
+  }
   revalidateArticle(article, existing.slug)
   return NextResponse.json({ ok: true, id, slug: article.slug, updatedAt: article.updatedAt })
 }
@@ -25,7 +34,11 @@ export async function DELETE(_req: Request, { params }: Ctx) {
   const { id } = await params
   const existing = await getArticleById(id)
   if (!existing) return NextResponse.json({ error: 'not_found' }, { status: 404 })
-  await deleteArticle(id)
+  try {
+    await deleteArticle(id)
+  } catch (err) {
+    return unavailable(err)
+  }
   revalidateArticle(existing)
   return NextResponse.json({ ok: true })
 }

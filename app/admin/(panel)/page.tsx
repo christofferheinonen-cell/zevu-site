@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getLeads } from '@/lib/leads'
+import { getLeadsSafe } from '@/lib/leads'
 import { getArticleRows } from '@/lib/articles/admin'
 import { adminDateTime, scoreColor } from '@/lib/admin-format'
 
@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic'
 export default async function AdminHome() {
   const now = new Date()
   const rows = await getArticleRows()
-  const leads = (await getLeads()).sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+  const leads = (await getLeadsSafe()).leads.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
   const live = (l: 'en' | 'es') => rows.filter(r => r.state === 'live' && r.a.locale === l).length
   const upcoming = rows
     .filter(r => r.state === 'scheduled')

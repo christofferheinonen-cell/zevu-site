@@ -21,6 +21,7 @@ const ERRORS: Record<string, string> = {
   title_required: 'Add a title first.',
   slug_required: 'The URL can’t be empty.',
   slug_taken: 'Another article in this language already uses that URL.',
+  storage_unavailable: 'The database is unreachable, so nothing was saved. Reconnect Redis in Vercel (see the banner on Overview).',
 }
 
 /** ISO <-> <input type="datetime-local"> in the browser's local time. */

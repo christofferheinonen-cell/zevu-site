@@ -1,10 +1,10 @@
-import { getLeads } from '@/lib/leads'
+import { getLeadsSafe } from '@/lib/leads'
 import { adminDateTime } from '@/lib/admin-format'
 
 export const dynamic = 'force-dynamic'
 
 export default async function LeadsPage() {
-  const leads = (await getLeads()).sort(
+  const leads = (await getLeadsSafe()).leads.sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   )
 
